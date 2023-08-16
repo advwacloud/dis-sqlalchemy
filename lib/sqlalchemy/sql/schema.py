@@ -5762,7 +5762,7 @@ class MetaData(HasSchemaAttr):
             for name in load:
                 try:
                     Table(name, self, **reflect_opts)
-                except exc.UnreflectableTableError as uerr:
+                except Exception as uerr:
                     util.warn("Skipping table %s: %s" % (name, uerr))
 
     def create_all(
