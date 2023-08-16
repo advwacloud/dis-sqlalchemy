@@ -6750,6 +6750,9 @@ class DDLCompiler(Compiled):
             not column.identity or not self.dialect.supports_identity_columns
         ):
             colspec += " NOT NULL"
+
+        if column.comment is not None:
+            colspec += " COMMENT " + column.comment
         return colspec
 
     def create_table_suffix(self, table):
