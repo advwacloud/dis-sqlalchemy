@@ -1093,7 +1093,9 @@ class DefaultDialect(Dialect):
                 except exc.UnreflectableTableError as err:
                     if key not in unreflectable:
                         unreflectable[key] = err
-                except Exception:
+                except Exception as err:
+                    if str(err).strip() != "":
+                      print(str(err))
                     pass
 
     def get_multi_table_options(self, connection, **kw):
