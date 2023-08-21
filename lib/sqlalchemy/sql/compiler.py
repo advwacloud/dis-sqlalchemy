@@ -958,7 +958,7 @@ class TypeCompiler(util.EnsureKWArg):
     def visit_unsupported_compilation(
         self, element: Any, err: Exception, **kw: Any
     ) -> NoReturn:
-        raise exc.UnsupportedCompilationError(self, element) from err
+        return ""
 
 
 # this was a Visitable, but to allow accurate detection of
