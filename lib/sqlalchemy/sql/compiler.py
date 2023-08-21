@@ -7077,11 +7077,7 @@ class GenericTypeCompiler(TypeCompiler):
         return self.visit_VARCHAR(type_, **kw)
 
     def visit_null(self, type_, **kw):
-        raise exc.CompileError(
-            "Can't generate DDL for %r; "
-            "did you forget to specify a "
-            "type on this Column?" % type_
-        )
+        return self.visit_TEXT(type_, **kw)
 
     def visit_type_decorator(self, type_, **kw):
         return self.process(type_.type_engine(self.dialect), **kw)
