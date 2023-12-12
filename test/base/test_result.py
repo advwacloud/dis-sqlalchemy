@@ -1,15 +1,15 @@
-from sqlalchemy import exc
-from sqlalchemy import testing
-from sqlalchemy.engine import result
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_false
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing.assertions import expect_raises
-from sqlalchemy.testing.util import picklers
-from sqlalchemy.util import compat
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.engine import result
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_false
+from dis_sqlalchemy.testing import is_true
+from dis_sqlalchemy.testing.assertions import expect_raises
+from dis_sqlalchemy.testing.util import picklers
+from dis_sqlalchemy.util import compat
 
 
 class ResultTupleTest(fixtures.TestBase):
@@ -203,8 +203,8 @@ class ResultTupleTest(fixtures.TestBase):
     @testing.requires.cextensions
     @testing.variation("direction", ["py_to_cy", "cy_to_py"])
     def test_serialize_cy_py_cy(self, direction: testing.Variation):
-        from sqlalchemy.engine import _py_row
-        from sqlalchemy.cyextension import resultproxy as _cy_row
+        from dis_sqlalchemy.engine import _py_row
+        from dis_sqlalchemy.cyextension import resultproxy as _cy_row
 
         global Row
 

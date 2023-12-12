@@ -1,30 +1,30 @@
 from unittest import mock
 from unittest.mock import Mock
 
-import sqlalchemy as tsa
-from sqlalchemy import create_engine
-from sqlalchemy import create_mock_engine
-from sqlalchemy import event
-from sqlalchemy import Index
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy.schema import AddConstraint
-from sqlalchemy.schema import CheckConstraint
-from sqlalchemy.schema import DDL
-from sqlalchemy.schema import DropConstraint
-from sqlalchemy.schema import ForeignKeyConstraint
-from sqlalchemy.schema import Sequence
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import config
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.provision import normalize_sequence
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+import dis_sqlalchemy as tsa
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import create_mock_engine
+from dis_sqlalchemy import event
+from dis_sqlalchemy import Index
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import text
+from dis_sqlalchemy.schema import AddConstraint
+from dis_sqlalchemy.schema import CheckConstraint
+from dis_sqlalchemy.schema import DDL
+from dis_sqlalchemy.schema import DropConstraint
+from dis_sqlalchemy.schema import ForeignKeyConstraint
+from dis_sqlalchemy.schema import Sequence
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import config
+from dis_sqlalchemy.testing import engines
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing.provision import normalize_sequence
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 
 
 class DDLEventTest(fixtures.TestBase):
@@ -861,7 +861,7 @@ class DDLExecutionTest(AssertsCompiledSQL, fixtures.TestBase):
 
 
 class DDLTransactionTest(fixtures.TestBase):
-    """test DDL transactional behavior as of SQLAlchemy 1.4."""
+    """test DDL transactional behavior as of dis_sqlalchemy 1.4."""
 
     @testing.fixture
     def metadata_fixture(self):

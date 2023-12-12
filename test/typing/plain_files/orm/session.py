@@ -3,18 +3,18 @@ from __future__ import annotations
 import asyncio
 from typing import List
 
-from sqlalchemy import create_engine
-from sqlalchemy import ForeignKey
-from sqlalchemy.ext.asyncio import async_scoped_session
-from sqlalchemy.ext.asyncio import async_sessionmaker
-from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import scoped_session
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import sessionmaker
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy.ext.asyncio import async_scoped_session
+from dis_sqlalchemy.ext.asyncio import async_sessionmaker
+from dis_sqlalchemy.ext.asyncio import AsyncSession
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import scoped_session
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import sessionmaker
 
 
 class Base(DeclarativeBase):

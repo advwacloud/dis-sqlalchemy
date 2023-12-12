@@ -1,13 +1,13 @@
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy import util
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import relationship
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import String
+from dis_sqlalchemy import util
+from dis_sqlalchemy.orm import backref
+from dis_sqlalchemy.orm import configure_mappers
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 
 
 __all__ = ()

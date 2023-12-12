@@ -1,19 +1,19 @@
-from sqlalchemy import FetchedValue
-from sqlalchemy import ForeignKey
-from sqlalchemy import Identity
-from sqlalchemy import insert
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import update
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.assertsql import CompiledSQL
-from sqlalchemy.testing.assertsql import Conditional
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from dis_sqlalchemy import FetchedValue
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Identity
+from dis_sqlalchemy import insert
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import update
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing.assertsql import CompiledSQL
+from dis_sqlalchemy.testing.assertsql import Conditional
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 from test.orm import _fixtures
 
 
@@ -167,7 +167,7 @@ class BulkInsertUpdateTest(BulkTest, _fixtures.FixtureTest):
 
         objects = [user1, user3, user2]
 
-        from sqlalchemy import inspect
+        from dis_sqlalchemy import inspect
 
         def _bulk_save_mappings(
             mapper,

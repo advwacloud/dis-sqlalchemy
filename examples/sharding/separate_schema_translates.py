@@ -9,17 +9,17 @@ from __future__ import annotations
 import datetime
 import os
 
-from sqlalchemy import create_engine
-from sqlalchemy import ForeignKey
-from sqlalchemy import inspect
-from sqlalchemy import select
-from sqlalchemy.ext.horizontal_shard import set_shard_id
-from sqlalchemy.ext.horizontal_shard import ShardedSession
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import sessionmaker
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import select
+from dis_sqlalchemy.ext.horizontal_shard import set_shard_id
+from dis_sqlalchemy.ext.horizontal_shard import ShardedSession
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import sessionmaker
 
 
 echo = True

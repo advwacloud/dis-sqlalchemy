@@ -1,10 +1,10 @@
 from asyncio import current_task
 
-from sqlalchemy import text
-from sqlalchemy.ext.asyncio import async_scoped_session
-from sqlalchemy.ext.asyncio import async_sessionmaker
-from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.ext.asyncio import create_async_engine
+from dis_sqlalchemy import text
+from dis_sqlalchemy.ext.asyncio import async_scoped_session
+from dis_sqlalchemy.ext.asyncio import async_sessionmaker
+from dis_sqlalchemy.ext.asyncio import AsyncSession
+from dis_sqlalchemy.ext.asyncio import create_async_engine
 
 
 engine = create_async_engine("")

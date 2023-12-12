@@ -9,15 +9,15 @@ UPDATE in the database.
 
 """
 
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import is_
-from sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import text
+from dis_sqlalchemy.orm import attributes
+from dis_sqlalchemy.orm import backref
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing.fixtures import fixture_session
 from test.orm import _fixtures
 
 

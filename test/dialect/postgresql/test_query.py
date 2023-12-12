@@ -1,44 +1,44 @@
 import datetime
 
-from sqlalchemy import and_
-from sqlalchemy import cast
-from sqlalchemy import Column
-from sqlalchemy import column
-from sqlalchemy import Date
-from sqlalchemy import DateTime
-from sqlalchemy import exc
-from sqlalchemy import extract
-from sqlalchemy import Float
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import JSON
-from sqlalchemy import literal
-from sqlalchemy import literal_column
-from sqlalchemy import MetaData
-from sqlalchemy import or_
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import Time
-from sqlalchemy import true
-from sqlalchemy import tuple_
-from sqlalchemy.dialects import postgresql
-from sqlalchemy.dialects.postgresql import JSONB
-from sqlalchemy.dialects.postgresql import REGCONFIG
-from sqlalchemy.sql.expression import type_coerce
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import AssertsExecutionResults
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.assertsql import CursorSQL
-from sqlalchemy.testing.assertsql import DialectSQL
+from dis_sqlalchemy import and_
+from dis_sqlalchemy import cast
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import column
+from dis_sqlalchemy import Date
+from dis_sqlalchemy import DateTime
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import extract
+from dis_sqlalchemy import Float
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import JSON
+from dis_sqlalchemy import literal
+from dis_sqlalchemy import literal_column
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import or_
+from dis_sqlalchemy import select
+from dis_sqlalchemy import Sequence
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import text
+from dis_sqlalchemy import Time
+from dis_sqlalchemy import true
+from dis_sqlalchemy import tuple_
+from dis_sqlalchemy.dialects import postgresql
+from dis_sqlalchemy.dialects.postgresql import JSONB
+from dis_sqlalchemy.dialects.postgresql import REGCONFIG
+from dis_sqlalchemy.sql.expression import type_coerce
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import AssertsExecutionResults
+from dis_sqlalchemy.testing import engines
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_warnings
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing.assertsql import CursorSQL
+from dis_sqlalchemy.testing.assertsql import DialectSQL
 
 
 class FunctionTypingTest(fixtures.TestBase, AssertsExecutionResults):
@@ -1259,7 +1259,7 @@ class ExtractTest(fixtures.TablesTest):
 
     @classmethod
     def setup_bind(cls):
-        from sqlalchemy import event
+        from dis_sqlalchemy import event
 
         eng = engines.testing_engine(options={"scope": "class"})
 

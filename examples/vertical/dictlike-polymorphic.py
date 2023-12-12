@@ -24,28 +24,28 @@ date.
 
 """
 
-from sqlalchemy import and_
-from sqlalchemy import Boolean
-from sqlalchemy import case
-from sqlalchemy import cast
-from sqlalchemy import Column
-from sqlalchemy import create_engine
-from sqlalchemy import event
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import literal_column
-from sqlalchemy import null
-from sqlalchemy import or_
-from sqlalchemy import String
-from sqlalchemy import Unicode
-from sqlalchemy import UnicodeText
-from sqlalchemy.ext.associationproxy import association_proxy
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.ext.hybrid import hybrid_property
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm.collections import attribute_keyed_dict
-from sqlalchemy.orm.interfaces import PropComparator
+from dis_sqlalchemy import and_
+from dis_sqlalchemy import Boolean
+from dis_sqlalchemy import case
+from dis_sqlalchemy import cast
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import event
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import literal_column
+from dis_sqlalchemy import null
+from dis_sqlalchemy import or_
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Unicode
+from dis_sqlalchemy import UnicodeText
+from dis_sqlalchemy.ext.associationproxy import association_proxy
+from dis_sqlalchemy.ext.declarative import declarative_base
+from dis_sqlalchemy.ext.hybrid import hybrid_property
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm.collections import attribute_keyed_dict
+from dis_sqlalchemy.orm.interfaces import PropComparator
 from .dictlike import ProxiedDictMixin
 
 

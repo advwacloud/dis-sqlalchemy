@@ -1,8 +1,8 @@
 from typing import List
 from typing import Optional
 
-import sqlalchemy as sa
-from sqlalchemy import orm as saorm
+import dis_sqlalchemy as sa
+from dis_sqlalchemy import orm as saorm
 
 
 Base = saorm.declarative_base()

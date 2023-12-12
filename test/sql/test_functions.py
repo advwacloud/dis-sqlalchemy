@@ -3,56 +3,56 @@ import datetime
 import decimal
 import pickle
 
-from sqlalchemy import ARRAY
-from sqlalchemy import bindparam
-from sqlalchemy import Boolean
-from sqlalchemy import cast
-from sqlalchemy import Column
-from sqlalchemy import Date
-from sqlalchemy import DateTime
-from sqlalchemy import extract
-from sqlalchemy import Float
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import JSON
-from sqlalchemy import literal
-from sqlalchemy import literal_column
-from sqlalchemy import Numeric
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import sql
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import Text
-from sqlalchemy import true
-from sqlalchemy.dialects import mysql
-from sqlalchemy.dialects import oracle
-from sqlalchemy.dialects import postgresql
-from sqlalchemy.dialects import sqlite
-from sqlalchemy.dialects.postgresql import ARRAY as PG_ARRAY
-from sqlalchemy.dialects.postgresql import array
-from sqlalchemy.ext.compiler import compiles
-from sqlalchemy.sql import column
-from sqlalchemy.sql import functions
-from sqlalchemy.sql import LABEL_STYLE_TABLENAME_PLUS_COL
-from sqlalchemy.sql import operators
-from sqlalchemy.sql import quoted_name
-from sqlalchemy.sql import sqltypes
-from sqlalchemy.sql import table
-from sqlalchemy.sql.compiler import BIND_TEMPLATES
-from sqlalchemy.sql.functions import FunctionElement
-from sqlalchemy.sql.functions import GenericFunction
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import config
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing.assertions import expect_warnings
-from sqlalchemy.testing.engines import all_dialects
-from sqlalchemy.testing.provision import normalize_sequence
+from dis_sqlalchemy import ARRAY
+from dis_sqlalchemy import bindparam
+from dis_sqlalchemy import Boolean
+from dis_sqlalchemy import cast
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import Date
+from dis_sqlalchemy import DateTime
+from dis_sqlalchemy import extract
+from dis_sqlalchemy import Float
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import JSON
+from dis_sqlalchemy import literal
+from dis_sqlalchemy import literal_column
+from dis_sqlalchemy import Numeric
+from dis_sqlalchemy import select
+from dis_sqlalchemy import Sequence
+from dis_sqlalchemy import sql
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import Text
+from dis_sqlalchemy import true
+from dis_sqlalchemy.dialects import mysql
+from dis_sqlalchemy.dialects import oracle
+from dis_sqlalchemy.dialects import postgresql
+from dis_sqlalchemy.dialects import sqlite
+from dis_sqlalchemy.dialects.postgresql import ARRAY as PG_ARRAY
+from dis_sqlalchemy.dialects.postgresql import array
+from dis_sqlalchemy.ext.compiler import compiles
+from dis_sqlalchemy.sql import column
+from dis_sqlalchemy.sql import functions
+from dis_sqlalchemy.sql import LABEL_STYLE_TABLENAME_PLUS_COL
+from dis_sqlalchemy.sql import operators
+from dis_sqlalchemy.sql import quoted_name
+from dis_sqlalchemy.sql import sqltypes
+from dis_sqlalchemy.sql import table
+from dis_sqlalchemy.sql.compiler import BIND_TEMPLATES
+from dis_sqlalchemy.sql.functions import FunctionElement
+from dis_sqlalchemy.sql.functions import GenericFunction
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import config
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing.assertions import expect_warnings
+from dis_sqlalchemy.testing.engines import all_dialects
+from dis_sqlalchemy.testing.provision import normalize_sequence
 
 
 table1 = table(
@@ -866,7 +866,7 @@ class CompileTest(fixtures.TestBase, AssertsCompiledSQL):
         )
 
     def test_incorrect_none_type(self):
-        from sqlalchemy.sql.expression import FunctionElement
+        from dis_sqlalchemy.sql.expression import FunctionElement
 
         class MissingType(FunctionElement):
             name = "mt"
@@ -899,7 +899,7 @@ class CompileTest(fixtures.TestBase, AssertsCompiledSQL):
     def test_as_comparison_annotate(self):
         fn = func.foobar("x", "y", "q", "p", "r").as_comparison(2, 5)
 
-        from sqlalchemy.sql import annotation
+        from dis_sqlalchemy.sql import annotation
 
         fn_annotated = annotation._deep_annotate(fn, {"token": "yes"})
 
@@ -923,7 +923,7 @@ class CompileTest(fixtures.TestBase, AssertsCompiledSQL):
             checkparams={"some_comparison_1": "q"},
         )
 
-        from sqlalchemy.sql import visitors
+        from dis_sqlalchemy.sql import visitors
 
         fn_2 = visitors.cloned_traverse(fn, {}, {})
         fn_2.right = literal_column("ABC")
@@ -987,7 +987,7 @@ class ReturnTypeTest(AssertsCompiledSQL, fixtures.TestBase):
         )
 
     def test_array_agg_array_literal_explicit_type(self):
-        from sqlalchemy.dialects.postgresql import array
+        from dis_sqlalchemy.dialects.postgresql import array
 
         expr = array([column("data", Integer), column("d2", Integer)])
 
@@ -1037,8 +1037,8 @@ class ExecuteTest(fixtures.TestBase):
         pass
 
     def test_conn_execute(self, connection):
-        from sqlalchemy.sql.expression import FunctionElement
-        from sqlalchemy.ext.compiler import compiles
+        from dis_sqlalchemy.sql.expression import FunctionElement
+        from dis_sqlalchemy.ext.compiler import compiles
 
         class myfunc(FunctionElement):
             inherit_cache = True

@@ -1,69 +1,69 @@
 from unittest.mock import call
 from unittest.mock import Mock
 
-import sqlalchemy as sa
-from sqlalchemy import cast
-from sqlalchemy import column
-from sqlalchemy import desc
-from sqlalchemy import event
-from sqlalchemy import exc as sa_exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Identity
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import literal_column
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy.engine import default
-from sqlalchemy.engine import result_tuple
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import clear_mappers
-from sqlalchemy.orm import collections
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import contains_alias
-from sqlalchemy.orm import contains_eager
-from sqlalchemy.orm import defaultload
-from sqlalchemy.orm import defer
-from sqlalchemy.orm import deferred
-from sqlalchemy.orm import foreign
-from sqlalchemy.orm import instrumentation
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import scoped_session
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm import subqueryload
-from sqlalchemy.orm import synonym
-from sqlalchemy.orm import undefer
-from sqlalchemy.orm import with_parent
-from sqlalchemy.orm import with_polymorphic
-from sqlalchemy.orm.collections import collection
-from sqlalchemy.orm.util import polymorphic_union
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import assertions
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import eq_ignore_whitespace
-from sqlalchemy.testing import expect_deprecated
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.entities import ComparableEntity
-from sqlalchemy.testing.fixtures import CacheKeyFixture
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.fixtures import RemoveORMEventsGlobally
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+import dis_sqlalchemy as sa
+from dis_sqlalchemy import cast
+from dis_sqlalchemy import column
+from dis_sqlalchemy import desc
+from dis_sqlalchemy import event
+from dis_sqlalchemy import exc as sa_exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Identity
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import literal_column
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import text
+from dis_sqlalchemy.engine import default
+from dis_sqlalchemy.engine import result_tuple
+from dis_sqlalchemy.orm import aliased
+from dis_sqlalchemy.orm import attributes
+from dis_sqlalchemy.orm import clear_mappers
+from dis_sqlalchemy.orm import collections
+from dis_sqlalchemy.orm import column_property
+from dis_sqlalchemy.orm import configure_mappers
+from dis_sqlalchemy.orm import contains_alias
+from dis_sqlalchemy.orm import contains_eager
+from dis_sqlalchemy.orm import defaultload
+from dis_sqlalchemy.orm import defer
+from dis_sqlalchemy.orm import deferred
+from dis_sqlalchemy.orm import foreign
+from dis_sqlalchemy.orm import instrumentation
+from dis_sqlalchemy.orm import joinedload
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import scoped_session
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import sessionmaker
+from dis_sqlalchemy.orm import subqueryload
+from dis_sqlalchemy.orm import synonym
+from dis_sqlalchemy.orm import undefer
+from dis_sqlalchemy.orm import with_parent
+from dis_sqlalchemy.orm import with_polymorphic
+from dis_sqlalchemy.orm.collections import collection
+from dis_sqlalchemy.orm.util import polymorphic_union
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import assertions
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import eq_ignore_whitespace
+from dis_sqlalchemy.testing import expect_deprecated
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_true
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing.entities import ComparableEntity
+from dis_sqlalchemy.testing.fixtures import CacheKeyFixture
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.fixtures import RemoveORMEventsGlobally
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 from . import _fixtures
 from .inheritance import _poly_fixtures
 from .inheritance._poly_fixtures import Manager
@@ -101,7 +101,7 @@ undefer_needs_chaining = (
 
 join_tuple_form = (
     r"Query.join\(\) will no longer accept tuples as "
-    "arguments in SQLAlchemy 2.0."
+    "arguments in dis_sqlalchemy 2.0."
 )
 
 
@@ -113,7 +113,7 @@ query_get_dep = r"The Query.get\(\) method is considered legacy as of the 1.x"
 
 with_polymorphic_dep = (
     r"The Query.with_polymorphic\(\) method is considered legacy as of "
-    r"the 1.x series of SQLAlchemy and will be removed in 2.0"
+    r"the 1.x series of dis_sqlalchemy and will be removed in 2.0"
 )
 
 merge_result_dep = (
@@ -124,7 +124,7 @@ dep_exc_wildcard = (
     r"The undocumented `.{WILDCARD}` format is deprecated and will be removed "
     r"in a future version as it is believed to be unused. If you have been "
     r"using this functionality, please comment on Issue #4390 on the "
-    r"SQLAlchemy project tracker."
+    r"dis_sqlalchemy project tracker."
 )
 
 
@@ -422,9 +422,9 @@ class MiscDeprecationsTest(fixtures.TestBase):
             "name will be removed in a future release.  "
             "'_EvaluatorCompiler' is for internal use only"
         ):
-            from sqlalchemy.orm.evaluator import EvaluatorCompiler
+            from dis_sqlalchemy.orm.evaluator import EvaluatorCompiler
 
-        from sqlalchemy.orm.evaluator import _EvaluatorCompiler
+        from dis_sqlalchemy.orm.evaluator import _EvaluatorCompiler
 
         is_(EvaluatorCompiler, _EvaluatorCompiler)
 
@@ -673,12 +673,12 @@ class DeprecatedMapperTest(
     __dialect__ = "default"
 
     def test_listen_on_mapper_mapper_event_fn(self, registry):
-        from sqlalchemy.orm import mapper
+        from dis_sqlalchemy.orm import mapper
 
         m1 = Mock()
 
         with expect_deprecated(
-            r"The `sqlalchemy.orm.mapper\(\)` symbol is deprecated and "
+            r"The `dis_sqlalchemy.orm.mapper\(\)` symbol is deprecated and "
             "will be removed"
         ):
 
@@ -695,12 +695,12 @@ class DeprecatedMapperTest(
         eq_(m1.mock_calls, [call()])
 
     def test_listen_on_mapper_instrumentation_event_fn(self, registry):
-        from sqlalchemy.orm import mapper
+        from dis_sqlalchemy.orm import mapper
 
         m1 = Mock()
 
         with expect_deprecated(
-            r"The `sqlalchemy.orm.mapper\(\)` symbol is deprecated and "
+            r"The `dis_sqlalchemy.orm.mapper\(\)` symbol is deprecated and "
             "will be removed"
         ):
 
@@ -731,12 +731,12 @@ class DeprecatedMapperTest(
 
         t1 = Table("t1", MetaData(), Column("id", Integer, primary_key=True))
 
-        from sqlalchemy.orm import mapper
+        from dis_sqlalchemy.orm import mapper
 
         with assertions.expect_raises_message(
             sa_exc.InvalidRequestError,
-            r"The 'sqlalchemy.orm.mapper\(\)' function is removed as of "
-            "SQLAlchemy 2.0.",
+            r"The 'dis_sqlalchemy.orm.mapper\(\)' function is removed as of "
+            "dis_sqlalchemy 2.0.",
         ):
             mapper(MyClass, t1)
 
@@ -1057,7 +1057,7 @@ class InstrumentationTest(fixtures.ORMTest):
                 def base_remove(self, x):
                     return "base_remove"
 
-        from sqlalchemy.orm.collections import _instrument_class
+        from dis_sqlalchemy.orm.collections import _instrument_class
 
         _instrument_class(Base)
 
@@ -1766,7 +1766,7 @@ class InstancesTest(QueryTest, AssertsCompiledSQL):
         # test using Alias with more than one level deep
 
         # new way:
-        # from sqlalchemy.orm.strategy_options import Load
+        # from dis_sqlalchemy.orm.strategy_options import Load
         # opt = Load(User).contains_eager('orders', alias=oalias).
         #     contains_eager('items', alias=ialias)
 
@@ -2005,7 +2005,7 @@ class MixedEntitiesTest(QueryTest, AssertsCompiledSQL):
     @testing.fails_on(
         "postgresql+asyncpg",
         "Asyncpg uses preprated statements that are not compatible with how "
-        "sqlalchemy passes the query. Fails with "
+        "dis_sqlalchemy passes the query. Fails with "
         'ERROR:  column "users.name" must appear in the GROUP BY clause'
         " or be used in an aggregate function",
     )
@@ -2250,7 +2250,7 @@ class BindSensitiveStringifyTest(fixtures.MappedTest):
         class MyDialect(default.DefaultDialect):
             default_paramstyle = "qmark"
 
-        from sqlalchemy.engine import base
+        from dis_sqlalchemy.engine import base
 
         return base.Engine(mock.Mock(), MyDialect(), mock.Mock())
 

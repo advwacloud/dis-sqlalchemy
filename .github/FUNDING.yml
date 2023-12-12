@@ -1,6 +1,6 @@
 # These are supported funding model platforms
 
-github: sqlalchemy
+github: dis_sqlalchemy
 patreon: zzzeek
-tidelift: "pypi/SQLAlchemy"
+tidelift: "pypi/dis_sqlalchemy"
 

@@ -9,12 +9,12 @@ within a coroutine.
 
 import asyncio
 
-from sqlalchemy import Column
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy.ext.asyncio import create_async_engine
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy.ext.asyncio import create_async_engine
 
 
 meta = MetaData()
@@ -33,7 +33,7 @@ async def async_main():
 
     # conn is an instance of AsyncConnection
     async with engine.begin() as conn:
-        # to support SQLAlchemy DDL methods as well as legacy functions, the
+        # to support dis_sqlalchemy DDL methods as well as legacy functions, the
         # AsyncConnection.run_sync() awaitable method will pass a "sync"
         # version of the AsyncConnection object to any synchronous method,
         # where synchronous IO calls will be transparently translated for
@@ -49,7 +49,7 @@ async def async_main():
 
     async with engine.connect() as conn:
         # the default result object is the
-        # sqlalchemy.engine.Result object
+        # dis_sqlalchemy.engine.Result object
         result = await conn.execute(t1.select())
 
         # the results are buffered so no await call is necessary
@@ -58,7 +58,7 @@ async def async_main():
 
         # for a streaming result that buffers only segments of the
         # result at time, the AsyncConnection.stream() method is used.
-        # this returns a sqlalchemy.ext.asyncio.AsyncResult object.
+        # this returns a dis_sqlalchemy.ext.asyncio.AsyncResult object.
         async_result = await conn.stream(t1.select())
 
         # this object supports async iteration and awaitable

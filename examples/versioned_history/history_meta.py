@@ -2,18 +2,18 @@
 
 import datetime
 
-from sqlalchemy import Column
-from sqlalchemy import DateTime
-from sqlalchemy import event
-from sqlalchemy import ForeignKeyConstraint
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import PrimaryKeyConstraint
-from sqlalchemy import util
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import object_mapper
-from sqlalchemy.orm.exc import UnmappedColumnError
-from sqlalchemy.orm.relationships import RelationshipProperty
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import DateTime
+from dis_sqlalchemy import event
+from dis_sqlalchemy import ForeignKeyConstraint
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import PrimaryKeyConstraint
+from dis_sqlalchemy import util
+from dis_sqlalchemy.orm import attributes
+from dis_sqlalchemy.orm import object_mapper
+from dis_sqlalchemy.orm.exc import UnmappedColumnError
+from dis_sqlalchemy.orm.relationships import RelationshipProperty
 
 
 def col_references_table(col, table):

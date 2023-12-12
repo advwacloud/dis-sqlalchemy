@@ -1,71 +1,71 @@
 from contextlib import contextmanager
 import pickle
 
-import sqlalchemy as tsa
-from sqlalchemy import ARRAY
-from sqlalchemy import BigInteger
-from sqlalchemy import bindparam
-from sqlalchemy import BLANK_SCHEMA
-from sqlalchemy import Boolean
-from sqlalchemy import CheckConstraint
-from sqlalchemy import Column
-from sqlalchemy import column
-from sqlalchemy import ColumnDefault
-from sqlalchemy import Computed
-from sqlalchemy import desc
-from sqlalchemy import Enum
-from sqlalchemy import event
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import ForeignKeyConstraint
-from sqlalchemy import func
-from sqlalchemy import Identity
-from sqlalchemy import Index
-from sqlalchemy import insert_sentinel
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import Numeric
-from sqlalchemy import PrimaryKeyConstraint
-from sqlalchemy import schema
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import table
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import TypeDecorator
-from sqlalchemy import types as sqltypes
-from sqlalchemy import Unicode
-from sqlalchemy import UniqueConstraint
-from sqlalchemy.engine import default
-from sqlalchemy.ext.compiler import compiles
-from sqlalchemy.ext.compiler import deregister
-from sqlalchemy.schema import AddConstraint
-from sqlalchemy.schema import CreateIndex
-from sqlalchemy.schema import DefaultClause
-from sqlalchemy.schema import DropIndex
-from sqlalchemy.sql import naming
-from sqlalchemy.sql import operators
-from sqlalchemy.sql.base import _NONE_NAME
-from sqlalchemy.sql.elements import literal_column
-from sqlalchemy.sql.schema import _InsertSentinelColumnDefault
-from sqlalchemy.sql.schema import RETAIN_SCHEMA
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import ComparesTables
-from sqlalchemy.testing import emits_warning
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import eq_ignore_whitespace
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_false
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import mock
-from sqlalchemy.testing import Variation
-from sqlalchemy.testing.assertions import expect_warnings
+import dis_sqlalchemy as tsa
+from dis_sqlalchemy import ARRAY
+from dis_sqlalchemy import BigInteger
+from dis_sqlalchemy import bindparam
+from dis_sqlalchemy import BLANK_SCHEMA
+from dis_sqlalchemy import Boolean
+from dis_sqlalchemy import CheckConstraint
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import column
+from dis_sqlalchemy import ColumnDefault
+from dis_sqlalchemy import Computed
+from dis_sqlalchemy import desc
+from dis_sqlalchemy import Enum
+from dis_sqlalchemy import event
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import ForeignKeyConstraint
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Identity
+from dis_sqlalchemy import Index
+from dis_sqlalchemy import insert_sentinel
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import Numeric
+from dis_sqlalchemy import PrimaryKeyConstraint
+from dis_sqlalchemy import schema
+from dis_sqlalchemy import select
+from dis_sqlalchemy import Sequence
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import text
+from dis_sqlalchemy import TypeDecorator
+from dis_sqlalchemy import types as sqltypes
+from dis_sqlalchemy import Unicode
+from dis_sqlalchemy import UniqueConstraint
+from dis_sqlalchemy.engine import default
+from dis_sqlalchemy.ext.compiler import compiles
+from dis_sqlalchemy.ext.compiler import deregister
+from dis_sqlalchemy.schema import AddConstraint
+from dis_sqlalchemy.schema import CreateIndex
+from dis_sqlalchemy.schema import DefaultClause
+from dis_sqlalchemy.schema import DropIndex
+from dis_sqlalchemy.sql import naming
+from dis_sqlalchemy.sql import operators
+from dis_sqlalchemy.sql.base import _NONE_NAME
+from dis_sqlalchemy.sql.elements import literal_column
+from dis_sqlalchemy.sql.schema import _InsertSentinelColumnDefault
+from dis_sqlalchemy.sql.schema import RETAIN_SCHEMA
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import ComparesTables
+from dis_sqlalchemy.testing import emits_warning
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import eq_ignore_whitespace
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_false
+from dis_sqlalchemy.testing import is_true
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing import Variation
+from dis_sqlalchemy.testing.assertions import expect_warnings
 
 
 class MetaDataTest(fixtures.TestBase, ComparesTables):
@@ -803,7 +803,7 @@ class ToMetaDataTest(fixtures.TestBase, AssertsCompiledSQL, ComparesTables):
     def test_copy(self):
         # TODO: modernize this test for 2.0
 
-        from sqlalchemy.testing.schema import Table
+        from dis_sqlalchemy.testing.schema import Table
 
         meta = MetaData()
 
@@ -957,7 +957,7 @@ class ToMetaDataTest(fixtures.TestBase, AssertsCompiledSQL, ComparesTables):
         still in the code.
 
         The feature was found to be not working but is repaired for
-        SQLAlchemy 2.0.
+        dis_sqlalchemy 2.0.
 
         """
         m1 = MetaData()
@@ -1703,7 +1703,7 @@ class TableTest(fixtures.TestBase, AssertsCompiledSQL):
     @testing.requires.temporary_tables
     @testing.skip_if("mssql", "different col format")
     def test_prefixes(self):
-        from sqlalchemy import Table
+        from dis_sqlalchemy import Table
 
         table1 = Table(
             "temporary_table_1",
@@ -3226,7 +3226,7 @@ class ConstraintTest(fixtures.TestBase):
         self._assert_index_col_x(t1, idx, columns=True)
 
     def test_column_associated_w_lowercase_table(self):
-        from sqlalchemy import table
+        from dis_sqlalchemy import table
 
         c = Column("x", Integer)
         table("foo", c)
@@ -4257,9 +4257,9 @@ class ColumnDefinitionTest(AssertsCompiledSQL, fixtures.TestBase):
     def test_custom_subclass_proxy(self):
         """test proxy generation of a Column subclass, can be compiled."""
 
-        from sqlalchemy.schema import Column
-        from sqlalchemy.ext.compiler import compiles
-        from sqlalchemy.sql import select
+        from dis_sqlalchemy.schema import Column
+        from dis_sqlalchemy.ext.compiler import compiles
+        from dis_sqlalchemy.sql import select
 
         class MyColumn(Column):
             def _constructor(self, name, type_, **kw):
@@ -4301,8 +4301,8 @@ class ColumnDefinitionTest(AssertsCompiledSQL, fixtures.TestBase):
         )
 
     def test_custom_subclass_proxy_typeerror(self):
-        from sqlalchemy.schema import Column
-        from sqlalchemy.sql import select
+        from dis_sqlalchemy.schema import Column
+        from dis_sqlalchemy.sql import select
 
         class MyColumn(Column):
             def __init__(self, type_, **kw):
@@ -4838,7 +4838,7 @@ class CatchAllEventsTest(fixtures.RemovesEvents, fixtures.TestBase):
 class DialectKWArgTest(fixtures.TestBase):
     @contextmanager
     def _fixture(self):
-        from sqlalchemy.engine.default import DefaultDialect
+        from dis_sqlalchemy.engine.default import DefaultDialect
 
         class ParticipatingDialect(DefaultDialect):
             construct_arguments = [
@@ -4865,7 +4865,7 @@ class DialectKWArgTest(fixtures.TestBase):
             else:
                 raise exc.NoSuchModuleError("no dialect %r" % dialect_name)
 
-        with mock.patch("sqlalchemy.dialects.registry.load", load):
+        with mock.patch("dis_sqlalchemy.dialects.registry.load", load):
             yield
 
     def teardown_test(self):
@@ -4907,7 +4907,7 @@ class DialectKWArgTest(fixtures.TestBase):
         with self._fixture():
             with testing.expect_warnings(
                 "Can't validate argument 'unknown_y'; can't locate "
-                "any SQLAlchemy dialect named 'unknown'",
+                "any dis_sqlalchemy dialect named 'unknown'",
             ):
                 Index("a", "b", "c", unknown_y=True)
 
@@ -4917,7 +4917,7 @@ class DialectKWArgTest(fixtures.TestBase):
                 exc.ArgumentError,
                 "Argument 'participating_q_p_x' is not accepted by dialect "
                 "'participating' on behalf of "
-                "<class 'sqlalchemy.sql.schema.Index'>",
+                "<class 'dis_sqlalchemy.sql.schema.Index'>",
                 Index,
                 "a",
                 "b",
@@ -4933,7 +4933,7 @@ class DialectKWArgTest(fixtures.TestBase):
                 exc.ArgumentError,
                 "Argument 'participating_q_p_x' is not accepted by dialect "
                 "'participating' on behalf of "
-                "<class 'sqlalchemy.sql.schema.UniqueConstraint'>",
+                "<class 'dis_sqlalchemy.sql.schema.UniqueConstraint'>",
                 UniqueConstraint,
                 "a",
                 "b",
@@ -5039,7 +5039,7 @@ class DialectKWArgTest(fixtures.TestBase):
                 exc.ArgumentError,
                 "Argument 'participating_fake' is not accepted by "
                 "dialect 'participating' on behalf of "
-                "<class 'sqlalchemy.sql.schema.ForeignKeyConstraint'>",
+                "<class 'dis_sqlalchemy.sql.schema.ForeignKeyConstraint'>",
                 Table,
                 "t",
                 m,
@@ -5990,7 +5990,7 @@ class NamingConventionTest(fixtures.TestBase, AssertsCompiledSQL):
 class CopyDialectOptionsTest(fixtures.TestBase):
     @contextmanager
     def _fixture(self):
-        from sqlalchemy.engine.default import DefaultDialect
+        from dis_sqlalchemy.engine.default import DefaultDialect
 
         class CopyDialectOptionsTestDialect(DefaultDialect):
             construct_arguments = [
@@ -6007,7 +6007,7 @@ class CopyDialectOptionsTest(fixtures.TestBase):
             else:
                 raise exc.NoSuchModuleError("no dialect %r" % dialect_name)
 
-        with mock.patch("sqlalchemy.dialects.registry.load", load):
+        with mock.patch("dis_sqlalchemy.dialects.registry.load", load):
             yield
 
     @classmethod

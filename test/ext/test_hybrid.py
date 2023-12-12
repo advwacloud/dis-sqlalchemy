@@ -1,39 +1,39 @@
 from decimal import Decimal
 
-from sqlalchemy import column
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import insert
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import LABEL_STYLE_TABLENAME_PLUS_COL
-from sqlalchemy import literal_column
-from sqlalchemy import Numeric
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.ext import hybrid
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import declarative_base
-from sqlalchemy.orm import declared_attr
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import synonym
-from sqlalchemy.sql import coercions
-from sqlalchemy.sql import operators
-from sqlalchemy.sql import roles
-from sqlalchemy.sql import update
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_false
-from sqlalchemy.testing import is_not
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.schema import Column
+from dis_sqlalchemy import column
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import insert
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import LABEL_STYLE_TABLENAME_PLUS_COL
+from dis_sqlalchemy import literal_column
+from dis_sqlalchemy import Numeric
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.ext import hybrid
+from dis_sqlalchemy.orm import aliased
+from dis_sqlalchemy.orm import column_property
+from dis_sqlalchemy.orm import declarative_base
+from dis_sqlalchemy.orm import declared_attr
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import synonym
+from dis_sqlalchemy.sql import coercions
+from dis_sqlalchemy.sql import operators
+from dis_sqlalchemy.sql import roles
+from dis_sqlalchemy.sql import update
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_false
+from dis_sqlalchemy.testing import is_not
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.schema import Column
 
 
 class PropertyComparatorTest(fixtures.TestBase, AssertsCompiledSQL):
@@ -1494,7 +1494,7 @@ class SpecialObjectTest(fixtures.TestBase, AssertsCompiledSQL):
 
     @classmethod
     def setup_test_class(cls):
-        from sqlalchemy import literal
+        from dis_sqlalchemy import literal
 
         symbols = ("usd", "gbp", "cad", "eur", "aud")
         currency_lookup = {
@@ -1546,7 +1546,7 @@ class SpecialObjectTest(fixtures.TestBase, AssertsCompiledSQL):
                 )
 
             def __clause_element__(self):
-                # helper method for SQLAlchemy to interpret
+                # helper method for dis_sqlalchemy to interpret
                 # the Amount object as a SQL element
                 if isinstance(self.amount, (float, int, Decimal)):
                     return literal(self.amount)

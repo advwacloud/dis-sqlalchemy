@@ -3,5 +3,5 @@
 Core Exceptions
 ===============
 
-.. automodule:: sqlalchemy.exc
+.. automodule:: dis_sqlalchemy.exc
     :members:

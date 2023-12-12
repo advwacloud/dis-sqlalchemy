@@ -5,25 +5,25 @@ See #4246
 """
 import contextlib
 
-from sqlalchemy import Column
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import literal_column
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import update
-from sqlalchemy.dialects.mysql import base as mysql
-from sqlalchemy.exc import ProgrammingError
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.sql import column
-from sqlalchemy.sql import table
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import fixtures
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import literal_column
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import text
+from dis_sqlalchemy import update
+from dis_sqlalchemy.dialects.mysql import base as mysql
+from dis_sqlalchemy.exc import ProgrammingError
+from dis_sqlalchemy.orm import joinedload
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.sql import column
+from dis_sqlalchemy.sql import table
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import fixtures
 
 
 class MySQLForUpdateLockingTest(fixtures.DeclarativeMappedTest):

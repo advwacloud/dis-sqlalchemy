@@ -1,11 +1,11 @@
 import typing
 
-from sqlalchemy import Integer
-from sqlalchemy import Text
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import declared_attr
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import Text
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import declared_attr
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
 
 
 class Base(DeclarativeBase):

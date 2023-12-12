@@ -1,40 +1,40 @@
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import literal
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import union
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import composite
-from sqlalchemy.orm import defaultload
-from sqlalchemy.orm import immediateload
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import lazyload
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import selectin_polymorphic
-from sqlalchemy.orm import selectinload
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import subqueryload
-from sqlalchemy.orm import with_polymorphic
-from sqlalchemy.orm.interfaces import CompileStateOption
-from sqlalchemy.sql.selectable import LABEL_STYLE_TABLENAME_PLUS_COL
-from sqlalchemy.testing import assertsql
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.assertions import expect_raises_message
-from sqlalchemy.testing.assertsql import AllOf
-from sqlalchemy.testing.assertsql import CompiledSQL
-from sqlalchemy.testing.assertsql import Conditional
-from sqlalchemy.testing.assertsql import EachOf
-from sqlalchemy.testing.assertsql import Or
-from sqlalchemy.testing.entities import ComparableEntity
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.schema import Column
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import literal
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import union
+from dis_sqlalchemy.orm import aliased
+from dis_sqlalchemy.orm import backref
+from dis_sqlalchemy.orm import column_property
+from dis_sqlalchemy.orm import composite
+from dis_sqlalchemy.orm import defaultload
+from dis_sqlalchemy.orm import immediateload
+from dis_sqlalchemy.orm import joinedload
+from dis_sqlalchemy.orm import lazyload
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import selectin_polymorphic
+from dis_sqlalchemy.orm import selectinload
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import subqueryload
+from dis_sqlalchemy.orm import with_polymorphic
+from dis_sqlalchemy.orm.interfaces import CompileStateOption
+from dis_sqlalchemy.sql.selectable import LABEL_STYLE_TABLENAME_PLUS_COL
+from dis_sqlalchemy.testing import assertsql
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing.assertions import expect_raises_message
+from dis_sqlalchemy.testing.assertsql import AllOf
+from dis_sqlalchemy.testing.assertsql import CompiledSQL
+from dis_sqlalchemy.testing.assertsql import Conditional
+from dis_sqlalchemy.testing.assertsql import EachOf
+from dis_sqlalchemy.testing.assertsql import Or
+from dis_sqlalchemy.testing.entities import ComparableEntity
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.schema import Column
 from ._poly_fixtures import _Polymorphic
 from ._poly_fixtures import Company
 from ._poly_fixtures import Engineer
@@ -683,7 +683,7 @@ class TestGeometries(GeometryFixtureBase):
         sess.add_all([d(d_data="d1"), e(e_data="e1")])
         sess.commit()
 
-        from sqlalchemy import select
+        from dis_sqlalchemy import select
 
         a_table, c_table, d_table, e_table = self.tables("a", "c", "d", "e")
 

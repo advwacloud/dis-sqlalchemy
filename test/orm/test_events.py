@@ -3,56 +3,56 @@ from unittest.mock import call
 from unittest.mock import Mock
 from unittest.mock import patch
 
-import sqlalchemy as sa
-from sqlalchemy import bindparam
-from sqlalchemy import delete
-from sqlalchemy import event
-from sqlalchemy import exc as sa_exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import insert
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import literal_column
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import update
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import class_mapper
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import declarative_base
-from sqlalchemy.orm import deferred
-from sqlalchemy.orm import EXT_SKIP
-from sqlalchemy.orm import instrumentation
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import lazyload
-from sqlalchemy.orm import Mapper
-from sqlalchemy.orm import mapperlib
-from sqlalchemy.orm import query
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import selectinload
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm import subqueryload
-from sqlalchemy.orm import UserDefinedOption
-from sqlalchemy.sql.cache_key import NO_CACHE
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import assert_warns_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_not
-from sqlalchemy.testing.assertions import expect_raises_message
-from sqlalchemy.testing.assertsql import CompiledSQL
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.fixtures import RemoveORMEventsGlobally
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.testing.util import gc_collect
+import dis_sqlalchemy as sa
+from dis_sqlalchemy import bindparam
+from dis_sqlalchemy import delete
+from dis_sqlalchemy import event
+from dis_sqlalchemy import exc as sa_exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import insert
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import literal_column
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import text
+from dis_sqlalchemy import update
+from dis_sqlalchemy.orm import attributes
+from dis_sqlalchemy.orm import class_mapper
+from dis_sqlalchemy.orm import configure_mappers
+from dis_sqlalchemy.orm import declarative_base
+from dis_sqlalchemy.orm import deferred
+from dis_sqlalchemy.orm import EXT_SKIP
+from dis_sqlalchemy.orm import instrumentation
+from dis_sqlalchemy.orm import joinedload
+from dis_sqlalchemy.orm import lazyload
+from dis_sqlalchemy.orm import Mapper
+from dis_sqlalchemy.orm import mapperlib
+from dis_sqlalchemy.orm import query
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import selectinload
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import sessionmaker
+from dis_sqlalchemy.orm import subqueryload
+from dis_sqlalchemy.orm import UserDefinedOption
+from dis_sqlalchemy.sql.cache_key import NO_CACHE
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import assert_warns_message
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises
+from dis_sqlalchemy.testing import expect_warnings
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_not
+from dis_sqlalchemy.testing.assertions import expect_raises_message
+from dis_sqlalchemy.testing.assertsql import CompiledSQL
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.fixtures import RemoveORMEventsGlobally
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
+from dis_sqlalchemy.testing.util import gc_collect
 from test.orm import _fixtures
 
 
@@ -2403,7 +2403,7 @@ class SessionEventsTest(RemoveORMEventsGlobally, _fixtures.FixtureTest):
         assert my_listener_two not in s2.dispatch.before_flush
 
     def test_scoped_session_invalid_callable(self):
-        from sqlalchemy.orm import scoped_session
+        from dis_sqlalchemy.orm import scoped_session
 
         def my_listener_one(*arg, **kw):
             pass
@@ -2421,7 +2421,7 @@ class SessionEventsTest(RemoveORMEventsGlobally, _fixtures.FixtureTest):
         )
 
     def test_scoped_session_invalid_class(self):
-        from sqlalchemy.orm import scoped_session
+        from dis_sqlalchemy.orm import scoped_session
 
         def my_listener_one(*arg, **kw):
             pass
@@ -2443,7 +2443,7 @@ class SessionEventsTest(RemoveORMEventsGlobally, _fixtures.FixtureTest):
         )
 
     def test_scoped_session_listen(self):
-        from sqlalchemy.orm import scoped_session
+        from dis_sqlalchemy.orm import scoped_session
 
         def my_listener_one(*arg, **kw):
             pass

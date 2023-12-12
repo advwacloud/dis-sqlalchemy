@@ -3,18 +3,18 @@ from __future__ import annotations
 from typing import Tuple
 from typing import TYPE_CHECKING
 
-from sqlalchemy import Column
-from sqlalchemy import create_engine
-from sqlalchemy import Integer
-from sqlalchemy import lambda_stmt
-from sqlalchemy import MetaData
-from sqlalchemy import Result
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import lambda_stmt
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import Result
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
 
 
 class Base(DeclarativeBase):

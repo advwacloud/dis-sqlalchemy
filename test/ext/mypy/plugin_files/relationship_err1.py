@@ -1,10 +1,10 @@
 from typing import List
 
-from sqlalchemy import Column
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy.ext.declarative import declarative_base
+from dis_sqlalchemy.orm import relationship
 
 Base = declarative_base()
 

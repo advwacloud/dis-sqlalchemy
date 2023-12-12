@@ -5,46 +5,46 @@ import random
 from typing import Optional
 from typing import TYPE_CHECKING
 
-from sqlalchemy import Column
-from sqlalchemy import event
-from sqlalchemy import exc as sa_exc
-from sqlalchemy import func
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import clear_mappers
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import session as _session
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm.util import identity_key
-from sqlalchemy.sql import elements
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import assert_warnings
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_not
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.config import Variation
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.util import gc_collect
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import event
+from dis_sqlalchemy import exc as sa_exc
+from dis_sqlalchemy import func
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import text
+from dis_sqlalchemy.orm import attributes
+from dis_sqlalchemy.orm import clear_mappers
+from dis_sqlalchemy.orm import exc as orm_exc
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import session as _session
+from dis_sqlalchemy.orm import sessionmaker
+from dis_sqlalchemy.orm.util import identity_key
+from dis_sqlalchemy.sql import elements
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import assert_warnings
+from dis_sqlalchemy.testing import engines
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import expect_warnings
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_not
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing.config import Variation
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.util import gc_collect
 from test.orm._fixtures import FixtureTest
 
 if TYPE_CHECKING:
-    from sqlalchemy import NestedTransaction
-    from sqlalchemy import Transaction
+    from dis_sqlalchemy import NestedTransaction
+    from dis_sqlalchemy import Transaction
 
 
 class SessionTransactionTest(fixtures.RemovesEvents, FixtureTest):

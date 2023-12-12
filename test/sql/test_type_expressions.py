@@ -1,18 +1,18 @@
-from sqlalchemy import cast
-from sqlalchemy import Column
-from sqlalchemy import func
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import TypeDecorator
-from sqlalchemy import union
-from sqlalchemy.sql import LABEL_STYLE_TABLENAME_PLUS_COL
-from sqlalchemy.sql.type_api import UserDefinedType
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
+from dis_sqlalchemy import cast
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import func
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import TypeDecorator
+from dis_sqlalchemy import union
+from dis_sqlalchemy.sql import LABEL_STYLE_TABLENAME_PLUS_COL
+from dis_sqlalchemy.sql.type_api import UserDefinedType
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
 
 
 class _ExprFixture:
@@ -103,7 +103,7 @@ class _ExprFixture:
             def column_expression(self, col):
                 return func.dialect_colexpr(col)
 
-        from sqlalchemy.engine import default
+        from dis_sqlalchemy.engine import default
 
         dialect = default.DefaultDialect()
         dialect.colspecs = {String: ImplString}

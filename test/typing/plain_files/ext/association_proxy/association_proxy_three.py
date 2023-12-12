@@ -2,14 +2,14 @@ from __future__ import annotations
 
 from typing import List
 
-from sqlalchemy import ForeignKey
-from sqlalchemy.ext.associationproxy import association_proxy
-from sqlalchemy.ext.associationproxy import AssociationProxy
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import declared_attr
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import relationship
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy.ext.associationproxy import association_proxy
+from dis_sqlalchemy.ext.associationproxy import AssociationProxy
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import declared_attr
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import relationship
 
 
 class Base(DeclarativeBase):

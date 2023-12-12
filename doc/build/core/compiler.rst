@@ -1,7 +1,7 @@
-.. _sqlalchemy.ext.compiler_toplevel:
+.. _dis_sqlalchemy.ext.compiler_toplevel:
 
 Custom SQL Constructs and Compilation Extension
 ===============================================
 
-.. automodule:: sqlalchemy.ext.compiler
+.. automodule:: dis_sqlalchemy.ext.compiler
     :members:

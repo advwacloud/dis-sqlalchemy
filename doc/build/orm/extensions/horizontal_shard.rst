@@ -3,7 +3,7 @@
 Horizontal Sharding
 ===================
 
-.. automodule:: sqlalchemy.ext.horizontal_shard
+.. automodule:: dis_sqlalchemy.ext.horizontal_shard
 
 API Documentation
 -----------------

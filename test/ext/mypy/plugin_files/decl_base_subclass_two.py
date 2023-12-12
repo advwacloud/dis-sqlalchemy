@@ -1,14 +1,14 @@
 from typing import List
 from typing import Optional
 
-from sqlalchemy import Column
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import registry
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm.decl_api import declared_attr
-from sqlalchemy.sql.schema import ForeignKey
-from sqlalchemy.sql.sqltypes import Integer
-from sqlalchemy.sql.sqltypes import String
+from dis_sqlalchemy import Column
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import registry
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm.decl_api import declared_attr
+from dis_sqlalchemy.sql.schema import ForeignKey
+from dis_sqlalchemy.sql.sqltypes import Integer
+from dis_sqlalchemy.sql.sqltypes import String
 
 reg: registry = registry()
 

@@ -1,27 +1,27 @@
-from sqlalchemy import event
-from sqlalchemy import exc
-from sqlalchemy import func
-from sqlalchemy import INT
-from sqlalchemy import MetaData
-from sqlalchemy import pool as _pool
-from sqlalchemy import select
-from sqlalchemy import testing
-from sqlalchemy import util
-from sqlalchemy import VARCHAR
-from sqlalchemy.engine import base
-from sqlalchemy.engine import characteristics
-from sqlalchemy.engine import default
-from sqlalchemy.engine import url
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import mock
-from sqlalchemy.testing import ne_
-from sqlalchemy.testing.assertions import expect_raises_message
-from sqlalchemy.testing.engines import testing_engine
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from dis_sqlalchemy import event
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import func
+from dis_sqlalchemy import INT
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import pool as _pool
+from dis_sqlalchemy import select
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import util
+from dis_sqlalchemy import VARCHAR
+from dis_sqlalchemy.engine import base
+from dis_sqlalchemy.engine import characteristics
+from dis_sqlalchemy.engine import default
+from dis_sqlalchemy.engine import url
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_warnings
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing import ne_
+from dis_sqlalchemy.testing.assertions import expect_raises_message
+from dis_sqlalchemy.testing.engines import testing_engine
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 
 
 class TransactionTest(fixtures.TablesTest):
@@ -286,7 +286,7 @@ class TransactionTest(fixtures.TablesTest):
                     connection, sp._savepoint
                 )
 
-        # prior to SQLAlchemy 1.4, the above release would fail
+        # prior to dis_sqlalchemy 1.4, the above release would fail
         # and then the savepoint would try to rollback, and that failed
         # also, causing a long exception chain that under Python 2
         # was particularly hard to diagnose, leading to issue
@@ -616,7 +616,7 @@ class TransactionTest(fixtures.TablesTest):
         with testing.db.begin() as conn:
             assert_raises_message(
                 exc.InvalidRequestError,
-                r"This connection has already initialized a SQLAlchemy "
+                r"This connection has already initialized a dis_sqlalchemy "
                 r"Transaction\(\) object via begin\(\) or autobegin; "
                 r"isolation_level may not be altered unless rollback\(\) or "
                 r"commit\(\) is called first.",
@@ -631,7 +631,7 @@ class TransactionTest(fixtures.TablesTest):
 
             assert_raises_message(
                 exc.InvalidRequestError,
-                r"This connection has already initialized a SQLAlchemy "
+                r"This connection has already initialized a dis_sqlalchemy "
                 r"Transaction\(\) object via begin\(\) or autobegin; "
                 r"isolation_level may not be altered unless rollback\(\) or "
                 r"commit\(\) is called first.",
@@ -872,7 +872,7 @@ class TransactionTest(fixtures.TablesTest):
 
             assert_raises_message(
                 exc.InvalidRequestError,
-                r"This connection has already initialized a SQLAlchemy "
+                r"This connection has already initialized a dis_sqlalchemy "
                 r"Transaction\(\) object via begin\(\) or autobegin; can't "
                 r"call begin\(\) here unless rollback\(\) or commit\(\) is "
                 r"called first.",
@@ -1132,7 +1132,7 @@ class AutoRollbackTest(fixtures.TestBase):
 
 
 class IsolationLevelTest(fixtures.TestBase):
-    """see also sqlalchemy/testing/suite/test_dialect.py::IsolationLevelTest"""
+    """see also dis_sqlalchemy/testing/suite/test_dialect.py::IsolationLevelTest"""
 
     __requires__ = (
         "isolation_level",
@@ -1347,7 +1347,7 @@ class IsolationLevelTest(fixtures.TestBase):
             eq_(c2.get_isolation_level(), self._default_isolation_level())
 
     def test_per_connection(self):
-        from sqlalchemy.pool import QueuePool
+        from dis_sqlalchemy.pool import QueuePool
 
         eng = testing_engine(
             options=dict(poolclass=QueuePool, pool_size=2, max_overflow=0)
@@ -1387,7 +1387,7 @@ class IsolationLevelTest(fixtures.TestBase):
         with eng.connect() as c1:
             with expect_raises_message(
                 exc.InvalidRequestError,
-                r"This connection has already initialized a SQLAlchemy "
+                r"This connection has already initialized a dis_sqlalchemy "
                 r"Transaction\(\) object via begin\(\) or autobegin; "
                 r"isolation_level may not be altered unless rollback\(\) or "
                 r"commit\(\) is called first.",
@@ -1555,7 +1555,7 @@ class ConnectionCharacteristicTest(fixtures.TestBase):
         c1 = engine.connect()
         with expect_raises_message(
             exc.InvalidRequestError,
-            r"This connection has already initialized a SQLAlchemy "
+            r"This connection has already initialized a dis_sqlalchemy "
             r"Transaction\(\) object via begin\(\) or autobegin; "
             r"foo may not be altered unless rollback\(\) or "
             r"commit\(\) is called first.",

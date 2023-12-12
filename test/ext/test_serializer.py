@@ -1,28 +1,28 @@
-from sqlalchemy import desc
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import join
-from sqlalchemy import literal_column
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.ext import serializer
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import class_mapper
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import scoped_session
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.entities import ComparableEntity
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from dis_sqlalchemy import desc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import join
+from dis_sqlalchemy import literal_column
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.ext import serializer
+from dis_sqlalchemy.orm import aliased
+from dis_sqlalchemy.orm import class_mapper
+from dis_sqlalchemy.orm import column_property
+from dis_sqlalchemy.orm import configure_mappers
+from dis_sqlalchemy.orm import joinedload
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import scoped_session
+from dis_sqlalchemy.orm import sessionmaker
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing.entities import ComparableEntity
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 
 
 def pickle_protocols():
@@ -229,7 +229,7 @@ class SerializeTest(AssertsCompiledSQL, fixtures.MappedTest):
             serializer.loads(pickled_failing, users.metadata, None)
 
     def test_orm_join(self):
-        from sqlalchemy.orm import join
+        from dis_sqlalchemy.orm import join
 
         j = join(User, Address, User.addresses)
 

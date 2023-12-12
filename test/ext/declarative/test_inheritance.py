@@ -1,31 +1,31 @@
-from sqlalchemy import exc as sa_exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.ext.declarative import AbstractConcreteBase
-from sqlalchemy.ext.declarative import ConcreteBase
-from sqlalchemy.orm import clear_mappers
-from sqlalchemy.orm import close_all_sessions
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import declarative_base
-from sqlalchemy.orm import declared_attr
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import has_inherited_table
-from sqlalchemy.orm import polymorphic_union
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.assertions import expect_raises_message
-from sqlalchemy.testing.entities import ComparableEntity
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.fixtures import RemoveORMEventsGlobally
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from dis_sqlalchemy import exc as sa_exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.ext.declarative import AbstractConcreteBase
+from dis_sqlalchemy.ext.declarative import ConcreteBase
+from dis_sqlalchemy.orm import clear_mappers
+from dis_sqlalchemy.orm import close_all_sessions
+from dis_sqlalchemy.orm import configure_mappers
+from dis_sqlalchemy.orm import declarative_base
+from dis_sqlalchemy.orm import declared_attr
+from dis_sqlalchemy.orm import exc as orm_exc
+from dis_sqlalchemy.orm import has_inherited_table
+from dis_sqlalchemy.orm import polymorphic_union
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing.assertions import expect_raises_message
+from dis_sqlalchemy.testing.entities import ComparableEntity
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.fixtures import RemoveORMEventsGlobally
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 
 Base = None
 
@@ -220,7 +220,7 @@ class ConcreteInhTest(
             "Class test.ext.declarative.test_inheritance.Employee is a "
             "subclass of AbstractConcreteBase and has a mapping pending "
             "until all subclasses are defined. Call the "
-            r"sqlalchemy.orm.configure_mappers\(\) function after all "
+            r"dis_sqlalchemy.orm.configure_mappers\(\) function after all "
             "subclasses have been defined to complete the "
             "mapping of this class.",
             Session().query,

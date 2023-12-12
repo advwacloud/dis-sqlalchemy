@@ -2,29 +2,29 @@ import pickle
 from unittest.mock import call
 from unittest.mock import Mock
 
-from sqlalchemy import event
-from sqlalchemy import exc as sa_exc
-from sqlalchemy import testing
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import instrumentation
-from sqlalchemy.orm import NO_KEY
-from sqlalchemy.orm.collections import attribute_keyed_dict
-from sqlalchemy.orm.collections import collection
-from sqlalchemy.orm.state import InstanceState
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_false
-from sqlalchemy.testing import is_not
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import not_in
-from sqlalchemy.testing.assertions import assert_warns
-from sqlalchemy.testing.entities import BasicEntity
-from sqlalchemy.testing.util import all_partial_orderings
-from sqlalchemy.testing.util import gc_collect
+from dis_sqlalchemy import event
+from dis_sqlalchemy import exc as sa_exc
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.orm import attributes
+from dis_sqlalchemy.orm import exc as orm_exc
+from dis_sqlalchemy.orm import instrumentation
+from dis_sqlalchemy.orm import NO_KEY
+from dis_sqlalchemy.orm.collections import attribute_keyed_dict
+from dis_sqlalchemy.orm.collections import collection
+from dis_sqlalchemy.orm.state import InstanceState
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_false
+from dis_sqlalchemy.testing import is_not
+from dis_sqlalchemy.testing import is_true
+from dis_sqlalchemy.testing import not_in
+from dis_sqlalchemy.testing.assertions import assert_warns
+from dis_sqlalchemy.testing.entities import BasicEntity
+from dis_sqlalchemy.testing.util import all_partial_orderings
+from dis_sqlalchemy.testing.util import gc_collect
 
 # global for pickling tests
 MyTest = None

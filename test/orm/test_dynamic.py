@@ -1,36 +1,36 @@
-from sqlalchemy import cast
-from sqlalchemy import Column
-from sqlalchemy import desc
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Identity
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import noload
-from sqlalchemy.orm import PassiveFlag
-from sqlalchemy.orm import Query
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import WriteOnlyMapped
-from sqlalchemy.orm.session import make_transient_to_detached
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import is_
-from sqlalchemy.testing.assertsql import CompiledSQL
-from sqlalchemy.testing.assertsql import Conditional
-from sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy import cast
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import desc
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Identity
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.orm import attributes
+from dis_sqlalchemy.orm import backref
+from dis_sqlalchemy.orm import configure_mappers
+from dis_sqlalchemy.orm import exc as orm_exc
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import noload
+from dis_sqlalchemy.orm import PassiveFlag
+from dis_sqlalchemy.orm import Query
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import WriteOnlyMapped
+from dis_sqlalchemy.orm.session import make_transient_to_detached
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing.assertsql import CompiledSQL
+from dis_sqlalchemy.testing.assertsql import Conditional
+from dis_sqlalchemy.testing.fixtures import fixture_session
 from test.orm import _fixtures
 
 
@@ -1460,7 +1460,7 @@ class DynamicUOWTest(
         sess.add(u)
         sess.commit()
 
-        from sqlalchemy import case
+        from dis_sqlalchemy import case
 
         # the byzantine syntax here is so the query works on MSSQL
         isnull_stmt = select(

@@ -28,22 +28,22 @@ those additional values.
 
 """
 
-from sqlalchemy import Column
-from sqlalchemy import create_engine
-from sqlalchemy import event
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy.ext.associationproxy import association_proxy
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import make_transient
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm import validates
-from sqlalchemy.orm.collections import attribute_keyed_dict
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import event
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import String
+from dis_sqlalchemy.ext.associationproxy import association_proxy
+from dis_sqlalchemy.ext.declarative import declarative_base
+from dis_sqlalchemy.orm import attributes
+from dis_sqlalchemy.orm import backref
+from dis_sqlalchemy.orm import make_transient
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import sessionmaker
+from dis_sqlalchemy.orm import validates
+from dis_sqlalchemy.orm.collections import attribute_keyed_dict
 
 
 @event.listens_for(Session, "before_flush")

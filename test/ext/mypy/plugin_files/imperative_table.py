@@ -1,13 +1,13 @@
 import datetime
 from typing import Optional
 
-from sqlalchemy import Column
-from sqlalchemy import DateTime
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy.orm import declarative_base
-from sqlalchemy.orm import Mapped
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import DateTime
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy.orm import declarative_base
+from dis_sqlalchemy.orm import Mapped
 
 
 Base = declarative_base()

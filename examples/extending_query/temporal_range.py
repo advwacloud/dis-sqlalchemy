@@ -6,17 +6,17 @@ to selected entities.
 
 import datetime
 
-from sqlalchemy import Column
-from sqlalchemy import create_engine
-from sqlalchemy import DateTime
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import orm
-from sqlalchemy import select
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import selectinload
-from sqlalchemy.orm import sessionmaker
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import DateTime
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import orm
+from dis_sqlalchemy import select
+from dis_sqlalchemy.ext.declarative import declarative_base
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import selectinload
+from dis_sqlalchemy.orm import sessionmaker
 
 
 class HasTemporal:

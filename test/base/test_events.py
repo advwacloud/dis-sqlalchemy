@@ -3,18 +3,18 @@
 from unittest.mock import call
 from unittest.mock import Mock
 
-from sqlalchemy import event
-from sqlalchemy import exc
-from sqlalchemy import testing
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_deprecated
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_not
-from sqlalchemy.testing.util import gc_collect
+from dis_sqlalchemy import event
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_deprecated
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_not
+from dis_sqlalchemy.testing.util import gc_collect
 
 
 class TearDownLocalEventsFixture:
@@ -1478,7 +1478,7 @@ class RemovalTest(TearDownLocalEventsFixture, fixtures.TestBase):
 
     @testing.requires.predictable_gc
     def test_listener_collection_removed_cleanup(self):
-        from sqlalchemy.event import registry
+        from dis_sqlalchemy.event import registry
 
         Target = self._fixture()
 

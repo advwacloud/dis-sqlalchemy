@@ -1,4 +1,4 @@
-"""A basic example of using the SQLAlchemy Sharding API.
+"""A basic example of using the dis_sqlalchemy Sharding API.
 Sharding refers to horizontally scaling data across multiple
 databases.
 
@@ -32,7 +32,7 @@ to the issue of organizing instances among multiple databases.   For a
 more plain-spoken alternative, the "distinct entity" approach
 is a simple method of assigning objects to different tables (and potentially
 database nodes) in an explicit way - described on the wiki at
-`EntityName <https://www.sqlalchemy.org/trac/wiki/UsageRecipes/EntityName>`_.
+`EntityName <https://www.dis_sqlalchemy.org/trac/wiki/UsageRecipes/EntityName>`_.
 
 .. autosource::
 

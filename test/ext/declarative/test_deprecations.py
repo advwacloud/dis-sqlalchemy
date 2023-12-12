@@ -1,18 +1,18 @@
-import sqlalchemy as sa
-from sqlalchemy import inspect
-from sqlalchemy.ext import declarative as legacy_decl
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_deprecated_20
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_false
-from sqlalchemy.testing import is_true
+import dis_sqlalchemy as sa
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy.ext import declarative as legacy_decl
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_deprecated_20
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_false
+from dis_sqlalchemy.testing import is_true
 
 
 class DeprecatedImportsTest(fixtures.TestBase):
     def _expect_warning(self, name):
         return expect_deprecated_20(
             r"The ``%s\(\)`` function is now available as "
-            r"sqlalchemy.orm.%s\(\)" % (name, name)
+            r"dis_sqlalchemy.orm.%s\(\)" % (name, name)
         )
 
     def test_declarative_base(self):

@@ -1,35 +1,35 @@
 import itertools
 import random
 
-from sqlalchemy import bindparam
-from sqlalchemy import column
-from sqlalchemy import exc
-from sqlalchemy import exists
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import literal
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import table
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import update
-from sqlalchemy import util
-from sqlalchemy.dialects import mysql
-from sqlalchemy.engine import default
-from sqlalchemy.sql import operators
-from sqlalchemy.sql.elements import BooleanClauseList
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from dis_sqlalchemy import bindparam
+from dis_sqlalchemy import column
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import exists
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import literal
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import text
+from dis_sqlalchemy import update
+from dis_sqlalchemy import util
+from dis_sqlalchemy.dialects import mysql
+from dis_sqlalchemy.engine import default
+from dis_sqlalchemy.sql import operators
+from dis_sqlalchemy.sql.elements import BooleanClauseList
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 
 
 class _UpdateFromTestBase:
@@ -835,7 +835,7 @@ class UpdateTest(_UpdateFromTestBase, fixtures.TablesTest, AssertsCompiledSQL):
 
     @testing.fixture
     def randomized_param_order_update(self):
-        from sqlalchemy.sql.dml import UpdateDMLState
+        from dis_sqlalchemy.sql.dml import UpdateDMLState
 
         super_process_ordered_values = UpdateDMLState._process_ordered_values
 
@@ -859,7 +859,7 @@ class UpdateTest(_UpdateFromTestBase, fixtures.TablesTest, AssertsCompiledSQL):
             yield
 
     def random_update_order_parameters():
-        from sqlalchemy import ARRAY
+        from dis_sqlalchemy import ARRAY
 
         t = table(
             "foo",

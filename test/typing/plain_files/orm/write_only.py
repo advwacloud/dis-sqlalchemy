@@ -2,14 +2,14 @@ from __future__ import annotations
 
 import typing
 
-from sqlalchemy import ForeignKey
-from sqlalchemy import select
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import WriteOnlyMapped
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import select
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import WriteOnlyMapped
 
 
 class Base(DeclarativeBase):

@@ -5,25 +5,25 @@ Primary key changing capabilities and passive/non-passive cascading updates.
 
 import itertools
 
-import sqlalchemy as sa
-from sqlalchemy import bindparam
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import TypeDecorator
-from sqlalchemy.orm import make_transient
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import with_parent
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import ne_
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+import dis_sqlalchemy as sa
+from dis_sqlalchemy import bindparam
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import TypeDecorator
+from dis_sqlalchemy.orm import make_transient
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import with_parent
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_warnings
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import ne_
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 from test.orm import _fixtures
 
 
@@ -1405,7 +1405,7 @@ class CascadeToFKPKTest(fixtures.MappedTest, testing.AssertsCompiledSQL):
         sess.add(u2)
         sess.add(a2)
 
-        from sqlalchemy.testing.assertsql import CompiledSQL
+        from dis_sqlalchemy.testing.assertsql import CompiledSQL
 
         # test that the primary key columns of addresses are not
         # being updated as well, since this is a row switch.

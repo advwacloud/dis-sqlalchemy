@@ -2,13 +2,13 @@ from __future__ import annotations
 
 from typing import Any
 
-from sqlalchemy import ColumnElement
-from sqlalchemy import func
-from sqlalchemy.ext.hybrid import Comparator
-from sqlalchemy.ext.hybrid import hybrid_property
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
+from dis_sqlalchemy import ColumnElement
+from dis_sqlalchemy import func
+from dis_sqlalchemy.ext.hybrid import Comparator
+from dis_sqlalchemy.ext.hybrid import hybrid_property
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
 
 
 class Base(DeclarativeBase):

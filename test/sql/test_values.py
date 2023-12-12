@@ -1,23 +1,23 @@
-from sqlalchemy import alias
-from sqlalchemy import Column
-from sqlalchemy import column
-from sqlalchemy import Enum
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import true
-from sqlalchemy.engine import default
-from sqlalchemy.sql import func
-from sqlalchemy.sql import select
-from sqlalchemy.sql import Values
-from sqlalchemy.sql.compiler import FROM_LINTING
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import fixtures
-from sqlalchemy.util import OrderedDict
+from dis_sqlalchemy import alias
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import column
+from dis_sqlalchemy import Enum
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import true
+from dis_sqlalchemy.engine import default
+from dis_sqlalchemy.sql import func
+from dis_sqlalchemy.sql import select
+from dis_sqlalchemy.sql import Values
+from dis_sqlalchemy.sql.compiler import FROM_LINTING
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.util import OrderedDict
 
 
 class ValuesTest(fixtures.TablesTest, AssertsCompiledSQL):
@@ -195,7 +195,7 @@ class ValuesTest(fixtures.TablesTest, AssertsCompiledSQL):
     @testing.fixture
     def tricky_types_parameter_fixture(self):
         class SomeEnum:
-            # Implements PEP 435 in the minimal fashion needed by SQLAlchemy
+            # Implements PEP 435 in the minimal fashion needed by dis_sqlalchemy
             __members__ = OrderedDict()
 
             def __init__(self, name, value, alias=None):

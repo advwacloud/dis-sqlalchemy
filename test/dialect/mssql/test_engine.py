@@ -2,32 +2,32 @@ from decimal import Decimal
 import re
 from unittest.mock import Mock
 
-from sqlalchemy import Column
-from sqlalchemy import event
-from sqlalchemy import exc
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import Numeric
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy.dialects.mssql import base
-from sqlalchemy.dialects.mssql import pymssql
-from sqlalchemy.dialects.mssql import pyodbc
-from sqlalchemy.engine import url
-from sqlalchemy.exc import DBAPIError
-from sqlalchemy.exc import IntegrityError
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import assert_warnings
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import mock
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import event
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import Numeric
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.dialects.mssql import base
+from dis_sqlalchemy.dialects.mssql import pymssql
+from dis_sqlalchemy.dialects.mssql import pyodbc
+from dis_sqlalchemy.engine import url
+from dis_sqlalchemy.exc import DBAPIError
+from dis_sqlalchemy.exc import IntegrityError
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import assert_warnings
+from dis_sqlalchemy.testing import engines
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import expect_warnings
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import mock
 
 
 class ParseConnectTest(fixtures.TestBase):

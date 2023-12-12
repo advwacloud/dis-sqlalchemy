@@ -1,11 +1,11 @@
 from typing import Any
 from typing import Tuple
 
-from sqlalchemy import Column
-from sqlalchemy import Integer
-from sqlalchemy import select
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import composite
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import select
+from dis_sqlalchemy.ext.declarative import declarative_base
+from dis_sqlalchemy.orm import composite
 
 Base = declarative_base()
 

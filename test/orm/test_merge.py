@@ -1,40 +1,40 @@
 import operator
 
-import sqlalchemy as sa
-from sqlalchemy import and_
-from sqlalchemy import case
-from sqlalchemy import event
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import PickleType
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import Text
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import defer
-from sqlalchemy.orm import deferred
-from sqlalchemy.orm import foreign
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import selectinload
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import synonym
-from sqlalchemy.orm.collections import attribute_keyed_dict
-from sqlalchemy.orm.interfaces import MapperOption
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import in_
-from sqlalchemy.testing import not_in
-from sqlalchemy.testing.assertsql import CountStatements
-from sqlalchemy.testing.entities import ComparableEntity
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+import dis_sqlalchemy as sa
+from dis_sqlalchemy import and_
+from dis_sqlalchemy import case
+from dis_sqlalchemy import event
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import PickleType
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import Text
+from dis_sqlalchemy.orm import attributes
+from dis_sqlalchemy.orm import backref
+from dis_sqlalchemy.orm import configure_mappers
+from dis_sqlalchemy.orm import defer
+from dis_sqlalchemy.orm import deferred
+from dis_sqlalchemy.orm import foreign
+from dis_sqlalchemy.orm import joinedload
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import selectinload
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import synonym
+from dis_sqlalchemy.orm.collections import attribute_keyed_dict
+from dis_sqlalchemy.orm.interfaces import MapperOption
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_warnings
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import in_
+from dis_sqlalchemy.testing import not_in
+from dis_sqlalchemy.testing.assertsql import CountStatements
+from dis_sqlalchemy.testing.entities import ComparableEntity
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 from test.orm import _fixtures
 
 
@@ -2001,7 +2001,7 @@ class DeferredMergeTest(fixtures.MappedTest):
 
         b = Book(
             id=1,
-            title="Essential SQLAlchemy",
+            title="Essential dis_sqlalchemy",
             summary="some summary",
             excerpt="some excerpt",
         )
@@ -2046,7 +2046,7 @@ class DeferredMergeTest(fixtures.MappedTest):
 
         b = Book(
             id=1,
-            title="Essential SQLAlchemy",
+            title="Essential dis_sqlalchemy",
             summary="some summary",
             excerpt="some excerpt",
         )

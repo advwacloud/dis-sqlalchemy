@@ -14,10 +14,10 @@ Establishing Connectivity - the Engine
 
     **Welcome ORM and Core readers alike!**
 
-    Every SQLAlchemy application that connects to a database needs to use
+    Every dis_sqlalchemy application that connects to a database needs to use
     an :class:`_engine.Engine`.  This short section is for everyone.
 
-The start of any SQLAlchemy application is an object called the
+The start of any dis_sqlalchemy application is an object called the
 :class:`_engine.Engine`.   This object acts as a central source of connections
 to a particular database, providing both a factory as well as a holding
 space called a :ref:`connection pool <pooling_toplevel>` for these database
@@ -32,7 +32,7 @@ set up.  The :class:`_engine.Engine` is created by using the
 
 .. sourcecode:: pycon+sql
 
-    >>> from sqlalchemy import create_engine
+    >>> from dis_sqlalchemy import create_engine
     >>> engine = create_engine("sqlite+pysqlite:///:memory:", echo=True)
 
 The main argument to :class:`_sa.create_engine`
@@ -41,14 +41,14 @@ This string indicates to the :class:`_engine.Engine` three important
 facts:
 
 1. What kind of database are we communicating with?   This is the ``sqlite``
-   portion above, which links in SQLAlchemy to an object known as the
+   portion above, which links in dis_sqlalchemy to an object known as the
    :term:`dialect`.
 
 2. What :term:`DBAPI` are we using?  The Python :term:`DBAPI` is a third party
-   driver that SQLAlchemy uses to interact with a particular database.  In
+   driver that dis_sqlalchemy uses to interact with a particular database.  In
    this case, we're using the name ``pysqlite``, which in modern Python
    use is the `sqlite3 <https://docs.python.org/library/sqlite3.html>`_ standard
-   library interface for SQLite. If omitted, SQLAlchemy will use a default
+   library interface for SQLite. If omitted, dis_sqlalchemy will use a default
    :term:`DBAPI` for the particular database selected.
 
 3. How do we locate the database?   In this case, our URL includes the phrase

@@ -26,8 +26,8 @@ and other directives:
 .. sourcecode:: python
 
 
-    from sqlalchemy.orm import Mapped
-    from sqlalchemy.orm import relationship
+    from dis_sqlalchemy.orm import Mapped
+    from dis_sqlalchemy.orm import relationship
 
 
     class User(Base):
@@ -78,7 +78,7 @@ Python list when we access the ``.addresses`` element::
     >>> u1.addresses
     []
 
-This object is a SQLAlchemy-specific version of Python ``list`` which
+This object is a dis_sqlalchemy-specific version of Python ``list`` which
 has the ability to track and respond to changes made to it.  The collection
 also appeared automatically when we accessed the attribute, even though we never assigned it to the object.
 This is similar to the behavior noted at :ref:`tutorial_inserting_orm` where
@@ -248,7 +248,7 @@ we again see a :term:`lazy load` emitted in order to retrieve the objects:
   [...] (6,){stop}
   [Address(id=4, email_address='pearl.krabs@gmail.com'), Address(id=5, email_address='pearl@aol.com')]
 
-Collections and related attributes in the SQLAlchemy ORM are persistent in
+Collections and related attributes in the dis_sqlalchemy ORM are persistent in
 memory; once the collection or attribute is populated, SQL is no longer emitted
 until that collection or attribute is :term:`expired`.    We may access
 ``u1.addresses`` again as well as add or remove items and this will not
@@ -372,7 +372,7 @@ available, or when using alternative concurrency patterns such as :ref:`asyncio
 
 At the same time, lazy loading is a vastly popular and useful pattern when it
 is compatible with the concurrency approach in use and isn't otherwise causing
-problems.   For these reasons, SQLAlchemy's ORM places a lot of emphasis on
+problems.   For these reasons, dis_sqlalchemy's ORM places a lot of emphasis on
 being able to control and optimize this loading behavior.
 
 Above all, the first step in using ORM lazy loading effectively is to **test
@@ -398,8 +398,8 @@ the :paramref:`_orm.relationship.lazy` option, e.g.:
 
 .. sourcecode:: python
 
-    from sqlalchemy.orm import Mapped
-    from sqlalchemy.orm import relationship
+    from dis_sqlalchemy.orm import Mapped
+    from dis_sqlalchemy.orm import relationship
 
 
     class User(Base):
@@ -429,7 +429,7 @@ loader strategies.
 Selectin Load
 ^^^^^^^^^^^^^
 
-The most useful loader in modern SQLAlchemy is the
+The most useful loader in modern dis_sqlalchemy is the
 :func:`_orm.selectinload` loader option.  This option solves the most common
 form of the "N plus one" problem which is that of a set of objects that refer
 to related collections.   :func:`_orm.selectinload` will ensure that a particular
@@ -446,7 +446,7 @@ related ``Address`` objects:
 
 .. sourcecode:: pycon+sql
 
-    >>> from sqlalchemy.orm import selectinload
+    >>> from dis_sqlalchemy.orm import selectinload
     >>> stmt = select(User).options(selectinload(User.addresses)).order_by(User.id)
     >>> for row in session.execute(stmt):
     ...     print(
@@ -460,8 +460,8 @@ related ``Address`` objects:
     FROM address
     WHERE address.user_id IN (?, ?, ?, ?, ?, ?)
     [...] (1, 2, 3, 4, 5, 6){stop}
-    spongebob  (spongebob@sqlalchemy.org)
-    sandy  (sandy@sqlalchemy.org, sandy@squirrelpower.org)
+    spongebob  (spongebob@dis_sqlalchemy.org)
+    sandy  (sandy@dis_sqlalchemy.org, sandy@squirrelpower.org)
     patrick  ()
     squidward  ()
     ehkrabs  ()
@@ -475,7 +475,7 @@ Joined Load
 ^^^^^^^^^^^
 
 The :func:`_orm.joinedload` eager load strategy is the oldest eager loader in
-SQLAlchemy, which augments the SELECT statement that's being passed to the
+dis_sqlalchemy, which augments the SELECT statement that's being passed to the
 database with a JOIN (which may be an outer or an inner join depending on options),
 which can then load in related objects.
 
@@ -489,7 +489,7 @@ as below where we know that all ``Address`` objects have an associated
 
 .. sourcecode:: pycon+sql
 
-    >>> from sqlalchemy.orm import joinedload
+    >>> from dis_sqlalchemy.orm import joinedload
     >>> stmt = (
     ...     select(Address)
     ...     .options(joinedload(Address.user, innerjoin=True))
@@ -503,8 +503,8 @@ as below where we know that all ``Address`` objects have an associated
     JOIN user_account AS user_account_1 ON user_account_1.id = address.user_id
     ORDER BY address.id
     [...] (){stop}
-    spongebob@sqlalchemy.org spongebob
-    sandy@sqlalchemy.org sandy
+    spongebob@dis_sqlalchemy.org spongebob
+    sandy@dis_sqlalchemy.org sandy
     sandy@squirrelpower.org sandy
     pearl.krabs@gmail.com pkrabs
     pearl@aol.com pkrabs
@@ -558,7 +558,7 @@ example:
 
 .. sourcecode:: pycon+sql
 
-    >>> from sqlalchemy.orm import contains_eager
+    >>> from dis_sqlalchemy.orm import contains_eager
     >>> stmt = (
     ...     select(Address)
     ...     .join(Address.user)
@@ -627,8 +627,8 @@ relationship will never try to emit SQL:
 
 ::
 
-    >>> from sqlalchemy.orm import Mapped
-    >>> from sqlalchemy.orm import relationship
+    >>> from dis_sqlalchemy.orm import Mapped
+    >>> from dis_sqlalchemy.orm import relationship
 
 
     >>> class User(Base):
@@ -654,7 +654,7 @@ indicating that a particular query would need to specify a loader strategy::
     {stop}>>> u1.addresses
     Traceback (most recent call last):
     ...
-    sqlalchemy.exc.InvalidRequestError: 'User.addresses' is not available due to lazy='raise_on_sql'
+    dis_sqlalchemy.exc.InvalidRequestError: 'User.addresses' is not available due to lazy='raise_on_sql'
 
 
 The exception would indicate that this collection should be loaded up front

@@ -1,12 +1,12 @@
-import sqlalchemy as sa
-from sqlalchemy import func
-from sqlalchemy import select
-from sqlalchemy.ext.asyncio import async_scoped_session
-from sqlalchemy.ext.asyncio import AsyncSession as _AsyncSession
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.testing import async_test
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import is_
+import dis_sqlalchemy as sa
+from dis_sqlalchemy import func
+from dis_sqlalchemy import select
+from dis_sqlalchemy.ext.asyncio import async_scoped_session
+from dis_sqlalchemy.ext.asyncio import AsyncSession as _AsyncSession
+from dis_sqlalchemy.orm import sessionmaker
+from dis_sqlalchemy.testing import async_test
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import is_
 from .test_session_py3k import AsyncFixture
 
 

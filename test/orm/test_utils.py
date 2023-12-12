@@ -1,36 +1,36 @@
 import re
 
-from sqlalchemy import Column
-from sqlalchemy import event
-from sqlalchemy import ForeignKey
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy.engine import result
-from sqlalchemy.ext.hybrid import hybrid_method
-from sqlalchemy.ext.hybrid import hybrid_property
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import clear_mappers
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import synonym
-from sqlalchemy.orm import util as orm_util
-from sqlalchemy.orm import with_polymorphic
-from sqlalchemy.orm.path_registry import PathRegistry
-from sqlalchemy.orm.path_registry import PathToken
-from sqlalchemy.orm.path_registry import RootRegistry
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing.assertions import is_true
-from sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import event
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import select
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.engine import result
+from dis_sqlalchemy.ext.hybrid import hybrid_method
+from dis_sqlalchemy.ext.hybrid import hybrid_property
+from dis_sqlalchemy.orm import aliased
+from dis_sqlalchemy.orm import clear_mappers
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import synonym
+from dis_sqlalchemy.orm import util as orm_util
+from dis_sqlalchemy.orm import with_polymorphic
+from dis_sqlalchemy.orm.path_registry import PathRegistry
+from dis_sqlalchemy.orm.path_registry import PathToken
+from dis_sqlalchemy.orm.path_registry import RootRegistry
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises
+from dis_sqlalchemy.testing import expect_warnings
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing.assertions import is_true
+from dis_sqlalchemy.testing.fixtures import fixture_session
 from test.orm import _fixtures
 from .inheritance import _poly_fixtures
 
@@ -282,7 +282,7 @@ class AliasedClassTest(fixtures.MappedTest, AssertsCompiledSQL):
         assert alias.thing.method() == "method"
 
     def _assert_has_table(self, expr, table):
-        from sqlalchemy import Column  # override testlib's override
+        from dis_sqlalchemy import Column  # override testlib's override
 
         for child in expr.get_children():
             if isinstance(child, Column):

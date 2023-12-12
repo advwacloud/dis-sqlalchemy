@@ -1,11 +1,11 @@
 from typing import Any
 from typing import Optional
 
-from sqlalchemy import Column
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy import TypeDecorator
-from sqlalchemy.ext.declarative import declarative_base
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import String
+from dis_sqlalchemy import TypeDecorator
+from dis_sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 

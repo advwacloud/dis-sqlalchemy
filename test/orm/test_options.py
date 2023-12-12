@@ -1,42 +1,42 @@
 import pickle
 
-import sqlalchemy as sa
-from sqlalchemy import Column
-from sqlalchemy import ForeignKey
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import contains_eager
-from sqlalchemy.orm import defaultload
-from sqlalchemy.orm import defer
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import Load
-from sqlalchemy.orm import load_only
-from sqlalchemy.orm import loading
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import strategy_options
-from sqlalchemy.orm import subqueryload
-from sqlalchemy.orm import synonym
-from sqlalchemy.orm import undefer
-from sqlalchemy.orm import util as orm_util
-from sqlalchemy.orm import with_polymorphic
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_not
-from sqlalchemy.testing.assertions import assert_raises_message
-from sqlalchemy.testing.assertions import AssertsCompiledSQL
-from sqlalchemy.testing.assertions import emits_warning
-from sqlalchemy.testing.assertions import eq_
-from sqlalchemy.testing.assertions import expect_raises_message
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.pickleable import Address
-from sqlalchemy.testing.pickleable import User
+import dis_sqlalchemy as sa
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.orm import aliased
+from dis_sqlalchemy.orm import attributes
+from dis_sqlalchemy.orm import column_property
+from dis_sqlalchemy.orm import contains_eager
+from dis_sqlalchemy.orm import defaultload
+from dis_sqlalchemy.orm import defer
+from dis_sqlalchemy.orm import exc as orm_exc
+from dis_sqlalchemy.orm import joinedload
+from dis_sqlalchemy.orm import Load
+from dis_sqlalchemy.orm import load_only
+from dis_sqlalchemy.orm import loading
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import strategy_options
+from dis_sqlalchemy.orm import subqueryload
+from dis_sqlalchemy.orm import synonym
+from dis_sqlalchemy.orm import undefer
+from dis_sqlalchemy.orm import util as orm_util
+from dis_sqlalchemy.orm import with_polymorphic
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_not
+from dis_sqlalchemy.testing.assertions import assert_raises_message
+from dis_sqlalchemy.testing.assertions import AssertsCompiledSQL
+from dis_sqlalchemy.testing.assertions import emits_warning
+from dis_sqlalchemy.testing.assertions import eq_
+from dis_sqlalchemy.testing.assertions import expect_raises_message
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.pickleable import Address
+from dis_sqlalchemy.testing.pickleable import User
 from test.orm import _fixtures
 from .inheritance._poly_fixtures import _Polymorphic
 from .inheritance._poly_fixtures import Company
@@ -1924,7 +1924,7 @@ class MapperOptionsTest(_fixtures.FixtureTest):
         ),
     )
     def test_conflicts(self, make_opt, errmsg):
-        """introduce a new error for conflicting options in SQLAlchemy 2.0.
+        """introduce a new error for conflicting options in dis_sqlalchemy 2.0.
 
         This case seems to be fairly difficult to come up with randomly
         so let's see if we can refuse to guess for this case.

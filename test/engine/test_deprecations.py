@@ -1,30 +1,30 @@
 import re
 from unittest.mock import Mock
 
-import sqlalchemy as tsa
-from sqlalchemy import create_engine
-from sqlalchemy import event
-from sqlalchemy import pool
-from sqlalchemy import select
-from sqlalchemy import testing
-from sqlalchemy.engine import BindTyping
-from sqlalchemy.engine import reflection
-from sqlalchemy.engine.base import Connection
-from sqlalchemy.engine.base import Engine
-from sqlalchemy.engine.default import DefaultDialect
-from sqlalchemy.engine.mock import MockConnection
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import assertions
-from sqlalchemy.testing import config
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_instance_of
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.assertions import expect_deprecated
-from sqlalchemy.testing.engines import testing_engine
+import dis_sqlalchemy as tsa
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import event
+from dis_sqlalchemy import pool
+from dis_sqlalchemy import select
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.engine import BindTyping
+from dis_sqlalchemy.engine import reflection
+from dis_sqlalchemy.engine.base import Connection
+from dis_sqlalchemy.engine.base import Engine
+from dis_sqlalchemy.engine.default import DefaultDialect
+from dis_sqlalchemy.engine.mock import MockConnection
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import assertions
+from dis_sqlalchemy.testing import config
+from dis_sqlalchemy.testing import engines
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_instance_of
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing.assertions import expect_deprecated
+from dis_sqlalchemy.testing.engines import testing_engine
 
 
 def _string_deprecation_expect():
@@ -87,8 +87,8 @@ class CreateEngineTest(fixtures.TestBase):
 
         """
 
-        from sqlalchemy.dialects.sqlite import pysqlite
-        from sqlalchemy.dialects import registry
+        from dis_sqlalchemy.dialects.sqlite import pysqlite
+        from dis_sqlalchemy.dialects import registry
 
         canary = mock.Mock()
 
@@ -134,8 +134,8 @@ class CreateEngineTest(fixtures.TestBase):
 
         """
 
-        from sqlalchemy.dialects.sqlite import pysqlite
-        from sqlalchemy.dialects import registry
+        from dis_sqlalchemy.dialects.sqlite import pysqlite
+        from dis_sqlalchemy.dialects import registry
 
         canary = mock.Mock()
 

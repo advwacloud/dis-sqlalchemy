@@ -1,42 +1,42 @@
 import datetime
 import os
 
-from sqlalchemy import Column
-from sqlalchemy import DateTime
-from sqlalchemy import delete
-from sqlalchemy import event
-from sqlalchemy import Float
-from sqlalchemy import ForeignKey
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import select
-from sqlalchemy import sql
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import update
-from sqlalchemy import util
-from sqlalchemy.ext.horizontal_shard import set_shard_id
-from sqlalchemy.ext.horizontal_shard import ShardedSession
-from sqlalchemy.orm import clear_mappers
-from sqlalchemy.orm import defer
-from sqlalchemy.orm import deferred
-from sqlalchemy.orm import lazyload
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import selectinload
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.pool import SingletonThreadPool
-from sqlalchemy.sql import operators
-from sqlalchemy.sql import Select
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_deprecated
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import provision
-from sqlalchemy.testing.engines import testing_engine
-from sqlalchemy.testing.engines import testing_reaper
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import DateTime
+from dis_sqlalchemy import delete
+from dis_sqlalchemy import event
+from dis_sqlalchemy import Float
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import select
+from dis_sqlalchemy import sql
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import text
+from dis_sqlalchemy import update
+from dis_sqlalchemy import util
+from dis_sqlalchemy.ext.horizontal_shard import set_shard_id
+from dis_sqlalchemy.ext.horizontal_shard import ShardedSession
+from dis_sqlalchemy.orm import clear_mappers
+from dis_sqlalchemy.orm import defer
+from dis_sqlalchemy.orm import deferred
+from dis_sqlalchemy.orm import lazyload
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import selectinload
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import sessionmaker
+from dis_sqlalchemy.pool import SingletonThreadPool
+from dis_sqlalchemy.sql import operators
+from dis_sqlalchemy.sql import Select
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_deprecated
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import provision
+from dis_sqlalchemy.testing.engines import testing_engine
+from dis_sqlalchemy.testing.engines import testing_reaper
 
 
 class ShardTest:
@@ -462,7 +462,7 @@ class ShardTest:
         tokyo.city
         sess.expunge_all()
 
-        from sqlalchemy.ext.baked import BakedQuery
+        from dis_sqlalchemy.ext.baked import BakedQuery
 
         bakery = BakedQuery.bakery()
 
@@ -479,7 +479,7 @@ class ShardTest:
         tokyo.city
         sess.expunge_all()
 
-        from sqlalchemy.ext.baked import BakedQuery
+        from dis_sqlalchemy.ext.baked import BakedQuery
 
         bakery = BakedQuery.bakery()
 
@@ -500,7 +500,7 @@ class ShardTest:
         tokyo.city
         sess.expunge_all()
 
-        from sqlalchemy.ext.baked import BakedQuery
+        from dis_sqlalchemy.ext.baked import BakedQuery
 
         bakery = BakedQuery.bakery()
 
@@ -556,7 +556,7 @@ class ShardTest:
         tokyo.city
         sess.expunge_all()
 
-        from sqlalchemy.ext.baked import BakedQuery
+        from dis_sqlalchemy.ext.baked import BakedQuery
 
         bakery = BakedQuery.bakery()
 

@@ -2,50 +2,50 @@ import itertools
 from operator import itemgetter
 import re
 
-import sqlalchemy as sa
-from sqlalchemy import BigInteger
-from sqlalchemy import Column
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import Identity
-from sqlalchemy import Index
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import join
-from sqlalchemy import MetaData
-from sqlalchemy import PrimaryKeyConstraint
-from sqlalchemy import Sequence
-from sqlalchemy import SmallInteger
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import Text
-from sqlalchemy import UniqueConstraint
-from sqlalchemy.dialects.postgresql import ARRAY
-from sqlalchemy.dialects.postgresql import base as postgresql
-from sqlalchemy.dialects.postgresql import ExcludeConstraint
-from sqlalchemy.dialects.postgresql import INTEGER
-from sqlalchemy.dialects.postgresql import INTERVAL
-from sqlalchemy.dialects.postgresql import pg_catalog
-from sqlalchemy.dialects.postgresql import TSRANGE
-from sqlalchemy.engine import ObjectKind
-from sqlalchemy.engine import ObjectScope
-from sqlalchemy.schema import CreateIndex
-from sqlalchemy.sql import ddl as sa_ddl
-from sqlalchemy.sql.schema import CheckConstraint
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.assertions import assert_warns
-from sqlalchemy.testing.assertions import AssertsExecutionResults
-from sqlalchemy.testing.assertions import ComparesIndexes
-from sqlalchemy.testing.assertions import eq_
-from sqlalchemy.testing.assertions import expect_raises
-from sqlalchemy.testing.assertions import expect_warnings
-from sqlalchemy.testing.assertions import is_
-from sqlalchemy.testing.assertions import is_false
-from sqlalchemy.testing.assertions import is_true
-from sqlalchemy.types import NullType
+import dis_sqlalchemy as sa
+from dis_sqlalchemy import BigInteger
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Identity
+from dis_sqlalchemy import Index
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import join
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import PrimaryKeyConstraint
+from dis_sqlalchemy import Sequence
+from dis_sqlalchemy import SmallInteger
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import Text
+from dis_sqlalchemy import UniqueConstraint
+from dis_sqlalchemy.dialects.postgresql import ARRAY
+from dis_sqlalchemy.dialects.postgresql import base as postgresql
+from dis_sqlalchemy.dialects.postgresql import ExcludeConstraint
+from dis_sqlalchemy.dialects.postgresql import INTEGER
+from dis_sqlalchemy.dialects.postgresql import INTERVAL
+from dis_sqlalchemy.dialects.postgresql import pg_catalog
+from dis_sqlalchemy.dialects.postgresql import TSRANGE
+from dis_sqlalchemy.engine import ObjectKind
+from dis_sqlalchemy.engine import ObjectScope
+from dis_sqlalchemy.schema import CreateIndex
+from dis_sqlalchemy.sql import ddl as sa_ddl
+from dis_sqlalchemy.sql.schema import CheckConstraint
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing.assertions import assert_warns
+from dis_sqlalchemy.testing.assertions import AssertsExecutionResults
+from dis_sqlalchemy.testing.assertions import ComparesIndexes
+from dis_sqlalchemy.testing.assertions import eq_
+from dis_sqlalchemy.testing.assertions import expect_raises
+from dis_sqlalchemy.testing.assertions import expect_warnings
+from dis_sqlalchemy.testing.assertions import is_
+from dis_sqlalchemy.testing.assertions import is_false
+from dis_sqlalchemy.testing.assertions import is_true
+from dis_sqlalchemy.types import NullType
 
 
 class ReflectionFixtures:
@@ -83,7 +83,7 @@ class ForeignTableReflectionTest(
 
     @classmethod
     def define_tables(cls, metadata):
-        from sqlalchemy.testing import config
+        from dis_sqlalchemy.testing import config
 
         dblink = config.file_config.get(
             "sqla_testing", "postgres_test_db_link"
@@ -567,7 +567,7 @@ class DomainReflectionTest(fixtures.TestBase, AssertsExecutionResults):
         ), "Expected reflected column to be nullable."
 
     def test_unknown_types(self, connection):
-        from sqlalchemy.dialects.postgresql import base
+        from dis_sqlalchemy.dialects.postgresql import base
 
         ischema_names = base.PGDialect.ischema_names
         base.PGDialect.ischema_names = {}

@@ -11,51 +11,51 @@ from unittest.mock import Mock
 from unittest.mock import patch
 import weakref
 
-import sqlalchemy as tsa
-from sqlalchemy import bindparam
-from sqlalchemy import create_engine
-from sqlalchemy import create_mock_engine
-from sqlalchemy import event
-from sqlalchemy import func
-from sqlalchemy import inspect
-from sqlalchemy import INT
-from sqlalchemy import Integer
-from sqlalchemy import LargeBinary
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import TypeDecorator
-from sqlalchemy import util
-from sqlalchemy import VARCHAR
-from sqlalchemy.engine import BindTyping
-from sqlalchemy.engine import default
-from sqlalchemy.engine.base import Connection
-from sqlalchemy.engine.base import Engine
-from sqlalchemy.pool import NullPool
-from sqlalchemy.pool import QueuePool
-from sqlalchemy.sql import column
-from sqlalchemy.sql import literal
-from sqlalchemy.sql.elements import literal_column
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import config
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_false
-from sqlalchemy.testing import is_not
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing.assertsql import CompiledSQL
-from sqlalchemy.testing.provision import normalize_sequence
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.testing.util import gc_collect
-from sqlalchemy.testing.util import picklers
+import dis_sqlalchemy as tsa
+from dis_sqlalchemy import bindparam
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import create_mock_engine
+from dis_sqlalchemy import event
+from dis_sqlalchemy import func
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import INT
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import LargeBinary
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import select
+from dis_sqlalchemy import Sequence
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import text
+from dis_sqlalchemy import TypeDecorator
+from dis_sqlalchemy import util
+from dis_sqlalchemy import VARCHAR
+from dis_sqlalchemy.engine import BindTyping
+from dis_sqlalchemy.engine import default
+from dis_sqlalchemy.engine.base import Connection
+from dis_sqlalchemy.engine.base import Engine
+from dis_sqlalchemy.pool import NullPool
+from dis_sqlalchemy.pool import QueuePool
+from dis_sqlalchemy.sql import column
+from dis_sqlalchemy.sql import literal
+from dis_sqlalchemy.sql.elements import literal_column
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import config
+from dis_sqlalchemy.testing import engines
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_false
+from dis_sqlalchemy.testing import is_not
+from dis_sqlalchemy.testing import is_true
+from dis_sqlalchemy.testing.assertsql import CompiledSQL
+from dis_sqlalchemy.testing.provision import normalize_sequence
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
+from dis_sqlalchemy.testing.util import gc_collect
+from dis_sqlalchemy.testing.util import picklers
 
 
 class SomeException(Exception):
@@ -507,7 +507,7 @@ class ExecuteTest(fixtures.TablesTest):
         # as the error message
         message = "some message méil".encode()
 
-        err = tsa.exc.SQLAlchemyError(message)
+        err = tsa.exc.dis_sqlalchemyError(message)
         eq_(str(err), "some message méil")
 
     def test_stmt_exception_bytestring_latin1(self):
@@ -515,7 +515,7 @@ class ExecuteTest(fixtures.TablesTest):
         # as the error message
         message = "some message méil".encode("latin-1")
 
-        err = tsa.exc.SQLAlchemyError(message)
+        err = tsa.exc.dis_sqlalchemyError(message)
         eq_(str(err), "some message m\\xe9il")
 
     def test_stmt_exception_unicode_hook_unicode(self):
@@ -523,27 +523,27 @@ class ExecuteTest(fixtures.TablesTest):
         # as the error message
         message = "some message méil"
 
-        err = tsa.exc.SQLAlchemyError(message)
+        err = tsa.exc.dis_sqlalchemyError(message)
         eq_(str(err), "some message méil")
 
     def test_stmt_exception_object_arg(self):
-        err = tsa.exc.SQLAlchemyError(Foo())
+        err = tsa.exc.dis_sqlalchemyError(Foo())
         eq_(str(err), "foo")
 
     def test_stmt_exception_str_multi_args(self):
-        err = tsa.exc.SQLAlchemyError("some message", 206)
+        err = tsa.exc.dis_sqlalchemyError("some message", 206)
         eq_(str(err), "('some message', 206)")
 
     def test_stmt_exception_str_multi_args_bytestring(self):
         message = "some message méil".encode()
 
-        err = tsa.exc.SQLAlchemyError(message, 206)
+        err = tsa.exc.dis_sqlalchemyError(message, 206)
         eq_(str(err), str((message, 206)))
 
     def test_stmt_exception_str_multi_args_unicode(self):
         message = "some message méil"
 
-        err = tsa.exc.SQLAlchemyError(message, 206)
+        err = tsa.exc.dis_sqlalchemyError(message, 206)
         eq_(str(err), str((message, 206)))
 
     def test_stmt_exception_pickleable_no_dbapi(self):
@@ -2373,7 +2373,7 @@ class EngineEventsTest(fixtures.TestBase):
 
     @testing.requires.ad_hoc_engines
     def test_cant_listen_to_option_engine(self):
-        from sqlalchemy.engine import base
+        from dis_sqlalchemy.engine import base
 
         def evt(*arg, **kw):
             pass
@@ -2381,7 +2381,7 @@ class EngineEventsTest(fixtures.TestBase):
         assert_raises_message(
             tsa.exc.InvalidRequestError,
             r"Can't assign an event directly to the "
-            "<class 'sqlalchemy.engine.base.OptionEngine'> class",
+            "<class 'dis_sqlalchemy.engine.base.OptionEngine'> class",
             event.listen,
             base.OptionEngine,
             "before_cursor_execute",
@@ -2799,7 +2799,7 @@ class HandleErrorTest(fixtures.TestBase):
                 ctx = canary.mock_calls[0][1][0]
 
                 eq_(ctx.original_exception, e.orig)
-                is_(ctx.sqlalchemy_exception, e)
+                is_(ctx.dis_sqlalchemy_exception, e)
                 eq_(ctx.statement, "SELECT FOO FROM I_DONT_EXIST")
 
     def test_exception_event_reraise(self):
@@ -3171,7 +3171,7 @@ class HandleErrorTest(fixtures.TestBase):
     def test_handle_error_not_on_connection(self, connection):
         with expect_raises_message(
             tsa.exc.InvalidRequestError,
-            r"The handle_error\(\) event hook as of SQLAlchemy 2.0 is "
+            r"The handle_error\(\) event hook as of dis_sqlalchemy 2.0 is "
             r"established "
             r"on the Dialect, and may only be applied to the Engine as a "
             r"whole or to a specific Dialect as a whole, not on a "
@@ -3197,7 +3197,7 @@ class HandleErrorTest(fixtures.TestBase):
             the_conn.append(connection)
 
         with mock.patch(
-            "sqlalchemy.engine.cursor.CursorResult.__init__",
+            "dis_sqlalchemy.engine.cursor.CursorResult.__init__",
             Mock(side_effect=tsa.exc.InvalidRequestError("duplicate col")),
         ):
             with engine.connect() as conn:
@@ -3233,7 +3233,7 @@ class HandleErrorTest(fixtures.TestBase):
         conn = engine.connect()
 
         with mock.patch(
-            "sqlalchemy.engine.cursor.CursorResult.__init__",
+            "dis_sqlalchemy.engine.cursor.CursorResult.__init__",
             Mock(side_effect=tsa.exc.InvalidRequestError("duplicate col")),
         ):
             assert_raises(
@@ -3321,7 +3321,7 @@ class OnConnectTest(fixtures.TestBase):
             assert ctx.engine is eng
             assert ctx.connection is conn
             assert isinstance(
-                ctx.sqlalchemy_exception, tsa.exc.ProgrammingError
+                ctx.dis_sqlalchemy_exception, tsa.exc.ProgrammingError
             )
             raise MySpecialException("failed operation")
 
@@ -3345,7 +3345,7 @@ class OnConnectTest(fixtures.TestBase):
             assert ctx.engine is eng
             assert ctx.connection is conn
             assert isinstance(
-                ctx.sqlalchemy_exception, tsa.exc.ProgrammingError
+                ctx.dis_sqlalchemy_exception, tsa.exc.ProgrammingError
             )
             raise MySpecialException("failed operation")
 
@@ -4045,7 +4045,7 @@ class SetInputSizesTest(fixtures.TablesTest):
     def test_set_input_sizes_expanding_tuple_param(self, input_sizes_fixture):
         engine, canary = input_sizes_fixture
 
-        from sqlalchemy import tuple_
+        from dis_sqlalchemy import tuple_
 
         with engine.connect() as conn:
             conn.execute(
@@ -4150,9 +4150,9 @@ class DialectDoesntSupportCachingTest(fixtures.TestBase):
 
     @testing.fixture()
     def sqlite_no_cache_dialect(self, testing_engine):
-        from sqlalchemy.dialects.sqlite.pysqlite import SQLiteDialect_pysqlite
-        from sqlalchemy.dialects.sqlite.base import SQLiteCompiler
-        from sqlalchemy.sql import visitors
+        from dis_sqlalchemy.dialects.sqlite.pysqlite import SQLiteDialect_pysqlite
+        from dis_sqlalchemy.dialects.sqlite.base import SQLiteCompiler
+        from dis_sqlalchemy.sql import visitors
 
         class MyCompiler(SQLiteCompiler):
             def translate_select_structure(self, select_stmt, **kwargs):
@@ -4175,7 +4175,7 @@ class DialectDoesntSupportCachingTest(fixtures.TestBase):
             statement_compiler = MyCompiler
             supports_statement_cache = False
 
-        from sqlalchemy.dialects import registry
+        from dis_sqlalchemy.dialects import registry
 
         def go(name):
             return MyDialect

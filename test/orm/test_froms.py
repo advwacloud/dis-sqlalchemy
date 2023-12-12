@@ -1,49 +1,49 @@
-from sqlalchemy import and_
-from sqlalchemy import asc
-from sqlalchemy import desc
-from sqlalchemy import exc as sa_exc
-from sqlalchemy import exists
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import literal
-from sqlalchemy import literal_column
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import Text
-from sqlalchemy import text
-from sqlalchemy import true
-from sqlalchemy import union
-from sqlalchemy import util
-from sqlalchemy.engine import default
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import clear_mappers
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import contains_eager
-from sqlalchemy.orm import declarative_base
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm.context import ORMSelectCompileState
-from sqlalchemy.sql import column
-from sqlalchemy.sql import table
-from sqlalchemy.sql.selectable import LABEL_STYLE_TABLENAME_PLUS_COL
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import in_
-from sqlalchemy.testing import is_
-from sqlalchemy.testing.entities import ComparableEntity
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.schema import Column
+from dis_sqlalchemy import and_
+from dis_sqlalchemy import asc
+from dis_sqlalchemy import desc
+from dis_sqlalchemy import exc as sa_exc
+from dis_sqlalchemy import exists
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import literal
+from dis_sqlalchemy import literal_column
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import Text
+from dis_sqlalchemy import text
+from dis_sqlalchemy import true
+from dis_sqlalchemy import union
+from dis_sqlalchemy import util
+from dis_sqlalchemy.engine import default
+from dis_sqlalchemy.orm import aliased
+from dis_sqlalchemy.orm import backref
+from dis_sqlalchemy.orm import clear_mappers
+from dis_sqlalchemy.orm import column_property
+from dis_sqlalchemy.orm import configure_mappers
+from dis_sqlalchemy.orm import contains_eager
+from dis_sqlalchemy.orm import declarative_base
+from dis_sqlalchemy.orm import joinedload
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm.context import ORMSelectCompileState
+from dis_sqlalchemy.sql import column
+from dis_sqlalchemy.sql import table
+from dis_sqlalchemy.sql.selectable import LABEL_STYLE_TABLENAME_PLUS_COL
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import in_
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing.entities import ComparableEntity
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.schema import Column
 from test.orm import _fixtures
 
 
@@ -499,9 +499,9 @@ class EntityFromSubqueryTest(QueryTest, AssertsCompiledSQL):
         assert_raises_message(
             sa_exc.ArgumentError,
             "Column expression, FROM clause, or other .* expected, got "
-            "<sqlalchemy.sql.selectable.Select .*> object resolved from "
+            "<dis_sqlalchemy.sql.selectable.Select .*> object resolved from "
             "<AliasedClass .* User> object. To create a FROM clause from "
-            "a <class 'sqlalchemy.sql.selectable.Select'> object",
+            "a <class 'dis_sqlalchemy.sql.selectable.Select'> object",
             s.query,
             aliased(User, stmt),
         )
@@ -875,7 +875,7 @@ class ColumnAccessTest(QueryTest, AssertsCompiledSQL):
 
     def test_anonymous_expression_oldstyle(self):
         # relies upon _orm_only_from_obj_alias setting
-        from sqlalchemy.sql import column
+        from dis_sqlalchemy.sql import column
 
         sess = fixture_session()
         c1, c2 = column("c1"), column("c2")
@@ -891,7 +891,7 @@ class ColumnAccessTest(QueryTest, AssertsCompiledSQL):
         )
 
     def test_anonymous_expression_newstyle(self):
-        from sqlalchemy.sql import column
+        from dis_sqlalchemy.sql import column
 
         c1, c2 = column("c1"), column("c2")
         q1 = select(c1, c2).where(c1 == "dog")
@@ -908,7 +908,7 @@ class ColumnAccessTest(QueryTest, AssertsCompiledSQL):
         )
 
     def test_table_anonymous_expression_from_self_twice_newstyle(self):
-        from sqlalchemy.sql import column
+        from dis_sqlalchemy.sql import column
 
         t1 = table("t1", column("c1"), column("c2"))
         stmt = (
@@ -948,7 +948,7 @@ class ColumnAccessTest(QueryTest, AssertsCompiledSQL):
         )
 
     def test_anonymous_expression_from_self_twice_newstyle_wlabels(self):
-        from sqlalchemy.sql import column
+        from dis_sqlalchemy.sql import column
 
         c1, c2 = column("c1"), column("c2")
         subq = select(c1, c2).where(c1 == "dog").subquery()
@@ -973,7 +973,7 @@ class ColumnAccessTest(QueryTest, AssertsCompiledSQL):
         )
 
     def test_anonymous_expression_from_self_twice_newstyle_wolabels(self):
-        from sqlalchemy.sql import column
+        from dis_sqlalchemy.sql import column
 
         c1, c2 = column("c1"), column("c2")
         subq = select(c1, c2).where(c1 == "dog").subquery()

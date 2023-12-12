@@ -1,8 +1,8 @@
-from sqlalchemy import event
-from sqlalchemy.pool import QueuePool
-from sqlalchemy.testing import AssertsExecutionResults
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import profiling
+from dis_sqlalchemy import event
+from dis_sqlalchemy.pool import QueuePool
+from dis_sqlalchemy.testing import AssertsExecutionResults
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import profiling
 
 pool = None
 

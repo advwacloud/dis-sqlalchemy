@@ -1,39 +1,39 @@
 """Test the TextClause and related constructs."""
 
-from sqlalchemy import and_
-from sqlalchemy import asc
-from sqlalchemy import bindparam
-from sqlalchemy import Column
-from sqlalchemy import desc
-from sqlalchemy import exc
-from sqlalchemy import extract
-from sqlalchemy import Float
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import literal
-from sqlalchemy import literal_column
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import union
-from sqlalchemy import util
-from sqlalchemy.sql import column
-from sqlalchemy.sql import LABEL_STYLE_TABLENAME_PLUS_COL
-from sqlalchemy.sql import quoted_name
-from sqlalchemy.sql import sqltypes
-from sqlalchemy.sql import table
-from sqlalchemy.sql import util as sql_util
-from sqlalchemy.sql.selectable import LABEL_STYLE_DISAMBIGUATE_ONLY
-from sqlalchemy.sql.selectable import LABEL_STYLE_NONE
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.assertions import expect_raises_message
-from sqlalchemy.types import NullType
+from dis_sqlalchemy import and_
+from dis_sqlalchemy import asc
+from dis_sqlalchemy import bindparam
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import desc
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import extract
+from dis_sqlalchemy import Float
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import literal
+from dis_sqlalchemy import literal_column
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import text
+from dis_sqlalchemy import union
+from dis_sqlalchemy import util
+from dis_sqlalchemy.sql import column
+from dis_sqlalchemy.sql import LABEL_STYLE_TABLENAME_PLUS_COL
+from dis_sqlalchemy.sql import quoted_name
+from dis_sqlalchemy.sql import sqltypes
+from dis_sqlalchemy.sql import table
+from dis_sqlalchemy.sql import util as sql_util
+from dis_sqlalchemy.sql.selectable import LABEL_STYLE_DISAMBIGUATE_ONLY
+from dis_sqlalchemy.sql.selectable import LABEL_STYLE_NONE
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing.assertions import expect_raises_message
+from dis_sqlalchemy.types import NullType
 
 table1 = table(
     "mytable",
@@ -952,7 +952,7 @@ class OrderByLabelResolutionTest(fixtures.TestBase, AssertsCompiledSQL):
         )
 
     def test_unresolvable_distinct_label(self):
-        from sqlalchemy.dialects import postgresql
+        from dis_sqlalchemy.dialects import postgresql
 
         stmt = select(table1.c.myid.label("foo")).distinct("not a label")
         self._test_exception(stmt, "not a label", dialect=postgresql.dialect())

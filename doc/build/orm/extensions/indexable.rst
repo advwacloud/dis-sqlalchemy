@@ -3,11 +3,11 @@
 Indexable
 =========
 
-.. automodule:: sqlalchemy.ext.indexable
+.. automodule:: dis_sqlalchemy.ext.indexable
 
 API Reference
 -------------
 
-.. autoclass:: sqlalchemy.ext.indexable.index_property
+.. autoclass:: dis_sqlalchemy.ext.indexable.index_property
     :members:
 

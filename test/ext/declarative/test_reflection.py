@@ -1,32 +1,32 @@
 from __future__ import annotations
 
-from sqlalchemy import DDL
-from sqlalchemy import event
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.ext.declarative import DeferredReflection
-from sqlalchemy.orm import clear_mappers
-from sqlalchemy.orm import decl_api as decl
-from sqlalchemy.orm import declared_attr
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm.decl_base import _DeferredMapperConfig
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.entities import ComparableEntity
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.testing.util import gc_collect
+from dis_sqlalchemy import DDL
+from dis_sqlalchemy import event
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.ext.declarative import DeferredReflection
+from dis_sqlalchemy.orm import clear_mappers
+from dis_sqlalchemy.orm import decl_api as decl
+from dis_sqlalchemy.orm import declared_attr
+from dis_sqlalchemy.orm import exc as orm_exc
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm.decl_base import _DeferredMapperConfig
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing.entities import ComparableEntity
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
+from dis_sqlalchemy.testing.util import gc_collect
 
 
 class DeclarativeReflectionBase(fixtures.TablesTest):

@@ -4,23 +4,23 @@ from __future__ import annotations
 
 import datetime
 
-from sqlalchemy import Column
-from sqlalchemy import create_engine
-from sqlalchemy import event
-from sqlalchemy import ForeignKey
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import select
-from sqlalchemy import Table
-from sqlalchemy.ext.horizontal_shard import set_shard_id
-from sqlalchemy.ext.horizontal_shard import ShardedSession
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.sql import operators
-from sqlalchemy.sql import visitors
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import event
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import select
+from dis_sqlalchemy import Table
+from dis_sqlalchemy.ext.horizontal_shard import set_shard_id
+from dis_sqlalchemy.ext.horizontal_shard import ShardedSession
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import sessionmaker
+from dis_sqlalchemy.sql import operators
+from dis_sqlalchemy.sql import visitors
 
 echo = True
 engine = create_engine("sqlite://", echo=echo)

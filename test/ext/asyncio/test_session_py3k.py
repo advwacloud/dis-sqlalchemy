@@ -3,46 +3,46 @@ from __future__ import annotations
 from typing import List
 from typing import Optional
 
-from sqlalchemy import Column
-from sqlalchemy import event
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Identity
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import update
-from sqlalchemy.ext.asyncio import async_object_session
-from sqlalchemy.ext.asyncio import async_sessionmaker
-from sqlalchemy.ext.asyncio import AsyncAttrs
-from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.ext.asyncio import exc as async_exc
-from sqlalchemy.ext.asyncio.base import ReversibleProxy
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import selectinload
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.testing import async_test
-from sqlalchemy.testing import config
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.assertions import expect_deprecated
-from sqlalchemy.testing.assertions import is_false
-from sqlalchemy.testing.entities import ComparableEntity
-from sqlalchemy.testing.provision import normalize_sequence
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import event
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Identity
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import select
+from dis_sqlalchemy import Sequence
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import update
+from dis_sqlalchemy.ext.asyncio import async_object_session
+from dis_sqlalchemy.ext.asyncio import async_sessionmaker
+from dis_sqlalchemy.ext.asyncio import AsyncAttrs
+from dis_sqlalchemy.ext.asyncio import AsyncSession
+from dis_sqlalchemy.ext.asyncio import exc as async_exc
+from dis_sqlalchemy.ext.asyncio.base import ReversibleProxy
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import selectinload
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import sessionmaker
+from dis_sqlalchemy.testing import async_test
+from dis_sqlalchemy.testing import config
+from dis_sqlalchemy.testing import engines
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_true
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing.assertions import expect_deprecated
+from dis_sqlalchemy.testing.assertions import is_false
+from dis_sqlalchemy.testing.entities import ComparableEntity
+from dis_sqlalchemy.testing.provision import normalize_sequence
 from .test_engine_py3k import AsyncFixture as _AsyncFixture
 from ...orm import _fixtures
 
@@ -941,7 +941,7 @@ class AsyncProxyTest(AsyncFixture):
         is_(inspect(u1).async_session, None)
 
     def test_inspect_session_no_asyncio_imported(self):
-        with mock.patch("sqlalchemy.orm.state._async_provider", None):
+        with mock.patch("dis_sqlalchemy.orm.state._async_provider", None):
             User = self.classes.User
 
             s1 = Session(testing.db)

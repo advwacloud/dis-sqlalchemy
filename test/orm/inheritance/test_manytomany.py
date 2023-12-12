@@ -1,16 +1,16 @@
-from sqlalchemy import Column
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import Sequence
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy.orm import class_mapper
-from sqlalchemy.orm import relationship
-from sqlalchemy.testing import config
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.provision import normalize_sequence
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import Sequence
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy.orm import class_mapper
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.testing import config
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.provision import normalize_sequence
 
 
 class InheritTest(fixtures.MappedTest):

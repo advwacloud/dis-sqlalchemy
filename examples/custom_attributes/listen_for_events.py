@@ -3,13 +3,13 @@ and listen for change events.
 
 """
 
-from sqlalchemy import Column
-from sqlalchemy import event
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import event
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import String
+from dis_sqlalchemy.ext.declarative import declarative_base
+from dis_sqlalchemy.orm import relationship
 
 
 def configure_listener(class_, key, inst):

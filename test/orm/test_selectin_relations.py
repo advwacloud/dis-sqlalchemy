@@ -1,38 +1,38 @@
-import sqlalchemy as sa
-from sqlalchemy import bindparam
-from sqlalchemy import ForeignKey
-from sqlalchemy import ForeignKeyConstraint
-from sqlalchemy import Integer
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import clear_mappers
-from sqlalchemy.orm import defaultload
-from sqlalchemy.orm import defer
-from sqlalchemy.orm import deferred
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import selectinload
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import subqueryload
-from sqlalchemy.orm import undefer
-from sqlalchemy.orm import with_polymorphic
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import assert_warns
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_not
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.assertsql import AllOf
-from sqlalchemy.testing.assertsql import assert_engine
-from sqlalchemy.testing.assertsql import CompiledSQL
-from sqlalchemy.testing.entities import ComparableEntity
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+import dis_sqlalchemy as sa
+from dis_sqlalchemy import bindparam
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import ForeignKeyConstraint
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.orm import aliased
+from dis_sqlalchemy.orm import clear_mappers
+from dis_sqlalchemy.orm import defaultload
+from dis_sqlalchemy.orm import defer
+from dis_sqlalchemy.orm import deferred
+from dis_sqlalchemy.orm import joinedload
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import selectinload
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import subqueryload
+from dis_sqlalchemy.orm import undefer
+from dis_sqlalchemy.orm import with_polymorphic
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import assert_warns
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_not
+from dis_sqlalchemy.testing import is_true
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing.assertsql import AllOf
+from dis_sqlalchemy.testing.assertsql import assert_engine
+from dis_sqlalchemy.testing.assertsql import CompiledSQL
+from dis_sqlalchemy.testing.entities import ComparableEntity
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 from test.orm import _fixtures
 from .inheritance._poly_fixtures import _Polymorphic
 from .inheritance._poly_fixtures import Company
@@ -2386,7 +2386,7 @@ class ChunkingTest(fixtures.DeclarativeMappedTest):
 
         def go():
             with mock.patch(
-                "sqlalchemy.orm.strategies.SelectInLoader._chunksize", 47
+                "dis_sqlalchemy.orm.strategies.SelectInLoader._chunksize", 47
             ):
                 q = session.query(A).options(selectinload(A.bs)).order_by(A.id)
 
@@ -2458,7 +2458,7 @@ class ChunkingTest(fixtures.DeclarativeMappedTest):
 
         def go():
             with mock.patch(
-                "sqlalchemy.orm.strategies.SelectInLoader._chunksize", 47
+                "dis_sqlalchemy.orm.strategies.SelectInLoader._chunksize", 47
             ):
                 q = session.query(B).options(selectinload(B.a)).order_by(B.id)
 
@@ -2993,7 +2993,7 @@ class SelfRefInheritanceAliasedTest(
 
             s = fixture_session()
 
-            from sqlalchemy.orm import Load
+            from dis_sqlalchemy.orm import Load
 
             opt1 = selectinload(attr1).selectinload(attr2)  # noqa
             opt2 = Load(Foo).selectinload(attr1).selectinload(attr2)  # noqa
@@ -3648,8 +3648,8 @@ class TestCompositePlusNonComposite(fixtures.DeclarativeMappedTest):
     def setup_classes(cls):
         Base = cls.DeclarativeBasic
 
-        from sqlalchemy.sql import lambdas
-        from sqlalchemy.orm import configure_mappers
+        from dis_sqlalchemy.sql import lambdas
+        from dis_sqlalchemy.orm import configure_mappers
 
         lambdas._closure_per_cache_key.clear()
         lambdas.AnalyzedCode._fns.clear()

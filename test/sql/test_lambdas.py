@@ -5,41 +5,41 @@ import time
 from typing import List
 from typing import Optional
 
-from sqlalchemy import exc
-from sqlalchemy import testing
-from sqlalchemy.future import select as future_select
-from sqlalchemy.schema import Column
-from sqlalchemy.schema import ForeignKey
-from sqlalchemy.schema import Table
-from sqlalchemy.sql import and_
-from sqlalchemy.sql import bindparam
-from sqlalchemy.sql import coercions
-from sqlalchemy.sql import column
-from sqlalchemy.sql import func
-from sqlalchemy.sql import join
-from sqlalchemy.sql import lambda_stmt
-from sqlalchemy.sql import lambdas
-from sqlalchemy.sql import literal
-from sqlalchemy.sql import null
-from sqlalchemy.sql import roles
-from sqlalchemy.sql import select
-from sqlalchemy.sql import table
-from sqlalchemy.sql import util as sql_util
-from sqlalchemy.sql.base import ExecutableOption
-from sqlalchemy.sql.cache_key import HasCacheKey
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import ne_
-from sqlalchemy.testing.assertions import expect_raises_message
-from sqlalchemy.testing.assertsql import CompiledSQL
-from sqlalchemy.types import ARRAY
-from sqlalchemy.types import Boolean
-from sqlalchemy.types import Integer
-from sqlalchemy.types import JSON
-from sqlalchemy.types import String
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.future import select as future_select
+from dis_sqlalchemy.schema import Column
+from dis_sqlalchemy.schema import ForeignKey
+from dis_sqlalchemy.schema import Table
+from dis_sqlalchemy.sql import and_
+from dis_sqlalchemy.sql import bindparam
+from dis_sqlalchemy.sql import coercions
+from dis_sqlalchemy.sql import column
+from dis_sqlalchemy.sql import func
+from dis_sqlalchemy.sql import join
+from dis_sqlalchemy.sql import lambda_stmt
+from dis_sqlalchemy.sql import lambdas
+from dis_sqlalchemy.sql import literal
+from dis_sqlalchemy.sql import null
+from dis_sqlalchemy.sql import roles
+from dis_sqlalchemy.sql import select
+from dis_sqlalchemy.sql import table
+from dis_sqlalchemy.sql import util as sql_util
+from dis_sqlalchemy.sql.base import ExecutableOption
+from dis_sqlalchemy.sql.cache_key import HasCacheKey
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import ne_
+from dis_sqlalchemy.testing.assertions import expect_raises_message
+from dis_sqlalchemy.testing.assertsql import CompiledSQL
+from dis_sqlalchemy.types import ARRAY
+from dis_sqlalchemy.types import Boolean
+from dis_sqlalchemy.types import Integer
+from dis_sqlalchemy.types import JSON
+from dis_sqlalchemy.types import String
 
 
 class LambdaElementTest(
@@ -2104,7 +2104,7 @@ class ConcurrencyTest(fixtures.TestBase):
 
         decl_base.metadata.create_all(testing.db)
 
-        from sqlalchemy.orm import Session
+        from dis_sqlalchemy.orm import Session
 
         with testing.db.connect() as conn:
             with Session(conn) as session:
@@ -2125,7 +2125,7 @@ class ConcurrencyTest(fixtures.TestBase):
         NUM_OF_LAMBDAS = 150
 
         code = """
-from sqlalchemy import lambda_stmt, select
+from dis_sqlalchemy import lambda_stmt, select
 
 
 def generate_lambda_stmt(wanted):

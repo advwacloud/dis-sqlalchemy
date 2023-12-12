@@ -2,33 +2,33 @@ from collections import OrderedDict
 import datetime
 import decimal
 
-from sqlalchemy import BOOLEAN
-from sqlalchemy import Boolean
-from sqlalchemy import Column
-from sqlalchemy import DefaultClause
-from sqlalchemy import Enum
-from sqlalchemy import exc
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import schema
-from sqlalchemy import select
-from sqlalchemy import sql
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import TIMESTAMP
-from sqlalchemy import TypeDecorator
-from sqlalchemy import types as sqltypes
-from sqlalchemy import UnicodeText
-from sqlalchemy.dialects.mysql import base as mysql
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import AssertsExecutionResults
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import eq_regex
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
+from dis_sqlalchemy import BOOLEAN
+from dis_sqlalchemy import Boolean
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import DefaultClause
+from dis_sqlalchemy import Enum
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import schema
+from dis_sqlalchemy import select
+from dis_sqlalchemy import sql
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import TIMESTAMP
+from dis_sqlalchemy import TypeDecorator
+from dis_sqlalchemy import types as sqltypes
+from dis_sqlalchemy import UnicodeText
+from dis_sqlalchemy.dialects.mysql import base as mysql
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import AssertsExecutionResults
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import eq_regex
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
 
 
 class TypeCompileTest(fixtures.TestBase, AssertsCompiledSQL):
@@ -774,7 +774,7 @@ class EnumSetTest(
     __backend__ = True
 
     class SomeEnum:
-        # Implements PEP 435 in the minimal fashion needed by SQLAlchemy
+        # Implements PEP 435 in the minimal fashion needed by dis_sqlalchemy
         __members__ = OrderedDict()
 
         def __init__(self, name, value):

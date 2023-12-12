@@ -16,15 +16,15 @@ but there really isn't any - the management and targeting of these tables
 is completely automated.
 
 """
-from sqlalchemy import Column
-from sqlalchemy import create_engine
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy.ext.declarative import as_declarative
-from sqlalchemy.ext.declarative import declared_attr
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import String
+from dis_sqlalchemy.ext.declarative import as_declarative
+from dis_sqlalchemy.ext.declarative import declared_attr
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
 
 
 @as_declarative()

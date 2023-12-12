@@ -4,30 +4,30 @@ module functions."""
 import unittest
 import warnings
 
-from sqlalchemy import Boolean
-from sqlalchemy import Column
-from sqlalchemy import create_engine
-from sqlalchemy import ForeignKey
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import join
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy.orm import clear_mappers
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import declarative_base
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import deferred
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import eq_ignore_whitespace
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import ne_
-from sqlalchemy.testing.entities import ComparableEntity
+from dis_sqlalchemy import Boolean
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import join
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy.orm import clear_mappers
+from dis_sqlalchemy.orm import column_property
+from dis_sqlalchemy.orm import declarative_base
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import deferred
+from dis_sqlalchemy.orm import exc as orm_exc
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import eq_ignore_whitespace
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import ne_
+from dis_sqlalchemy.testing.entities import ComparableEntity
 from .history_meta import Versioned
 from .history_meta import versioned_session
 

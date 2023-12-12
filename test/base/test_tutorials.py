@@ -6,9 +6,9 @@ import os
 import re
 import sys
 
-from sqlalchemy.testing import config
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import requires
+from dis_sqlalchemy.testing import config
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import requires
 
 
 class DocTest(fixtures.TestBase):
@@ -16,7 +16,7 @@ class DocTest(fixtures.TestBase):
     __only_on__ = "sqlite+pysqlite"
 
     def _setup_logger(self):
-        rootlogger = logging.getLogger("sqlalchemy.engine.Engine")
+        rootlogger = logging.getLogger("dis_sqlalchemy.engine.Engine")
 
         class MyStream:
             def write(self, string):
@@ -31,11 +31,11 @@ class DocTest(fixtures.TestBase):
         rootlogger.addHandler(handler)
 
     def _teardown_logger(self):
-        rootlogger = logging.getLogger("sqlalchemy.engine.Engine")
+        rootlogger = logging.getLogger("dis_sqlalchemy.engine.Engine")
         rootlogger.removeHandler(self._handler)
 
     def _setup_create_table_patcher(self):
-        from sqlalchemy.sql import ddl
+        from dis_sqlalchemy.sql import ddl
 
         self.orig_sort = ddl.sort_tables_and_constraints
 
@@ -45,7 +45,7 @@ class DocTest(fixtures.TestBase):
         ddl.sort_tables_and_constraints = our_sort
 
     def _teardown_create_table_patcher(self):
-        from sqlalchemy.sql import ddl
+        from dis_sqlalchemy.sql import ddl
 
         ddl.sort_tables_and_constraints = self.orig_sort
 

@@ -1,31 +1,31 @@
 import decimal
 
-from sqlalchemy import and_
-from sqlalchemy import Column
-from sqlalchemy import DDL
-from sqlalchemy import desc
-from sqlalchemy import event
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Identity
-from sqlalchemy import Integer
-from sqlalchemy import literal
-from sqlalchemy import Numeric
-from sqlalchemy import or_
-from sqlalchemy import PrimaryKeyConstraint
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy.dialects.mssql import base as mssql
-from sqlalchemy.dialects.mssql import pyodbc as mssql_pyodbc
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import config
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.assertsql import CursorSQL
-from sqlalchemy.testing.assertsql import DialectSQL
+from dis_sqlalchemy import and_
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import DDL
+from dis_sqlalchemy import desc
+from dis_sqlalchemy import event
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Identity
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import literal
+from dis_sqlalchemy import Numeric
+from dis_sqlalchemy import or_
+from dis_sqlalchemy import PrimaryKeyConstraint
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.dialects.mssql import base as mssql
+from dis_sqlalchemy.dialects.mssql import pyodbc as mssql_pyodbc
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import config
+from dis_sqlalchemy.testing import engines
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing.assertsql import CursorSQL
+from dis_sqlalchemy.testing.assertsql import DialectSQL
 
 
 class IdentityInsertTest(fixtures.TablesTest, AssertsCompiledSQL):
@@ -169,7 +169,7 @@ class QueryTest(testing.AssertsExecutionResults, fixtures.TestBase):
         to fire upon each insert and subsequently perform an
         insert into a different table.
 
-        SQLALchemy's MSSQL dialect by default will attempt to
+        dis_sqlalchemy's MSSQL dialect by default will attempt to
         use an OUTPUT_INSERTED clause, which in this case will
         raise the following error:
 

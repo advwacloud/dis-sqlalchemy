@@ -1,53 +1,53 @@
-from sqlalchemy import bindparam
-from sqlalchemy import Column
-from sqlalchemy import delete
-from sqlalchemy import exc
-from sqlalchemy import exists
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import insert
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import literal
-from sqlalchemy import literal_column
-from sqlalchemy import null
-from sqlalchemy import or_
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import true
-from sqlalchemy import union
-from sqlalchemy import update
-from sqlalchemy import util
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import contains_eager
-from sqlalchemy.orm import deferred
-from sqlalchemy.orm import join as orm_join
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import query_expression
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import undefer
-from sqlalchemy.orm import with_expression
-from sqlalchemy.orm import with_loader_criteria
-from sqlalchemy.orm import with_polymorphic
-from sqlalchemy.sql import and_
-from sqlalchemy.sql import sqltypes
-from sqlalchemy.sql.selectable import Join as core_join
-from sqlalchemy.sql.selectable import LABEL_STYLE_DISAMBIGUATE_ONLY
-from sqlalchemy.sql.selectable import LABEL_STYLE_TABLENAME_PLUS_COL
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import mock
-from sqlalchemy.testing import Variation
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.util import resolve_lambda
-from sqlalchemy.util.langhelpers import hybridproperty
+from dis_sqlalchemy import bindparam
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import delete
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import exists
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import insert
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import literal
+from dis_sqlalchemy import literal_column
+from dis_sqlalchemy import null
+from dis_sqlalchemy import or_
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import text
+from dis_sqlalchemy import true
+from dis_sqlalchemy import union
+from dis_sqlalchemy import update
+from dis_sqlalchemy import util
+from dis_sqlalchemy.orm import aliased
+from dis_sqlalchemy.orm import column_property
+from dis_sqlalchemy.orm import contains_eager
+from dis_sqlalchemy.orm import deferred
+from dis_sqlalchemy.orm import join as orm_join
+from dis_sqlalchemy.orm import joinedload
+from dis_sqlalchemy.orm import query_expression
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import undefer
+from dis_sqlalchemy.orm import with_expression
+from dis_sqlalchemy.orm import with_loader_criteria
+from dis_sqlalchemy.orm import with_polymorphic
+from dis_sqlalchemy.sql import and_
+from dis_sqlalchemy.sql import sqltypes
+from dis_sqlalchemy.sql.selectable import Join as core_join
+from dis_sqlalchemy.sql.selectable import LABEL_STYLE_DISAMBIGUATE_ONLY
+from dis_sqlalchemy.sql.selectable import LABEL_STYLE_TABLENAME_PLUS_COL
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing import Variation
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.util import resolve_lambda
+from dis_sqlalchemy.util.langhelpers import hybridproperty
 from .inheritance import _poly_fixtures
 from .test_query import QueryTest
 from ..sql import test_compiler
@@ -2785,7 +2785,7 @@ class RawSelectTest(QueryTest, AssertsCompiledSQL):
         )
 
     def test_update_from_entity(self):
-        from sqlalchemy.sql import update
+        from dis_sqlalchemy.sql import update
 
         User = self.classes.User
         self.assert_compile(
@@ -2805,7 +2805,7 @@ class RawSelectTest(QueryTest, AssertsCompiledSQL):
         )
 
     def test_delete_from_entity(self):
-        from sqlalchemy.sql import delete
+        from dis_sqlalchemy.sql import delete
 
         User = self.classes.User
         self.assert_compile(delete(User), "DELETE FROM users")
@@ -2817,7 +2817,7 @@ class RawSelectTest(QueryTest, AssertsCompiledSQL):
         )
 
     def test_insert_from_entity(self):
-        from sqlalchemy.sql import insert
+        from dis_sqlalchemy.sql import insert
 
         User = self.classes.User
         self.assert_compile(
@@ -2898,7 +2898,7 @@ class CrudParamOverlapTest(test_compiler.CrudParamOverlapTest):
         type_ = request.param
 
         if type_.orm:
-            from sqlalchemy.orm import declarative_base
+            from dis_sqlalchemy.orm import declarative_base
 
             Base = declarative_base()
 

@@ -1,10 +1,10 @@
 import dataclasses
 
-from sqlalchemy import select
-from sqlalchemy.orm import composite
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
+from dis_sqlalchemy import select
+from dis_sqlalchemy.orm import composite
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
 
 
 class Base(DeclarativeBase):

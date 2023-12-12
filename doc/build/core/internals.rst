@@ -5,68 +5,68 @@ Core Internals
 
 Some key internal constructs are listed here.
 
-.. currentmodule:: sqlalchemy
+.. currentmodule:: dis_sqlalchemy
 
-.. autoclass:: sqlalchemy.engine.BindTyping
+.. autoclass:: dis_sqlalchemy.engine.BindTyping
     :members:
 
-.. autoclass:: sqlalchemy.engine.Compiled
+.. autoclass:: dis_sqlalchemy.engine.Compiled
     :members:
 
-.. autoclass:: sqlalchemy.engine.interfaces.DBAPIConnection
-    :members:
-    :undoc-members:
-
-.. autoclass:: sqlalchemy.engine.interfaces.DBAPICursor
+.. autoclass:: dis_sqlalchemy.engine.interfaces.DBAPIConnection
     :members:
     :undoc-members:
 
-.. autoclass:: sqlalchemy.engine.interfaces.DBAPIType
+.. autoclass:: dis_sqlalchemy.engine.interfaces.DBAPICursor
     :members:
     :undoc-members:
 
-.. autoclass:: sqlalchemy.sql.compiler.DDLCompiler
+.. autoclass:: dis_sqlalchemy.engine.interfaces.DBAPIType
+    :members:
+    :undoc-members:
+
+.. autoclass:: dis_sqlalchemy.sql.compiler.DDLCompiler
     :members:
     :inherited-members:
 
-.. autoclass:: sqlalchemy.engine.default.DefaultDialect
+.. autoclass:: dis_sqlalchemy.engine.default.DefaultDialect
     :members:
     :inherited-members:
 
-.. autoclass:: sqlalchemy.engine.Dialect
+.. autoclass:: dis_sqlalchemy.engine.Dialect
     :members:
 
-.. autoclass:: sqlalchemy.engine.default.DefaultExecutionContext
-    :members:
-
-
-.. autoclass:: sqlalchemy.engine.ExecutionContext
-    :members:
-
-.. autoclass:: sqlalchemy.sql.compiler.ExpandedState
+.. autoclass:: dis_sqlalchemy.engine.default.DefaultExecutionContext
     :members:
 
 
-.. autoclass:: sqlalchemy.sql.compiler.GenericTypeCompiler
+.. autoclass:: dis_sqlalchemy.engine.ExecutionContext
+    :members:
+
+.. autoclass:: dis_sqlalchemy.sql.compiler.ExpandedState
+    :members:
+
+
+.. autoclass:: dis_sqlalchemy.sql.compiler.GenericTypeCompiler
     :members:
     :inherited-members:
 
 
-.. autoclass:: sqlalchemy.log.Identified
+.. autoclass:: dis_sqlalchemy.log.Identified
     :members:
 
 
-.. autoclass:: sqlalchemy.sql.compiler.IdentifierPreparer
+.. autoclass:: dis_sqlalchemy.sql.compiler.IdentifierPreparer
     :members:
 
 
-.. autoclass:: sqlalchemy.sql.compiler.SQLCompiler
+.. autoclass:: dis_sqlalchemy.sql.compiler.SQLCompiler
     :members:
 
-.. autoclass:: sqlalchemy.sql.compiler.StrSQLCompiler
+.. autoclass:: dis_sqlalchemy.sql.compiler.StrSQLCompiler
     :members:
 
 
-.. autoclass:: sqlalchemy.engine.AdaptedConnection
+.. autoclass:: dis_sqlalchemy.engine.AdaptedConnection
     :members:
 

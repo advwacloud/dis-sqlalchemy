@@ -1,70 +1,70 @@
-from sqlalchemy import BLOB
-from sqlalchemy import BOOLEAN
-from sqlalchemy import Boolean
-from sqlalchemy import cast
-from sqlalchemy import CHAR
-from sqlalchemy import CheckConstraint
-from sqlalchemy import CLOB
-from sqlalchemy import Column
-from sqlalchemy import Computed
-from sqlalchemy import create_engine
-from sqlalchemy import DATE
-from sqlalchemy import Date
-from sqlalchemy import DATETIME
-from sqlalchemy import DateTime
-from sqlalchemy import DECIMAL
-from sqlalchemy import DOUBLE
-from sqlalchemy import Double
-from sqlalchemy import exc
-from sqlalchemy import extract
-from sqlalchemy import FLOAT
-from sqlalchemy import Float
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Index
-from sqlalchemy import INT
-from sqlalchemy import Integer
-from sqlalchemy import Interval
-from sqlalchemy import LargeBinary
-from sqlalchemy import literal
-from sqlalchemy import MetaData
-from sqlalchemy import NCHAR
-from sqlalchemy import NUMERIC
-from sqlalchemy import Numeric
-from sqlalchemy import NVARCHAR
-from sqlalchemy import PrimaryKeyConstraint
-from sqlalchemy import schema
-from sqlalchemy import select
-from sqlalchemy import SmallInteger
-from sqlalchemy import sql
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import TEXT
-from sqlalchemy import Text
-from sqlalchemy import text
-from sqlalchemy import TIME
-from sqlalchemy import Time
-from sqlalchemy import TIMESTAMP
-from sqlalchemy import types as sqltypes
-from sqlalchemy import Unicode
-from sqlalchemy import UnicodeText
-from sqlalchemy import VARCHAR
-from sqlalchemy.dialects.mysql import base as mysql
-from sqlalchemy.dialects.mysql import insert
-from sqlalchemy.dialects.mysql import match
-from sqlalchemy.sql import column
-from sqlalchemy.sql import table
-from sqlalchemy.sql.expression import bindparam
-from sqlalchemy.sql.expression import literal_column
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import eq_ignore_whitespace
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import mock
-from sqlalchemy.testing import Variation
+from dis_sqlalchemy import BLOB
+from dis_sqlalchemy import BOOLEAN
+from dis_sqlalchemy import Boolean
+from dis_sqlalchemy import cast
+from dis_sqlalchemy import CHAR
+from dis_sqlalchemy import CheckConstraint
+from dis_sqlalchemy import CLOB
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import Computed
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import DATE
+from dis_sqlalchemy import Date
+from dis_sqlalchemy import DATETIME
+from dis_sqlalchemy import DateTime
+from dis_sqlalchemy import DECIMAL
+from dis_sqlalchemy import DOUBLE
+from dis_sqlalchemy import Double
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import extract
+from dis_sqlalchemy import FLOAT
+from dis_sqlalchemy import Float
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Index
+from dis_sqlalchemy import INT
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import Interval
+from dis_sqlalchemy import LargeBinary
+from dis_sqlalchemy import literal
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import NCHAR
+from dis_sqlalchemy import NUMERIC
+from dis_sqlalchemy import Numeric
+from dis_sqlalchemy import NVARCHAR
+from dis_sqlalchemy import PrimaryKeyConstraint
+from dis_sqlalchemy import schema
+from dis_sqlalchemy import select
+from dis_sqlalchemy import SmallInteger
+from dis_sqlalchemy import sql
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import TEXT
+from dis_sqlalchemy import Text
+from dis_sqlalchemy import text
+from dis_sqlalchemy import TIME
+from dis_sqlalchemy import Time
+from dis_sqlalchemy import TIMESTAMP
+from dis_sqlalchemy import types as sqltypes
+from dis_sqlalchemy import Unicode
+from dis_sqlalchemy import UnicodeText
+from dis_sqlalchemy import VARCHAR
+from dis_sqlalchemy.dialects.mysql import base as mysql
+from dis_sqlalchemy.dialects.mysql import insert
+from dis_sqlalchemy.dialects.mysql import match
+from dis_sqlalchemy.sql import column
+from dis_sqlalchemy.sql import table
+from dis_sqlalchemy.sql.expression import bindparam
+from dis_sqlalchemy.sql.expression import literal_column
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import eq_ignore_whitespace
+from dis_sqlalchemy.testing import expect_warnings
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing import Variation
 
 
 class ReservedWordFixture(AssertsCompiledSQL):
@@ -89,7 +89,7 @@ class ReservedWordFixture(AssertsCompiledSQL):
             "rw_table.`mdb_reserved` FROM rw_table"
         )
 
-        from sqlalchemy.dialects.mysql import reserved_words
+        from dis_sqlalchemy.dialects.mysql import reserved_words
 
         reserved_words.RESERVED_WORDS_MARIADB.add("mdb_reserved")
         reserved_words.RESERVED_WORDS_MYSQL.add("mysql_reserved")
@@ -196,7 +196,7 @@ class CompileTest(ReservedWordFixture, fixtures.TestBase, AssertsCompiledSQL):
         )
 
     def test_create_index_with_arbitrary_column_element(self):
-        from sqlalchemy.ext.compiler import compiles
+        from dis_sqlalchemy.ext.compiler import compiles
 
         class _textual_index_element(sql.ColumnElement):
             """alembic's wrapper"""

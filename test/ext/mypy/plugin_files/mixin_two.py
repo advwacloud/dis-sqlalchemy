@@ -1,16 +1,16 @@
 from typing import Callable
 
-from sqlalchemy import Column
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy.orm import deferred
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import registry
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import RelationshipProperty
-from sqlalchemy.orm.decl_api import declared_attr
-from sqlalchemy.orm.interfaces import MapperProperty
-from sqlalchemy.sql.schema import ForeignKey
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import String
+from dis_sqlalchemy.orm import deferred
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import registry
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import RelationshipProperty
+from dis_sqlalchemy.orm.decl_api import declared_attr
+from dis_sqlalchemy.orm.interfaces import MapperProperty
+from dis_sqlalchemy.sql.schema import ForeignKey
 
 
 reg: registry = registry()

@@ -1,16 +1,16 @@
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import declarative_base
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm.attributes import instance_state
-from sqlalchemy.testing import AssertsExecutionResults
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.schema import Column
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.orm import backref
+from dis_sqlalchemy.orm import declarative_base
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm.attributes import instance_state
+from dis_sqlalchemy.testing import AssertsExecutionResults
+from dis_sqlalchemy.testing import expect_warnings
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.schema import Column
 
 
 class FlushOnPendingTest(AssertsExecutionResults, fixtures.TestBase):

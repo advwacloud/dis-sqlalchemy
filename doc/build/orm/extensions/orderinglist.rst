@@ -1,7 +1,7 @@
 Ordering List
 =============
 
-.. automodule:: sqlalchemy.ext.orderinglist
+.. automodule:: dis_sqlalchemy.ext.orderinglist
 
 API Reference
 -------------

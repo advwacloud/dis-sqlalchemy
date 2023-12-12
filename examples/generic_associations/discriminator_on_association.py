@@ -5,7 +5,7 @@ contains a "discriminator" column which determines what type of
 parent object associates to each particular row in the association
 table.
 
-SQLAlchemy's single-table-inheritance feature is used
+dis_sqlalchemy's single-table-inheritance feature is used
 to target different association types.
 
 This configuration attempts to simulate a so-called "generic foreign key"
@@ -15,17 +15,17 @@ it uses a fixed number of tables to serve any number of potential parent
 objects, but is also slightly more complex.
 
 """
-from sqlalchemy import Column
-from sqlalchemy import create_engine
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy.ext.associationproxy import association_proxy
-from sqlalchemy.ext.declarative import as_declarative
-from sqlalchemy.ext.declarative import declared_attr
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import String
+from dis_sqlalchemy.ext.associationproxy import association_proxy
+from dis_sqlalchemy.ext.declarative import as_declarative
+from dis_sqlalchemy.ext.declarative import declared_attr
+from dis_sqlalchemy.orm import backref
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
 
 
 @as_declarative()

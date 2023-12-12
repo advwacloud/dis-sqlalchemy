@@ -2,17 +2,17 @@ from decimal import Decimal
 from typing import Any
 from typing import List
 
-from sqlalchemy import ARRAY
-from sqlalchemy import BigInteger
-from sqlalchemy import column
-from sqlalchemy import ColumnElement
-from sqlalchemy import Integer
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.sql import operators
+from dis_sqlalchemy import ARRAY
+from dis_sqlalchemy import BigInteger
+from dis_sqlalchemy import column
+from dis_sqlalchemy import ColumnElement
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.sql import operators
 
 
 class Base(DeclarativeBase):

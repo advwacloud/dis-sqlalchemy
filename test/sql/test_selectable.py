@@ -1,64 +1,64 @@
 """Test various algorithmic properties of selectables."""
 from itertools import zip_longest
 
-from sqlalchemy import and_
-from sqlalchemy import bindparam
-from sqlalchemy import Boolean
-from sqlalchemy import cast
-from sqlalchemy import Column
-from sqlalchemy import delete
-from sqlalchemy import exc
-from sqlalchemy import exists
-from sqlalchemy import false
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import insert
-from sqlalchemy import Integer
-from sqlalchemy import join
-from sqlalchemy import literal_column
-from sqlalchemy import MetaData
-from sqlalchemy import not_
-from sqlalchemy import null
-from sqlalchemy import or_
-from sqlalchemy import outerjoin
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import true
-from sqlalchemy import type_coerce
-from sqlalchemy import TypeDecorator
-from sqlalchemy import union
-from sqlalchemy import update
-from sqlalchemy import util
-from sqlalchemy.sql import Alias
-from sqlalchemy.sql import annotation
-from sqlalchemy.sql import base
-from sqlalchemy.sql import column
-from sqlalchemy.sql import elements
-from sqlalchemy.sql import LABEL_STYLE_DISAMBIGUATE_ONLY
-from sqlalchemy.sql import LABEL_STYLE_TABLENAME_PLUS_COL
-from sqlalchemy.sql import operators
-from sqlalchemy.sql import table
-from sqlalchemy.sql import util as sql_util
-from sqlalchemy.sql import visitors
-from sqlalchemy.sql.dml import Insert
-from sqlalchemy.sql.selectable import LABEL_STYLE_NONE
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import AssertsExecutionResults
-from sqlalchemy.testing import config
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import in_
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_not
-from sqlalchemy.testing import ne_
-from sqlalchemy.testing.assertions import expect_raises_message
-from sqlalchemy.testing.provision import normalize_sequence
+from dis_sqlalchemy import and_
+from dis_sqlalchemy import bindparam
+from dis_sqlalchemy import Boolean
+from dis_sqlalchemy import cast
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import delete
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import exists
+from dis_sqlalchemy import false
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import insert
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import join
+from dis_sqlalchemy import literal_column
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import not_
+from dis_sqlalchemy import null
+from dis_sqlalchemy import or_
+from dis_sqlalchemy import outerjoin
+from dis_sqlalchemy import select
+from dis_sqlalchemy import Sequence
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import text
+from dis_sqlalchemy import true
+from dis_sqlalchemy import type_coerce
+from dis_sqlalchemy import TypeDecorator
+from dis_sqlalchemy import union
+from dis_sqlalchemy import update
+from dis_sqlalchemy import util
+from dis_sqlalchemy.sql import Alias
+from dis_sqlalchemy.sql import annotation
+from dis_sqlalchemy.sql import base
+from dis_sqlalchemy.sql import column
+from dis_sqlalchemy.sql import elements
+from dis_sqlalchemy.sql import LABEL_STYLE_DISAMBIGUATE_ONLY
+from dis_sqlalchemy.sql import LABEL_STYLE_TABLENAME_PLUS_COL
+from dis_sqlalchemy.sql import operators
+from dis_sqlalchemy.sql import table
+from dis_sqlalchemy.sql import util as sql_util
+from dis_sqlalchemy.sql import visitors
+from dis_sqlalchemy.sql.dml import Insert
+from dis_sqlalchemy.sql.selectable import LABEL_STYLE_NONE
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import AssertsExecutionResults
+from dis_sqlalchemy.testing import config
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import in_
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_not
+from dis_sqlalchemy.testing import ne_
+from dis_sqlalchemy.testing.assertions import expect_raises_message
+from dis_sqlalchemy.testing.provision import normalize_sequence
 
 
 metadata = MetaData()
@@ -580,7 +580,7 @@ class SelectableTest(
         assert c in s.c.bar.proxy_set
 
     def test_no_error_on_unsupported_expr_key(self):
-        from sqlalchemy.sql.expression import BinaryExpression
+        from dis_sqlalchemy.sql.expression import BinaryExpression
 
         def myop(x, y):
             pass
@@ -1600,7 +1600,7 @@ class SelectableTest(
     def test_unusual_column_elements_clauselist(self):
         """Test that raw ClauseList is expanded into .c."""
 
-        from sqlalchemy.sql.expression import ClauseList
+        from dis_sqlalchemy.sql.expression import ClauseList
 
         s = select(
             table1.c.col1, ClauseList(table1.c.col2, table1.c.col3)
@@ -2766,7 +2766,7 @@ class ReduceTest(fixtures.TestBase, AssertsExecutionResults):
             Column("id", Integer, primary_key=True),
             Column("child_name", String(255), default=None),
         )
-        from sqlalchemy.orm.util import polymorphic_union
+        from dis_sqlalchemy.orm.util import polymorphic_union
 
         item_join = polymorphic_union(
             {
@@ -3044,7 +3044,7 @@ class AnnotationsTest(fixtures.TestBase):
             assert "inherit_cache" not in type(anno).__dict__
 
     def test_proxy_set_iteration_includes_annotated(self):
-        from sqlalchemy.schema import Column
+        from dis_sqlalchemy.schema import Column
 
         c1 = Column("foo", Integer)
 
@@ -3065,7 +3065,7 @@ class AnnotationsTest(fixtures.TestBase):
         eq_(d, {"weight": 10})
 
     def test_proxy_set_iteration_includes_annotated_two(self):
-        from sqlalchemy.schema import Column
+        from dis_sqlalchemy.schema import Column
 
         c1 = Column("foo", Integer)
 
@@ -3081,7 +3081,7 @@ class AnnotationsTest(fixtures.TestBase):
         eq_(d, {"weight": 10})
 
     def test_late_name_add(self):
-        from sqlalchemy.schema import Column
+        from dis_sqlalchemy.schema import Column
 
         c1 = Column(Integer)
         c1_a = c1._annotate({"foo": "bar"})
@@ -3111,7 +3111,7 @@ class AnnotationsTest(fixtures.TestBase):
         eq_(t.c.x._anon_name_label, x_a._anon_name_label)
 
     def test_custom_constructions(self):
-        from sqlalchemy.schema import Column
+        from dis_sqlalchemy.schema import Column
 
         class MyColumn(Column):
             def __init__(self):
@@ -3132,8 +3132,8 @@ class AnnotationsTest(fixtures.TestBase):
 
     def test_custom_construction_correct_anno_subclass(self):
         # [ticket:2918]
-        from sqlalchemy.schema import Column
-        from sqlalchemy.sql.elements import AnnotatedColumnElement
+        from dis_sqlalchemy.schema import Column
+        from dis_sqlalchemy.sql.elements import AnnotatedColumnElement
 
         class MyColumn(Column):
             pass
@@ -3145,7 +3145,7 @@ class AnnotationsTest(fixtures.TestBase):
 
     def test_custom_construction_correct_anno_expr(self):
         # [ticket:2918]
-        from sqlalchemy.schema import Column
+        from dis_sqlalchemy.schema import Column
 
         class MyColumn(Column):
             pass

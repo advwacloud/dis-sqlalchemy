@@ -1,6 +1,6 @@
 :orphan:
 
-.. currentmodule:: sqlalchemy.orm
+.. currentmodule:: dis_sqlalchemy.orm
 
 .. _mapping_constructors:
 

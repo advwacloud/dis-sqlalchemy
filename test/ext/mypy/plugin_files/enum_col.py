@@ -1,9 +1,9 @@
 import enum
 from typing import Optional
 
-from sqlalchemy import Column
-from sqlalchemy import Enum
-from sqlalchemy.orm import declarative_base
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import Enum
+from dis_sqlalchemy.orm import declarative_base
 
 
 class MyEnum(enum.Enum):

@@ -1,13 +1,13 @@
 """test the inspection registry system."""
 
-from sqlalchemy import Column
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import Table
-from sqlalchemy.sql import ClauseElement
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import Table
+from dis_sqlalchemy.sql import ClauseElement
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
 
 
 class TestCoreInspection(fixtures.TestBase):

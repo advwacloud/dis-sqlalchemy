@@ -3,37 +3,37 @@ import datetime
 from unittest.mock import patch
 import uuid
 
-import sqlalchemy as sa
-from sqlalchemy import Date
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import orm
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import TypeDecorator
-from sqlalchemy import util
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import assert_warns
-from sqlalchemy.testing import assert_warns_message
-from sqlalchemy.testing import config
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_false
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing.assertsql import CompiledSQL
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+import dis_sqlalchemy as sa
+from dis_sqlalchemy import Date
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import orm
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import TypeDecorator
+from dis_sqlalchemy import util
+from dis_sqlalchemy.orm import configure_mappers
+from dis_sqlalchemy.orm import exc as orm_exc
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import assert_warns
+from dis_sqlalchemy.testing import assert_warns_message
+from dis_sqlalchemy.testing import config
+from dis_sqlalchemy.testing import engines
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_warnings
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_false
+from dis_sqlalchemy.testing import is_true
+from dis_sqlalchemy.testing.assertsql import CompiledSQL
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 
 
 def make_uuid():
@@ -431,7 +431,7 @@ class VersioningTest(fixtures.MappedTest):
 
         with patch.object(
             config.db.dialect, "supports_sane_multi_rowcount", False
-        ), patch("sqlalchemy.engine.cursor.CursorResult.rowcount", rowcount):
+        ), patch("dis_sqlalchemy.engine.cursor.CursorResult.rowcount", rowcount):
             Foo = self.classes.Foo
             s1 = self._fixture()
             f1s1 = Foo(value="f1 value")
@@ -1287,8 +1287,8 @@ class ServerVersioningTest(fixtures.MappedTest):
 
     @classmethod
     def define_tables(cls, metadata):
-        from sqlalchemy.sql import ColumnElement
-        from sqlalchemy.ext.compiler import compiles
+        from dis_sqlalchemy.sql import ColumnElement
+        from dis_sqlalchemy.ext.compiler import compiles
         import itertools
 
         counter = itertools.count(1)

@@ -1,4 +1,4 @@
-"""Illustrates use of the sqlalchemy.ext.asyncio.AsyncSession object
+"""Illustrates use of the dis_sqlalchemy.ext.asyncio.AsyncSession object
 for asynchronous ORM use, including the optional run_sync() method.
 
 
@@ -6,16 +6,16 @@ for asynchronous ORM use, including the optional run_sync() method.
 
 import asyncio
 
-from sqlalchemy import Column
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy.ext.asyncio import AsyncAttrs
-from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.ext.asyncio import create_async_engine
-from sqlalchemy.future import select
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import relationship
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import String
+from dis_sqlalchemy.ext.asyncio import AsyncAttrs
+from dis_sqlalchemy.ext.asyncio import AsyncSession
+from dis_sqlalchemy.ext.asyncio import create_async_engine
+from dis_sqlalchemy.future import select
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import relationship
 
 
 class Base(AsyncAttrs, DeclarativeBase):

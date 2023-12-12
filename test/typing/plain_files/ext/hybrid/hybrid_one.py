@@ -2,12 +2,12 @@ from __future__ import annotations
 
 import typing
 
-from sqlalchemy import select
-from sqlalchemy.ext.hybrid import hybrid_method
-from sqlalchemy.ext.hybrid import hybrid_property
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
+from dis_sqlalchemy import select
+from dis_sqlalchemy.ext.hybrid import hybrid_method
+from dis_sqlalchemy.ext.hybrid import hybrid_property
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
 
 
 class Base(DeclarativeBase):
@@ -69,16 +69,16 @@ if typing.TYPE_CHECKING:
     # EXPECTED_RE_TYPE: builtins.int\*?
     reveal_type(i1.length)
 
-    # EXPECTED_RE_TYPE: sqlalchemy.*._HybridClassLevelAccessor\[builtins.int\*?\]
+    # EXPECTED_RE_TYPE: dis_sqlalchemy.*._HybridClassLevelAccessor\[builtins.int\*?\]
     reveal_type(Interval.length)
 
-    # EXPECTED_RE_TYPE: sqlalchemy.*.BinaryExpression\[builtins.bool\*?\]
+    # EXPECTED_RE_TYPE: dis_sqlalchemy.*.BinaryExpression\[builtins.bool\*?\]
     reveal_type(expr1)
 
-    # EXPECTED_RE_TYPE: sqlalchemy.*.SQLCoreOperations\[builtins.int\*?\]
+    # EXPECTED_RE_TYPE: dis_sqlalchemy.*.SQLCoreOperations\[builtins.int\*?\]
     reveal_type(expr2)
 
-    # EXPECTED_RE_TYPE: sqlalchemy.*.SQLCoreOperations\[builtins.int\*?\]
+    # EXPECTED_RE_TYPE: dis_sqlalchemy.*.SQLCoreOperations\[builtins.int\*?\]
     reveal_type(expr3)
 
     # EXPECTED_TYPE: bool

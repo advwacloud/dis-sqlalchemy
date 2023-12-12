@@ -3,7 +3,7 @@
 Hybrid Attributes
 =================
 
-.. automodule:: sqlalchemy.ext.hybrid
+.. automodule:: dis_sqlalchemy.ext.hybrid
 
 API Reference
 -------------

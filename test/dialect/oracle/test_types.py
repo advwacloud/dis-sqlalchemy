@@ -3,53 +3,53 @@ import decimal
 import os
 import random
 
-from sqlalchemy import bindparam
-from sqlalchemy import cast
-from sqlalchemy import CHAR
-from sqlalchemy import DATE
-from sqlalchemy import Date
-from sqlalchemy import DateTime
-from sqlalchemy import Double
-from sqlalchemy import DOUBLE_PRECISION
-from sqlalchemy import event
-from sqlalchemy import exc
-from sqlalchemy import FLOAT
-from sqlalchemy import Float
-from sqlalchemy import Integer
-from sqlalchemy import LargeBinary
-from sqlalchemy import literal
-from sqlalchemy import MetaData
-from sqlalchemy import NCHAR
-from sqlalchemy import Numeric
-from sqlalchemy import NVARCHAR
-from sqlalchemy import select
-from sqlalchemy import SmallInteger
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import Text
-from sqlalchemy import text
-from sqlalchemy import TIMESTAMP
-from sqlalchemy import TypeDecorator
-from sqlalchemy import types as sqltypes
-from sqlalchemy import Unicode
-from sqlalchemy import UnicodeText
-from sqlalchemy import VARCHAR
-from sqlalchemy.dialects.oracle import base as oracle
-from sqlalchemy.dialects.oracle import cx_oracle
-from sqlalchemy.dialects.oracle import oracledb
-from sqlalchemy.sql import column
-from sqlalchemy.sql.sqltypes import NullType
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.engines import testing_engine
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.util import b
+from dis_sqlalchemy import bindparam
+from dis_sqlalchemy import cast
+from dis_sqlalchemy import CHAR
+from dis_sqlalchemy import DATE
+from dis_sqlalchemy import Date
+from dis_sqlalchemy import DateTime
+from dis_sqlalchemy import Double
+from dis_sqlalchemy import DOUBLE_PRECISION
+from dis_sqlalchemy import event
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import FLOAT
+from dis_sqlalchemy import Float
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import LargeBinary
+from dis_sqlalchemy import literal
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import NCHAR
+from dis_sqlalchemy import Numeric
+from dis_sqlalchemy import NVARCHAR
+from dis_sqlalchemy import select
+from dis_sqlalchemy import SmallInteger
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import Text
+from dis_sqlalchemy import text
+from dis_sqlalchemy import TIMESTAMP
+from dis_sqlalchemy import TypeDecorator
+from dis_sqlalchemy import types as sqltypes
+from dis_sqlalchemy import Unicode
+from dis_sqlalchemy import UnicodeText
+from dis_sqlalchemy import VARCHAR
+from dis_sqlalchemy.dialects.oracle import base as oracle
+from dis_sqlalchemy.dialects.oracle import cx_oracle
+from dis_sqlalchemy.dialects.oracle import oracledb
+from dis_sqlalchemy.sql import column
+from dis_sqlalchemy.sql.sqltypes import NullType
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing.engines import testing_engine
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
+from dis_sqlalchemy.util import b
 
 
 def exec_sql(conn, sql, *args, **kwargs):

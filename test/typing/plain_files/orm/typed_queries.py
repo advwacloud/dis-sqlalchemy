@@ -2,26 +2,26 @@ from __future__ import annotations
 
 from typing import Tuple
 
-from sqlalchemy import Column
-from sqlalchemy import column
-from sqlalchemy import create_engine
-from sqlalchemy import delete
-from sqlalchemy import func
-from sqlalchemy import insert
-from sqlalchemy import Integer
-from sqlalchemy import join
-from sqlalchemy import MetaData
-from sqlalchemy import Select
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import text
-from sqlalchemy import update
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import Session
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import column
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import delete
+from dis_sqlalchemy import func
+from dis_sqlalchemy import insert
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import join
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import Select
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import text
+from dis_sqlalchemy import update
+from dis_sqlalchemy.orm import aliased
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import Session
 
 
 class Base(DeclarativeBase):

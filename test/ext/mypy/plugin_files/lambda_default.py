@@ -1,8 +1,8 @@
 import uuid
 
-from sqlalchemy import Column
-from sqlalchemy import String
-from sqlalchemy.orm import declarative_base
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import String
+from dis_sqlalchemy.orm import declarative_base
 
 Base = declarative_base()
 

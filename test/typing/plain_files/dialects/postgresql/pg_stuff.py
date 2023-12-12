@@ -2,22 +2,22 @@ from typing import Any
 from typing import Dict
 from uuid import UUID as _py_uuid
 
-from sqlalchemy import cast
-from sqlalchemy import Column
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import or_
-from sqlalchemy import select
-from sqlalchemy import Text
-from sqlalchemy import UniqueConstraint
-from sqlalchemy.dialects.postgresql import ARRAY
-from sqlalchemy.dialects.postgresql import array
-from sqlalchemy.dialects.postgresql import insert
-from sqlalchemy.dialects.postgresql import JSONB
-from sqlalchemy.dialects.postgresql import UUID
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
+from dis_sqlalchemy import cast
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import or_
+from dis_sqlalchemy import select
+from dis_sqlalchemy import Text
+from dis_sqlalchemy import UniqueConstraint
+from dis_sqlalchemy.dialects.postgresql import ARRAY
+from dis_sqlalchemy.dialects.postgresql import array
+from dis_sqlalchemy.dialects.postgresql import insert
+from dis_sqlalchemy.dialects.postgresql import JSONB
+from dis_sqlalchemy.dialects.postgresql import UUID
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
 
 
 # test #6402

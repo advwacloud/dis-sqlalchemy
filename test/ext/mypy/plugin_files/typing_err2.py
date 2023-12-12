@@ -1,10 +1,10 @@
-from sqlalchemy import Column
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy.orm import declared_attr
-from sqlalchemy.orm import registry
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import RelationshipProperty
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import String
+from dis_sqlalchemy.orm import declared_attr
+from dis_sqlalchemy.orm import registry
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import RelationshipProperty
 
 reg: registry = registry()
 

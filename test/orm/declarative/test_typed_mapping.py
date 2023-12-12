@@ -21,59 +21,59 @@ import uuid
 from typing_extensions import get_args as get_args
 from typing_extensions import Literal as Literal
 
-from sqlalchemy import BIGINT
-from sqlalchemy import BigInteger
-from sqlalchemy import Column
-from sqlalchemy import DateTime
-from sqlalchemy import exc as sa_exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Identity
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import JSON
-from sqlalchemy import Numeric
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import types
-from sqlalchemy import VARCHAR
-from sqlalchemy.exc import ArgumentError
-from sqlalchemy.ext.associationproxy import association_proxy
-from sqlalchemy.ext.associationproxy import AssociationProxy
-from sqlalchemy.ext.mutable import MutableDict
-from sqlalchemy.orm import as_declarative
-from sqlalchemy.orm import composite
-from sqlalchemy.orm import declarative_base
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import declared_attr
-from sqlalchemy.orm import deferred
-from sqlalchemy.orm import DynamicMapped
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import MappedAsDataclass
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import undefer
-from sqlalchemy.orm import WriteOnlyMapped
-from sqlalchemy.orm.collections import attribute_keyed_dict
-from sqlalchemy.orm.collections import KeyFuncDict
-from sqlalchemy.schema import CreateTable
-from sqlalchemy.sql.sqltypes import Enum
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_false
-from sqlalchemy.testing import is_not
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import Variation
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.util import compat
-from sqlalchemy.util.typing import Annotated
+from dis_sqlalchemy import BIGINT
+from dis_sqlalchemy import BigInteger
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import DateTime
+from dis_sqlalchemy import exc as sa_exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Identity
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import JSON
+from dis_sqlalchemy import Numeric
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import types
+from dis_sqlalchemy import VARCHAR
+from dis_sqlalchemy.exc import ArgumentError
+from dis_sqlalchemy.ext.associationproxy import association_proxy
+from dis_sqlalchemy.ext.associationproxy import AssociationProxy
+from dis_sqlalchemy.ext.mutable import MutableDict
+from dis_sqlalchemy.orm import as_declarative
+from dis_sqlalchemy.orm import composite
+from dis_sqlalchemy.orm import declarative_base
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import declared_attr
+from dis_sqlalchemy.orm import deferred
+from dis_sqlalchemy.orm import DynamicMapped
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import MappedAsDataclass
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import undefer
+from dis_sqlalchemy.orm import WriteOnlyMapped
+from dis_sqlalchemy.orm.collections import attribute_keyed_dict
+from dis_sqlalchemy.orm.collections import KeyFuncDict
+from dis_sqlalchemy.schema import CreateTable
+from dis_sqlalchemy.sql.sqltypes import Enum
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_false
+from dis_sqlalchemy.testing import is_not
+from dis_sqlalchemy.testing import is_true
+from dis_sqlalchemy.testing import Variation
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.util import compat
+from dis_sqlalchemy.util.typing import Annotated
 
 
 def expect_annotation_syntax_error(name):
@@ -402,7 +402,7 @@ class MappedColumnTest(fixtures.TestBase, testing.AssertsCompiledSQL):
 
         with expect_raises_message(
             sa_exc.ArgumentError,
-            "Could not locate SQLAlchemy Core type for Python type "
+            "Could not locate dis_sqlalchemy Core type for Python type "
             ".*MyClass.* inside the 'data' attribute Mapped annotation",
         ):
 
@@ -412,11 +412,11 @@ class MappedColumnTest(fixtures.TestBase, testing.AssertsCompiledSQL):
                 id: Mapped[int] = mapped_column(primary_key=True)
                 data: Mapped[MyClass] = mapped_column()
 
-    def test_construct_lhs_sqlalchemy_type(self, decl_base):
+    def test_construct_lhs_dis_sqlalchemy_type(self, decl_base):
         with expect_raises_message(
             sa_exc.ArgumentError,
             "The type provided inside the 'data' attribute Mapped "
-            "annotation is the SQLAlchemy type .*BigInteger.*. Expected "
+            "annotation is the dis_sqlalchemy type .*BigInteger.*. Expected "
             "a Python type instead",
         ):
 
@@ -691,7 +691,7 @@ class MappedColumnTest(fixtures.TestBase, testing.AssertsCompiledSQL):
 
         with expect_raises_message(
             NotImplementedError,
-            r"Use of the \<class 'sqlalchemy.orm."
+            r"Use of the \<class 'dis_sqlalchemy.orm."
             r"relationships.Relationship'\> construct inside of an Annotated "
             r"object is not yet supported.",
         ):
@@ -1251,7 +1251,7 @@ class MappedColumnTest(fixtures.TestBase, testing.AssertsCompiledSQL):
         if not provide_type and not add_to_type_map:
             with expect_raises_message(
                 sa_exc.ArgumentError,
-                r"Could not locate SQLAlchemy.*" r".*ForwardRef\('T'\).*",
+                r"Could not locate dis_sqlalchemy.*" r".*ForwardRef\('T'\).*",
             ):
 
                 class TypeTest(decl_base):
@@ -1442,7 +1442,7 @@ class MappedColumnTest(fixtures.TestBase, testing.AssertsCompiledSQL):
         )
 
         with expect_raises_message(
-            sa_exc.ArgumentError, "Could not locate SQLAlchemy Core type"
+            sa_exc.ArgumentError, "Could not locate dis_sqlalchemy Core type"
         ):
 
             class MyClass(Base):
@@ -1469,7 +1469,7 @@ class MappedColumnTest(fixtures.TestBase, testing.AssertsCompiledSQL):
         )
 
         with expect_raises_message(
-            sa_exc.ArgumentError, "Could not locate SQLAlchemy Core type"
+            sa_exc.ArgumentError, "Could not locate dis_sqlalchemy Core type"
         ):
 
             class MyClass(Base):

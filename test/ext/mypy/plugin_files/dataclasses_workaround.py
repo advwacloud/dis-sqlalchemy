@@ -10,14 +10,14 @@ from typing import List
 from typing import Optional
 from typing import TYPE_CHECKING
 
-from sqlalchemy import Column
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy.orm import registry
-from sqlalchemy.orm import relationship
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy.orm import registry
+from dis_sqlalchemy.orm import relationship
 
 mapper_registry: registry = registry()
 

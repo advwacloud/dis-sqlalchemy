@@ -3,41 +3,41 @@
 import datetime
 import re
 
-import sqlalchemy as sa
-from sqlalchemy import Boolean
-from sqlalchemy import Enum
-from sqlalchemy import event
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import literal
-from sqlalchemy import literal_column
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.inspection import inspect
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm.persistence import _sort_states
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import config
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing.assertions import expect_raises_message
-from sqlalchemy.testing.assertsql import AllOf
-from sqlalchemy.testing.assertsql import CompiledSQL
-from sqlalchemy.testing.assertsql import Conditional
-from sqlalchemy.testing.entities import BasicEntity
-from sqlalchemy.testing.entities import ComparableEntity
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.provision import normalize_sequence
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.util import OrderedDict
+import dis_sqlalchemy as sa
+from dis_sqlalchemy import Boolean
+from dis_sqlalchemy import Enum
+from dis_sqlalchemy import event
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import literal
+from dis_sqlalchemy import literal_column
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.inspection import inspect
+from dis_sqlalchemy.orm import column_property
+from dis_sqlalchemy.orm import exc as orm_exc
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm.persistence import _sort_states
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import config
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_true
+from dis_sqlalchemy.testing.assertions import expect_raises_message
+from dis_sqlalchemy.testing.assertsql import AllOf
+from dis_sqlalchemy.testing.assertsql import CompiledSQL
+from dis_sqlalchemy.testing.assertsql import Conditional
+from dis_sqlalchemy.testing.entities import BasicEntity
+from dis_sqlalchemy.testing.entities import ComparableEntity
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.provision import normalize_sequence
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
+from dis_sqlalchemy.util import OrderedDict
 from test.orm import _fixtures
 
 
@@ -3615,7 +3615,7 @@ class NoRowInsertedTest(fixtures.TestBase):
 
 class EnsurePKSortableTest(fixtures.MappedTest):
     class SomeEnum:
-        # Implements PEP 435 in the minimal fashion needed by SQLAlchemy
+        # Implements PEP 435 in the minimal fashion needed by dis_sqlalchemy
         __members__ = OrderedDict()
 
         def __init__(self, name, value, alias=None):

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# SQLAlchemy documentation build configuration file, created by
+# dis_sqlalchemy documentation build configuration file, created by
 # sphinx-quickstart on Wed Nov 26 19:50:10 2008.
 #
 # This file is execfile()d with the current directory set to its containing
@@ -23,7 +23,7 @@ sys.path.insert(0, os.path.abspath("../.."))  # examples
 sys.path.insert(0, os.path.abspath("."))
 
 
-os.environ["DISABLE_SQLALCHEMY_CEXT_RUNTIME"] = "true"
+os.environ["DISABLE_dis_sqlalchemy_CEXT_RUNTIME"] = "true"
 
 # -- General configuration --------------------------------------------------
 
@@ -107,14 +107,14 @@ changelog_inner_tag_sort = [
 
 
 # how to render changelog links
-changelog_render_ticket = "https://www.sqlalchemy.org/trac/ticket/%s"
+changelog_render_ticket = "https://www.dis_sqlalchemy.org/trac/ticket/%s"
 
 changelog_render_pullreq = {
-    "default": "https://github.com/sqlalchemy/sqlalchemy/pull/%s",
-    "github": "https://github.com/sqlalchemy/sqlalchemy/pull/%s",
+    "default": "https://github.com/dis_sqlalchemy/dis_sqlalchemy/pull/%s",
+    "github": "https://github.com/dis_sqlalchemy/dis_sqlalchemy/pull/%s",
 }
 
-changelog_render_changeset = "https://www.sqlalchemy.org/trac/changeset/%s"
+changelog_render_changeset = "https://www.dis_sqlalchemy.org/trac/changeset/%s"
 
 exclude_patterns = ["build", "**/unreleased*/*", "**/*_include.rst", ".venv"]
 
@@ -141,87 +141,87 @@ zzzeeksphinx_annotation_key = "glossary#annotated-example"
 # docstrings classes, methods, and functions within the scope of
 # Sphinx autodoc
 autodocmods_convert_modname = {
-    "sqlalchemy.sql.sqltypes": "sqlalchemy.types",
-    "sqlalchemy.sql.type_api": "sqlalchemy.types",
-    "sqlalchemy.sql.schema": "sqlalchemy.schema",
-    "sqlalchemy.sql.elements": "sqlalchemy.sql.expression",
-    "sqlalchemy.sql.selectable": "sqlalchemy.sql.expression",
-    "sqlalchemy.sql.dml": "sqlalchemy.sql.expression",
-    "sqlalchemy.sql.ddl": "sqlalchemy.schema",
-    "sqlalchemy.sql.base": "sqlalchemy.sql.expression",
-    "sqlalchemy.sql.operators": "sqlalchemy.sql.expression",
-    "sqlalchemy.event.base": "sqlalchemy.event",
-    "sqlalchemy.engine.base": "sqlalchemy.engine",
-    "sqlalchemy.engine.url": "sqlalchemy.engine",
-    "sqlalchemy.engine.row": "sqlalchemy.engine",
-    "sqlalchemy.engine.cursor": "sqlalchemy.engine",
-    "sqlalchemy.engine.result": "sqlalchemy.engine",
-    "sqlalchemy.ext.asyncio.result": "sqlalchemy.ext.asyncio",
-    "sqlalchemy.ext.asyncio.engine": "sqlalchemy.ext.asyncio",
-    "sqlalchemy.ext.asyncio.session": "sqlalchemy.ext.asyncio",
-    "sqlalchemy.util._collections": "sqlalchemy.util",
-    "sqlalchemy.orm.attributes": "sqlalchemy.orm",
-    "sqlalchemy.orm.relationships": "sqlalchemy.orm",
-    "sqlalchemy.orm.interfaces": "sqlalchemy.orm",
-    "sqlalchemy.orm.query": "sqlalchemy.orm",
-    "sqlalchemy.orm.util": "sqlalchemy.orm",
+    "dis_sqlalchemy.sql.sqltypes": "dis_sqlalchemy.types",
+    "dis_sqlalchemy.sql.type_api": "dis_sqlalchemy.types",
+    "dis_sqlalchemy.sql.schema": "dis_sqlalchemy.schema",
+    "dis_sqlalchemy.sql.elements": "dis_sqlalchemy.sql.expression",
+    "dis_sqlalchemy.sql.selectable": "dis_sqlalchemy.sql.expression",
+    "dis_sqlalchemy.sql.dml": "dis_sqlalchemy.sql.expression",
+    "dis_sqlalchemy.sql.ddl": "dis_sqlalchemy.schema",
+    "dis_sqlalchemy.sql.base": "dis_sqlalchemy.sql.expression",
+    "dis_sqlalchemy.sql.operators": "dis_sqlalchemy.sql.expression",
+    "dis_sqlalchemy.event.base": "dis_sqlalchemy.event",
+    "dis_sqlalchemy.engine.base": "dis_sqlalchemy.engine",
+    "dis_sqlalchemy.engine.url": "dis_sqlalchemy.engine",
+    "dis_sqlalchemy.engine.row": "dis_sqlalchemy.engine",
+    "dis_sqlalchemy.engine.cursor": "dis_sqlalchemy.engine",
+    "dis_sqlalchemy.engine.result": "dis_sqlalchemy.engine",
+    "dis_sqlalchemy.ext.asyncio.result": "dis_sqlalchemy.ext.asyncio",
+    "dis_sqlalchemy.ext.asyncio.engine": "dis_sqlalchemy.ext.asyncio",
+    "dis_sqlalchemy.ext.asyncio.session": "dis_sqlalchemy.ext.asyncio",
+    "dis_sqlalchemy.util._collections": "dis_sqlalchemy.util",
+    "dis_sqlalchemy.orm.attributes": "dis_sqlalchemy.orm",
+    "dis_sqlalchemy.orm.relationships": "dis_sqlalchemy.orm",
+    "dis_sqlalchemy.orm.interfaces": "dis_sqlalchemy.orm",
+    "dis_sqlalchemy.orm.query": "dis_sqlalchemy.orm",
+    "dis_sqlalchemy.orm.util": "dis_sqlalchemy.orm",
 }
 
 autodocmods_convert_modname_w_class = {
-    ("sqlalchemy.engine.interfaces", "Connectable"): "sqlalchemy.engine",
-    ("sqlalchemy.sql.base", "DialectKWArgs"): "sqlalchemy.sql.base",
+    ("dis_sqlalchemy.engine.interfaces", "Connectable"): "dis_sqlalchemy.engine",
+    ("dis_sqlalchemy.sql.base", "DialectKWArgs"): "dis_sqlalchemy.sql.base",
 }
 
 # on the referencing side, a newer zzzeeksphinx extension
 # applies shorthand symbols to references so that we can have short
 # names that are still using absolute references.
 zzzeeksphinx_module_prefixes = {
-    "_sa": "sqlalchemy",
-    "_engine": "sqlalchemy.engine",
-    "_url": "sqlalchemy.engine",
-    "_result": "sqlalchemy.engine",
-    "_row": "sqlalchemy.engine",
-    "_schema": "sqlalchemy.schema",
-    "_types": "sqlalchemy.types",
-    "_sqltypes": "sqlalchemy.types",
-    "_asyncio": "sqlalchemy.ext.asyncio",
-    "_expression": "sqlalchemy.sql.expression",
-    "_sql": "sqlalchemy.sql.expression",
-    "_dml": "sqlalchemy.sql.expression",
-    "_ddl": "sqlalchemy.schema",
-    "_functions": "sqlalchemy.sql.functions",
-    "_pool": "sqlalchemy.pool",
+    "_sa": "dis_sqlalchemy",
+    "_engine": "dis_sqlalchemy.engine",
+    "_url": "dis_sqlalchemy.engine",
+    "_result": "dis_sqlalchemy.engine",
+    "_row": "dis_sqlalchemy.engine",
+    "_schema": "dis_sqlalchemy.schema",
+    "_types": "dis_sqlalchemy.types",
+    "_sqltypes": "dis_sqlalchemy.types",
+    "_asyncio": "dis_sqlalchemy.ext.asyncio",
+    "_expression": "dis_sqlalchemy.sql.expression",
+    "_sql": "dis_sqlalchemy.sql.expression",
+    "_dml": "dis_sqlalchemy.sql.expression",
+    "_ddl": "dis_sqlalchemy.schema",
+    "_functions": "dis_sqlalchemy.sql.functions",
+    "_pool": "dis_sqlalchemy.pool",
     # base event API, like listen() etc.
-    "_event": "sqlalchemy.event",
+    "_event": "dis_sqlalchemy.event",
     # core events like PoolEvents, ConnectionEvents
-    "_events": "sqlalchemy.events",
-    # note Core events are linked as sqlalchemy.event.<cls>
-    # ORM is sqlalchemy.orm.<cls>.
-    "_ormevent": "sqlalchemy.orm",
-    "_ormevents": "sqlalchemy.orm",
-    "_scoping": "sqlalchemy.orm.scoping",
-    "_exc": "sqlalchemy.exc",
-    "_reflection": "sqlalchemy.engine.reflection",
-    "_orm": "sqlalchemy.orm",
-    "_query": "sqlalchemy.orm",
-    "_ormexc": "sqlalchemy.orm.exc",
-    "_roles": "sqlalchemy.sql.roles",
-    "_baked": "sqlalchemy.ext.baked",
-    "_horizontal": "sqlalchemy.ext.horizontal_shard",
-    "_associationproxy": "sqlalchemy.ext.associationproxy",
-    "_automap": "sqlalchemy.ext.automap",
-    "_hybrid": "sqlalchemy.ext.hybrid",
-    "_compilerext": "sqlalchemy.ext.compiler",
-    "_mutable": "sqlalchemy.ext.mutable",
-    "_declarative": "sqlalchemy.ext.declarative",
-    "_future": "sqlalchemy.future",
-    "_futureorm": "sqlalchemy.future.orm",
-    "_postgresql": "sqlalchemy.dialects.postgresql",
-    "_mysql": "sqlalchemy.dialects.mysql",
-    "_mssql": "sqlalchemy.dialects.mssql",
-    "_oracle": "sqlalchemy.dialects.oracle",
-    "_sqlite": "sqlalchemy.dialects.sqlite",
-    "_util": "sqlalchemy.util",
+    "_events": "dis_sqlalchemy.events",
+    # note Core events are linked as dis_sqlalchemy.event.<cls>
+    # ORM is dis_sqlalchemy.orm.<cls>.
+    "_ormevent": "dis_sqlalchemy.orm",
+    "_ormevents": "dis_sqlalchemy.orm",
+    "_scoping": "dis_sqlalchemy.orm.scoping",
+    "_exc": "dis_sqlalchemy.exc",
+    "_reflection": "dis_sqlalchemy.engine.reflection",
+    "_orm": "dis_sqlalchemy.orm",
+    "_query": "dis_sqlalchemy.orm",
+    "_ormexc": "dis_sqlalchemy.orm.exc",
+    "_roles": "dis_sqlalchemy.sql.roles",
+    "_baked": "dis_sqlalchemy.ext.baked",
+    "_horizontal": "dis_sqlalchemy.ext.horizontal_shard",
+    "_associationproxy": "dis_sqlalchemy.ext.associationproxy",
+    "_automap": "dis_sqlalchemy.ext.automap",
+    "_hybrid": "dis_sqlalchemy.ext.hybrid",
+    "_compilerext": "dis_sqlalchemy.ext.compiler",
+    "_mutable": "dis_sqlalchemy.ext.mutable",
+    "_declarative": "dis_sqlalchemy.ext.declarative",
+    "_future": "dis_sqlalchemy.future",
+    "_futureorm": "dis_sqlalchemy.future.orm",
+    "_postgresql": "dis_sqlalchemy.dialects.postgresql",
+    "_mysql": "dis_sqlalchemy.dialects.mysql",
+    "_mssql": "dis_sqlalchemy.dialects.mssql",
+    "_oracle": "dis_sqlalchemy.dialects.oracle",
+    "_sqlite": "dis_sqlalchemy.dialects.sqlite",
+    "_util": "dis_sqlalchemy.util",
 }
 
 
@@ -232,8 +232,8 @@ zzzeeksphinx_module_prefixes = {
 master_doc = "contents"
 
 # General information about the project.
-project = "SQLAlchemy"
-copyright = "2007-2023, the SQLAlchemy authors and contributors"  # noqa
+project = "dis_sqlalchemy"
+copyright = "2007-2023, the dis_sqlalchemy authors and contributors"  # noqa
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -246,7 +246,7 @@ release = "2.0.19"
 
 release_date = "July 15, 2023"
 
-site_base = os.environ.get("RTD_SITE_BASE", "https://www.sqlalchemy.org")
+site_base = os.environ.get("RTD_SITE_BASE", "https://www.dis_sqlalchemy.org")
 site_adapter_template = "docs_adapter.mako"
 site_adapter_py = "docs_adapter.py"
 
@@ -376,7 +376,7 @@ html_show_sourcelink = False
 # html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "SQLAlchemydoc"
+htmlhelp_basename = "dis_sqlalchemydoc"
 
 # autoclass_content = 'both'
 
@@ -393,8 +393,8 @@ htmlhelp_basename = "SQLAlchemydoc"
 latex_documents = [
     (
         "contents",
-        "sqlalchemy_%s.tex" % release.replace(".", "_"),
-        "SQLAlchemy Documentation",
+        "dis_sqlalchemy_%s.tex" % release.replace(".", "_"),
+        "dis_sqlalchemy Documentation",
         "Mike Bayer",
         "manual",
     )
@@ -436,9 +436,9 @@ latex_preamble = r"\setcounter{tocdepth}{3}"
 man_pages = [
     (
         "index",
-        "sqlalchemy",
-        "SQLAlchemy Documentation",
-        ["SQLAlchemy authors"],
+        "dis_sqlalchemy",
+        "dis_sqlalchemy Documentation",
+        ["dis_sqlalchemy authors"],
         1,
     )
 ]
@@ -447,10 +447,10 @@ man_pages = [
 # -- Options for Epub output -------------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title = "SQLAlchemy"
-epub_author = "SQLAlchemy authors"
-epub_publisher = "SQLAlchemy authors"
-epub_copyright = "2007-2015, SQLAlchemy authors"
+epub_title = "dis_sqlalchemy"
+epub_author = "dis_sqlalchemy authors"
+epub_publisher = "dis_sqlalchemy authors"
+epub_copyright = "2007-2015, dis_sqlalchemy authors"
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.

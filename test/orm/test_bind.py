@@ -1,34 +1,34 @@
 from unittest.mock import Mock
 
-import sqlalchemy as sa
-from sqlalchemy import delete
-from sqlalchemy import ForeignKey
-from sqlalchemy import insert
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import table
-from sqlalchemy import testing
-from sqlalchemy import true
-from sqlalchemy import union_all
-from sqlalchemy import update
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm.query import Query
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+import dis_sqlalchemy as sa
+from dis_sqlalchemy import delete
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import insert
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import true
+from dis_sqlalchemy import union_all
+from dis_sqlalchemy import update
+from dis_sqlalchemy.orm import aliased
+from dis_sqlalchemy.orm import backref
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import sessionmaker
+from dis_sqlalchemy.orm.query import Query
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import engines
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 from test.orm import _fixtures
 
 
@@ -464,14 +464,14 @@ class BindIntegrationTest(_fixtures.FixtureTest):
         engine = {"e1": e1, "e2": e2, "e3": e3}[expected_engine_name]
 
         with mock.patch(
-            "sqlalchemy.orm.context." "ORMCompileState.orm_setup_cursor_result"
+            "dis_sqlalchemy.orm.context." "ORMCompileState.orm_setup_cursor_result"
         ), mock.patch(
-            "sqlalchemy.orm.context.ORMCompileState.orm_execute_statement"
+            "dis_sqlalchemy.orm.context.ORMCompileState.orm_execute_statement"
         ), mock.patch(
-            "sqlalchemy.orm.bulk_persistence."
+            "dis_sqlalchemy.orm.bulk_persistence."
             "BulkORMInsert.orm_execute_statement"
         ), mock.patch(
-            "sqlalchemy.orm.bulk_persistence."
+            "dis_sqlalchemy.orm.bulk_persistence."
             "BulkUDCompileState.orm_setup_cursor_result"
         ):
             sess.execute(statement)

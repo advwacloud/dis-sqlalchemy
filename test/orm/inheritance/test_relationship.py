@@ -1,32 +1,32 @@
 from contextlib import nullcontext
 
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import contains_eager
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm import subqueryload
-from sqlalchemy.orm import with_polymorphic
-from sqlalchemy.sql.selectable import LABEL_STYLE_TABLENAME_PLUS_COL
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing.assertions import expect_raises_message
-from sqlalchemy.testing.entities import ComparableEntity
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.orm import aliased
+from dis_sqlalchemy.orm import backref
+from dis_sqlalchemy.orm import configure_mappers
+from dis_sqlalchemy.orm import contains_eager
+from dis_sqlalchemy.orm import joinedload
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import sessionmaker
+from dis_sqlalchemy.orm import subqueryload
+from dis_sqlalchemy.orm import with_polymorphic
+from dis_sqlalchemy.sql.selectable import LABEL_STYLE_TABLENAME_PLUS_COL
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing.assertions import expect_raises_message
+from dis_sqlalchemy.testing.entities import ComparableEntity
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 
 
 class Company(ComparableEntity):
@@ -889,7 +889,7 @@ class SelfReferentialM2MTest(fixtures.MappedTest, AssertsCompiledSQL):
 
         configure_mappers()
 
-        from sqlalchemy.sql import join
+        from dis_sqlalchemy.sql import join
 
         C1 = aliased(Child1, flat=True)
 

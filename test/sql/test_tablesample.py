@@ -1,18 +1,18 @@
-from sqlalchemy import Column
-from sqlalchemy import column
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import table
-from sqlalchemy import tablesample
-from sqlalchemy.engine import default
-from sqlalchemy.sql import func
-from sqlalchemy.sql import select
-from sqlalchemy.sql import text
-from sqlalchemy.sql.selectable import TableSample
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import fixtures
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import column
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import table
+from dis_sqlalchemy import tablesample
+from dis_sqlalchemy.engine import default
+from dis_sqlalchemy.sql import func
+from dis_sqlalchemy.sql import select
+from dis_sqlalchemy.sql import text
+from dis_sqlalchemy.sql.selectable import TableSample
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import fixtures
 
 
 class TableSampleTest(fixtures.TablesTest, AssertsCompiledSQL):

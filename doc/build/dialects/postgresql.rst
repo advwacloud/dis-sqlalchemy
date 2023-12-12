@@ -3,7 +3,7 @@
 PostgreSQL
 ==========
 
-.. automodule:: sqlalchemy.dialects.postgresql.base
+.. automodule:: dis_sqlalchemy.dialects.postgresql.base
 
 ARRAY Types
 -----------
@@ -49,7 +49,7 @@ ENUM Types
 
 PostgreSQL has an independently creatable TYPE structure which is used
 to implement an enumerated type.   This approach introduces significant
-complexity on the SQLAlchemy side in terms of when this type should be
+complexity on the dis_sqlalchemy side in terms of when this type should be
 CREATED and DROPPED.   The type object is also an independently reflectable
 entity.   The following sections should be consulted:
 
@@ -66,16 +66,16 @@ Using ENUM with ARRAY
 ^^^^^^^^^^^^^^^^^^^^^
 
 The combination of ENUM and ARRAY is not directly supported by backend
-DBAPIs at this time.   Prior to SQLAlchemy 1.3.17, a special workaround
+DBAPIs at this time.   Prior to dis_sqlalchemy 1.3.17, a special workaround
 was needed in order to allow this combination to work, described below.
 
 .. versionchanged:: 1.3.17 The combination of ENUM and ARRAY is now directly
-   handled by SQLAlchemy's implementation without any workarounds needed.
+   handled by dis_sqlalchemy's implementation without any workarounds needed.
 
 .. sourcecode:: python
 
-    from sqlalchemy import TypeDecorator
-    from sqlalchemy.dialects.postgresql import ARRAY
+    from dis_sqlalchemy import TypeDecorator
+    from dis_sqlalchemy.dialects.postgresql import ARRAY
 
 
     class ArrayOfEnum(TypeDecorator):
@@ -116,12 +116,12 @@ a new version.
 Using JSON/JSONB with ARRAY
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Similar to using ENUM, prior to SQLAlchemy 1.3.17, for an ARRAY of JSON/JSONB
+Similar to using ENUM, prior to dis_sqlalchemy 1.3.17, for an ARRAY of JSON/JSONB
 we need to render the appropriate CAST.   Current psycopg2 drivers accommodate
 the result set correctly without any special steps.
 
 .. versionchanged:: 1.3.17 The combination of JSON/JSONB and ARRAY is now
-   directly handled by SQLAlchemy's implementation without any workarounds
+   directly handled by dis_sqlalchemy's implementation without any workarounds
    needed.
 
 .. sourcecode:: python
@@ -164,11 +164,11 @@ E.g. an example of a fully typed model using the
 
     from datetime import datetime
 
-    from sqlalchemy.dialects.postgresql import Range
-    from sqlalchemy.dialects.postgresql import TSRANGE
-    from sqlalchemy.orm import DeclarativeBase
-    from sqlalchemy.orm import Mapped
-    from sqlalchemy.orm import mapped_column
+    from dis_sqlalchemy.dialects.postgresql import Range
+    from dis_sqlalchemy.dialects.postgresql import TSRANGE
+    from dis_sqlalchemy.orm import DeclarativeBase
+    from dis_sqlalchemy.orm import Mapped
+    from dis_sqlalchemy.orm import mapped_column
 
 
     class Base(DeclarativeBase):
@@ -186,8 +186,8 @@ To represent data for the ``during`` column above, the :class:`_postgresql.Range
 type is a simple dataclass that will represent the bounds of the range.
 Below illustrates an INSERT of a row into the above ``room_booking`` table::
 
-    from sqlalchemy import create_engine
-    from sqlalchemy.orm import Session
+    from dis_sqlalchemy import create_engine
+    from dis_sqlalchemy.orm import Session
 
     engine = create_engine("postgresql+psycopg://scott:tiger@pg14/dbname")
 
@@ -203,7 +203,7 @@ Below illustrates an INSERT of a row into the above ``room_booking`` table::
 Selecting from any range column will also return :class:`_postgresql.Range`
 objects as indicated::
 
-    from sqlalchemy import select
+    from dis_sqlalchemy import select
 
     with Session(engine) as session:
         for row in session.execute(select(RoomBooking.during)):
@@ -218,21 +218,21 @@ The available range datatypes are as follows:
 * :class:`_postgresql.TSRANGE`
 * :class:`_postgresql.TSTZRANGE`
 
-.. autoclass:: sqlalchemy.dialects.postgresql.Range
+.. autoclass:: dis_sqlalchemy.dialects.postgresql.Range
     :members:
 
 Multiranges
 ^^^^^^^^^^^
 
-Multiranges are supported by PostgreSQL 14 and above.  SQLAlchemy's
+Multiranges are supported by PostgreSQL 14 and above.  dis_sqlalchemy's
 multirange datatypes deal in lists of :class:`_postgresql.Range` types.
 
 Multiranges are supported on the psycopg, asyncpg, and pg8000 dialects
-**only**.  The psycopg2 dialect, which is SQLAlchemy's default ``postgresql``
+**only**.  The psycopg2 dialect, which is dis_sqlalchemy's default ``postgresql``
 dialect, **does not** support multirange datatypes.
 
 .. versionadded:: 2.0 Added support for MULTIRANGE datatypes.
-   SQLAlchemy represents a multirange value as a list of
+   dis_sqlalchemy represents a multirange value as a list of
    :class:`_postgresql.Range` objects.
 
 .. versionadded:: 2.0.17 Added multirange support for the pg8000 dialect.
@@ -244,11 +244,11 @@ datatype::
     from datetime import datetime
     from typing import List
 
-    from sqlalchemy.dialects.postgresql import Range
-    from sqlalchemy.dialects.postgresql import TSMULTIRANGE
-    from sqlalchemy.orm import DeclarativeBase
-    from sqlalchemy.orm import Mapped
-    from sqlalchemy.orm import mapped_column
+    from dis_sqlalchemy.dialects.postgresql import Range
+    from dis_sqlalchemy.dialects.postgresql import TSMULTIRANGE
+    from dis_sqlalchemy.orm import DeclarativeBase
+    from dis_sqlalchemy.orm import Mapped
+    from dis_sqlalchemy.orm import mapped_column
 
 
     class Base(DeclarativeBase):
@@ -264,9 +264,9 @@ datatype::
 
 Illustrating insertion and selecting of a record::
 
-    from sqlalchemy import create_engine
-    from sqlalchemy import select
-    from sqlalchemy.orm import Session
+    from dis_sqlalchemy import create_engine
+    from dis_sqlalchemy import select
+    from dis_sqlalchemy.orm import Session
 
     engine = create_engine("postgresql+psycopg://scott:tiger@pg14/test")
 
@@ -274,7 +274,7 @@ Illustrating insertion and selecting of a record::
 
     with Session(engine) as session:
         calendar = EventCalendar(
-            event_name="SQLAlchemy Tutorial Sessions",
+            event_name="dis_sqlalchemy Tutorial Sessions",
             in_session_periods=[
                 Range(datetime(2013, 3, 23), datetime(2013, 3, 25)),
                 Range(datetime(2013, 4, 12), datetime(2013, 4, 15)),
@@ -317,7 +317,7 @@ conditional support is available for these datatypes to send and retrieve
 Python ``ipaddress`` objects including ``ipaddress.IPv4Network``,
 ``ipaddress.IPv6Network``, ``ipaddress.IPv4Address``,
 ``ipaddress.IPv6Address``.  This support is currently **the default behavior of
-the DBAPI itself, and varies per DBAPI.  SQLAlchemy does not yet implement its
+the DBAPI itself, and varies per DBAPI.  dis_sqlalchemy does not yet implement its
 own network address conversion logic**.
 
 * The :ref:`postgresql_psycopg` and :ref:`postgresql_asyncpg` support these
@@ -349,11 +349,11 @@ don't yet fully support, conversion of rows to Python ``ipaddress`` datatypes
 PostgreSQL Data Types
 ---------------------
 
-As with all SQLAlchemy dialects, all UPPERCASE types that are known to be
+As with all dis_sqlalchemy dialects, all UPPERCASE types that are known to be
 valid with PostgreSQL are importable from the top level dialect, whether
-they originate from :mod:`sqlalchemy.types` or from the local dialect::
+they originate from :mod:`dis_sqlalchemy.types` or from the local dialect::
 
-    from sqlalchemy.dialects.postgresql import (
+    from dis_sqlalchemy.dialects.postgresql import (
         ARRAY,
         BIGINT,
         BIT,
@@ -403,12 +403,12 @@ construction arguments, are as follows:
    in the dialect module, just imported from sqltypes.  this avoids warnings
    in the sphinx build
 
-.. currentmodule:: sqlalchemy.dialects.postgresql
+.. currentmodule:: dis_sqlalchemy.dialects.postgresql
 
-.. autoclass:: sqlalchemy.dialects.postgresql.AbstractRange
+.. autoclass:: dis_sqlalchemy.dialects.postgresql.AbstractRange
     :members: comparator_factory
 
-.. autoclass:: sqlalchemy.dialects.postgresql.AbstractMultiRange
+.. autoclass:: dis_sqlalchemy.dialects.postgresql.AbstractMultiRange
 
 
 .. autoclass:: ARRAY
@@ -552,7 +552,7 @@ PostgreSQL SQL Elements and Functions
 PostgreSQL Constraint Types
 ---------------------------
 
-SQLAlchemy supports PostgreSQL EXCLUDE constraints via the
+dis_sqlalchemy supports PostgreSQL EXCLUDE constraints via the
 :class:`ExcludeConstraint` class:
 
 .. autoclass:: ExcludeConstraint
@@ -560,7 +560,7 @@ SQLAlchemy supports PostgreSQL EXCLUDE constraints via the
 
 For example::
 
-    from sqlalchemy.dialects.postgresql import ExcludeConstraint, TSRANGE
+    from dis_sqlalchemy.dialects.postgresql import ExcludeConstraint, TSRANGE
 
 
     class RoomBooking(Base):
@@ -574,9 +574,9 @@ For example::
 PostgreSQL DML Constructs
 -------------------------
 
-.. autofunction:: sqlalchemy.dialects.postgresql.insert
+.. autofunction:: dis_sqlalchemy.dialects.postgresql.insert
 
-.. autoclass:: sqlalchemy.dialects.postgresql.Insert
+.. autoclass:: dis_sqlalchemy.dialects.postgresql.Insert
   :members:
 
 .. _postgresql_psycopg2:
@@ -584,21 +584,21 @@ PostgreSQL DML Constructs
 psycopg2
 --------
 
-.. automodule:: sqlalchemy.dialects.postgresql.psycopg2
+.. automodule:: dis_sqlalchemy.dialects.postgresql.psycopg2
 
 .. _postgresql_psycopg:
 
 psycopg
 --------
 
-.. automodule:: sqlalchemy.dialects.postgresql.psycopg
+.. automodule:: dis_sqlalchemy.dialects.postgresql.psycopg
 
 .. _postgresql_pg8000:
 
 pg8000
 ------
 
-.. automodule:: sqlalchemy.dialects.postgresql.pg8000
+.. automodule:: dis_sqlalchemy.dialects.postgresql.pg8000
 
 .. _dialect-postgresql-asyncpg:
 
@@ -607,9 +607,9 @@ pg8000
 asyncpg
 -------
 
-.. automodule:: sqlalchemy.dialects.postgresql.asyncpg
+.. automodule:: dis_sqlalchemy.dialects.postgresql.asyncpg
 
 psycopg2cffi
 ------------
 
-.. automodule:: sqlalchemy.dialects.postgresql.psycopg2cffi
+.. automodule:: dis_sqlalchemy.dialects.postgresql.psycopg2cffi

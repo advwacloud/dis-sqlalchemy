@@ -1,46 +1,46 @@
-from sqlalchemy import Boolean
-from sqlalchemy import case
-from sqlalchemy import column
-from sqlalchemy import delete
-from sqlalchemy import event
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import insert
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import lambda_stmt
-from sqlalchemy import MetaData
-from sqlalchemy import or_
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import update
-from sqlalchemy import values
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm import synonym
-from sqlalchemy.orm import with_loader_criteria
-from sqlalchemy.sql.dml import Delete
-from sqlalchemy.sql.dml import Update
-from sqlalchemy.sql.selectable import Select
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import in_
-from sqlalchemy.testing import not_in
-from sqlalchemy.testing.assertions import expect_raises_message
-from sqlalchemy.testing.assertsql import CompiledSQL
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from dis_sqlalchemy import Boolean
+from dis_sqlalchemy import case
+from dis_sqlalchemy import column
+from dis_sqlalchemy import delete
+from dis_sqlalchemy import event
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import insert
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import lambda_stmt
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import or_
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import text
+from dis_sqlalchemy import update
+from dis_sqlalchemy import values
+from dis_sqlalchemy.orm import backref
+from dis_sqlalchemy.orm import exc as orm_exc
+from dis_sqlalchemy.orm import joinedload
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import sessionmaker
+from dis_sqlalchemy.orm import synonym
+from dis_sqlalchemy.orm import with_loader_criteria
+from dis_sqlalchemy.sql.dml import Delete
+from dis_sqlalchemy.sql.dml import Update
+from dis_sqlalchemy.sql.selectable import Select
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import in_
+from dis_sqlalchemy.testing import not_in
+from dis_sqlalchemy.testing.assertions import expect_raises_message
+from dis_sqlalchemy.testing.assertsql import CompiledSQL
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 
 
 class UpdateDeleteTest(fixtures.MappedTest):
@@ -459,7 +459,7 @@ class UpdateDeleteTest(fixtures.MappedTest):
     ):
         """test #5664.
 
-        approach is revised in SQLAlchemy 2.0 to not pre-emptively
+        approach is revised in dis_sqlalchemy 2.0 to not pre-emptively
         unexpire the involved attributes
 
         """

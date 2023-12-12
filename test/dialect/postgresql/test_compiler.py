@@ -1,76 +1,76 @@
-from sqlalchemy import and_
-from sqlalchemy import BigInteger
-from sqlalchemy import bindparam
-from sqlalchemy import case
-from sqlalchemy import cast
-from sqlalchemy import CheckConstraint
-from sqlalchemy import Column
-from sqlalchemy import Computed
-from sqlalchemy import Date
-from sqlalchemy import delete
-from sqlalchemy import Enum
-from sqlalchemy import exc
-from sqlalchemy import Float
-from sqlalchemy import ForeignKey
-from sqlalchemy import ForeignKeyConstraint
-from sqlalchemy import func
-from sqlalchemy import Identity
-from sqlalchemy import Index
-from sqlalchemy import Integer
-from sqlalchemy import literal
-from sqlalchemy import MetaData
-from sqlalchemy import null
-from sqlalchemy import schema
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import SmallInteger
-from sqlalchemy import sql
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import Text
-from sqlalchemy import text
-from sqlalchemy import true
-from sqlalchemy import tuple_
-from sqlalchemy import types as sqltypes
-from sqlalchemy import UniqueConstraint
-from sqlalchemy import update
-from sqlalchemy.dialects import postgresql
-from sqlalchemy.dialects.postgresql import aggregate_order_by
-from sqlalchemy.dialects.postgresql import ARRAY as PG_ARRAY
-from sqlalchemy.dialects.postgresql import array
-from sqlalchemy.dialects.postgresql import array_agg as pg_array_agg
-from sqlalchemy.dialects.postgresql import DOMAIN
-from sqlalchemy.dialects.postgresql import ExcludeConstraint
-from sqlalchemy.dialects.postgresql import insert
-from sqlalchemy.dialects.postgresql import JSONB
-from sqlalchemy.dialects.postgresql import JSONPATH
-from sqlalchemy.dialects.postgresql import Range
-from sqlalchemy.dialects.postgresql import REGCONFIG
-from sqlalchemy.dialects.postgresql import TSQUERY
-from sqlalchemy.dialects.postgresql import TSRANGE
-from sqlalchemy.dialects.postgresql.base import PGDialect
-from sqlalchemy.dialects.postgresql.psycopg2 import PGDialect_psycopg2
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import clear_mappers
-from sqlalchemy.orm import Session
-from sqlalchemy.sql import column
-from sqlalchemy.sql import literal_column
-from sqlalchemy.sql import operators
-from sqlalchemy.sql import table
-from sqlalchemy.sql import util as sql_util
-from sqlalchemy.sql.functions import GenericFunction
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.assertions import assert_raises
-from sqlalchemy.testing.assertions import assert_raises_message
-from sqlalchemy.testing.assertions import AssertsCompiledSQL
-from sqlalchemy.testing.assertions import eq_
-from sqlalchemy.testing.assertions import eq_ignore_whitespace
-from sqlalchemy.testing.assertions import expect_warnings
-from sqlalchemy.testing.assertions import is_
-from sqlalchemy.types import TypeEngine
-from sqlalchemy.util import OrderedDict
+from dis_sqlalchemy import and_
+from dis_sqlalchemy import BigInteger
+from dis_sqlalchemy import bindparam
+from dis_sqlalchemy import case
+from dis_sqlalchemy import cast
+from dis_sqlalchemy import CheckConstraint
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import Computed
+from dis_sqlalchemy import Date
+from dis_sqlalchemy import delete
+from dis_sqlalchemy import Enum
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import Float
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import ForeignKeyConstraint
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Identity
+from dis_sqlalchemy import Index
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import literal
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import null
+from dis_sqlalchemy import schema
+from dis_sqlalchemy import select
+from dis_sqlalchemy import Sequence
+from dis_sqlalchemy import SmallInteger
+from dis_sqlalchemy import sql
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import Text
+from dis_sqlalchemy import text
+from dis_sqlalchemy import true
+from dis_sqlalchemy import tuple_
+from dis_sqlalchemy import types as sqltypes
+from dis_sqlalchemy import UniqueConstraint
+from dis_sqlalchemy import update
+from dis_sqlalchemy.dialects import postgresql
+from dis_sqlalchemy.dialects.postgresql import aggregate_order_by
+from dis_sqlalchemy.dialects.postgresql import ARRAY as PG_ARRAY
+from dis_sqlalchemy.dialects.postgresql import array
+from dis_sqlalchemy.dialects.postgresql import array_agg as pg_array_agg
+from dis_sqlalchemy.dialects.postgresql import DOMAIN
+from dis_sqlalchemy.dialects.postgresql import ExcludeConstraint
+from dis_sqlalchemy.dialects.postgresql import insert
+from dis_sqlalchemy.dialects.postgresql import JSONB
+from dis_sqlalchemy.dialects.postgresql import JSONPATH
+from dis_sqlalchemy.dialects.postgresql import Range
+from dis_sqlalchemy.dialects.postgresql import REGCONFIG
+from dis_sqlalchemy.dialects.postgresql import TSQUERY
+from dis_sqlalchemy.dialects.postgresql import TSRANGE
+from dis_sqlalchemy.dialects.postgresql.base import PGDialect
+from dis_sqlalchemy.dialects.postgresql.psycopg2 import PGDialect_psycopg2
+from dis_sqlalchemy.orm import aliased
+from dis_sqlalchemy.orm import clear_mappers
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.sql import column
+from dis_sqlalchemy.sql import literal_column
+from dis_sqlalchemy.sql import operators
+from dis_sqlalchemy.sql import table
+from dis_sqlalchemy.sql import util as sql_util
+from dis_sqlalchemy.sql.functions import GenericFunction
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing.assertions import assert_raises
+from dis_sqlalchemy.testing.assertions import assert_raises_message
+from dis_sqlalchemy.testing.assertions import AssertsCompiledSQL
+from dis_sqlalchemy.testing.assertions import eq_
+from dis_sqlalchemy.testing.assertions import eq_ignore_whitespace
+from dis_sqlalchemy.testing.assertions import expect_warnings
+from dis_sqlalchemy.testing.assertions import is_
+from dis_sqlalchemy.types import TypeEngine
+from dis_sqlalchemy.util import OrderedDict
 
 
 class SequenceTest(fixtures.TestBase, AssertsCompiledSQL):
@@ -302,7 +302,7 @@ class CompileTest(fixtures.TestBase, AssertsCompiledSQL):
     def test_cast_double_pg_double(self):
         """test #5465:
 
-        test sqlalchemy Double/DOUBLE to PostgreSQL DOUBLE PRECISION
+        test dis_sqlalchemy Double/DOUBLE to PostgreSQL DOUBLE PRECISION
         """
         d1 = sqltypes.Double
 
@@ -426,7 +426,7 @@ class CompileTest(fixtures.TestBase, AssertsCompiledSQL):
         table = Table(
             "some_table", MetaData(), Column("q", e1), Column("p", e2)
         )
-        from sqlalchemy.schema import CreateTable
+        from dis_sqlalchemy.schema import CreateTable
 
         self.assert_compile(
             CreateTable(table),
@@ -447,7 +447,7 @@ class CompileTest(fixtures.TestBase, AssertsCompiledSQL):
             Column("q", PG_ARRAY(e1)),
             Column("p", PG_ARRAY(e2)),
         )
-        from sqlalchemy.schema import CreateTable
+        from dis_sqlalchemy.schema import CreateTable
 
         self.assert_compile(
             CreateTable(table),
@@ -3502,10 +3502,10 @@ class FullTextSearchTest(fixtures.TestBase, AssertsCompiledSQL):
             exc.CompileError,
             rf"Can't compile \"{to_ts_name}\(\)\" full text search "
             f"function construct that does not originate from the "
-            f'"sqlalchemy.dialects.postgresql" package.  '
-            f'Please ensure "import sqlalchemy.dialects.postgresql" is '
+            f'"dis_sqlalchemy.dialects.postgresql" package.  '
+            f'Please ensure "import dis_sqlalchemy.dialects.postgresql" is '
             f"called before constructing "
-            rf"\"sqlalchemy.func.{to_ts_name}\(\)\" to ensure "
+            rf"\"dis_sqlalchemy.func.{to_ts_name}\(\)\" to ensure "
             f"registration of the correct "
             f"argument and return types.",
         ):

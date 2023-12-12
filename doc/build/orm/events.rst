@@ -37,7 +37,7 @@ here include:
 Be sure to read the :ref:`session_events_toplevel` chapter for context
 on these events.
 
-.. autoclass:: sqlalchemy.orm.SessionEvents
+.. autoclass:: dis_sqlalchemy.orm.SessionEvents
    :members:
 
 Mapper Events
@@ -67,7 +67,7 @@ Types of things which occur at the :class:`_orm.Mapper` level include:
   and :meth:`_orm.MapperEvents.after_configured` at the level of collections of
   :class:`_orm.Mapper` objects.
 
-.. autoclass:: sqlalchemy.orm.MapperEvents
+.. autoclass:: dis_sqlalchemy.orm.MapperEvents
    :members:
 
 Instance Events
@@ -78,7 +78,7 @@ including when they are instantiated as :term:`transient` objects,
 when they are loaded from the database and become :term:`persistent` objects,
 as well as when database refresh or expiration operations occur on the object.
 
-.. autoclass:: sqlalchemy.orm.InstanceEvents
+.. autoclass:: dis_sqlalchemy.orm.InstanceEvents
    :members:
 
 
@@ -97,21 +97,21 @@ ORM mapped objects.  These events form the basis for things like
 
   :ref:`mapping_attributes_toplevel`
 
-.. autoclass:: sqlalchemy.orm.AttributeEvents
+.. autoclass:: dis_sqlalchemy.orm.AttributeEvents
    :members:
 
 
 Query Events
 ------------
 
-.. autoclass:: sqlalchemy.orm.QueryEvents
+.. autoclass:: dis_sqlalchemy.orm.QueryEvents
    :members:
 
 Instrumentation Events
 ----------------------
 
-.. automodule:: sqlalchemy.orm.instrumentation
+.. automodule:: dis_sqlalchemy.orm.instrumentation
 
-.. autoclass:: sqlalchemy.orm.InstrumentationEvents
+.. autoclass:: dis_sqlalchemy.orm.InstrumentationEvents
    :members:
 

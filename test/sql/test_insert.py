@@ -2,35 +2,35 @@ from __future__ import annotations
 
 from typing import Tuple
 
-from sqlalchemy import bindparam
-from sqlalchemy import Column
-from sqlalchemy import column
-from sqlalchemy import exc
-from sqlalchemy import func
-from sqlalchemy import insert
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import table
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy.dialects import mysql
-from sqlalchemy.dialects import postgresql
-from sqlalchemy.dialects import sqlite
-from sqlalchemy.engine import default
-from sqlalchemy.sql import crud
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import config
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.provision import normalize_sequence
+from dis_sqlalchemy import bindparam
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import column
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import func
+from dis_sqlalchemy import insert
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import select
+from dis_sqlalchemy import Sequence
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import text
+from dis_sqlalchemy.dialects import mysql
+from dis_sqlalchemy.dialects import postgresql
+from dis_sqlalchemy.dialects import sqlite
+from dis_sqlalchemy.engine import default
+from dis_sqlalchemy.sql import crud
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import config
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import expect_warnings
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing.provision import normalize_sequence
 
 
 class ORMExpr:
@@ -942,7 +942,7 @@ class InsertTest(_InsertTestBase, fixtures.TablesTest, AssertsCompiledSQL):
 
     def test_insert_from_select_dont_mutate_raw_columns(self):
         # test [ticket:3603]
-        from sqlalchemy import table
+        from dis_sqlalchemy import table
 
         table_ = table(
             "mytable",
@@ -1054,7 +1054,7 @@ class InsertTest(_InsertTestBase, fixtures.TablesTest, AssertsCompiledSQL):
 
         with expect_warnings(
             "Column 't.y' is marked as a member.*"
-            "Note that as of SQLAlchemy 1.1,"
+            "Note that as of dis_sqlalchemy 1.1,"
         ):
             self.assert_compile(
                 t.insert(), "INSERT INTO t (x) VALUES (:x)", params={"x": 5}
@@ -1072,7 +1072,7 @@ class InsertTest(_InsertTestBase, fixtures.TablesTest, AssertsCompiledSQL):
 
         with expect_warnings(
             "Column 't.y' is marked as a member.*"
-            "Note that as of SQLAlchemy 1.1,"
+            "Note that as of dis_sqlalchemy 1.1,"
         ):
             self.assert_compile(
                 t.insert(),
@@ -1092,7 +1092,7 @@ class InsertTest(_InsertTestBase, fixtures.TablesTest, AssertsCompiledSQL):
         d.implicit_returning = False
         with expect_warnings(
             "Column 't.y' is marked as a member.*"
-            "Note that as of SQLAlchemy 1.1,"
+            "Note that as of dis_sqlalchemy 1.1,"
         ):
             self.assert_compile(
                 t.insert(),

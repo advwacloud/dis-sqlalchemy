@@ -1,13 +1,13 @@
 from typing import List
 from typing import Optional
 
-from sqlalchemy import Column
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy.orm import declarative_base
-from sqlalchemy.orm import relationship
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy.orm import declarative_base
+from dis_sqlalchemy.orm import relationship
 
 Base = declarative_base()
 

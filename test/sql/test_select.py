@@ -1,26 +1,26 @@
-from sqlalchemy import cast
-from sqlalchemy import Column
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import true
-from sqlalchemy import tuple_
-from sqlalchemy import union
-from sqlalchemy.sql import column
-from sqlalchemy.sql import literal
-from sqlalchemy.sql import table
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
+from dis_sqlalchemy import cast
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import true
+from dis_sqlalchemy import tuple_
+from dis_sqlalchemy import union
+from dis_sqlalchemy.sql import column
+from dis_sqlalchemy.sql import literal
+from dis_sqlalchemy.sql import table
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
 
 table1 = table(
     "mytable",
@@ -125,7 +125,7 @@ class SelectTest(fixtures.TestBase, AssertsCompiledSQL):
             def __clause_element__(self):
                 return table1
 
-        from sqlalchemy.inspection import _inspects
+        from dis_sqlalchemy.inspection import _inspects
 
         @_inspects(Thing)
         def _ce(thing):

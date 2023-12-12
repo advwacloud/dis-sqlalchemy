@@ -6,7 +6,7 @@ ORM Internals
 Key ORM constructs, not otherwise covered in other
 sections, are listed here.
 
-.. currentmodule:: sqlalchemy.orm
+.. currentmodule:: dis_sqlalchemy.orm
 
 .. autoclass:: AttributeState
     :members:

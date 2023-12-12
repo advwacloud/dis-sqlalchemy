@@ -1,11 +1,11 @@
-from sqlalchemy import String
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import deferred
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import query_expression
-from sqlalchemy.orm import validates
+from dis_sqlalchemy import String
+from dis_sqlalchemy.orm import column_property
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import deferred
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import query_expression
+from dis_sqlalchemy.orm import validates
 
 
 class Base(DeclarativeBase):

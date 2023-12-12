@@ -1,16 +1,16 @@
 from unittest.mock import Mock
 
-from sqlalchemy import Column
-from sqlalchemy import ForeignKey
-from sqlalchemy import Index
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import schema
-from sqlalchemy import Sequence
-from sqlalchemy import Table
-from sqlalchemy.sql.ddl import SchemaDropper
-from sqlalchemy.sql.ddl import SchemaGenerator
-from sqlalchemy.testing import fixtures
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Index
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import schema
+from dis_sqlalchemy import Sequence
+from dis_sqlalchemy import Table
+from dis_sqlalchemy.sql.ddl import SchemaDropper
+from dis_sqlalchemy.sql.ddl import SchemaGenerator
+from dis_sqlalchemy.testing import fixtures
 
 
 class EmitDDLTest(fixtures.TestBase):

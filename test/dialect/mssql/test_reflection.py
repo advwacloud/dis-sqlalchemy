@@ -2,40 +2,40 @@ import datetime
 import decimal
 import random
 
-from sqlalchemy import Column
-from sqlalchemy import DDL
-from sqlalchemy import event
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import ForeignKeyConstraint
-from sqlalchemy import Identity
-from sqlalchemy import Index
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import PrimaryKeyConstraint
-from sqlalchemy import schema
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import types
-from sqlalchemy import types as sqltypes
-from sqlalchemy.dialects import mssql
-from sqlalchemy.dialects.mssql import base
-from sqlalchemy.dialects.mssql.information_schema import tables
-from sqlalchemy.pool import NullPool
-from sqlalchemy.schema import CreateIndex
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import ComparesTables
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import in_
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import mock
-from sqlalchemy.testing import provision
-from sqlalchemy.testing.assertions import is_false
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import DDL
+from dis_sqlalchemy import event
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import ForeignKeyConstraint
+from dis_sqlalchemy import Identity
+from dis_sqlalchemy import Index
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import PrimaryKeyConstraint
+from dis_sqlalchemy import schema
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import types
+from dis_sqlalchemy import types as sqltypes
+from dis_sqlalchemy.dialects import mssql
+from dis_sqlalchemy.dialects.mssql import base
+from dis_sqlalchemy.dialects.mssql.information_schema import tables
+from dis_sqlalchemy.pool import NullPool
+from dis_sqlalchemy.schema import CreateIndex
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import ComparesTables
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import in_
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_true
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing import provision
+from dis_sqlalchemy.testing.assertions import is_false
 
 
 class ReflectionTest(fixtures.TestBase, ComparesTables, AssertsCompiledSQL):

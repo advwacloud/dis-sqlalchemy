@@ -1,9 +1,9 @@
-from sqlalchemy import Integer
-from sqlalchemy import UniqueConstraint
-from sqlalchemy.dialects.sqlite import insert
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import UniqueConstraint
+from dis_sqlalchemy.dialects.sqlite import insert
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
 
 
 class Base(DeclarativeBase):

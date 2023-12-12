@@ -1,23 +1,23 @@
 from unittest.mock import Mock
 
-from sqlalchemy import Column
-from sqlalchemy import engine_from_config
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy.dialects.mssql import base as mssql
-from sqlalchemy.sql import column
-from sqlalchemy.sql import table
-from sqlalchemy.sql.selectable import LABEL_STYLE_TABLENAME_PLUS_COL
-from sqlalchemy.testing import assertions
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import engine_from_config
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.dialects.mssql import base as mssql
+from dis_sqlalchemy.sql import column
+from dis_sqlalchemy.sql import table
+from dis_sqlalchemy.sql.selectable import LABEL_STYLE_TABLENAME_PLUS_COL
+from dis_sqlalchemy.testing import assertions
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import engines
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
 
 
 def _legacy_schema_aliasing_warning():
@@ -64,15 +64,15 @@ class LegacySchemaAliasingTest(fixtures.TestBase, AssertsCompiledSQL):
     @testing.combinations(
         (
             {
-                "sqlalchemy.url": "mssql+pyodbc://foodsn",
-                "sqlalchemy.legacy_schema_aliasing": "true",
+                "dis_sqlalchemy.url": "mssql+pyodbc://foodsn",
+                "dis_sqlalchemy.legacy_schema_aliasing": "true",
             },
             True,
         ),
         (
             {
-                "sqlalchemy.url": "mssql+pyodbc://foodsn",
-                "sqlalchemy.legacy_schema_aliasing": "false",
+                "dis_sqlalchemy.url": "mssql+pyodbc://foodsn",
+                "dis_sqlalchemy.legacy_schema_aliasing": "false",
             },
             False,
         ),

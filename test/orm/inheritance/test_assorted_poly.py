@@ -7,44 +7,44 @@ from __future__ import annotations
 
 from typing import Optional
 
-from sqlalchemy import and_
-from sqlalchemy import exists
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import Unicode
-from sqlalchemy import util
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import class_mapper
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import contains_eager
-from sqlalchemy.orm import immediateload
-from sqlalchemy.orm import join
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import polymorphic_union
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import selectinload
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm import with_polymorphic
-from sqlalchemy.orm.interfaces import MANYTOONE
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import AssertsExecutionResults
-from sqlalchemy.testing import config
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.entities import ComparableEntity
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.provision import normalize_sequence
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from dis_sqlalchemy import and_
+from dis_sqlalchemy import exists
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import select
+from dis_sqlalchemy import Sequence
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import Unicode
+from dis_sqlalchemy import util
+from dis_sqlalchemy.orm import aliased
+from dis_sqlalchemy.orm import class_mapper
+from dis_sqlalchemy.orm import column_property
+from dis_sqlalchemy.orm import contains_eager
+from dis_sqlalchemy.orm import immediateload
+from dis_sqlalchemy.orm import join
+from dis_sqlalchemy.orm import joinedload
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import polymorphic_union
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import selectinload
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import sessionmaker
+from dis_sqlalchemy.orm import with_polymorphic
+from dis_sqlalchemy.orm.interfaces import MANYTOONE
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import AssertsExecutionResults
+from dis_sqlalchemy.testing import config
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_warnings
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing.entities import ComparableEntity
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.provision import normalize_sequence
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 
 
 class RelationshipTest1(fixtures.MappedTest):
@@ -2253,7 +2253,7 @@ class ColSubclassTest(
 
     @classmethod
     def setup_classes(cls):
-        from sqlalchemy.schema import Column
+        from dis_sqlalchemy.schema import Column
 
         Base = cls.DeclarativeBasic
 

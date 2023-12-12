@@ -1,20 +1,20 @@
 import random
 import uuid
 
-from sqlalchemy import Column
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy.dialects.postgresql import ENUM
-from sqlalchemy.testing import async_test
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import mock
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.dialects.postgresql import ENUM
+from dis_sqlalchemy.testing import async_test
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import mock
 
 
 class AsyncPgTest(fixtures.TestBase):
@@ -73,7 +73,7 @@ class AsyncPgTest(fixtures.TestBase):
             with testing.expect_raises_message(
                 exc.NotSupportedError,
                 r"cached statement plan is invalid due to a database schema "
-                r"or configuration change \(SQLAlchemy asyncpg dialect "
+                r"or configuration change \(dis_sqlalchemy asyncpg dialect "
                 r"will now invalidate all prepared caches in response "
                 r"to this exception\)",
             ):

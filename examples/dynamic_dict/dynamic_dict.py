@@ -1,11 +1,11 @@
-from sqlalchemy import Column
-from sqlalchemy import create_engine
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import sessionmaker
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import String
+from dis_sqlalchemy.ext.declarative import declarative_base
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import sessionmaker
 
 
 class ProxyDict:

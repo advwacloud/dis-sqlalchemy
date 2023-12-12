@@ -31,18 +31,18 @@ can be used with many common vertical schemas as-is or with minor adaptations.
 
 """
 
-from sqlalchemy import and_
-from sqlalchemy import Column
-from sqlalchemy import create_engine
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import Unicode
-from sqlalchemy import UnicodeText
-from sqlalchemy.ext.associationproxy import association_proxy
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm.collections import attribute_keyed_dict
+from dis_sqlalchemy import and_
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import Unicode
+from dis_sqlalchemy import UnicodeText
+from dis_sqlalchemy.ext.associationproxy import association_proxy
+from dis_sqlalchemy.ext.declarative import declarative_base
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm.collections import attribute_keyed_dict
 
 
 class ProxiedDictMixin:

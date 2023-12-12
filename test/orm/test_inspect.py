@@ -3,33 +3,33 @@
 import random
 import textwrap
 
-from sqlalchemy import Column
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy.ext.associationproxy import association_proxy
-from sqlalchemy.ext.associationproxy import AssociationProxyExtensionType
-from sqlalchemy.ext.hybrid import hybrid_method
-from sqlalchemy.ext.hybrid import hybrid_property
-from sqlalchemy.ext.hybrid import HybridExtensionType
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import class_mapper
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import synonym
-from sqlalchemy.orm.attributes import instance_state
-from sqlalchemy.orm.attributes import NO_VALUE
-from sqlalchemy.orm.base import InspectionAttr
-from sqlalchemy.orm.interfaces import NotExtension
-from sqlalchemy.orm.util import identity_key
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import is_
-from sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.ext.associationproxy import association_proxy
+from dis_sqlalchemy.ext.associationproxy import AssociationProxyExtensionType
+from dis_sqlalchemy.ext.hybrid import hybrid_method
+from dis_sqlalchemy.ext.hybrid import hybrid_property
+from dis_sqlalchemy.ext.hybrid import HybridExtensionType
+from dis_sqlalchemy.orm import aliased
+from dis_sqlalchemy.orm import class_mapper
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import synonym
+from dis_sqlalchemy.orm.attributes import instance_state
+from dis_sqlalchemy.orm.attributes import NO_VALUE
+from dis_sqlalchemy.orm.base import InspectionAttr
+from dis_sqlalchemy.orm.interfaces import NotExtension
+from dis_sqlalchemy.orm.util import identity_key
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing.fixtures import fixture_session
 from test.orm import _fixtures
 
 
@@ -412,8 +412,8 @@ class TestORMInspection(_fixtures.FixtureTest):
             __foo__ = "bar"
             __bat__ = Thing()
 
-        from sqlalchemy.orm import column_property
-        from sqlalchemy.ext.hybrid import hybrid_property
+        from dis_sqlalchemy.orm import column_property
+        from dis_sqlalchemy.ext.hybrid import hybrid_property
 
         m = self.mapper_registry.map_imperatively(AnonClass, self.tables.users)
 
@@ -494,9 +494,9 @@ class TestORMInspection(_fixtures.FixtureTest):
             glbls["MyOtherClass"] = MyOtherClass
         code = """
 
-from sqlalchemy import Column, Integer, ForeignKey
-from sqlalchemy.orm import relationship
-from sqlalchemy.ext.hybrid import hybrid_property
+from dis_sqlalchemy import Column, Integer, ForeignKey
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.ext.hybrid import hybrid_property
 
 class %s(SuperCls):
     %s
@@ -514,7 +514,7 @@ class %s(SuperCls):
         return names, glbls[clsname]
 
     def test_all_orm_descriptors_pep520_noinh(self):
-        from sqlalchemy.orm import declarative_base
+        from dis_sqlalchemy.orm import declarative_base
 
         Base = declarative_base()
 
@@ -526,7 +526,7 @@ class %s(SuperCls):
         eq_(MyClass.__mapper__.all_orm_descriptors.keys(), names)
 
     def test_all_orm_descriptors_pep520_onelevel_inh(self):
-        from sqlalchemy.orm import declarative_base
+        from dis_sqlalchemy.orm import declarative_base
 
         Base = declarative_base()
 

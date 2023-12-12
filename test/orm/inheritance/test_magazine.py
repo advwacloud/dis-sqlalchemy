@@ -1,19 +1,19 @@
 """A legacy test for a particular somewhat complicated mapping."""
 
-from sqlalchemy import CHAR
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import Text
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import polymorphic_union
-from sqlalchemy.orm import relationship
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from dis_sqlalchemy import CHAR
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import Text
+from dis_sqlalchemy.orm import backref
+from dis_sqlalchemy.orm import polymorphic_union
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 
 
 class MagazineTest(fixtures.MappedTest):

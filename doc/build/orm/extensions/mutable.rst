@@ -3,7 +3,7 @@
 Mutation Tracking
 =================
 
-.. automodule:: sqlalchemy.ext.mutable
+.. automodule:: dis_sqlalchemy.ext.mutable
 
 API Reference
 -------------

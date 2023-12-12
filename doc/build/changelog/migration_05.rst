@@ -1,11 +1,11 @@
 =============================
-What's new in SQLAlchemy 0.5?
+What's new in dis_sqlalchemy 0.5?
 =============================
 
 .. admonition:: About this Document
 
-    This document describes changes between SQLAlchemy version 0.4,
-    last released October 12, 2008, and SQLAlchemy version 0.5,
+    This document describes changes between dis_sqlalchemy version 0.4,
+    last released October 12, 2008, and dis_sqlalchemy version 0.5,
     last released January 16, 2010.
 
     Document date: August 4, 2009
@@ -13,11 +13,11 @@ What's new in SQLAlchemy 0.5?
 
 This guide documents API changes which affect users
 migrating their applications from the 0.4 series of
-SQLAlchemy to 0.5.   It's also recommended for those working
-from  `Essential SQLAlchemy
+dis_sqlalchemy to 0.5.   It's also recommended for those working
+from  `Essential dis_sqlalchemy
 <https://oreilly.com/catalog/9780596516147/>`_, which only
 covers 0.4 and seems to even have some old 0.3isms in it.
-Note that SQLAlchemy 0.5 removes many behaviors which were
+Note that dis_sqlalchemy 0.5 removes many behaviors which were
 deprecated throughout the span of the 0.4 series, and also
 deprecates more behaviors specific to 0.4.
 
@@ -34,10 +34,10 @@ highly customized ORM queries and dealing with stale session
 state, commits and rollbacks.
 
 * `ORM Tutorial
-  <https://www.sqlalchemy.org/docs/05/ormtutorial.html>`_
+  <https://www.dis_sqlalchemy.org/docs/05/ormtutorial.html>`_
 
 * `Session Documentation
-  <https://www.sqlalchemy.org/docs/05/session.html>`_
+  <https://www.dis_sqlalchemy.org/docs/05/session.html>`_
 
 Deprecations Source
 ===================
@@ -45,12 +45,12 @@ Deprecations Source
 Another source of information is documented within a series
 of unit tests illustrating up to date usages of some common
 ``Query`` patterns; this file can be viewed at
-[source:sqlalchemy/trunk/test/orm/test_deprecations.py].
+[source:dis_sqlalchemy/trunk/test/orm/test_deprecations.py].
 
 Requirements Changes
 ====================
 
-* Python 2.4 or higher is required.  The SQLAlchemy 0.4 line
+* Python 2.4 or higher is required.  The dis_sqlalchemy 0.4 line
   is the last version with Python 2.3 support.
 
 Object Relational Mapping
@@ -58,7 +58,7 @@ Object Relational Mapping
 
 * **Column level expressions within Query.** - as detailed
   in the `tutorial
-  <https://www.sqlalchemy.org/docs/05/ormtutorial.html>`_,
+  <https://www.dis_sqlalchemy.org/docs/05/ormtutorial.html>`_,
   ``Query`` has the capability to create specific SELECT
   statements, not just those against full rows:
 
@@ -132,7 +132,7 @@ Object Relational Mapping
   mapper per class" pattern, and allows the full range of
   configuration available to distinct ``mapper()`` calls.
   Separate ``mapper()`` and ``Table`` usage is now referred
-  to as "classical SQLAlchemy usage" and of course is freely
+  to as "classical dis_sqlalchemy usage" and of course is freely
   mixable with declarative.
 
 * **The .c. attribute has been removed** from classes (i.e.
@@ -374,7 +374,7 @@ extend the ORM.  Heres a summary:
 
 * **Attribute Instrumentation Customization.** - An API is
   provided for ambitious efforts to entirely replace
-  SQLAlchemy's attribute instrumentation, or just to augment
+  dis_sqlalchemy's attribute instrumentation, or just to augment
   it in some cases.  This API was produced for the purposes
   of the Trellis toolkit, but is available as a public API.
   Some examples are provided in the distribution in the
@@ -501,7 +501,7 @@ Schema/Types
 
   ::
 
-       from sqlalchemy.databases.sqlite import DateTimeMixin
+       from dis_sqlalchemy.databases.sqlite import DateTimeMixin
 
        DateTimeMixin.__legacy_microseconds__ = True
 
@@ -561,7 +561,7 @@ Removed
   map them separately.  An example of this is at
   [wiki:UsageRecipes/EntityName].  More information
   regarding rationale is described at https://groups.google.c
-  om/group/sqlalchemy/browse_thread/thread/9e23a0641a88b96d?
+  om/group/dis_sqlalchemy/browse_thread/thread/9e23a0641a88b96d?
   hl=en .
 
 * **get()/load() cleanup**
@@ -597,7 +597,7 @@ Removed
 
        ad1 = session.query(Address).get(1)
 
-* ``sqlalchemy.orm.relation()``
+* ``dis_sqlalchemy.orm.relation()``
 
 
   The following deprecated keyword arguments have been
@@ -627,12 +627,12 @@ Removed
 
   ::
 
-      from sqlalchemy.orm import aliased
+      from dis_sqlalchemy.orm import aliased
 
       address_alias = aliased(Address)
       print(session.query(User, address_alias).join((address_alias, User.addresses)).all())
 
-* ``sqlalchemy.orm.Mapper``
+* ``dis_sqlalchemy.orm.Mapper``
 
 
   * instances()
@@ -655,18 +655,18 @@ Removed
   Mapped classes no are longer instrumented with a "c" class
   attribute; e.g. ``MyClass.c``
 
-* ``sqlalchemy.orm.collections``
+* ``dis_sqlalchemy.orm.collections``
 
 
   The _prepare_instrumentation alias for
   prepare_instrumentation has been removed.
 
-* ``sqlalchemy.orm``
+* ``dis_sqlalchemy.orm``
 
 
   Removed the ``EXT_PASS`` alias of ``EXT_CONTINUE``.
 
-* ``sqlalchemy.engine``
+* ``dis_sqlalchemy.engine``
 
 
   The alias from ``DefaultDialect.preexecute_sequences`` to
@@ -675,51 +675,51 @@ Removed
   The deprecated engine_descriptors() function has been
   removed.
 
-* ``sqlalchemy.ext.activemapper``
+* ``dis_sqlalchemy.ext.activemapper``
 
 
   Module removed.
 
-* ``sqlalchemy.ext.assignmapper``
+* ``dis_sqlalchemy.ext.assignmapper``
 
 
   Module removed.
 
-* ``sqlalchemy.ext.associationproxy``
+* ``dis_sqlalchemy.ext.associationproxy``
 
 
   Pass-through of keyword args on the proxy's
   ``.append(item, \**kw)`` has been removed and is now
   simply ``.append(item)``
 
-* ``sqlalchemy.ext.selectresults``,
-  ``sqlalchemy.mods.selectresults``
+* ``dis_sqlalchemy.ext.selectresults``,
+  ``dis_sqlalchemy.mods.selectresults``
 
   Modules removed.
 
-* ``sqlalchemy.ext.declarative``
+* ``dis_sqlalchemy.ext.declarative``
 
 
   ``declared_synonym()`` removed.
 
-* ``sqlalchemy.ext.sessioncontext``
+* ``dis_sqlalchemy.ext.sessioncontext``
 
 
   Module removed.
 
-* ``sqlalchemy.log``
+* ``dis_sqlalchemy.log``
 
 
   The ``SADeprecationWarning`` alias to
-  ``sqlalchemy.exc.SADeprecationWarning`` has been removed.
+  ``dis_sqlalchemy.exc.SADeprecationWarning`` has been removed.
 
-* ``sqlalchemy.exc``
+* ``dis_sqlalchemy.exc``
 
 
   ``exc.AssertionError`` has been removed and usage replaced
   by the Python built-in of the same name.
 
-* ``sqlalchemy.databases.mysql``
+* ``dis_sqlalchemy.databases.mysql``
 
 
   The deprecated ``get_version_info`` dialect method has
@@ -728,20 +728,20 @@ Removed
 Renamed or Moved
 ================
 
-* ``sqlalchemy.exceptions`` is now ``sqlalchemy.exc``
+* ``dis_sqlalchemy.exceptions`` is now ``dis_sqlalchemy.exc``
 
 
   The module may still be imported under the old name until
   0.6.
 
 * ``FlushError``, ``ConcurrentModificationError``,
-  ``UnmappedColumnError`` -> sqlalchemy.orm.exc
+  ``UnmappedColumnError`` -> dis_sqlalchemy.orm.exc
 
   These exceptions moved to the orm package.  Importing
-  'sqlalchemy.orm' will install aliases in sqlalchemy.exc
+  'dis_sqlalchemy.orm' will install aliases in dis_sqlalchemy.exc
   for compatibility until 0.6.
 
-* ``sqlalchemy.logging`` -> ``sqlalchemy.log``
+* ``dis_sqlalchemy.logging`` -> ``dis_sqlalchemy.log``
 
 
   This internal module was renamed.  No longer needs to be
@@ -759,11 +759,11 @@ Deprecated
 
   All three replaced by ``Session.add()``
 
-* ``sqlalchemy.PassiveDefault``
+* ``dis_sqlalchemy.PassiveDefault``
 
 
   Use ``Column(server_default=...)`` Translates to
-  sqlalchemy.DefaultClause() under the hood.
+  dis_sqlalchemy.DefaultClause() under the hood.
 
 * ``session.Query().iterate_instances()``. It has been
   renamed to ``instances()``.

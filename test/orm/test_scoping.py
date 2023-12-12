@@ -1,25 +1,25 @@
 from unittest.mock import Mock
 
-import sqlalchemy as sa
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import util
-from sqlalchemy.orm import query
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import scoped_session
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import assert_warns_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.entities import ComparableEntity
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+import dis_sqlalchemy as sa
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import util
+from dis_sqlalchemy.orm import query
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import scoped_session
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import sessionmaker
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import assert_warns_message
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing.entities import ComparableEntity
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 
 
 class ScopedSessionTest(fixtures.MappedTest):
@@ -167,7 +167,7 @@ class ScopedSessionTest(fixtures.MappedTest):
         )
 
         with mock.patch(
-            "sqlalchemy.orm.session.object_session"
+            "dis_sqlalchemy.orm.session.object_session"
         ) as mock_object_session:
             sess.object_session("foo")
 

@@ -1,42 +1,42 @@
 import datetime
 import random
 
-from sqlalchemy import Column
-from sqlalchemy import DateTime
-from sqlalchemy import delete
-from sqlalchemy import event
-from sqlalchemy import exc as sa_exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import insert
-from sqlalchemy import Integer
-from sqlalchemy import literal_column
-from sqlalchemy import orm
-from sqlalchemy import select
-from sqlalchemy import sql
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import union
-from sqlalchemy import update
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import defer
-from sqlalchemy.orm import join as orm_join
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import lazyload
-from sqlalchemy.orm import registry
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import selectinload
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import subqueryload
-from sqlalchemy.orm import with_loader_criteria
-from sqlalchemy.orm.decl_api import declared_attr
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing.assertions import expect_raises
-from sqlalchemy.testing.assertsql import CompiledSQL
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.util import resolve_lambda
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import DateTime
+from dis_sqlalchemy import delete
+from dis_sqlalchemy import event
+from dis_sqlalchemy import exc as sa_exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import insert
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import literal_column
+from dis_sqlalchemy import orm
+from dis_sqlalchemy import select
+from dis_sqlalchemy import sql
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import union
+from dis_sqlalchemy import update
+from dis_sqlalchemy.orm import aliased
+from dis_sqlalchemy.orm import column_property
+from dis_sqlalchemy.orm import defer
+from dis_sqlalchemy.orm import join as orm_join
+from dis_sqlalchemy.orm import joinedload
+from dis_sqlalchemy.orm import lazyload
+from dis_sqlalchemy.orm import registry
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import selectinload
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import subqueryload
+from dis_sqlalchemy.orm import with_loader_criteria
+from dis_sqlalchemy.orm.decl_api import declared_attr
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing.assertions import expect_raises
+from dis_sqlalchemy.testing.assertsql import CompiledSQL
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.util import resolve_lambda
 from test.orm import _fixtures
 
 

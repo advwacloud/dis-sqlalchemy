@@ -10,18 +10,18 @@ from typing import Optional
 from typing import Set
 from typing import TYPE_CHECKING
 
-from sqlalchemy import create_engine
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import select
-from sqlalchemy import Table
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import registry
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import select
+from dis_sqlalchemy import Table
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import joinedload
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import registry
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
 
 
 class Base(DeclarativeBase):
@@ -81,22 +81,22 @@ class SelfReferential(Base):
 
 
 if typing.TYPE_CHECKING:
-    # EXPECTED_RE_TYPE: sqlalchemy.*.InstrumentedAttribute\[Union\[builtins.str, None\]\]
+    # EXPECTED_RE_TYPE: dis_sqlalchemy.*.InstrumentedAttribute\[Union\[builtins.str, None\]\]
     reveal_type(User.extra)
 
-    # EXPECTED_RE_TYPE: sqlalchemy.*.InstrumentedAttribute\[Union\[builtins.str, None\]\]
+    # EXPECTED_RE_TYPE: dis_sqlalchemy.*.InstrumentedAttribute\[Union\[builtins.str, None\]\]
     reveal_type(User.extra_name)
 
-    # EXPECTED_RE_TYPE: sqlalchemy.*.InstrumentedAttribute\[builtins.str\*?\]
+    # EXPECTED_RE_TYPE: dis_sqlalchemy.*.InstrumentedAttribute\[builtins.str\*?\]
     reveal_type(Address.email)
 
-    # EXPECTED_RE_TYPE: sqlalchemy.*.InstrumentedAttribute\[builtins.str\*?\]
+    # EXPECTED_RE_TYPE: dis_sqlalchemy.*.InstrumentedAttribute\[builtins.str\*?\]
     reveal_type(Address.email_name)
 
-    # EXPECTED_RE_TYPE: sqlalchemy.*.InstrumentedAttribute\[builtins.list\*?\[relationship.Address\]\]
+    # EXPECTED_RE_TYPE: dis_sqlalchemy.*.InstrumentedAttribute\[builtins.list\*?\[relationship.Address\]\]
     reveal_type(User.addresses_style_one)
 
-    # EXPECTED_RE_TYPE: sqlalchemy.orm.attributes.InstrumentedAttribute\[builtins.set\*?\[relationship.Address\]\]
+    # EXPECTED_RE_TYPE: dis_sqlalchemy.orm.attributes.InstrumentedAttribute\[builtins.set\*?\[relationship.Address\]\]
     reveal_type(User.addresses_style_two)
 
 

@@ -1,10 +1,10 @@
 """basic tests of lazy loaded attributes"""
 
-from sqlalchemy import testing
-from sqlalchemy.orm import immediateload
-from sqlalchemy.orm import relationship
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.orm import immediateload
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing.fixtures import fixture_session
 from test.orm import _fixtures
 
 

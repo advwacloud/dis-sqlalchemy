@@ -9,34 +9,34 @@ from typing import List
 from typing import MutableMapping
 from typing import MutableSet
 
-from sqlalchemy import event
-from sqlalchemy import exc as sa_exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import util
-from sqlalchemy.ext.associationproxy import association_proxy
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import declarative_base
-from sqlalchemy.orm import instrumentation
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import synonym
-import sqlalchemy.orm.collections as collections
-from sqlalchemy.orm.collections import collection
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_false
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import ne_
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from dis_sqlalchemy import event
+from dis_sqlalchemy import exc as sa_exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import text
+from dis_sqlalchemy import util
+from dis_sqlalchemy.ext.associationproxy import association_proxy
+from dis_sqlalchemy.orm import attributes
+from dis_sqlalchemy.orm import declarative_base
+from dis_sqlalchemy.orm import instrumentation
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import synonym
+import dis_sqlalchemy.orm.collections as collections
+from dis_sqlalchemy.orm.collections import collection
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import expect_warnings
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_false
+from dis_sqlalchemy.testing import is_true
+from dis_sqlalchemy.testing import ne_
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 
 
 def _register_attribute(class_, key, **kw):
@@ -2309,7 +2309,7 @@ class ColumnMappedWSerialize(fixtures.MappedTest):
         )
 
     def test_selectable_column_mapped(self):
-        from sqlalchemy import select
+        from dis_sqlalchemy import select
 
         s = select(self.tables.foo).alias()
         Foo = self.classes.Foo
@@ -2317,7 +2317,7 @@ class ColumnMappedWSerialize(fixtures.MappedTest):
         self._run_test([(Foo.b, Foo(b=5), 5), (s.c.b, Foo(b=5), 5)])
 
     def _run_test(self, specs):
-        from sqlalchemy.testing.util import picklers
+        from dis_sqlalchemy.testing.util import picklers
 
         for spec, obj, expected in specs:
             coll = collections.column_keyed_dict(spec)()

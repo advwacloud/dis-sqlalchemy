@@ -1,19 +1,19 @@
-from sqlalchemy import Column
-from sqlalchemy import exc
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import testing
-from sqlalchemy.orm import clsregistry
-from sqlalchemy.orm import registry
-from sqlalchemy.orm import relationship
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.assertions import expect_warnings
-from sqlalchemy.testing.util import gc_collect
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.orm import clsregistry
+from dis_sqlalchemy.orm import registry
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing.assertions import expect_warnings
+from dis_sqlalchemy.testing.util import gc_collect
 
 
 class MockClass:
@@ -151,19 +151,19 @@ class ClsRegistryTest(fixtures.TestBase):
 
         gc_collect()
 
-        import sqlalchemy
+        import dis_sqlalchemy
 
         is_(
-            resolver("__import__('sqlalchemy.util').util.EMPTY_SET")(),
-            sqlalchemy.util.EMPTY_SET,
+            resolver("__import__('dis_sqlalchemy.util').util.EMPTY_SET")(),
+            dis_sqlalchemy.util.EMPTY_SET,
         )
 
         assert_raises_message(
             exc.InvalidRequestError,
             r"When initializing mapper some_parent, expression "
-            r"\"__import__\('sqlalchemy.util'\).util.EMPTY_SET\" "
+            r"\"__import__\('dis_sqlalchemy.util'\).util.EMPTY_SET\" "
             "failed to locate a name",
-            name_resolver("__import__('sqlalchemy.util').util.EMPTY_SET"),
+            name_resolver("__import__('dis_sqlalchemy.util').util.EMPTY_SET"),
         )
 
     def test_resolve_dupe_by_name(self):

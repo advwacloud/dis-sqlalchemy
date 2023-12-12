@@ -1,9 +1,9 @@
 import os
 import shutil
 
-from sqlalchemy import testing
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
 
 
 def _incremental_dirs():

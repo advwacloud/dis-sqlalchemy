@@ -1,14 +1,14 @@
-from sqlalchemy import Column
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy.engine import default
-from sqlalchemy.sql.selectable import LABEL_STYLE_TABLENAME_PLUS_COL
-from sqlalchemy.testing import AssertsExecutionResults
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import profiling
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy.engine import default
+from dis_sqlalchemy.sql.selectable import LABEL_STYLE_TABLENAME_PLUS_COL
+from dis_sqlalchemy.testing import AssertsExecutionResults
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import profiling
 
 
 t1 = t2 = None
@@ -49,7 +49,7 @@ class CompileTest(fixtures.TestBase, AssertsExecutionResults):
         for t in (t1, t2):
             for c in t.c:
                 c.type._type_affinity
-        from sqlalchemy.sql import sqltypes
+        from dis_sqlalchemy.sql import sqltypes
 
         for t in list(sqltypes._type_map.values()):
             t._type_affinity

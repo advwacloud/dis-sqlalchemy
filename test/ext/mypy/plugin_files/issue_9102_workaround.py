@@ -1,6 +1,6 @@
-from sqlalchemy import Column
-from sqlalchemy import Integer
-from sqlalchemy.orm import registry
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy.orm import registry
 
 
 class BackendMeta:

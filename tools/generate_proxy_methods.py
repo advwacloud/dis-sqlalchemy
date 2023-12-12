@@ -1,4 +1,4 @@
-"""Generate static proxy code for SQLAlchemy classes that proxy other
+"""Generate static proxy code for dis_sqlalchemy classes that proxy other
 objects.
 
 This tool is run at source code authoring / commit time whenever we add new
@@ -62,12 +62,12 @@ from typing import Tuple
 from typing import Type
 from typing import TypeVar
 
-from sqlalchemy import util
-from sqlalchemy.util import compat
-from sqlalchemy.util import langhelpers
-from sqlalchemy.util.langhelpers import format_argspec_plus
-from sqlalchemy.util.langhelpers import inject_docstring_text
-from sqlalchemy.util.tool_support import code_writer_cmd
+from dis_sqlalchemy import util
+from dis_sqlalchemy.util import compat
+from dis_sqlalchemy.util import langhelpers
+from dis_sqlalchemy.util.langhelpers import format_argspec_plus
+from dis_sqlalchemy.util.langhelpers import inject_docstring_text
+from dis_sqlalchemy.util.tool_support import code_writer_cmd
 
 is_posix = os.name == "posix"
 
@@ -392,8 +392,8 @@ def run_module(modname: str, cmd: code_writer_cmd) -> None:
 
 
 def main(cmd: code_writer_cmd) -> None:
-    from sqlalchemy import util
-    from sqlalchemy.util import langhelpers
+    from dis_sqlalchemy import util
+    from dis_sqlalchemy.util import langhelpers
 
     util.create_proxy_methods = (
         langhelpers.create_proxy_methods
@@ -405,10 +405,10 @@ def main(cmd: code_writer_cmd) -> None:
 
 
 entries = [
-    "sqlalchemy.orm.scoping",
-    "sqlalchemy.ext.asyncio.engine",
-    "sqlalchemy.ext.asyncio.session",
-    "sqlalchemy.ext.asyncio.scoping",
+    "dis_sqlalchemy.orm.scoping",
+    "dis_sqlalchemy.ext.asyncio.engine",
+    "dis_sqlalchemy.ext.asyncio.session",
+    "dis_sqlalchemy.ext.asyncio.scoping",
 ]
 
 if __name__ == "__main__":

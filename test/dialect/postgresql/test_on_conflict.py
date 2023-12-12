@@ -1,17 +1,17 @@
-from sqlalchemy import Column
-from sqlalchemy import exc
-from sqlalchemy import Integer
-from sqlalchemy import schema
-from sqlalchemy import sql
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import types as sqltypes
-from sqlalchemy.dialects.postgresql import insert
-from sqlalchemy.testing import config
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.assertions import assert_raises
-from sqlalchemy.testing.assertions import eq_
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import schema
+from dis_sqlalchemy import sql
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import types as sqltypes
+from dis_sqlalchemy.dialects.postgresql import insert
+from dis_sqlalchemy.testing import config
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing.assertions import assert_raises
+from dis_sqlalchemy.testing.assertions import eq_
 
 
 class OnConflictTest(fixtures.TablesTest):

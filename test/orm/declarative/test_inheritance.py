@@ -1,37 +1,37 @@
 import contextlib
 
-import sqlalchemy as sa
-from sqlalchemy import ForeignKey
-from sqlalchemy import Identity
-from sqlalchemy import Integer
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.orm import class_mapper
-from sqlalchemy.orm import close_all_sessions
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import declared_attr
-from sqlalchemy.orm import deferred
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import with_polymorphic
-from sqlalchemy.orm.decl_api import registry
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_false
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing.entities import ComparableEntity
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+import dis_sqlalchemy as sa
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Identity
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.orm import class_mapper
+from dis_sqlalchemy.orm import close_all_sessions
+from dis_sqlalchemy.orm import column_property
+from dis_sqlalchemy.orm import configure_mappers
+from dis_sqlalchemy.orm import declared_attr
+from dis_sqlalchemy.orm import deferred
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import with_polymorphic
+from dis_sqlalchemy.orm.decl_api import registry
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import expect_warnings
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_false
+from dis_sqlalchemy.testing import is_true
+from dis_sqlalchemy.testing.entities import ComparableEntity
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 
 Base = None
 
@@ -387,7 +387,7 @@ class DeclarativeInheritanceTest(
             id = Column(Integer, ForeignKey(Person.id), primary_key=True)
             __mapper_args__ = {"polymorphic_identity": "manager"}
 
-        from sqlalchemy import inspect
+        from dis_sqlalchemy import inspect
 
         assert inspect(Manager).inherits is inspect(Person)
 
@@ -420,7 +420,7 @@ class DeclarativeInheritanceTest(
             id = Column(Integer, ForeignKey(Person.id), primary_key=True)
             __mapper_args__ = {"polymorphic_identity": "manager"}
 
-        from sqlalchemy import inspect
+        from dis_sqlalchemy import inspect
 
         assert inspect(Manager).inherits is inspect(Person)
 

@@ -1,27 +1,27 @@
 from itertools import zip_longest
 
-from sqlalchemy import bindparam
-from sqlalchemy import Column
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import TypeDecorator
-from sqlalchemy.sql import base as sql_base
-from sqlalchemy.sql import coercions
-from sqlalchemy.sql import column
-from sqlalchemy.sql import ColumnElement
-from sqlalchemy.sql import roles
-from sqlalchemy.sql import util as sql_util
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_not_none
+from dis_sqlalchemy import bindparam
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import TypeDecorator
+from dis_sqlalchemy.sql import base as sql_base
+from dis_sqlalchemy.sql import coercions
+from dis_sqlalchemy.sql import column
+from dis_sqlalchemy.sql import ColumnElement
+from dis_sqlalchemy.sql import roles
+from dis_sqlalchemy.sql import util as sql_util
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_not_none
 
 
 class MiscTest(fixtures.TestBase):

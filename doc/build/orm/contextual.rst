@@ -10,7 +10,7 @@ of a web request.   Most modern web frameworks include integration tools
 so that the scope of the :class:`.Session` can be managed automatically,
 and these tools should be used as they are available.
 
-SQLAlchemy includes its own helper object, which helps with the establishment
+dis_sqlalchemy includes its own helper object, which helps with the establishment
 of user-defined :class:`.Session` scopes.  It is also used by third-party
 integration systems to help construct their integration schemes.
 
@@ -37,13 +37,13 @@ Architecture <https://martinfowler.com/eaaCatalog/registry.html>`_.
 .. note::
 
    The :class:`.scoped_session` object is a very popular and useful object
-   used by many SQLAlchemy applications.  However, it is important to note
+   used by many dis_sqlalchemy applications.  However, it is important to note
    that it presents **only one approach** to the issue of :class:`.Session`
-   management.  If you're new to SQLAlchemy, and especially if the
+   management.  If you're new to dis_sqlalchemy, and especially if the
    term "thread-local variable" seems strange to you, we recommend that
    if possible you familiarize first with an off-the-shelf integration
-   system such as `Flask-SQLAlchemy <https://pypi.org/project/Flask-SQLAlchemy/>`_
-   or `zope.sqlalchemy <https://pypi.org/project/zope.sqlalchemy>`_.
+   system such as `Flask-dis_sqlalchemy <https://pypi.org/project/Flask-dis_sqlalchemy/>`_
+   or `zope.dis_sqlalchemy <https://pypi.org/project/zope.dis_sqlalchemy>`_.
 
 A :class:`.scoped_session` is constructed by calling it, passing it a
 **factory** which can create new :class:`.Session` objects.   A factory
@@ -51,8 +51,8 @@ is just something that produces a new object when called, and in the
 case of :class:`.Session`, the most common factory is the :class:`.sessionmaker`,
 introduced earlier in this section.  Below we illustrate this usage::
 
-    >>> from sqlalchemy.orm import scoped_session
-    >>> from sqlalchemy.orm import sessionmaker
+    >>> from dis_sqlalchemy.orm import scoped_session
+    >>> from dis_sqlalchemy.orm import sessionmaker
 
     >>> session_factory = sessionmaker(bind=some_engine)
     >>> Session = scoped_session(session_factory)
@@ -182,7 +182,7 @@ diagram below illustrates this flow:
 
 .. sourcecode:: text
 
-    Web Server          Web Framework        SQLAlchemy ORM Code
+    Web Server          Web Framework        dis_sqlalchemy ORM Code
     --------------      --------------       ------------------------------
     startup        ->   Web framework        # Session registry is established
                         initializes          Session = scoped_session(sessionmaker())
@@ -251,7 +251,7 @@ this in conjunction with a hypothetical event marker provided by the web framewo
 ``on_request_end``, which allows code to be invoked whenever a request ends::
 
     from my_web_framework import get_current_request, on_request_end
-    from sqlalchemy.orm import scoped_session, sessionmaker
+    from dis_sqlalchemy.orm import scoped_session, sessionmaker
 
     Session = scoped_session(sessionmaker(bind=some_engine), scopefunc=get_current_request)
 
@@ -271,13 +271,13 @@ otherwise self-managed.
 Contextual Session API
 ----------------------
 
-.. autoclass:: sqlalchemy.orm.scoped_session
+.. autoclass:: dis_sqlalchemy.orm.scoped_session
     :members:
     :inherited-members:
 
-.. autoclass:: sqlalchemy.util.ScopedRegistry
+.. autoclass:: dis_sqlalchemy.util.ScopedRegistry
     :members:
 
-.. autoclass:: sqlalchemy.util.ThreadLocalRegistry
+.. autoclass:: dis_sqlalchemy.util.ThreadLocalRegistry
 
-.. autoclass:: sqlalchemy.orm.QueryPropertyDescriptor
+.. autoclass:: dis_sqlalchemy.orm.QueryPropertyDescriptor

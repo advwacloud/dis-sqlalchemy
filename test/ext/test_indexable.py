@@ -1,22 +1,22 @@
-import sqlalchemy as sa
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import testing
-from sqlalchemy import Text
-from sqlalchemy.ext.indexable import index_property
-from sqlalchemy.orm import declarative_base
-from sqlalchemy.orm import Session
-from sqlalchemy.sql.sqltypes import ARRAY
-from sqlalchemy.sql.sqltypes import JSON
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import in_
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import ne_
-from sqlalchemy.testing import not_in
-from sqlalchemy.testing.entities import ComparableEntity
-from sqlalchemy.testing.schema import Column
+import dis_sqlalchemy as sa
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import Text
+from dis_sqlalchemy.ext.indexable import index_property
+from dis_sqlalchemy.orm import declarative_base
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.sql.sqltypes import ARRAY
+from dis_sqlalchemy.sql.sqltypes import JSON
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import in_
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import ne_
+from dis_sqlalchemy.testing import not_in
+from dis_sqlalchemy.testing.entities import ComparableEntity
+from dis_sqlalchemy.testing.schema import Column
 
 
 class IndexPropertyTest(fixtures.TestBase):
@@ -230,7 +230,7 @@ class IndexPropertyArrayTest(fixtures.DeclarativeMappedTest):
         eq_(a.first, 2)
 
     def test_modified(self):
-        from sqlalchemy import inspect
+        from dis_sqlalchemy import inspect
 
         Array = self.classes.Array
         s = Session(testing.db)
@@ -258,7 +258,7 @@ class IndexPropertyJsonTest(fixtures.DeclarativeMappedTest):
 
     @classmethod
     def setup_classes(cls):
-        from sqlalchemy.dialects.postgresql import JSON
+        from dis_sqlalchemy.dialects.postgresql import JSON
 
         Base = cls.DeclarativeBasic
 

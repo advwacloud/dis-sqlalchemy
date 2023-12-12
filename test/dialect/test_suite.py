@@ -1,1 +1,1 @@
-from sqlalchemy.testing.suite import *  # noqa
+from dis_sqlalchemy.testing.suite import *  # noqa

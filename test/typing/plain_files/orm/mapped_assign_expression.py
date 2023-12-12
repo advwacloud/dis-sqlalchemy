@@ -1,11 +1,11 @@
 from datetime import datetime
 
-from sqlalchemy import create_engine
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import registry
-from sqlalchemy.orm import Session
-from sqlalchemy.sql.functions import now
-from sqlalchemy.testing.schema import mapped_column
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import registry
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.sql.functions import now
+from dis_sqlalchemy.testing.schema import mapped_column
 
 mapper_registry: registry = registry()
 e = create_engine("sqlite:///database.db", echo=True)

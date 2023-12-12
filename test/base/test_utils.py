@@ -4,39 +4,39 @@ from pathlib import Path
 import pickle
 import sys
 
-from sqlalchemy import exc
-from sqlalchemy import sql
-from sqlalchemy import testing
-from sqlalchemy import util
-from sqlalchemy.sql import column
-from sqlalchemy.sql.base import DedupeColumnCollection
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import combinations
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import in_
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_false
-from sqlalchemy.testing import is_instance_of
-from sqlalchemy.testing import is_none
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import mock
-from sqlalchemy.testing import ne_
-from sqlalchemy.testing import not_in
-from sqlalchemy.testing.util import gc_collect
-from sqlalchemy.testing.util import picklers
-from sqlalchemy.util import classproperty
-from sqlalchemy.util import compat
-from sqlalchemy.util import FastIntFlag
-from sqlalchemy.util import get_callable_argspec
-from sqlalchemy.util import langhelpers
-from sqlalchemy.util import preloaded
-from sqlalchemy.util import WeakSequence
-from sqlalchemy.util._collections import merge_lists_w_ordering
-from sqlalchemy.util._has_cy import _import_cy_extensions
-from sqlalchemy.util._has_cy import HAS_CYEXTENSION
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import sql
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import util
+from dis_sqlalchemy.sql import column
+from dis_sqlalchemy.sql.base import DedupeColumnCollection
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import combinations
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import in_
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_false
+from dis_sqlalchemy.testing import is_instance_of
+from dis_sqlalchemy.testing import is_none
+from dis_sqlalchemy.testing import is_true
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing import ne_
+from dis_sqlalchemy.testing import not_in
+from dis_sqlalchemy.testing.util import gc_collect
+from dis_sqlalchemy.testing.util import picklers
+from dis_sqlalchemy.util import classproperty
+from dis_sqlalchemy.util import compat
+from dis_sqlalchemy.util import FastIntFlag
+from dis_sqlalchemy.util import get_callable_argspec
+from dis_sqlalchemy.util import langhelpers
+from dis_sqlalchemy.util import preloaded
+from dis_sqlalchemy.util import WeakSequence
+from dis_sqlalchemy.util._collections import merge_lists_w_ordering
+from dis_sqlalchemy.util._has_cy import _import_cy_extensions
+from dis_sqlalchemy.util._has_cy import HAS_CYEXTENSION
 
 
 class WeakSequenceTest(fixtures.TestBase):
@@ -2544,7 +2544,7 @@ class SymbolTest(fixtures.TestBase):
         if native == "native":
             from enum import IntFlag
         else:
-            from sqlalchemy.util import FastIntFlag as IntFlag
+            from dis_sqlalchemy.util import FastIntFlag as IntFlag
 
         class Enum(IntFlag):
             fi_sym1 = 1
@@ -3478,7 +3478,7 @@ class TestModuleRegistry(fixtures.TestBase):
             mr = preloaded._ModuleRegistry()
 
             ret = mr.preload_module(
-                "xml.dom", "wsgiref.simple_server", "sqlalchemy.sql.util"
+                "xml.dom", "wsgiref.simple_server", "dis_sqlalchemy.sql.util"
             )
             o = object()
             is_(ret(o), o)
@@ -3493,8 +3493,8 @@ class TestModuleRegistry(fixtures.TestBase):
             is_true("wsgiref.simple_server" in sys.modules)
             is_(sys.modules["wsgiref.simple_server"], mr.wsgiref_simple_server)
 
-            mr.import_prefix("sqlalchemy")
-            is_(sys.modules["sqlalchemy.sql.util"], mr.sql_util)
+            mr.import_prefix("dis_sqlalchemy")
+            is_(sys.modules["dis_sqlalchemy.sql.util"], mr.sql_util)
         finally:
             for name, mod in to_restore:
                 if mod is not None:
@@ -3595,7 +3595,7 @@ class CyExtensionTest(fixtures.TestBase):
     def test_all_cyext_imported(self):
         ext = _import_cy_extensions()
         lib_folder = (Path(__file__).parent / ".." / ".." / "lib").resolve()
-        sa_folder = lib_folder / "sqlalchemy"
+        sa_folder = lib_folder / "dis_sqlalchemy"
         cython_files = [f.resolve() for f in sa_folder.glob("**/*.pyx")]
         eq_(len(ext), len(cython_files))
         names = {

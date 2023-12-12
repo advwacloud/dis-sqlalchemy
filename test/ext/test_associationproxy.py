@@ -8,51 +8,51 @@ from typing import List
 from unittest.mock import call
 from unittest.mock import Mock
 
-from sqlalchemy import cast
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import or_
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.engine import default
-from sqlalchemy.ext.associationproxy import _AssociationList
-from sqlalchemy.ext.associationproxy import association_proxy
-from sqlalchemy.ext.associationproxy import AssociationProxy
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import clear_mappers
-from sqlalchemy.orm import collections
-from sqlalchemy.orm import composite
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import declarative_base
-from sqlalchemy.orm import declared_attr
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import mapper
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm.collections import attribute_keyed_dict
-from sqlalchemy.orm.collections import collection
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_false
-from sqlalchemy.testing import is_none
-from sqlalchemy.testing import is_not_none
-from sqlalchemy.testing.assertions import expect_raises_message
-from sqlalchemy.testing.entities import ComparableEntity  # noqa
-from sqlalchemy.testing.entities import ComparableMixin  # noqa
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.testing.util import gc_collect
+from dis_sqlalchemy import cast
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import or_
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.engine import default
+from dis_sqlalchemy.ext.associationproxy import _AssociationList
+from dis_sqlalchemy.ext.associationproxy import association_proxy
+from dis_sqlalchemy.ext.associationproxy import AssociationProxy
+from dis_sqlalchemy.orm import aliased
+from dis_sqlalchemy.orm import clear_mappers
+from dis_sqlalchemy.orm import collections
+from dis_sqlalchemy.orm import composite
+from dis_sqlalchemy.orm import configure_mappers
+from dis_sqlalchemy.orm import declarative_base
+from dis_sqlalchemy.orm import declared_attr
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import mapper
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm.collections import attribute_keyed_dict
+from dis_sqlalchemy.orm.collections import collection
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_warnings
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_false
+from dis_sqlalchemy.testing import is_none
+from dis_sqlalchemy.testing import is_not_none
+from dis_sqlalchemy.testing.assertions import expect_raises_message
+from dis_sqlalchemy.testing.entities import ComparableEntity  # noqa
+from dis_sqlalchemy.testing.entities import ComparableMixin  # noqa
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
+from dis_sqlalchemy.testing.util import gc_collect
 
 
 class DictCollection(dict):
@@ -3331,7 +3331,7 @@ class ProxyOfSynonymTest(AssertsCompiledSQL, fixtures.DeclarativeMappedTest):
 
     @classmethod
     def setup_classes(cls):
-        from sqlalchemy.orm import synonym
+        from dis_sqlalchemy.orm import synonym
 
         Base = cls.DeclarativeBasic
 
@@ -3383,7 +3383,7 @@ class SynonymOfProxyTest(AssertsCompiledSQL, fixtures.DeclarativeMappedTest):
 
     @classmethod
     def setup_classes(cls):
-        from sqlalchemy.orm import synonym
+        from dis_sqlalchemy.orm import synonym
 
         Base = cls.DeclarativeBasic
 
@@ -3431,8 +3431,8 @@ class ProxyHybridTest(fixtures.DeclarativeMappedTest, AssertsCompiledSQL):
 
     @classmethod
     def setup_classes(cls):
-        from sqlalchemy.ext.hybrid import hybrid_property
-        from sqlalchemy.orm.interfaces import PropComparator
+        from dis_sqlalchemy.ext.hybrid import hybrid_property
+        from dis_sqlalchemy.orm.interfaces import PropComparator
 
         Base = cls.DeclarativeBasic
 

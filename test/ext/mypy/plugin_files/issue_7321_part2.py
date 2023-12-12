@@ -2,8 +2,8 @@ from typing import Any
 from typing import Dict
 from typing import Type
 
-from sqlalchemy.orm import declarative_base
-from sqlalchemy.orm import declared_attr
+from dis_sqlalchemy.orm import declarative_base
+from dis_sqlalchemy.orm import declared_attr
 
 
 Base = declarative_base()

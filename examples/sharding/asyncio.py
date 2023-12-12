@@ -13,23 +13,23 @@ from __future__ import annotations
 import asyncio
 import datetime
 
-from sqlalchemy import Column
-from sqlalchemy import ForeignKey
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import select
-from sqlalchemy import Table
-from sqlalchemy.ext.asyncio import async_sessionmaker
-from sqlalchemy.ext.asyncio import create_async_engine
-from sqlalchemy.ext.horizontal_shard import set_shard_id
-from sqlalchemy.ext.horizontal_shard import ShardedSession
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import immediateload
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import relationship
-from sqlalchemy.sql import operators
-from sqlalchemy.sql import visitors
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import select
+from dis_sqlalchemy import Table
+from dis_sqlalchemy.ext.asyncio import async_sessionmaker
+from dis_sqlalchemy.ext.asyncio import create_async_engine
+from dis_sqlalchemy.ext.horizontal_shard import set_shard_id
+from dis_sqlalchemy.ext.horizontal_shard import ShardedSession
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import immediateload
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.sql import operators
+from dis_sqlalchemy.sql import visitors
 
 
 echo = True

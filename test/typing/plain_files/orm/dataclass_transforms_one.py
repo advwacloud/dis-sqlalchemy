@@ -2,12 +2,12 @@ from __future__ import annotations
 
 from typing import Optional
 
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import MappedAsDataclass
-from sqlalchemy.orm import query_expression
+from dis_sqlalchemy.orm import column_property
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import MappedAsDataclass
+from dis_sqlalchemy.orm import query_expression
 
 
 class Base(DeclarativeBase):

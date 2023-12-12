@@ -1,29 +1,29 @@
 """Illustrates customized class instrumentation, using
-the :mod:`sqlalchemy.ext.instrumentation` extension package.
+the :mod:`dis_sqlalchemy.ext.instrumentation` extension package.
 
 In this example, mapped classes are modified to
 store their state in a dictionary attached to an attribute
 named "_goofy_dict", instead of using __dict__.
-this example illustrates how to replace SQLAlchemy's class
+this example illustrates how to replace dis_sqlalchemy's class
 descriptors with a user-defined system.
 
 
 """
-from sqlalchemy import Column
-from sqlalchemy import create_engine
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import Table
-from sqlalchemy import Text
-from sqlalchemy.ext.instrumentation import InstrumentationManager
-from sqlalchemy.orm import registry as _reg
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm.attributes import del_attribute
-from sqlalchemy.orm.attributes import get_attribute
-from sqlalchemy.orm.attributes import set_attribute
-from sqlalchemy.orm.instrumentation import is_instrumented
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import Text
+from dis_sqlalchemy.ext.instrumentation import InstrumentationManager
+from dis_sqlalchemy.orm import registry as _reg
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm.attributes import del_attribute
+from dis_sqlalchemy.orm.attributes import get_attribute
+from dis_sqlalchemy.orm.attributes import set_attribute
+from dis_sqlalchemy.orm.instrumentation import is_instrumented
 
 
 registry = _reg()

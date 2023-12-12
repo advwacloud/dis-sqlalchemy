@@ -2,33 +2,33 @@ import dataclasses
 import operator
 import random
 
-import sqlalchemy as sa
-from sqlalchemy import event
-from sqlalchemy import ForeignKey
-from sqlalchemy import insert
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import update
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import Composite
-from sqlalchemy.orm import composite
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm.attributes import LoaderCallableStatus
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+import dis_sqlalchemy as sa
+from dis_sqlalchemy import event
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import insert
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import update
+from dis_sqlalchemy.orm import aliased
+from dis_sqlalchemy.orm import Composite
+from dis_sqlalchemy.orm import composite
+from dis_sqlalchemy.orm import configure_mappers
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm.attributes import LoaderCallableStatus
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 
 
 class PointTest(fixtures.MappedTest, testing.AssertsCompiledSQL):
@@ -518,7 +518,7 @@ class PointTest(fixtures.MappedTest, testing.AssertsCompiledSQL):
     def test_get_history(self):
         Edge = self.classes.Edge
         Point = self.classes.Point
-        from sqlalchemy.orm.attributes import get_history
+        from dis_sqlalchemy.orm.attributes import get_history
 
         e1 = Edge()
         e1.start = Point(1, 2)
@@ -606,7 +606,7 @@ class PointTest(fixtures.MappedTest, testing.AssertsCompiledSQL):
         """test saving a null composite value
 
         See google groups thread for more context:
-        https://groups.google.com/group/sqlalchemy/browse_thread/thread/0c6580a1761b2c29
+        https://groups.google.com/group/dis_sqlalchemy/browse_thread/thread/0c6580a1761b2c29
 
         """
 
@@ -1810,7 +1810,7 @@ class ComparatorTest(fixtures.MappedTest, testing.AssertsCompiledSQL):
     def test_clause_expansion(self):
         self._fixture(False)
         Edge = self.classes.Edge
-        from sqlalchemy.orm import configure_mappers
+        from dis_sqlalchemy.orm import configure_mappers
 
         configure_mappers()
 

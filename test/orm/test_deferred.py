@@ -2,51 +2,51 @@ from __future__ import annotations
 
 from typing import Union
 
-import sqlalchemy as sa
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import null
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import union_all
-from sqlalchemy import util
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import contains_eager
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import defaultload
-from sqlalchemy.orm import defer
-from sqlalchemy.orm import deferred
-from sqlalchemy.orm import immediateload
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import lazyload
-from sqlalchemy.orm import Load
-from sqlalchemy.orm import load_only
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import query_expression
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import selectinload
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import subqueryload
-from sqlalchemy.orm import synonym
-from sqlalchemy.orm import undefer
-from sqlalchemy.orm import undefer_group
-from sqlalchemy.orm import with_expression
-from sqlalchemy.orm import with_polymorphic
-from sqlalchemy.sql import literal
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing.entities import ComparableEntity
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+import dis_sqlalchemy as sa
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import null
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import union_all
+from dis_sqlalchemy import util
+from dis_sqlalchemy.orm import aliased
+from dis_sqlalchemy.orm import attributes
+from dis_sqlalchemy.orm import contains_eager
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import defaultload
+from dis_sqlalchemy.orm import defer
+from dis_sqlalchemy.orm import deferred
+from dis_sqlalchemy.orm import immediateload
+from dis_sqlalchemy.orm import joinedload
+from dis_sqlalchemy.orm import lazyload
+from dis_sqlalchemy.orm import Load
+from dis_sqlalchemy.orm import load_only
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import query_expression
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import selectinload
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import subqueryload
+from dis_sqlalchemy.orm import synonym
+from dis_sqlalchemy.orm import undefer
+from dis_sqlalchemy.orm import undefer_group
+from dis_sqlalchemy.orm import with_expression
+from dis_sqlalchemy.orm import with_polymorphic
+from dis_sqlalchemy.sql import literal
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing.entities import ComparableEntity
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 from test.orm import _fixtures
 from .inheritance._poly_fixtures import _Polymorphic
 from .inheritance._poly_fixtures import Boss
@@ -1710,7 +1710,7 @@ class InheritanceTest(_Polymorphic):
     @classmethod
     def setup_mappers(cls):
         super().setup_mappers()
-        from sqlalchemy import inspect
+        from dis_sqlalchemy import inspect
 
         inspect(Company).add_property(
             "managers", relationship(Manager, viewonly=True)

@@ -1,22 +1,22 @@
-import sqlalchemy
-from sqlalchemy import Column
-from sqlalchemy import Enum
-from sqlalchemy import ForeignKey
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy.ext.declarative import ConcreteBase
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import join as ormjoin
-from sqlalchemy.orm import relationship
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import profiling
-from sqlalchemy.util import classproperty
+import dis_sqlalchemy
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import Enum
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.ext.declarative import ConcreteBase
+from dis_sqlalchemy.orm import aliased
+from dis_sqlalchemy.orm import join as ormjoin
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import profiling
+from dis_sqlalchemy.util import classproperty
 
 
 class EnumTest(fixtures.TestBase):
@@ -24,7 +24,7 @@ class EnumTest(fixtures.TestBase):
 
     def setup_test(self):
         class SomeEnum:
-            # Implements PEP 435 in the minimal fashion needed by SQLAlchemy
+            # Implements PEP 435 in the minimal fashion needed by dis_sqlalchemy
 
             _members = {}
 
@@ -61,7 +61,7 @@ class CacheKeyTest(fixtures.TestBase):
         # a whole new model of setup/teardown, since pytest "fixture"
         # sort of purposely works badly with setup/teardown
 
-        registry = sqlalchemy.orm.registry()
+        registry = dis_sqlalchemy.orm.registry()
 
         metadata = MetaData()
         parent = Table(

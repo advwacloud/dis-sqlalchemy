@@ -1,4 +1,4 @@
-.. |tutorial_title| replace:: SQLAlchemy Unified Tutorial
+.. |tutorial_title| replace:: dis_sqlalchemy Unified Tutorial
 .. |next| replace:: :doc:`engine`
 
 .. footer_topic:: |tutorial_title|
@@ -10,41 +10,41 @@
 .. rst-class:: orm_core
 
 ============================
-SQLAlchemy Unified Tutorial
+dis_sqlalchemy Unified Tutorial
 ============================
 
 .. admonition:: About this document
 
-    The SQLAlchemy Unified Tutorial is integrated between the Core and ORM
-    components of SQLAlchemy and serves as a unified introduction to SQLAlchemy
-    as a whole. For users of SQLAlchemy within the 1.x series, in the
+    The dis_sqlalchemy Unified Tutorial is integrated between the Core and ORM
+    components of dis_sqlalchemy and serves as a unified introduction to dis_sqlalchemy
+    as a whole. For users of dis_sqlalchemy within the 1.x series, in the
     :term:`2.0 style` of working, the ORM uses Core-style querying with the
     :func:`_sql.select` construct, and transactional semantics between Core
     connections and ORM sessions are equivalent. Take note of the blue border
     styles for each section, that will tell you how "ORM-ish" a particular
     topic is!
 
-    Users who are already familiar with SQLAlchemy, and especially those
-    looking to migrate existing applications to work under the SQLAlchemy 2.0
+    Users who are already familiar with dis_sqlalchemy, and especially those
+    looking to migrate existing applications to work under the dis_sqlalchemy 2.0
     series within the 1.4 transitional phase should check out the
     :ref:`migration_20_toplevel` document as well.
 
     For the newcomer, this document has a **lot** of detail, however by the
     end they will be considered an **Alchemist**.
 
-SQLAlchemy is presented as two distinct APIs, one building on top of the other.
+dis_sqlalchemy is presented as two distinct APIs, one building on top of the other.
 These APIs are known as **Core** and **ORM**.
 
 .. container:: core-header
 
-    **SQLAlchemy Core** is the foundational architecture for SQLAlchemy as a
+    **dis_sqlalchemy Core** is the foundational architecture for dis_sqlalchemy as a
     "database toolkit".  The library provides tools for managing connectivity
     to a database, interacting with database queries and results, and
     programmatic construction of SQL statements.
 
     Sections that are **primarily Core-only** will not refer to the ORM.
-    SQLAlchemy constructs used in these sections will be imported from the
-    ``sqlalchemy`` namespace. As an additional indicator of subject
+    dis_sqlalchemy constructs used in these sections will be imported from the
+    ``dis_sqlalchemy`` namespace. As an additional indicator of subject
     classification, they will also include a **dark blue border on the right**.
     When using the ORM, these concepts are still in play but are less often
     explicit in user code. ORM users should read these sections, but not expect
@@ -53,7 +53,7 @@ These APIs are known as **Core** and **ORM**.
 
 .. container:: orm-header
 
-    **SQLAlchemy ORM** builds upon the Core to provide optional **object
+    **dis_sqlalchemy ORM** builds upon the Core to provide optional **object
     relational mapping** capabilities.   The ORM provides an additional
     configuration layer allowing user-defined Python classes to be **mapped**
     to database tables and other constructs, as well as an object persistence
@@ -63,22 +63,22 @@ These APIs are known as **Core** and **ORM**.
 
     Sections that are **primarily ORM-only** should be **titled to
     include the phrase "ORM"**, so that it's clear this is an ORM related topic.
-    SQLAlchemy constructs used in these sections will be imported from the
-    ``sqlalchemy.orm`` namespace. Finally, as an additional indicator of
+    dis_sqlalchemy constructs used in these sections will be imported from the
+    ``dis_sqlalchemy.orm`` namespace. Finally, as an additional indicator of
     subject classification, they will also include a **light blue border on the
     left**. Core-only users can skip these.
 
 .. container:: core-header, orm-dependency
 
     **Most** sections in this tutorial discuss **Core concepts that
-    are also used explicitly with the ORM**. SQLAlchemy 2.0 in particular
+    are also used explicitly with the ORM**. dis_sqlalchemy 2.0 in particular
     features a much greater level of integration of Core API use within the
     ORM.
 
     For each of these sections, there will be **introductory text** discussing the
     degree to which ORM users should expect to be using these programming
-    patterns. SQLAlchemy constructs in these sections will be imported from the
-    ``sqlalchemy`` namespace with some potential use of ``sqlalchemy.orm``
+    patterns. dis_sqlalchemy constructs in these sections will be imported from the
+    ``dis_sqlalchemy`` namespace with some potential use of ``dis_sqlalchemy.orm``
     constructs at the same time. As an additional indicator of subject
     classification, these sections will also include **both a thinner light
     border on the left, and a thicker dark border on the right**. Core and ORM
@@ -106,7 +106,7 @@ The major sections of this tutorial are as follows:
     orm_related_objects
     further_reading
 
-* :ref:`tutorial_engine` - all SQLAlchemy applications start with an
+* :ref:`tutorial_engine` - all dis_sqlalchemy applications start with an
   :class:`_engine.Engine` object; here's how to create one.
 
 * :ref:`tutorial_working_with_transactions` - the usage API of the
@@ -115,14 +115,14 @@ The major sections of this tutorial are as follows:
   however ORM users will want to be familiar with at least the
   :class:`_result.Result` object.
 
-* :ref:`tutorial_working_with_metadata` - SQLAlchemy's SQL abstractions as well
+* :ref:`tutorial_working_with_metadata` - dis_sqlalchemy's SQL abstractions as well
   as the ORM rely upon a system of defining database schema constructs as
   Python objects.   This section introduces how to do that from both a Core and
   an ORM perspective.
 
 * :ref:`tutorial_working_with_data` - here we learn how to create, select,
   update and delete data in the database.   The so-called :term:`CRUD`
-  operations here are given in terms of SQLAlchemy Core with links out towards
+  operations here are given in terms of dis_sqlalchemy Core with links out towards
   their ORM counterparts.  The SELECT operation that is introduced in detail at
   :ref:`tutorial_selecting_data` applies equally well to Core and ORM.
 
@@ -146,17 +146,17 @@ Version Check
 
 This tutorial is written using a system called `doctest
 <https://docs.python.org/3/library/doctest.html>`_. All of the code excerpts
-written with a ``>>>`` are actually run as part of SQLAlchemy's test suite, and
+written with a ``>>>`` are actually run as part of dis_sqlalchemy's test suite, and
 the reader is invited to work with the code examples given in real time with
 their own Python interpreter.
 
 If running the examples, it is advised that the reader performs a quick check to
-verify that we are on  **version 2.0** of SQLAlchemy:
+verify that we are on  **version 2.0** of dis_sqlalchemy:
 
 .. sourcecode:: pycon+sql
 
-    >>> import sqlalchemy
-    >>> sqlalchemy.__version__  # doctest: +SKIP
+    >>> import dis_sqlalchemy
+    >>> dis_sqlalchemy.__version__  # doctest: +SKIP
     2.0.0
 
 

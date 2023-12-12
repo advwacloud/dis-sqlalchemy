@@ -1,28 +1,28 @@
-from sqlalchemy import and_
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import join
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import Bundle
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import defaultload
-from sqlalchemy.orm import defer
-from sqlalchemy.orm import join as orm_join
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import Load
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import selectinload
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import profiling
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.fixtures import NoCache
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from dis_sqlalchemy import and_
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import join
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.orm import aliased
+from dis_sqlalchemy.orm import Bundle
+from dis_sqlalchemy.orm import configure_mappers
+from dis_sqlalchemy.orm import defaultload
+from dis_sqlalchemy.orm import defer
+from dis_sqlalchemy.orm import join as orm_join
+from dis_sqlalchemy.orm import joinedload
+from dis_sqlalchemy.orm import Load
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import selectinload
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import sessionmaker
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import profiling
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.fixtures import NoCache
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 
 
 class MergeTest(NoCache, fixtures.MappedTest):

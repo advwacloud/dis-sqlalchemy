@@ -1,12 +1,12 @@
-from sqlalchemy import exc
-from sqlalchemy import testing
-from sqlalchemy.engine import default
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import relationship
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.engine import default
+from dis_sqlalchemy.orm import joinedload
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing.fixtures import fixture_session
 from test.orm import _fixtures
 
 
@@ -330,7 +330,7 @@ class CompileTest(_fixtures.FixtureTest, AssertsCompiledSQL):
         )
 
     def test_for_update_on_inner_w_joinedload_no_render_oracle(self):
-        from sqlalchemy.dialects import oracle
+        from dis_sqlalchemy.dialects import oracle
 
         User = self.classes.User
         sess = fixture_session()

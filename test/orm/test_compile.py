@@ -1,18 +1,18 @@
-from sqlalchemy import Column
-from sqlalchemy import exc as sa_exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import Unicode
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import clear_mappers
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import fixtures
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import exc as sa_exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import Unicode
+from dis_sqlalchemy.orm import backref
+from dis_sqlalchemy.orm import clear_mappers
+from dis_sqlalchemy.orm import configure_mappers
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import fixtures
 
 
 class CompileTest(fixtures.MappedTest):

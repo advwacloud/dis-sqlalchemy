@@ -1,29 +1,29 @@
 """Evaluating SQL expressions on ORM objects"""
 
-from sqlalchemy import and_
-from sqlalchemy import bindparam
-from sqlalchemy import ForeignKey
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import JSON
-from sqlalchemy import not_
-from sqlalchemy import or_
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import tuple_
-from sqlalchemy.ext.hybrid import hybrid_property
-from sqlalchemy.orm import evaluator
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import relationship
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing.assertions import expect_raises_message
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from dis_sqlalchemy import and_
+from dis_sqlalchemy import bindparam
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import JSON
+from dis_sqlalchemy import not_
+from dis_sqlalchemy import or_
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import tuple_
+from dis_sqlalchemy.ext.hybrid import hybrid_property
+from dis_sqlalchemy.orm import evaluator
+from dis_sqlalchemy.orm import exc as orm_exc
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing.assertions import expect_raises_message
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 
 compiler = evaluator._EvaluatorCompiler()
 

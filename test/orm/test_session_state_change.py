@@ -1,8 +1,8 @@
-from sqlalchemy import exc as sa_exc
-from sqlalchemy.orm import state_changes
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import fixtures
+from dis_sqlalchemy import exc as sa_exc
+from dis_sqlalchemy.orm import state_changes
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import fixtures
 
 
 class StateTestChange(state_changes._StateChangeState):

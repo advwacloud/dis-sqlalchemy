@@ -203,7 +203,7 @@
         :tickets: 428
 
       finally figured out how to get setuptools version in, available
-      as sqlalchemy.__version__
+      as dis_sqlalchemy.__version__
 
     .. change::
         :tags: general
@@ -852,7 +852,7 @@
         :tags: engines
         :tickets: 521
 
-      the dialects within sqlalchemy.databases become a setuptools
+      the dialects within dis_sqlalchemy.databases become a setuptools
       entry points. loading the built-in database dialects works the
       same as always, but if none found will fall back to trying
       pkg_resources to load an external module
@@ -2190,7 +2190,7 @@
         :tags: 
         :tickets: 
 
-      added object_session() method to sqlalchemy namespace
+      added object_session() method to dis_sqlalchemy namespace
 
     .. change::
         :tags: 
@@ -2438,7 +2438,7 @@
         :tags: orm
         :tickets: 
 
-      new extension sqlalchemy.ext.associationproxy, provides transparent
+      new extension dis_sqlalchemy.ext.associationproxy, provides transparent
       "association object" mappings.  new example
       examples/association/proxied_association.py illustrates.
 
@@ -2481,9 +2481,9 @@
       "echo" keyword parameters are still functional but set/unset
       log levels for their respective classes/instances.  all logging
       can be controlled directly through the Python API by setting
-      INFO and DEBUG levels for loggers in the "sqlalchemy" namespace.
-      class-level logging is under "sqlalchemy.<module>.<classname>",
-      instance-level logging under "sqlalchemy.<module>.<classname>.0x..<00-FF>".
+      INFO and DEBUG levels for loggers in the "dis_sqlalchemy" namespace.
+      class-level logging is under "dis_sqlalchemy.<module>.<classname>",
+      instance-level logging under "dis_sqlalchemy.<module>.<classname>.0x..<00-FF>".
       Test suite includes "--log-info" and "--log-debug" arguments
       which work independently of --verbose/--quiet.  Logging added
       to orm to allow tracking of mapper configurations, row iteration.

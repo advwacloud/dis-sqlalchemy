@@ -1,4 +1,4 @@
-"""Illustrates use of the sqlalchemy.ext.asyncio.AsyncSession object
+"""Illustrates use of the dis_sqlalchemy.ext.asyncio.AsyncSession object
 for asynchronous ORM use.
 
 """
@@ -10,18 +10,18 @@ from typing import List
 from typing import Optional
 from typing import TYPE_CHECKING
 
-from sqlalchemy import ForeignKey
-from sqlalchemy.ext.asyncio import async_sessionmaker
-from sqlalchemy.ext.asyncio import create_async_engine
-from sqlalchemy.future import select
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy.ext.asyncio import async_sessionmaker
+from dis_sqlalchemy.ext.asyncio import create_async_engine
+from dis_sqlalchemy.future import select
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
 
 if TYPE_CHECKING:
-    from sqlalchemy import ScalarResult
+    from dis_sqlalchemy import ScalarResult
 
 
 class Base(DeclarativeBase):

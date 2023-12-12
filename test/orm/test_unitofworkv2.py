@@ -2,54 +2,54 @@ from unittest.mock import Mock
 from unittest.mock import patch
 import uuid
 
-from sqlalchemy import cast
-from sqlalchemy import DateTime
-from sqlalchemy import event
-from sqlalchemy import exc
-from sqlalchemy import FetchedValue
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Identity
-from sqlalchemy import insert
-from sqlalchemy import insert_sentinel
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import JSON
-from sqlalchemy import literal
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import util
-from sqlalchemy import Uuid
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import clear_mappers
-from sqlalchemy.orm import declarative_base
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import unitofwork
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import assert_warns_message
-from sqlalchemy.testing import config
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import variation_fixture
-from sqlalchemy.testing.assertsql import AllOf
-from sqlalchemy.testing.assertsql import CompiledSQL
-from sqlalchemy.testing.assertsql import Conditional
-from sqlalchemy.testing.assertsql import RegexSQL
-from sqlalchemy.testing.entities import BasicEntity
-from sqlalchemy.testing.entities import ComparableEntity
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.provision import normalize_sequence
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from dis_sqlalchemy import cast
+from dis_sqlalchemy import DateTime
+from dis_sqlalchemy import event
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import FetchedValue
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Identity
+from dis_sqlalchemy import insert
+from dis_sqlalchemy import insert_sentinel
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import JSON
+from dis_sqlalchemy import literal
+from dis_sqlalchemy import select
+from dis_sqlalchemy import Sequence
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import text
+from dis_sqlalchemy import util
+from dis_sqlalchemy import Uuid
+from dis_sqlalchemy.orm import attributes
+from dis_sqlalchemy.orm import backref
+from dis_sqlalchemy.orm import clear_mappers
+from dis_sqlalchemy.orm import declarative_base
+from dis_sqlalchemy.orm import exc as orm_exc
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import unitofwork
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import assert_warns_message
+from dis_sqlalchemy.testing import config
+from dis_sqlalchemy.testing import engines
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_warnings
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import variation_fixture
+from dis_sqlalchemy.testing.assertsql import AllOf
+from dis_sqlalchemy.testing.assertsql import CompiledSQL
+from dis_sqlalchemy.testing.assertsql import Conditional
+from dis_sqlalchemy.testing.assertsql import RegexSQL
+from dis_sqlalchemy.testing.entities import BasicEntity
+from dis_sqlalchemy.testing.entities import ComparableEntity
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.provision import normalize_sequence
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 from test.orm import _fixtures
 
 
@@ -1842,7 +1842,7 @@ class BasicStaleChecksTest(fixtures.MappedTest):
             config.db.dialect, "supports_sane_multi_rowcount", False
         ):
             with patch(
-                "sqlalchemy.engine.cursor.CursorResult.rowcount", rowcount
+                "dis_sqlalchemy.engine.cursor.CursorResult.rowcount", rowcount
             ):
                 Parent, Child = self._fixture()
                 sess = fixture_session()
@@ -1872,7 +1872,7 @@ class BasicStaleChecksTest(fixtures.MappedTest):
             config.db.dialect, "supports_sane_multi_rowcount", False
         ):
             with patch(
-                "sqlalchemy.engine.cursor.CursorResult.rowcount", rowcount
+                "dis_sqlalchemy.engine.cursor.CursorResult.rowcount", rowcount
             ):
                 Parent, Child = self._fixture()
                 sess = fixture_session()
@@ -1902,7 +1902,7 @@ class BasicStaleChecksTest(fixtures.MappedTest):
             config.db.dialect, "supports_sane_multi_rowcount", False
         ):
             with patch(
-                "sqlalchemy.engine.cursor.CursorResult.rowcount", rowcount
+                "dis_sqlalchemy.engine.cursor.CursorResult.rowcount", rowcount
             ):
                 Parent, Child = self._fixture()
                 sess = fixture_session()
@@ -2217,7 +2217,7 @@ class LoadersUsingCommittedTest(UOWTest):
             # it will be still be u1 instead of u2
             assert target.user.id == target.user_id == u2.id
 
-        from sqlalchemy import event
+        from dis_sqlalchemy import event
 
         event.listen(Address, "before_update", before_update)
 
@@ -2289,7 +2289,7 @@ class LoadersUsingCommittedTest(UOWTest):
                 eq_([a.id for a in target.addresses], [a.id for a in [a1, a2]])
             raise AvoidReferencialError()
 
-        from sqlalchemy import event
+        from dis_sqlalchemy import event
 
         event.listen(User, "before_update", before_update)
 
@@ -3376,7 +3376,7 @@ class TypeWoBoolTest(fixtures.MappedTest, testing.AssertsExecutionResults):
 
     @classmethod
     def define_tables(cls, metadata):
-        from sqlalchemy import TypeDecorator
+        from dis_sqlalchemy import TypeDecorator
 
         class NoBool:
             def __nonzero__(self):
@@ -3478,7 +3478,7 @@ class TypeWoBoolTest(fixtures.MappedTest, testing.AssertsExecutionResults):
 class NullEvaluatingTest(fixtures.MappedTest, testing.AssertsExecutionResults):
     @classmethod
     def define_tables(cls, metadata):
-        from sqlalchemy import TypeDecorator
+        from dis_sqlalchemy import TypeDecorator
 
         class EvalsNull(TypeDecorator):
             impl = String(50)

@@ -1,13 +1,13 @@
-import sqlalchemy as sa
-from sqlalchemy import testing
-from sqlalchemy import util
-from sqlalchemy.orm import defaultload
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import subqueryload
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing.assertions import expect_raises_message
-from sqlalchemy.testing.fixtures import fixture_session
+import dis_sqlalchemy as sa
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import util
+from dis_sqlalchemy.orm import defaultload
+from dis_sqlalchemy.orm import joinedload
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import subqueryload
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing.assertions import expect_raises_message
+from dis_sqlalchemy.testing.fixtures import fixture_session
 from test.orm import _fixtures
 
 

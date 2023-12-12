@@ -1,11 +1,11 @@
 """test the inspection registry system."""
 
-from sqlalchemy import exc
-from sqlalchemy import inspect
-from sqlalchemy import inspection
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import inspection
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
 
 
 class TestFixture:

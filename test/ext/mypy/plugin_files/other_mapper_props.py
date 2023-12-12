@@ -1,15 +1,15 @@
 from typing import Optional
 
-from sqlalchemy import Column
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import deferred
-from sqlalchemy.orm import registry
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import synonym
-from sqlalchemy.sql.functions import func
-from sqlalchemy.sql.sqltypes import Text
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import String
+from dis_sqlalchemy.orm import column_property
+from dis_sqlalchemy.orm import deferred
+from dis_sqlalchemy.orm import registry
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import synonym
+from dis_sqlalchemy.sql.functions import func
+from dis_sqlalchemy.sql.sqltypes import Text
 
 reg: registry = registry()
 

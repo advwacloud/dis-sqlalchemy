@@ -1,15 +1,15 @@
 from typing import TYPE_CHECKING
 
-from sqlalchemy import Column
-from sqlalchemy import Integer
-from sqlalchemy.orm import as_declarative
-from sqlalchemy.orm import declared_attr
-from sqlalchemy.orm import Mapped
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy.orm import as_declarative
+from dis_sqlalchemy.orm import declared_attr
+from dis_sqlalchemy.orm import Mapped
 from .address import Address
 from .user import User
 
 if TYPE_CHECKING:
-    from sqlalchemy.orm.decl_api import DeclarativeMeta
+    from dis_sqlalchemy.orm.decl_api import DeclarativeMeta
 
 
 @as_declarative()

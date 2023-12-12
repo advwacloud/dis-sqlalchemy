@@ -2,16 +2,16 @@ from decimal import Decimal
 import os
 import random
 
-from sqlalchemy import __version__
-from sqlalchemy import Column
-from sqlalchemy import create_engine
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import Numeric
-from sqlalchemy import String
-from sqlalchemy.orm import declarative_base
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
+from dis_sqlalchemy import __version__
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import Numeric
+from dis_sqlalchemy import String
+from dis_sqlalchemy.orm import declarative_base
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
 
 
 Base = declarative_base()

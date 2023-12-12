@@ -4,20 +4,20 @@ Core Events
 ===========
 
 This section describes the event interfaces provided in
-SQLAlchemy Core.
+dis_sqlalchemy Core.
 For an introduction to the event listening API, see :ref:`event_toplevel`.
 ORM events are described in :ref:`orm_event_toplevel`.
 
-.. autoclass:: sqlalchemy.event.base.Events
+.. autoclass:: dis_sqlalchemy.event.base.Events
    :members:
 
 Connection Pool Events
 ----------------------
 
-.. autoclass:: sqlalchemy.events.PoolEvents
+.. autoclass:: dis_sqlalchemy.events.PoolEvents
    :members:
 
-.. autoclass:: sqlalchemy.events.PoolResetState
+.. autoclass:: dis_sqlalchemy.events.PoolResetState
    :members:
 
 .. _core_sql_events:
@@ -25,18 +25,18 @@ Connection Pool Events
 SQL Execution and Connection Events
 -----------------------------------
 
-.. autoclass:: sqlalchemy.events.ConnectionEvents
+.. autoclass:: dis_sqlalchemy.events.ConnectionEvents
     :members:
 
-.. autoclass:: sqlalchemy.events.DialectEvents
+.. autoclass:: dis_sqlalchemy.events.DialectEvents
     :members:
 
 Schema Events
 -------------
 
-.. autoclass:: sqlalchemy.events.DDLEvents
+.. autoclass:: dis_sqlalchemy.events.DDLEvents
     :members:
 
-.. autoclass:: sqlalchemy.events.SchemaEventTarget
+.. autoclass:: dis_sqlalchemy.events.SchemaEventTarget
     :members:
 

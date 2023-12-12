@@ -5,52 +5,52 @@ import multiprocessing
 import pickle
 import weakref
 
-import sqlalchemy as sa
-from sqlalchemy import and_
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import types
-from sqlalchemy import Unicode
-from sqlalchemy import util
-from sqlalchemy.dialects import mysql
-from sqlalchemy.dialects import postgresql
-from sqlalchemy.dialects import sqlite
-from sqlalchemy.engine import result
-from sqlalchemy.engine.processors import to_decimal_processor_factory
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import clear_mappers
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import declarative_base
-from sqlalchemy.orm import join as orm_join
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import Load
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import selectinload
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm import subqueryload
-from sqlalchemy.orm.session import _sessions
-from sqlalchemy.sql import column
-from sqlalchemy.sql import util as sql_util
-from sqlalchemy.sql.util import visit_binary_product
-from sqlalchemy.sql.visitors import cloned_traverse
-from sqlalchemy.sql.visitors import replacement_traverse
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import pickleable
-from sqlalchemy.testing.entities import ComparableEntity
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.testing.util import gc_collect
+import dis_sqlalchemy as sa
+from dis_sqlalchemy import and_
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import types
+from dis_sqlalchemy import Unicode
+from dis_sqlalchemy import util
+from dis_sqlalchemy.dialects import mysql
+from dis_sqlalchemy.dialects import postgresql
+from dis_sqlalchemy.dialects import sqlite
+from dis_sqlalchemy.engine import result
+from dis_sqlalchemy.engine.processors import to_decimal_processor_factory
+from dis_sqlalchemy.orm import aliased
+from dis_sqlalchemy.orm import attributes
+from dis_sqlalchemy.orm import clear_mappers
+from dis_sqlalchemy.orm import configure_mappers
+from dis_sqlalchemy.orm import declarative_base
+from dis_sqlalchemy.orm import join as orm_join
+from dis_sqlalchemy.orm import joinedload
+from dis_sqlalchemy.orm import Load
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import selectinload
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import sessionmaker
+from dis_sqlalchemy.orm import subqueryload
+from dis_sqlalchemy.orm.session import _sessions
+from dis_sqlalchemy.sql import column
+from dis_sqlalchemy.sql import util as sql_util
+from dis_sqlalchemy.sql.util import visit_binary_product
+from dis_sqlalchemy.sql.visitors import cloned_traverse
+from dis_sqlalchemy.sql.visitors import replacement_traverse
+from dis_sqlalchemy.testing import engines
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import pickleable
+from dis_sqlalchemy.testing.entities import ComparableEntity
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
+from dis_sqlalchemy.testing.util import gc_collect
 from ..orm import _fixtures
 
 
@@ -268,7 +268,7 @@ class MemUsageTest(EnsureZeroed):
     __requires__ = ("cpython", "no_windows")
 
     def test_type_compile(self):
-        from sqlalchemy.dialects.sqlite.base import dialect as SQLiteDialect
+        from dis_sqlalchemy.dialects.sqlite.base import dialect as SQLiteDialect
 
         cast = sa.cast(column("x"), sa.Integer)
 
@@ -1241,7 +1241,7 @@ class CycleTest(_fixtures.FixtureTest):
         go()
 
     def test_proxied_attribute(self):
-        from sqlalchemy.ext import hybrid
+        from dis_sqlalchemy.ext import hybrid
 
         users = self.tables.users
 

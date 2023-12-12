@@ -1,7 +1,7 @@
 """
 compiler tests.
 
-These tests are among the very first that were written when SQLAlchemy
+These tests are among the very first that were written when dis_sqlalchemy
 began in 2005.  As a result the testing style here is very dense;
 it's an ongoing job to break these into much smaller tests with correct pep8
 styling and coherent test organization.
@@ -14,105 +14,105 @@ import datetime
 import decimal
 from typing import TYPE_CHECKING
 
-from sqlalchemy import alias
-from sqlalchemy import and_
-from sqlalchemy import asc
-from sqlalchemy import bindparam
-from sqlalchemy import Boolean
-from sqlalchemy import case
-from sqlalchemy import cast
-from sqlalchemy import CheckConstraint
-from sqlalchemy import Column
-from sqlalchemy import Date
-from sqlalchemy import desc
-from sqlalchemy import distinct
-from sqlalchemy import Enum
-from sqlalchemy import exc
-from sqlalchemy import except_
-from sqlalchemy import exists
-from sqlalchemy import Float
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Index
-from sqlalchemy import insert
-from sqlalchemy import insert_sentinel
-from sqlalchemy import Integer
-from sqlalchemy import intersect
-from sqlalchemy import join
-from sqlalchemy import literal
-from sqlalchemy import literal_column
-from sqlalchemy import MetaData
-from sqlalchemy import not_
-from sqlalchemy import null
-from sqlalchemy import Numeric
-from sqlalchemy import or_
-from sqlalchemy import outerjoin
-from sqlalchemy import over
-from sqlalchemy import schema
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import sql
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import Text
-from sqlalchemy import text
-from sqlalchemy import TIMESTAMP
-from sqlalchemy import true
-from sqlalchemy import try_cast
-from sqlalchemy import tuple_
-from sqlalchemy import type_coerce
-from sqlalchemy import types
-from sqlalchemy import union
-from sqlalchemy import union_all
-from sqlalchemy import update
-from sqlalchemy import util
-from sqlalchemy.dialects import mssql
-from sqlalchemy.dialects import mysql
-from sqlalchemy.dialects import oracle
-from sqlalchemy.dialects import postgresql
-from sqlalchemy.dialects import sqlite
-from sqlalchemy.dialects.postgresql.base import PGCompiler
-from sqlalchemy.dialects.postgresql.base import PGDialect
-from sqlalchemy.engine import default
-from sqlalchemy.ext.compiler import compiles
-from sqlalchemy.sql import column
-from sqlalchemy.sql import compiler
-from sqlalchemy.sql import elements
-from sqlalchemy.sql import label
-from sqlalchemy.sql import operators
-from sqlalchemy.sql import table
-from sqlalchemy.sql import util as sql_util
-from sqlalchemy.sql.elements import BooleanClauseList
-from sqlalchemy.sql.elements import ColumnElement
-from sqlalchemy.sql.elements import CompilerColumnElement
-from sqlalchemy.sql.elements import Grouping
-from sqlalchemy.sql.expression import ClauseElement
-from sqlalchemy.sql.expression import ClauseList
-from sqlalchemy.sql.expression import ColumnClause
-from sqlalchemy.sql.expression import TableClause
-from sqlalchemy.sql.selectable import LABEL_STYLE_NONE
-from sqlalchemy.sql.selectable import LABEL_STYLE_TABLENAME_PLUS_COL
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import eq_ignore_whitespace
-from sqlalchemy.testing import expect_raises
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_none
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import mock
-from sqlalchemy.testing import ne_
-from sqlalchemy.testing import Variation
-from sqlalchemy.testing.schema import pep435_enum
-from sqlalchemy.types import UserDefinedType
+from dis_sqlalchemy import alias
+from dis_sqlalchemy import and_
+from dis_sqlalchemy import asc
+from dis_sqlalchemy import bindparam
+from dis_sqlalchemy import Boolean
+from dis_sqlalchemy import case
+from dis_sqlalchemy import cast
+from dis_sqlalchemy import CheckConstraint
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import Date
+from dis_sqlalchemy import desc
+from dis_sqlalchemy import distinct
+from dis_sqlalchemy import Enum
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import except_
+from dis_sqlalchemy import exists
+from dis_sqlalchemy import Float
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Index
+from dis_sqlalchemy import insert
+from dis_sqlalchemy import insert_sentinel
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import intersect
+from dis_sqlalchemy import join
+from dis_sqlalchemy import literal
+from dis_sqlalchemy import literal_column
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import not_
+from dis_sqlalchemy import null
+from dis_sqlalchemy import Numeric
+from dis_sqlalchemy import or_
+from dis_sqlalchemy import outerjoin
+from dis_sqlalchemy import over
+from dis_sqlalchemy import schema
+from dis_sqlalchemy import select
+from dis_sqlalchemy import Sequence
+from dis_sqlalchemy import sql
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import Text
+from dis_sqlalchemy import text
+from dis_sqlalchemy import TIMESTAMP
+from dis_sqlalchemy import true
+from dis_sqlalchemy import try_cast
+from dis_sqlalchemy import tuple_
+from dis_sqlalchemy import type_coerce
+from dis_sqlalchemy import types
+from dis_sqlalchemy import union
+from dis_sqlalchemy import union_all
+from dis_sqlalchemy import update
+from dis_sqlalchemy import util
+from dis_sqlalchemy.dialects import mssql
+from dis_sqlalchemy.dialects import mysql
+from dis_sqlalchemy.dialects import oracle
+from dis_sqlalchemy.dialects import postgresql
+from dis_sqlalchemy.dialects import sqlite
+from dis_sqlalchemy.dialects.postgresql.base import PGCompiler
+from dis_sqlalchemy.dialects.postgresql.base import PGDialect
+from dis_sqlalchemy.engine import default
+from dis_sqlalchemy.ext.compiler import compiles
+from dis_sqlalchemy.sql import column
+from dis_sqlalchemy.sql import compiler
+from dis_sqlalchemy.sql import elements
+from dis_sqlalchemy.sql import label
+from dis_sqlalchemy.sql import operators
+from dis_sqlalchemy.sql import table
+from dis_sqlalchemy.sql import util as sql_util
+from dis_sqlalchemy.sql.elements import BooleanClauseList
+from dis_sqlalchemy.sql.elements import ColumnElement
+from dis_sqlalchemy.sql.elements import CompilerColumnElement
+from dis_sqlalchemy.sql.elements import Grouping
+from dis_sqlalchemy.sql.expression import ClauseElement
+from dis_sqlalchemy.sql.expression import ClauseList
+from dis_sqlalchemy.sql.expression import ColumnClause
+from dis_sqlalchemy.sql.expression import TableClause
+from dis_sqlalchemy.sql.selectable import LABEL_STYLE_NONE
+from dis_sqlalchemy.sql.selectable import LABEL_STYLE_TABLENAME_PLUS_COL
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import eq_ignore_whitespace
+from dis_sqlalchemy.testing import expect_raises
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_none
+from dis_sqlalchemy.testing import is_true
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing import ne_
+from dis_sqlalchemy.testing import Variation
+from dis_sqlalchemy.testing.schema import pep435_enum
+from dis_sqlalchemy.types import UserDefinedType
 
 
 if TYPE_CHECKING:
-    from sqlalchemy import Select
+    from dis_sqlalchemy import Select
 
 
 table1 = table(
@@ -928,7 +928,7 @@ class SelectTest(fixtures.TestBase, AssertsCompiledSQL):
         #
         # this kind of thing happens of course because the ORM is in some
         # more exotic cases writing in joins where columns may be duped.
-        # it might be nice to fix it on that side also, however SQLAlchemy
+        # it might be nice to fix it on that side also, however dis_sqlalchemy
         # has deduped columns in SELECT statements for 13 years so having a
         # robust behavior when dupes are present is still very useful.
 
@@ -3204,7 +3204,7 @@ class SelectTest(fixtures.TestBase, AssertsCompiledSQL):
         )
 
     def test_over_within_group(self):
-        from sqlalchemy import within_group
+        from dis_sqlalchemy import within_group
 
         stmt = select(
             table1.c.myid,
@@ -4895,7 +4895,7 @@ class BindParameterTest(AssertsCompiledSQL, fixtures.TestBase):
             None,
         ),
         (
-            # as of SQLAlchemy 1.4, values like these are considered to be
+            # as of dis_sqlalchemy 1.4, values like these are considered to be
             # SQL expressions up front, so it is coerced to null()
             # immediately and no bindparam() is created
             table1.insert().values({"myid": None}),
@@ -5197,7 +5197,7 @@ class BindParameterTest(AssertsCompiledSQL, fixtures.TestBase):
 
         The main test for actual known characters passing through for bound
         params is in
-        sqlalchemy.testing.suite.test_dialect.DifficultParametersTest.
+        dis_sqlalchemy.testing.suite.test_dialect.DifficultParametersTest.
 
         """
         dialect = default.DefaultDialect()
@@ -5770,20 +5770,20 @@ class CompileUXTest(fixtures.TestBase):
 
 class UnsupportedTest(fixtures.TestBase):
     def test_unsupported_element_str_visit_name(self):
-        from sqlalchemy.sql.expression import ClauseElement
+        from dis_sqlalchemy.sql.expression import ClauseElement
 
         class SomeElement(ClauseElement):
             __visit_name__ = "some_element"
 
         assert_raises_message(
             exc.UnsupportedCompilationError,
-            r"Compiler <sqlalchemy.sql.compiler.StrSQLCompiler .*"
+            r"Compiler <dis_sqlalchemy.sql.compiler.StrSQLCompiler .*"
             r"can't render element of type <class '.*SomeElement'>",
             SomeElement().compile,
         )
 
     def test_unsupported_element_meth_visit_name(self):
-        from sqlalchemy.sql.expression import ClauseElement
+        from dis_sqlalchemy.sql.expression import ClauseElement
 
         def go():
             class SomeElement(ClauseElement):
@@ -5812,7 +5812,7 @@ class UnsupportedTest(fixtures.TestBase):
             schema.CreateTable(t).compile(dialect=sqlite.dialect())
 
     def test_unsupported_operator(self):
-        from sqlalchemy.sql.expression import BinaryExpression
+        from dis_sqlalchemy.sql.expression import BinaryExpression
 
         def myop(x, y):
             pass
@@ -5820,7 +5820,7 @@ class UnsupportedTest(fixtures.TestBase):
         binary = BinaryExpression(column("foo"), column("bar"), myop)
         assert_raises_message(
             exc.UnsupportedCompilationError,
-            r"Compiler <sqlalchemy.sql.compiler.StrSQLCompiler .*"
+            r"Compiler <dis_sqlalchemy.sql.compiler.StrSQLCompiler .*"
             r"can't render element of type <function.*",
             binary.compile,
         )
@@ -5953,7 +5953,7 @@ class StringifySpecialTest(fixtures.TestBase):
             return "widget"
 
         with mock.patch(
-            "sqlalchemy.dialects.sqlite.base.SQLiteCompiler.visit_widget",
+            "dis_sqlalchemy.dialects.sqlite.base.SQLiteCompiler.visit_widget",
             visit_widget,
             create=True,
         ):
@@ -5974,7 +5974,7 @@ class StringifySpecialTest(fixtures.TestBase):
             return f"widget {self.process(bindparam('q'), **kw)}"
 
         with mock.patch(
-            "sqlalchemy.dialects.sqlite.base.SQLiteCompiler.visit_widget",
+            "dis_sqlalchemy.dialects.sqlite.base.SQLiteCompiler.visit_widget",
             visit_widget,
             create=True,
         ):
@@ -5982,7 +5982,7 @@ class StringifySpecialTest(fixtures.TestBase):
 
     def test_within_group(self):
         # stringify of these was supported anyway by defaultdialect.
-        from sqlalchemy import within_group
+        from dis_sqlalchemy import within_group
 
         stmt = select(
             table1.c.myid,
@@ -6049,7 +6049,7 @@ class StringifySpecialTest(fixtures.TestBase):
             "my_table", column("id"), column("data"), column("user_email")
         )
 
-        from sqlalchemy.dialects.postgresql import insert
+        from dis_sqlalchemy.dialects.postgresql import insert
 
         insert_stmt = insert(my_table).values(
             id="some_existing_id", data="inserted value"
@@ -6065,7 +6065,7 @@ class StringifySpecialTest(fixtures.TestBase):
         )
 
     def test_dialect_specific_ddl(self):
-        from sqlalchemy.dialects.postgresql import ExcludeConstraint
+        from dis_sqlalchemy.dialects.postgresql import ExcludeConstraint
 
         m = MetaData()
         tbl = Table("testtbl", m, Column("room", Integer, primary_key=True))
@@ -7574,7 +7574,7 @@ class ResultMapTest(fixtures.TestBase):
         )
 
     def test_nested_api(self):
-        from sqlalchemy.engine.cursor import CursorResultMetaData
+        from dis_sqlalchemy.engine.cursor import CursorResultMetaData
 
         stmt2 = select(table2).subquery()
 

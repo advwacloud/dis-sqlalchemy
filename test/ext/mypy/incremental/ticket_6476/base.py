@@ -1,4 +1,4 @@
-from sqlalchemy.ext.declarative import declarative_base
+from dis_sqlalchemy.ext.declarative import declarative_base
 
 
 class CustomBase:

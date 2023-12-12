@@ -4,9 +4,9 @@
 Runtime Inspection API
 ======================
 
-.. automodule:: sqlalchemy.inspection
+.. automodule:: dis_sqlalchemy.inspection
 
-.. autofunction:: sqlalchemy.inspect
+.. autofunction:: dis_sqlalchemy.inspect
 
 
 Available Inspection Targets

@@ -12,58 +12,58 @@ from tempfile import mkstemp
 from unittest.mock import Mock
 from unittest.mock import patch
 
-from sqlalchemy import CHAR
-from sqlalchemy import column
-from sqlalchemy import exc
-from sqlalchemy import exc as sa_exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import INT
-from sqlalchemy import Integer
-from sqlalchemy import literal
-from sqlalchemy import literal_column
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import sql
-from sqlalchemy import String
-from sqlalchemy import table
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import true
-from sqlalchemy import tuple_
-from sqlalchemy import type_coerce
-from sqlalchemy import TypeDecorator
-from sqlalchemy import VARCHAR
-from sqlalchemy.engine import cursor as _cursor
-from sqlalchemy.engine import default
-from sqlalchemy.engine import Row
-from sqlalchemy.engine.result import SimpleResultMetaData
-from sqlalchemy.ext.compiler import compiles
-from sqlalchemy.sql import ColumnElement
-from sqlalchemy.sql import expression
-from sqlalchemy.sql import LABEL_STYLE_TABLENAME_PLUS_COL
-from sqlalchemy.sql.selectable import LABEL_STYLE_NONE
-from sqlalchemy.sql.selectable import TextualSelect
-from sqlalchemy.sql.sqltypes import NULLTYPE
-from sqlalchemy.sql.util import ClauseAdapter
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import assertions
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import in_
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_false
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import le_
-from sqlalchemy.testing import mock
-from sqlalchemy.testing import ne_
-from sqlalchemy.testing import not_in
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from dis_sqlalchemy import CHAR
+from dis_sqlalchemy import column
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import exc as sa_exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import INT
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import literal
+from dis_sqlalchemy import literal_column
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import select
+from dis_sqlalchemy import sql
+from dis_sqlalchemy import String
+from dis_sqlalchemy import table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import text
+from dis_sqlalchemy import true
+from dis_sqlalchemy import tuple_
+from dis_sqlalchemy import type_coerce
+from dis_sqlalchemy import TypeDecorator
+from dis_sqlalchemy import VARCHAR
+from dis_sqlalchemy.engine import cursor as _cursor
+from dis_sqlalchemy.engine import default
+from dis_sqlalchemy.engine import Row
+from dis_sqlalchemy.engine.result import SimpleResultMetaData
+from dis_sqlalchemy.ext.compiler import compiles
+from dis_sqlalchemy.sql import ColumnElement
+from dis_sqlalchemy.sql import expression
+from dis_sqlalchemy.sql import LABEL_STYLE_TABLENAME_PLUS_COL
+from dis_sqlalchemy.sql.selectable import LABEL_STYLE_NONE
+from dis_sqlalchemy.sql.selectable import TextualSelect
+from dis_sqlalchemy.sql.sqltypes import NULLTYPE
+from dis_sqlalchemy.sql.util import ClauseAdapter
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import assertions
+from dis_sqlalchemy.testing import engines
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import in_
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_false
+from dis_sqlalchemy.testing import is_true
+from dis_sqlalchemy.testing import le_
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing import ne_
+from dis_sqlalchemy.testing import not_in
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 
 
 class CursorResultTest(fixtures.TablesTest):
@@ -524,7 +524,7 @@ class CursorResultTest(fixtures.TablesTest):
             pickle.dump(result, f)
         name = name.replace(os.sep, "/")
         code = (
-            "import sqlalchemy; import pickle; print(["
+            "import dis_sqlalchemy; import pickle; print(["
             f"r[0] for r in pickle.load(open('''{name}''', 'rb'))])"
         )
         proc = subprocess.run(

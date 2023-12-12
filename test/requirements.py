@@ -1,24 +1,24 @@
-"""Requirements specific to SQLAlchemy's own unit tests.
+"""Requirements specific to dis_sqlalchemy's own unit tests.
 
 
 """
 
-from sqlalchemy import exc
-from sqlalchemy.sql import sqltypes
-from sqlalchemy.sql import text
-from sqlalchemy.testing import exclusions
-from sqlalchemy.testing.exclusions import against
-from sqlalchemy.testing.exclusions import fails_if
-from sqlalchemy.testing.exclusions import fails_on
-from sqlalchemy.testing.exclusions import fails_on_everything_except
-from sqlalchemy.testing.exclusions import LambdaPredicate
-from sqlalchemy.testing.exclusions import NotPredicate
-from sqlalchemy.testing.exclusions import only_if
-from sqlalchemy.testing.exclusions import only_on
-from sqlalchemy.testing.exclusions import skip_if
-from sqlalchemy.testing.exclusions import SpecPredicate
-from sqlalchemy.testing.exclusions import succeeds_if
-from sqlalchemy.testing.requirements import SuiteRequirements
+from dis_sqlalchemy import exc
+from dis_sqlalchemy.sql import sqltypes
+from dis_sqlalchemy.sql import text
+from dis_sqlalchemy.testing import exclusions
+from dis_sqlalchemy.testing.exclusions import against
+from dis_sqlalchemy.testing.exclusions import fails_if
+from dis_sqlalchemy.testing.exclusions import fails_on
+from dis_sqlalchemy.testing.exclusions import fails_on_everything_except
+from dis_sqlalchemy.testing.exclusions import LambdaPredicate
+from dis_sqlalchemy.testing.exclusions import NotPredicate
+from dis_sqlalchemy.testing.exclusions import only_if
+from dis_sqlalchemy.testing.exclusions import only_on
+from dis_sqlalchemy.testing.exclusions import skip_if
+from dis_sqlalchemy.testing.exclusions import SpecPredicate
+from dis_sqlalchemy.testing.exclusions import succeeds_if
+from dis_sqlalchemy.testing.requirements import SuiteRequirements
 
 
 def no_support(db, reason):
@@ -692,7 +692,7 @@ class DefaultRequirements(SuiteRequirements):
             [
                 "postgresql",
                 "mssql",
-                # "oracle" - oracle can do this but SQLAlchemy doesn't support
+                # "oracle" - oracle can do this but dis_sqlalchemy doesn't support
                 # their syntax yet
             ]
         )

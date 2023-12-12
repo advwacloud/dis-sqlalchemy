@@ -1,6 +1,6 @@
-# do not import sqlalchemy testing feature in this file, since it's
+# do not import dis_sqlalchemy testing feature in this file, since it's
 # run directly, not passing through pytest
-from sqlalchemy import create_engine
+from dis_sqlalchemy import create_engine
 
 
 def _get_version(conn):

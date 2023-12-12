@@ -3,16 +3,16 @@
 Changes and Migration
 =====================
 
-SQLAlchemy changelogs and migration guides are now integrated
+dis_sqlalchemy changelogs and migration guides are now integrated
 within the main documentation.
 
 Current Migration Guide
 -----------------------
 
-For SQLAlchemy 2.0, there are two separate documents; the "Major Migration
-Guide" details how to update a SQLAlchemy 1.4 application to be compatible
-under SQLAlchemy 2.0. The "What's New?" document details major new features,
-capabilities and behaviors in SQLAlchemy 2.0.
+For dis_sqlalchemy 2.0, there are two separate documents; the "Major Migration
+Guide" details how to update a dis_sqlalchemy 1.4 application to be compatible
+under dis_sqlalchemy 2.0. The "What's New?" document details major new features,
+capabilities and behaviors in dis_sqlalchemy 2.0.
 
 .. toctree::
    :titlesonly:

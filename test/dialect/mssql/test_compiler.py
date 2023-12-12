@@ -1,41 +1,41 @@
-from sqlalchemy import bindparam
-from sqlalchemy import Column
-from sqlalchemy import Computed
-from sqlalchemy import delete
-from sqlalchemy import exc
-from sqlalchemy import extract
-from sqlalchemy import func
-from sqlalchemy import Identity
-from sqlalchemy import Index
-from sqlalchemy import insert
-from sqlalchemy import Integer
-from sqlalchemy import literal
-from sqlalchemy import literal_column
-from sqlalchemy import MetaData
-from sqlalchemy import PrimaryKeyConstraint
-from sqlalchemy import schema
-from sqlalchemy import select
-from sqlalchemy import sql
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import try_cast
-from sqlalchemy import union
-from sqlalchemy import UniqueConstraint
-from sqlalchemy import update
-from sqlalchemy.dialects import mssql
-from sqlalchemy.dialects.mssql import base as mssql_base
-from sqlalchemy.sql import column
-from sqlalchemy.sql import quoted_name
-from sqlalchemy.sql import table
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing.assertions import eq_ignore_whitespace
-from sqlalchemy.types import TypeEngine
+from dis_sqlalchemy import bindparam
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import Computed
+from dis_sqlalchemy import delete
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import extract
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Identity
+from dis_sqlalchemy import Index
+from dis_sqlalchemy import insert
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import literal
+from dis_sqlalchemy import literal_column
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import PrimaryKeyConstraint
+from dis_sqlalchemy import schema
+from dis_sqlalchemy import select
+from dis_sqlalchemy import sql
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import text
+from dis_sqlalchemy import try_cast
+from dis_sqlalchemy import union
+from dis_sqlalchemy import UniqueConstraint
+from dis_sqlalchemy import update
+from dis_sqlalchemy.dialects import mssql
+from dis_sqlalchemy.dialects.mssql import base as mssql_base
+from dis_sqlalchemy.sql import column
+from dis_sqlalchemy.sql import quoted_name
+from dis_sqlalchemy.sql import table
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing.assertions import eq_ignore_whitespace
+from dis_sqlalchemy.types import TypeEngine
 
 tbl = table("t", column("a"))
 
@@ -398,7 +398,7 @@ class CompileTest(fixtures.TestBase, AssertsCompiledSQL):
     def test_strict_binds(self, expr, compiled, kw):
         """test the 'strict' compiler binds."""
 
-        from sqlalchemy.dialects.mssql.base import MSSQLStrictCompiler
+        from dis_sqlalchemy.dialects.mssql.base import MSSQLStrictCompiler
 
         mssql_dialect = mssql.dialect()
         mssql_dialect.statement_compiler = MSSQLStrictCompiler

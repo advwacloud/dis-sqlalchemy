@@ -5,18 +5,18 @@ record by primary key
 """
 import random
 
-from sqlalchemy import bindparam
-from sqlalchemy import Column
-from sqlalchemy import create_engine
-from sqlalchemy import Integer
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy.ext import baked
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.future import select as future_select
-from sqlalchemy.orm import deferred
-from sqlalchemy.orm import Session
-from sqlalchemy.sql import lambdas
+from dis_sqlalchemy import bindparam
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy.ext import baked
+from dis_sqlalchemy.ext.declarative import declarative_base
+from dis_sqlalchemy.future import select as future_select
+from dis_sqlalchemy.orm import deferred
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.sql import lambdas
 from . import Profiler
 
 

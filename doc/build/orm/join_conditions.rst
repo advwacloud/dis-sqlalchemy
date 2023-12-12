@@ -19,9 +19,9 @@ there are more than one foreign key path between two tables.
 Consider a ``Customer`` class that contains two foreign keys to an ``Address``
 class::
 
-    from sqlalchemy import Integer, ForeignKey, String, Column
-    from sqlalchemy.orm import DeclarativeBase
-    from sqlalchemy.orm import relationship
+    from dis_sqlalchemy import Integer, ForeignKey, String, Column
+    from dis_sqlalchemy.orm import DeclarativeBase
+    from dis_sqlalchemy.orm import relationship
 
 
     class Base(DeclarativeBase):
@@ -52,7 +52,7 @@ The above mapping, when we attempt to use it, will produce the error:
 
 .. sourcecode:: text
 
-    sqlalchemy.exc.AmbiguousForeignKeysError: Could not determine join
+    dis_sqlalchemy.exc.AmbiguousForeignKeysError: Could not determine join
     condition between parent/child tables on relationship
     Customer.billing_address - there are multiple foreign key
     paths linking the tables.  Specify the 'foreign_keys' argument,
@@ -127,9 +127,9 @@ as well as an ``Address`` class which stores a street address,  we
 create a relationship ``boston_addresses`` which will only
 load those ``Address`` objects which specify a city of "Boston"::
 
-    from sqlalchemy import Integer, ForeignKey, String, Column
-    from sqlalchemy.orm import DeclarativeBase
-    from sqlalchemy.orm import relationship
+    from dis_sqlalchemy import Integer, ForeignKey, String, Column
+    from dis_sqlalchemy.orm import DeclarativeBase
+    from dis_sqlalchemy.orm import relationship
 
 
     class Base(DeclarativeBase):
@@ -173,7 +173,7 @@ argument.
 
 
 The custom criteria we use in a :paramref:`_orm.relationship.primaryjoin`
-is generally only significant when SQLAlchemy is rendering SQL in
+is generally only significant when dis_sqlalchemy is rendering SQL in
 order to load or represent this relationship. That is, it's used in
 the SQL statement that's emitted in order to perform a per-attribute
 lazy load, or when a join is constructed at query time, such as via
@@ -211,11 +211,11 @@ column to the ``ip_address`` column, which is a PostgreSQL type called ``INET``.
 We need to use :func:`.cast` in order to cast one side of the join to the
 type of the other::
 
-    from sqlalchemy import cast, String, Column, Integer
-    from sqlalchemy.orm import relationship
-    from sqlalchemy.dialects.postgresql import INET
+    from dis_sqlalchemy import cast, String, Column, Integer
+    from dis_sqlalchemy.orm import relationship
+    from dis_sqlalchemy.dialects.postgresql import INET
 
-    from sqlalchemy.orm import DeclarativeBase
+    from dis_sqlalchemy.orm import DeclarativeBase
 
 
     class Base(DeclarativeBase):
@@ -256,7 +256,7 @@ serve to mark exactly the column that is "foreign" or "remote" independent
 of whether that column is stated multiple times or within complex
 SQL expressions::
 
-    from sqlalchemy.orm import foreign, remote
+    from dis_sqlalchemy.orm import foreign, remote
 
 
     class HostEntry(Base):
@@ -335,8 +335,8 @@ two expressions.  The below example illustrates this with the
 `Geoalchemy2 <https://geoalchemy-2.readthedocs.io/>`_ library::
 
     from geoalchemy2 import Geometry
-    from sqlalchemy import Column, Integer, func
-    from sqlalchemy.orm import relationship, foreign
+    from dis_sqlalchemy import Column, Integer, func
+    from dis_sqlalchemy.orm import relationship, foreign
 
 
     class Polygon(Base):
@@ -541,9 +541,9 @@ specifies a many-to-many reference using the :paramref:`_orm.relationship.second
 A common situation which involves the usage of :paramref:`_orm.relationship.primaryjoin` and :paramref:`_orm.relationship.secondaryjoin`
 is when establishing a many-to-many relationship from a class to itself, as shown below::
 
-    from sqlalchemy import Integer, ForeignKey, String, Column, Table
-    from sqlalchemy.orm import DeclarativeBase
-    from sqlalchemy.orm import relationship
+    from dis_sqlalchemy import Integer, ForeignKey, String, Column, Table
+    from dis_sqlalchemy.orm import DeclarativeBase
+    from dis_sqlalchemy.orm import relationship
 
 
     class Base(DeclarativeBase):
@@ -570,7 +570,7 @@ is when establishing a many-to-many relationship from a class to itself, as show
             backref="left_nodes",
         )
 
-Where above, SQLAlchemy can't know automatically which columns should connect
+Where above, dis_sqlalchemy can't know automatically which columns should connect
 to which for the ``right_nodes`` and ``left_nodes`` relationships.   The :paramref:`_orm.relationship.primaryjoin`
 and :paramref:`_orm.relationship.secondaryjoin` arguments establish how we'd like to join to the association table.
 In the Declarative form above, as we are declaring these conditions within the Python
@@ -607,8 +607,8 @@ use the string name of the table as it is present in the :class:`_schema.MetaDat
 A classical mapping situation here is similar, where ``node_to_node`` can be joined
 to ``node.c.id``::
 
-    from sqlalchemy import Integer, ForeignKey, String, Column, Table, MetaData
-    from sqlalchemy.orm import relationship, registry
+    from dis_sqlalchemy import Integer, ForeignKey, String, Column, Table, MetaData
+    from dis_sqlalchemy.orm import relationship, registry
 
     metadata_obj = MetaData()
     mapper_registry = registry()
@@ -669,7 +669,7 @@ Composite "Secondary" Joins
 .. note::
 
     This section features far edge cases that are somewhat supported
-    by SQLAlchemy, however it is recommended to solve problems like these
+    by dis_sqlalchemy, however it is recommended to solve problems like these
     in simpler ways whenever possible, by using reasonable relational
     layouts and / or :ref:`in-Python attributes <mapper_hybrids>`.
 
@@ -677,10 +677,10 @@ Sometimes, when one seeks to build a :func:`_orm.relationship` between two table
 there is a need for more than just two or three tables to be involved in
 order to join them.  This is an area of :func:`_orm.relationship` where one seeks
 to push the boundaries of what's possible, and often the ultimate solution to
-many of these exotic use cases needs to be hammered out on the SQLAlchemy mailing
+many of these exotic use cases needs to be hammered out on the dis_sqlalchemy mailing
 list.
 
-In more recent versions of SQLAlchemy, the :paramref:`_orm.relationship.secondary`
+In more recent versions of dis_sqlalchemy, the :paramref:`_orm.relationship.secondary`
 parameter can be used in some of these cases in order to provide a composite
 target consisting of multiple tables.   Below is an example of such a
 join condition (requires version 0.9.2 at least to function as is)::
@@ -955,7 +955,7 @@ Building Query-Enabled Properties
 Very ambitious custom join conditions may fail to be directly persistable, and
 in some cases may not even load correctly. To remove the persistence part of
 the equation, use the flag :paramref:`_orm.relationship.viewonly` on the
-:func:`~sqlalchemy.orm.relationship`, which establishes it as a read-only
+:func:`~dis_sqlalchemy.orm.relationship`, which establishes it as a read-only
 attribute (data written to the collection will be ignored on flush()).
 However, in extreme cases, consider using a regular Python property in
 conjunction with :class:`_query.Query` as follows:

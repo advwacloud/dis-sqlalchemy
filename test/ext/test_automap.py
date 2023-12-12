@@ -4,31 +4,31 @@ import time
 from unittest.mock import Mock
 from unittest.mock import patch
 
-from sqlalchemy import create_engine
-from sqlalchemy import exc as sa_exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.ext.automap import AutomapBase
-from sqlalchemy.ext.automap import generate_relationship
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import interfaces
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import config
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import exc as sa_exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.ext.automap import automap_base
+from dis_sqlalchemy.ext.automap import AutomapBase
+from dis_sqlalchemy.ext.automap import generate_relationship
+from dis_sqlalchemy.orm import configure_mappers
+from dis_sqlalchemy.orm import exc as orm_exc
+from dis_sqlalchemy.orm import interfaces
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import config
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import expect_warnings
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 from ..orm._fixtures import FixtureTest
 
 
@@ -418,10 +418,10 @@ class MultipleSchemaTest(AssertsCompiledSQL, fixtures.MappedTest):
             reflect_method.fail()
 
         # only class with None for __module__ gets placed in .classes
-        is_(Base.classes.user, Base.by_module.sqlalchemy.ext.automap.user)
+        is_(Base.classes.user, Base.by_module.dis_sqlalchemy.ext.automap.user)
 
         self.assert_compile(
-            select(Base.by_module.sqlalchemy.ext.automap.user),
+            select(Base.by_module.dis_sqlalchemy.ext.automap.user),
             'SELECT "user".id, "user".name FROM "user"',
         )
 

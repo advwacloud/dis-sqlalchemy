@@ -4,57 +4,57 @@ import inspect as _py_inspect
 import pickle
 from typing import TYPE_CHECKING
 
-import sqlalchemy as sa
-from sqlalchemy import delete
-from sqlalchemy import event
-from sqlalchemy import ForeignKey
-from sqlalchemy import insert
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import literal
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import update
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import close_all_sessions
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import make_transient
-from sqlalchemy.orm import make_transient_to_detached
-from sqlalchemy.orm import object_session
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm import was_deleted
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import assert_warns_message
-from sqlalchemy.testing import assertions
-from sqlalchemy.testing import config
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_false
-from sqlalchemy.testing import is_not
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import mock
-from sqlalchemy.testing import pickleable
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.provision import normalize_sequence
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.testing.util import gc_collect
-from sqlalchemy.util.compat import inspect_getfullargspec
+import dis_sqlalchemy as sa
+from dis_sqlalchemy import delete
+from dis_sqlalchemy import event
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import insert
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import literal
+from dis_sqlalchemy import select
+from dis_sqlalchemy import Sequence
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import text
+from dis_sqlalchemy import update
+from dis_sqlalchemy.orm import attributes
+from dis_sqlalchemy.orm import backref
+from dis_sqlalchemy.orm import close_all_sessions
+from dis_sqlalchemy.orm import exc as orm_exc
+from dis_sqlalchemy.orm import make_transient
+from dis_sqlalchemy.orm import make_transient_to_detached
+from dis_sqlalchemy.orm import object_session
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import sessionmaker
+from dis_sqlalchemy.orm import was_deleted
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import assert_warns_message
+from dis_sqlalchemy.testing import assertions
+from dis_sqlalchemy.testing import config
+from dis_sqlalchemy.testing import engines
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import expect_warnings
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_false
+from dis_sqlalchemy.testing import is_not
+from dis_sqlalchemy.testing import is_true
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing import pickleable
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.provision import normalize_sequence
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
+from dis_sqlalchemy.testing.util import gc_collect
+from dis_sqlalchemy.util.compat import inspect_getfullargspec
 from test.orm import _fixtures
 
 if TYPE_CHECKING:
-    from sqlalchemy.orm import ORMExecuteState
+    from dis_sqlalchemy.orm import ORMExecuteState
 
 
 class ExecutionTest(_fixtures.FixtureTest):
@@ -1843,7 +1843,7 @@ class DisposedStates(fixtures.MappedTest):
         cls.mapper_registry.map_imperatively(T, cls.tables.t1)
 
     def teardown_test(self):
-        from sqlalchemy.orm.session import _sessions
+        from dis_sqlalchemy.orm.session import _sessions
 
         _sessions.clear()
 
@@ -2122,14 +2122,14 @@ class SessionInterface(fixtures.MappedTest):
             )
 
             with mock.patch(
-                "sqlalchemy.orm.session.loading.load_on_ident"
+                "dis_sqlalchemy.orm.session.loading.load_on_ident"
             ) as load_on_ident:
                 s.refresh(m1, with_for_update={"read": True})
                 s.refresh(m1, with_for_update=True)
                 s.refresh(m1, with_for_update=False)
                 s.refresh(m1)
 
-            from sqlalchemy.orm.query import ForUpdateArg
+            from dis_sqlalchemy.orm.query import ForUpdateArg
 
             eq_(
                 [

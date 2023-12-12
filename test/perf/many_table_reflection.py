@@ -7,8 +7,8 @@ from pprint import pprint
 import random
 import time
 
-import sqlalchemy as sa
-from sqlalchemy.engine import Inspector
+import dis_sqlalchemy as sa
+from dis_sqlalchemy.engine import Inspector
 
 types = (sa.Integer, sa.BigInteger, sa.String(200), sa.DateTime)
 USE_CONNECTION = False

@@ -1,20 +1,20 @@
-from sqlalchemy import Boolean
-from sqlalchemy import CheckConstraint
-from sqlalchemy import Column
-from sqlalchemy import DateTime
-from sqlalchemy import FetchedValue
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Index
-from sqlalchemy import Integer
-from sqlalchemy import literal_column
-from sqlalchemy import MetaData
-from sqlalchemy import PrimaryKeyConstraint
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import text
-from sqlalchemy import true
-from sqlalchemy import UUID
+from dis_sqlalchemy import Boolean
+from dis_sqlalchemy import CheckConstraint
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import DateTime
+from dis_sqlalchemy import FetchedValue
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Index
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import literal_column
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import PrimaryKeyConstraint
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import text
+from dis_sqlalchemy import true
+from dis_sqlalchemy import UUID
 
 
 m = MetaData()

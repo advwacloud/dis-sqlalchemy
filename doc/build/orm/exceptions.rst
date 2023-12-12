@@ -3,5 +3,5 @@
 ORM Exceptions
 ==============
 
-.. automodule:: sqlalchemy.orm.exc
+.. automodule:: dis_sqlalchemy.orm.exc
     :members:

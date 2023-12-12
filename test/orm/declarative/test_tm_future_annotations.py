@@ -13,19 +13,19 @@ from typing import TYPE_CHECKING
 from typing import TypeVar
 import uuid
 
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import select
-from sqlalchemy import Uuid
-import sqlalchemy.orm
-from sqlalchemy.orm import attribute_keyed_dict
-from sqlalchemy.orm import KeyFuncDict
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import relationship
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import is_
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import select
+from dis_sqlalchemy import Uuid
+import dis_sqlalchemy.orm
+from dis_sqlalchemy.orm import attribute_keyed_dict
+from dis_sqlalchemy.orm import KeyFuncDict
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import is_
 from .test_typed_mapping import expect_annotation_syntax_error
 from .test_typed_mapping import MappedColumnTest as _MappedColumnTest
 from .test_typed_mapping import RelationshipLHSTest as _RelationshipLHSTest
@@ -52,11 +52,11 @@ class MappedColumnTest(_MappedColumnTest):
         class Foo(decl_base):
             __tablename__ = "foo"
 
-            id: sqlalchemy.orm.Mapped[int] = mapped_column(primary_key=True)
+            id: dis_sqlalchemy.orm.Mapped[int] = mapped_column(primary_key=True)
 
-            data: sqlalchemy.orm.Mapped[int] = mapped_column()
+            data: dis_sqlalchemy.orm.Mapped[int] = mapped_column()
 
-            data2: sqlalchemy.orm.Mapped[int]
+            data2: dis_sqlalchemy.orm.Mapped[int]
 
         self.assert_compile(
             select(Foo), "SELECT foo.id, foo.data, foo.data2 FROM foo"

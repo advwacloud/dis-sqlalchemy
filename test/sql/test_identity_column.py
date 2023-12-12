@@ -1,19 +1,19 @@
 import re
 
-from sqlalchemy import Column
-from sqlalchemy import Identity
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import Sequence
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy.engine import URL
-from sqlalchemy.exc import ArgumentError
-from sqlalchemy.schema import CreateTable
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_not_
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import Identity
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import Sequence
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.engine import URL
+from dis_sqlalchemy.exc import ArgumentError
+from dis_sqlalchemy.schema import CreateTable
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_not_
 
 
 class _IdentityDDLFixture(testing.AssertsCompiledSQL):

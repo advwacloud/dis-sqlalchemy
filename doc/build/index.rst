@@ -3,7 +3,7 @@
 .. _index_toplevel:
 
 ========================
-SQLAlchemy Documentation
+dis_sqlalchemy Documentation
 ========================
 
 .. container:: left_right_container
@@ -16,11 +16,11 @@ SQLAlchemy Documentation
 
   .. container::
 
-    New to SQLAlchemy?   Start here:
+    New to dis_sqlalchemy?   Start here:
 
     * **For Python Beginners:** :ref:`Installation Guide <installation>` - basic guidance on installing with pip and similar
 
-    * **For Python Veterans:** :doc:`SQLAlchemy Overview <intro>` - brief architectural overview
+    * **For Python Veterans:** :doc:`dis_sqlalchemy Overview <intro>` - brief architectural overview
 
 .. container:: left_right_container
 
@@ -32,7 +32,7 @@ SQLAlchemy Documentation
 
   .. container::
 
-    New users of SQLAlchemy, as well as veterans of older SQLAlchemy
+    New users of dis_sqlalchemy, as well as veterans of older dis_sqlalchemy
     release series, should start with the
     :doc:`/tutorial/index`, which covers everything an Alchemist needs
     to know when using the ORM or just Core.
@@ -52,12 +52,12 @@ SQLAlchemy Documentation
 
   .. container::
 
-    Users coming from older versions of SQLAlchemy, especially those transitioning
+    Users coming from older versions of dis_sqlalchemy, especially those transitioning
     from the 1.x style of working, will want to review this documentation.
 
-    * :doc:`Migrating to SQLAlchemy 2.0 <changelog/migration_20>` - Complete background on migrating from 1.3 or 1.4 to 2.0
-    * :doc:`What's New in SQLAlchemy 2.0? <changelog/whatsnew_20>` - New 2.0 features and behaviors beyond the 1.x migration
-    * :doc:`Changelog catalog <changelog/index>` - Detailed changelogs for all SQLAlchemy Versions
+    * :doc:`Migrating to dis_sqlalchemy 2.0 <changelog/migration_20>` - Complete background on migrating from 1.3 or 1.4 to 2.0
+    * :doc:`What's New in dis_sqlalchemy 2.0? <changelog/whatsnew_20>` - New 2.0 features and behaviors beyond the 1.x migration
+    * :doc:`Changelog catalog <changelog/index>` - Detailed changelogs for all dis_sqlalchemy Versions
 
 
 .. container:: left_right_container
@@ -71,7 +71,7 @@ SQLAlchemy Documentation
 
   .. container:: orm
 
-    **SQLAlchemy ORM** - Detailed guides and API reference for using the ORM
+    **dis_sqlalchemy ORM** - Detailed guides and API reference for using the ORM
 
     * **Mapping Classes:**
       :doc:`Mapping Python Classes <orm/mapper_config>` |
@@ -97,7 +97,7 @@ SQLAlchemy Documentation
 
   .. container:: core
 
-    **SQLAlchemy Core** - Detailed guides and API reference for working with Core
+    **dis_sqlalchemy Core** - Detailed guides and API reference for working with Core
 
     * **Engines, Connections, Pools:**
       :doc:`Engine Configuration <core/engines>` |
@@ -145,7 +145,7 @@ SQLAlchemy Documentation
 
     .. container::
 
-      The **dialect** is the system SQLAlchemy uses to communicate with various types of DBAPIs and databases.
+      The **dialect** is the system dis_sqlalchemy uses to communicate with various types of DBAPIs and databases.
       This section describes notes, options, and usage patterns regarding individual dialects.
 
       :doc:`PostgreSQL <dialects/postgresql>` |
@@ -167,8 +167,8 @@ SQLAlchemy Documentation
   .. container::
 
     * :doc:`Frequently Asked Questions <faq/index>` - A collection of common problems and solutions
-    * :doc:`Glossary <glossary>` - Terms used in SQLAlchemy's documentation
-    * :doc:`Error Message Guide <errors>` - Explainations of many SQLAlchemy Errors
+    * :doc:`Glossary <glossary>` - Terms used in dis_sqlalchemy's documentation
+    * :doc:`Error Message Guide <errors>` - Explainations of many dis_sqlalchemy Errors
     * :doc:`Complete table of of contents <contents>`
     * :ref:`Index <genindex>`
 

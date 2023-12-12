@@ -3,44 +3,44 @@ import functools
 import itertools
 import uuid
 
-from sqlalchemy import and_
-from sqlalchemy import ARRAY
-from sqlalchemy import bindparam
-from sqlalchemy import DateTime
-from sqlalchemy import event
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Identity
-from sqlalchemy import insert
-from sqlalchemy import insert_sentinel
-from sqlalchemy import INT
-from sqlalchemy import Integer
-from sqlalchemy import literal
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import sql
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import TypeDecorator
-from sqlalchemy import Uuid
-from sqlalchemy import VARCHAR
-from sqlalchemy.engine import cursor as _cursor
-from sqlalchemy.sql.compiler import InsertmanyvaluesSentinelOpts
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import config
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import mock
-from sqlalchemy.testing import provision
-from sqlalchemy.testing.fixtures import insertmanyvalues_fixture
-from sqlalchemy.testing.provision import normalize_sequence
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from dis_sqlalchemy import and_
+from dis_sqlalchemy import ARRAY
+from dis_sqlalchemy import bindparam
+from dis_sqlalchemy import DateTime
+from dis_sqlalchemy import event
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Identity
+from dis_sqlalchemy import insert
+from dis_sqlalchemy import insert_sentinel
+from dis_sqlalchemy import INT
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import literal
+from dis_sqlalchemy import select
+from dis_sqlalchemy import Sequence
+from dis_sqlalchemy import sql
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import TypeDecorator
+from dis_sqlalchemy import Uuid
+from dis_sqlalchemy import VARCHAR
+from dis_sqlalchemy.engine import cursor as _cursor
+from dis_sqlalchemy.sql.compiler import InsertmanyvaluesSentinelOpts
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import config
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import expect_warnings
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing import provision
+from dis_sqlalchemy.testing.fixtures import insertmanyvalues_fixture
+from dis_sqlalchemy.testing.provision import normalize_sequence
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 
 
 class ExpectExpr:
@@ -109,7 +109,7 @@ class InsertExecTest(fixtures.TablesTest):
 
         assert_raises_message(
             exc.StatementError,
-            r"\(sqlalchemy.exc.InvalidRequestError\) A value is required for "
+            r"\(dis_sqlalchemy.exc.InvalidRequestError\) A value is required for "
             "bind parameter 'user_name', in "
             "parameter group 2\n"
             r"\[SQL: u?INSERT INTO users",
@@ -375,7 +375,7 @@ class InsertExecTest(fixtures.TablesTest):
     # TODO: why not in the sqlite suite?
     @testing.only_on("sqlite+pysqlite")
     def test_lastrowid_zero(self, metadata, connection):
-        from sqlalchemy.dialects import sqlite
+        from dis_sqlalchemy.dialects import sqlite
 
         class ExcCtx(sqlite.base.SQLiteExecutionContext):
             def get_lastrowid(self):
@@ -711,7 +711,7 @@ class TableInsertTest(fixtures.TablesTest):
         """test new use case in #7998"""
 
         # NOTE: this use case uses cursor.lastrowid on SQLite, MySQL, MariaDB,
-        # however when SQLAlchemy 2.0 adds support for RETURNING to SQLite
+        # however when dis_sqlalchemy 2.0 adds support for RETURNING to SQLite
         # and MariaDB, it should work there as well.
 
         t = self.tables.foo_no_seq
@@ -728,7 +728,7 @@ class TableInsertTest(fixtures.TablesTest):
         """test new use case in #7998"""
 
         # NOTE: this use case uses cursor.lastrowid on SQLite, MySQL, MariaDB,
-        # however when SQLAlchemy 2.0 adds support for RETURNING to SQLite
+        # however when dis_sqlalchemy 2.0 adds support for RETURNING to SQLite
         # and MariaDB, it should work there as well.
 
         t = self.tables.foo_no_seq

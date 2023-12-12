@@ -1,56 +1,56 @@
-from sqlalchemy import Boolean
-from sqlalchemy import case
-from sqlalchemy import column
-from sqlalchemy import event
-from sqlalchemy import exc as sa_exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import ForeignKeyConstraint
-from sqlalchemy import func
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import table
-from sqlalchemy import testing
-from sqlalchemy import util
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import class_mapper
-from sqlalchemy.orm import clear_mappers
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import composite
-from sqlalchemy.orm import declarative_base
-from sqlalchemy.orm import deferred
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import object_mapper
-from sqlalchemy.orm import polymorphic_union
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import synonym
-from sqlalchemy.orm.util import instance_str
-from sqlalchemy.sql.selectable import LABEL_STYLE_TABLENAME_PLUS_COL
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.assertions import assert_warns_message
-from sqlalchemy.testing.assertsql import AllOf
-from sqlalchemy.testing.assertsql import CompiledSQL
-from sqlalchemy.testing.assertsql import Conditional
-from sqlalchemy.testing.assertsql import Or
-from sqlalchemy.testing.assertsql import RegexSQL
-from sqlalchemy.testing.entities import BasicEntity
-from sqlalchemy.testing.entities import ComparableEntity
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from dis_sqlalchemy import Boolean
+from dis_sqlalchemy import case
+from dis_sqlalchemy import column
+from dis_sqlalchemy import event
+from dis_sqlalchemy import exc as sa_exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import ForeignKeyConstraint
+from dis_sqlalchemy import func
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import util
+from dis_sqlalchemy.orm import attributes
+from dis_sqlalchemy.orm import class_mapper
+from dis_sqlalchemy.orm import clear_mappers
+from dis_sqlalchemy.orm import column_property
+from dis_sqlalchemy.orm import composite
+from dis_sqlalchemy.orm import declarative_base
+from dis_sqlalchemy.orm import deferred
+from dis_sqlalchemy.orm import exc as orm_exc
+from dis_sqlalchemy.orm import joinedload
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import object_mapper
+from dis_sqlalchemy.orm import polymorphic_union
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import synonym
+from dis_sqlalchemy.orm.util import instance_str
+from dis_sqlalchemy.sql.selectable import LABEL_STYLE_TABLENAME_PLUS_COL
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import expect_warnings
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing.assertions import assert_warns_message
+from dis_sqlalchemy.testing.assertsql import AllOf
+from dis_sqlalchemy.testing.assertsql import CompiledSQL
+from dis_sqlalchemy.testing.assertsql import Conditional
+from dis_sqlalchemy.testing.assertsql import Or
+from dis_sqlalchemy.testing.assertsql import RegexSQL
+from dis_sqlalchemy.testing.entities import BasicEntity
+from dis_sqlalchemy.testing.entities import ComparableEntity
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 
 
 class O2MTest(fixtures.MappedTest):
@@ -2939,7 +2939,7 @@ class OptimizedLoadTest(fixtures.MappedTest):
             raise KeyError(key)
 
         with mock.patch(
-            "sqlalchemy.engine.result.ResultMetaData._key_fallback",
+            "dis_sqlalchemy.engine.result.ResultMetaData._key_fallback",
             _key_fallback,
         ):
             eq_(s1.sub, "s1sub")

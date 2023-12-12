@@ -11,7 +11,7 @@ SQL Expressions
 How do I render SQL expressions as strings, possibly with bound parameters inlined?
 ------------------------------------------------------------------------------------
 
-The "stringification" of a SQLAlchemy Core statement object or
+The "stringification" of a dis_sqlalchemy Core statement object or
 expression fragment, as well as that of an ORM :class:`_query.Query` object,
 in the majority of simple cases is as simple as using
 the ``str()`` builtin function, as below when use it with the ``print``
@@ -20,7 +20,7 @@ if we don't use it explicitly):
 
 .. sourcecode:: pycon+sql
 
-    >>> from sqlalchemy import table, column, select
+    >>> from dis_sqlalchemy import table, column, select
     >>> t = table("my_table", column("x"))
     >>> statement = select(t)
     >>> print(str(statement))
@@ -34,7 +34,7 @@ as:
 
 .. sourcecode:: pycon+sql
 
-    >>> from sqlalchemy import column
+    >>> from dis_sqlalchemy import column
     >>> print(column("x") == "some value")
     {printsql}x = :x_1
 
@@ -53,7 +53,7 @@ or :class:`.Dialect` object that represents the target database.  Such as
 below, if we have a MySQL database engine, we can stringify a statement in
 terms of the MySQL dialect::
 
-    from sqlalchemy import create_engine
+    from dis_sqlalchemy import create_engine
 
     engine = create_engine("mysql+pymysql://scott:tiger@localhost/test")
     print(statement.compile(engine))
@@ -62,7 +62,7 @@ More directly, without building up an :class:`_engine.Engine` object we can
 instantiate a :class:`.Dialect` object directly, as below where we
 use a PostgreSQL dialect::
 
-    from sqlalchemy.dialects import postgresql
+    from dis_sqlalchemy.dialects import postgresql
 
     print(statement.compile(dialect=postgresql.dialect()))
 
@@ -86,22 +86,22 @@ Rendering Bound Parameters Inline
 
 .. warning:: **Never** use these techniques with string content received from
    untrusted input, such as from web forms or other user-input applications.
-   SQLAlchemy's facilities to  coerce Python values into direct SQL string
+   dis_sqlalchemy's facilities to  coerce Python values into direct SQL string
    values are **not secure against untrusted input and do not validate the type
    of data being passed**. Always use bound parameters when programmatically
    invoking non-DDL SQL statements against a relational database.
 
 The above forms will render the SQL statement as it is passed to the Python
 :term:`DBAPI`, which includes that bound parameters are not rendered inline.
-SQLAlchemy normally does not stringify bound parameters, as this is handled
+dis_sqlalchemy normally does not stringify bound parameters, as this is handled
 appropriately by the Python DBAPI, not to mention bypassing bound
 parameters is probably the most widely exploited security hole in
-modern web applications.   SQLAlchemy has limited ability to do this
+modern web applications.   dis_sqlalchemy has limited ability to do this
 stringification in certain circumstances such as that of emitting DDL.
 In order to access this functionality one can use the ``literal_binds``
 flag, passed to ``compile_kwargs``::
 
-    from sqlalchemy.sql import table, column, select
+    from dis_sqlalchemy.sql import table, column, select
 
     t = table("t", column("x"))
 
@@ -126,11 +126,11 @@ Methods of stringifying all parameters unconditionally are detailed below.
 
 .. tip::
 
-   The reason SQLAlchemy does not support full stringification of all
+   The reason dis_sqlalchemy does not support full stringification of all
    datatypes is threefold:
 
    1. This is a functionality that is already supported by the DBAPI in use
-      when the DBAPI is used normally.   The SQLAlchemy project cannot be
+      when the DBAPI is used normally.   The dis_sqlalchemy project cannot be
       tasked with duplicating this functionality for every datatype for
       all backends, as this is redundant work which also incurs significant
       testing and ongoing support overhead.
@@ -138,28 +138,28 @@ Methods of stringifying all parameters unconditionally are detailed below.
    2. Stringifying with bound parameters inlined for specific databases
       suggests a usage that is actually passing these fully stringified
       statements onto the database for execution. This is unnecessary and
-      insecure, and SQLAlchemy does not want to encourage this use in any
+      insecure, and dis_sqlalchemy does not want to encourage this use in any
       way.
 
    3. The area of rendering literal values is the most likely area for
-      security issues to be reported.  SQLAlchemy tries to keep the area of
+      security issues to be reported.  dis_sqlalchemy tries to keep the area of
       safe parameter stringification an issue for the DBAPI drivers as much
       as possible where the specifics for each DBAPI can be handled
       appropriately and securely.
 
-As SQLAlchemy intentionally does not support full stringification of literal
+As dis_sqlalchemy intentionally does not support full stringification of literal
 values, techniques to do so within specific debugging scenarios include the
 following. As an example, we will use the PostgreSQL :class:`_postgresql.UUID`
 datatype::
 
     import uuid
 
-    from sqlalchemy import Column
-    from sqlalchemy import create_engine
-    from sqlalchemy import Integer
-    from sqlalchemy import select
-    from sqlalchemy.dialects.postgresql import UUID
-    from sqlalchemy.orm import declarative_base
+    from dis_sqlalchemy import Column
+    from dis_sqlalchemy import create_engine
+    from dis_sqlalchemy import Integer
+    from dis_sqlalchemy import select
+    from dis_sqlalchemy.dialects.postgresql import UUID
+    from dis_sqlalchemy.orm import declarative_base
 
 
     Base = declarative_base()
@@ -246,13 +246,13 @@ include:
     FROM a
     WHERE a.data = UUID('1bd70375-db17-4d8c-94f1-fc2ef3aada26')
 
-* Use the :ref:`sqlalchemy.ext.compiler_toplevel` extension to render
+* Use the :ref:`dis_sqlalchemy.ext.compiler_toplevel` extension to render
   :class:`_sql.BindParameter` objects in a custom way when a user-defined
   flag is present.  This flag is sent through the ``compile_kwargs``
   dictionary like any other flag::
 
-    from sqlalchemy.ext.compiler import compiles
-    from sqlalchemy.sql.expression import BindParameter
+    from dis_sqlalchemy.ext.compiler import compiles
+    from dis_sqlalchemy.sql.expression import BindParameter
 
 
     @compiles(BindParameter)
@@ -281,7 +281,7 @@ include:
   :class:`_types.TypeDecorator` class may be used to provide custom stringification
   of any datatype using the :meth:`.TypeDecorator.process_literal_param` method::
 
-    from sqlalchemy import TypeDecorator
+    from dis_sqlalchemy import TypeDecorator
 
 
     class UUIDStringify(TypeDecorator):
@@ -293,7 +293,7 @@ include:
   The above datatype needs to be used either explicitly within the model
   or locally within the statement using :func:`_sql.type_coerce`, such as ::
 
-    from sqlalchemy import type_coerce
+    from dis_sqlalchemy import type_coerce
 
     stmt = select(A).where(type_coerce(A.data, UUIDStringify) == uuid.uuid4())
 
@@ -310,7 +310,7 @@ include:
 Rendering "POSTCOMPILE" Parameters as Bound Parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-SQLAlchemy includes a variant on a bound parameter known as
+dis_sqlalchemy includes a variant on a bound parameter known as
 :paramref:`_sql.BindParameter.expanding`, which is a "late evaluated" parameter
 that is rendered in an intermediary state when a SQL construct is compiled,
 which is then further processed at statement execution time when the actual
@@ -394,7 +394,7 @@ the string form of the statements used, e.g.:
 
     SELECT a, b FROM some_table WHERE a = %s AND c = %s AND num %% modulus = 0
 
-When SQL statements are passed to the underlying DBAPI by SQLAlchemy,
+When SQL statements are passed to the underlying DBAPI by dis_sqlalchemy,
 substitution of bound parameters works in the same way as the Python string
 interpolation operator ``%``, and in many cases the DBAPI actually uses this
 operator directly.  Above, the substitution of bound parameters would then look
@@ -410,8 +410,8 @@ escaping behavior:
 
 .. sourcecode:: pycon+sql
 
-    >>> from sqlalchemy import table, column
-    >>> from sqlalchemy.dialects import postgresql
+    >>> from dis_sqlalchemy import table, column
+    >>> from dis_sqlalchemy.dialects import postgresql
     >>> t = table("my_table", column("value % one"), column("value % two"))
     >>> print(t.select().compile(dialect=postgresql.dialect()))
     {printsql}SELECT my_table."value %% one", my_table."value %% two"
@@ -450,7 +450,7 @@ I'm using op() to generate a custom operator and my parenthesis are not coming o
 ---------------------------------------------------------------------------------------------
 
 The :meth:`.Operators.op` method allows one to create a custom database operator
-otherwise not known by SQLAlchemy:
+otherwise not known by dis_sqlalchemy:
 
 .. sourcecode:: pycon+sql
 
@@ -470,7 +470,7 @@ Where above, we probably want ``(q1 + q2) -> p``.
 The solution to this case is to set the precedence of the operator, using
 the :paramref:`.Operators.op.precedence` parameter, to a high
 number, where 100 is the maximum value, and the highest number used by any
-SQLAlchemy operator is currently 15:
+dis_sqlalchemy operator is currently 15:
 
 .. sourcecode:: pycon+sql
 
@@ -490,7 +490,7 @@ Why are the parentheses rules like this?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A lot of databases barf when there are excessive parenthesis or when
-parenthesis are in unusual places they doesn't expect, so SQLAlchemy does not
+parenthesis are in unusual places they doesn't expect, so dis_sqlalchemy does not
 generate parenthesis based on groupings, it uses operator precedence and if the
 operator is known to be associative, so that parenthesis are generated
 minimally. Otherwise, an expression like::

@@ -1,14 +1,14 @@
-from sqlalchemy import testing
-from sqlalchemy.engine.base import Connection
-from sqlalchemy.engine.base import Engine
-from sqlalchemy.engine.interfaces import CoreExecuteOptionsParameter
-from sqlalchemy.ext.asyncio.engine import AsyncConnection
-from sqlalchemy.ext.asyncio.engine import AsyncEngine
-from sqlalchemy.orm._typing import OrmExecuteOptionsParameter
-from sqlalchemy.orm.query import Query
-from sqlalchemy.sql.base import Executable
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.assertions import eq_
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.engine.base import Connection
+from dis_sqlalchemy.engine.base import Engine
+from dis_sqlalchemy.engine.interfaces import CoreExecuteOptionsParameter
+from dis_sqlalchemy.ext.asyncio.engine import AsyncConnection
+from dis_sqlalchemy.ext.asyncio.engine import AsyncEngine
+from dis_sqlalchemy.orm._typing import OrmExecuteOptionsParameter
+from dis_sqlalchemy.orm.query import Query
+from dis_sqlalchemy.sql.base import Executable
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing.assertions import eq_
 
 engine_execution_options = {
     "compiled_cache": "Optional[CompiledCacheType]",

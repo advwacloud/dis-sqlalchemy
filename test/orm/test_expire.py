@@ -2,40 +2,40 @@
 
 import re
 
-import sqlalchemy as sa
-from sqlalchemy import exc as sa_exc
-from sqlalchemy import FetchedValue
-from sqlalchemy import ForeignKey
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import contains_eager
-from sqlalchemy.orm import defer
-from sqlalchemy.orm import deferred
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import immediateload
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import lazyload
-from sqlalchemy.orm import make_transient_to_detached
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import selectinload
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import strategies
-from sqlalchemy.orm import subqueryload
-from sqlalchemy.orm import undefer
-from sqlalchemy.sql import select
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.assertions import expect_raises_message
-from sqlalchemy.testing.assertsql import CountStatements
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.testing.util import gc_collect
+import dis_sqlalchemy as sa
+from dis_sqlalchemy import exc as sa_exc
+from dis_sqlalchemy import FetchedValue
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.orm import attributes
+from dis_sqlalchemy.orm import contains_eager
+from dis_sqlalchemy.orm import defer
+from dis_sqlalchemy.orm import deferred
+from dis_sqlalchemy.orm import exc as orm_exc
+from dis_sqlalchemy.orm import immediateload
+from dis_sqlalchemy.orm import joinedload
+from dis_sqlalchemy.orm import lazyload
+from dis_sqlalchemy.orm import make_transient_to_detached
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import selectinload
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import strategies
+from dis_sqlalchemy.orm import subqueryload
+from dis_sqlalchemy.orm import undefer
+from dis_sqlalchemy.sql import select
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing.assertions import expect_raises_message
+from dis_sqlalchemy.testing.assertsql import CountStatements
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
+from dis_sqlalchemy.testing.util import gc_collect
 from test.orm import _fixtures
 
 

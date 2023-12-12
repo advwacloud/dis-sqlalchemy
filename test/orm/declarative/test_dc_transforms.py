@@ -17,48 +17,48 @@ from unittest import mock
 
 from typing_extensions import Annotated
 
-from sqlalchemy import BigInteger
-from sqlalchemy import Column
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import JSON
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.ext.associationproxy import association_proxy
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import composite
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import declared_attr
-from sqlalchemy.orm import deferred
-from sqlalchemy.orm import interfaces
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import MappedAsDataclass
-from sqlalchemy.orm import MappedColumn
-from sqlalchemy.orm import query_expression
-from sqlalchemy.orm import registry
-from sqlalchemy.orm import registry as _RegistryType
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import synonym
-from sqlalchemy.sql.base import _NoArg
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import eq_regex
-from sqlalchemy.testing import expect_deprecated
-from sqlalchemy.testing import expect_raises
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_false
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import ne_
-from sqlalchemy.testing import Variation
-from sqlalchemy.util import compat
+from dis_sqlalchemy import BigInteger
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import JSON
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.ext.associationproxy import association_proxy
+from dis_sqlalchemy.orm import column_property
+from dis_sqlalchemy.orm import composite
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import declared_attr
+from dis_sqlalchemy.orm import deferred
+from dis_sqlalchemy.orm import interfaces
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import MappedAsDataclass
+from dis_sqlalchemy.orm import MappedColumn
+from dis_sqlalchemy.orm import query_expression
+from dis_sqlalchemy.orm import registry
+from dis_sqlalchemy.orm import registry as _RegistryType
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import synonym
+from dis_sqlalchemy.sql.base import _NoArg
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import eq_regex
+from dis_sqlalchemy.testing import expect_deprecated
+from dis_sqlalchemy.testing import expect_raises
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_false
+from dis_sqlalchemy.testing import is_true
+from dis_sqlalchemy.testing import ne_
+from dis_sqlalchemy.testing import Variation
+from dis_sqlalchemy.util import compat
 
 
 def _dataclass_mixin_warning(clsname, attrnames):
@@ -981,7 +981,7 @@ class RelationshipDefaultFactoryTest(fixtures.TestBase):
     def test_no_field_args_w_new_style(self, registry: _RegistryType):
         with expect_raises_message(
             exc.InvalidRequestError,
-            "SQLAlchemy mapped dataclasses can't consume mapping information",
+            "dis_sqlalchemy mapped dataclasses can't consume mapping information",
         ):
 
             @registry.mapped_as_dataclass()
@@ -1001,7 +1001,7 @@ class RelationshipDefaultFactoryTest(fixtures.TestBase):
 
         with expect_raises_message(
             exc.InvalidRequestError,
-            "SQLAlchemy mapped dataclasses can't consume mapping information",
+            "dis_sqlalchemy mapped dataclasses can't consume mapping information",
         ):
 
             @registry.mapped_as_dataclass()
@@ -1439,7 +1439,7 @@ class DataclassArgsTest(fixtures.TestBase):
             exc.ArgumentError,
             r"Attribute 'x' on class .*A.* includes dataclasses "
             r"argument\(s\): "
-            rf"{unwanted_args} but class does not specify SQLAlchemy native "
+            rf"{unwanted_args} but class does not specify dis_sqlalchemy native "
             "dataclass configuration",
         ):
 

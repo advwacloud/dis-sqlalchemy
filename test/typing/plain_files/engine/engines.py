@@ -1,6 +1,6 @@
-from sqlalchemy import create_engine
-from sqlalchemy import Pool
-from sqlalchemy import text
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import Pool
+from dis_sqlalchemy import text
 
 
 def regular() -> None:

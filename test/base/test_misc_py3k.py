@@ -1,9 +1,9 @@
 import operator
 from typing import cast
 
-from sqlalchemy import Column
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
+from dis_sqlalchemy import Column
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
 
 
 class TestGenerics(fixtures.TestBase):

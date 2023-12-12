@@ -3,12 +3,12 @@ from __future__ import annotations
 from typing import Any
 from typing import Dict
 
-from sqlalchemy import Column
-from sqlalchemy import insert
-from sqlalchemy import select
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import insert
+from dis_sqlalchemy import select
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
 
 
 class Base(DeclarativeBase):

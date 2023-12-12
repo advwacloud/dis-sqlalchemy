@@ -1,18 +1,18 @@
 import typing
 
-from sqlalchemy import and_
-from sqlalchemy import Boolean
-from sqlalchemy import cast
-from sqlalchemy import column
-from sqlalchemy import DateTime
-from sqlalchemy import false
-from sqlalchemy import Float
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import or_
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import true
+from dis_sqlalchemy import and_
+from dis_sqlalchemy import Boolean
+from dis_sqlalchemy import cast
+from dis_sqlalchemy import column
+from dis_sqlalchemy import DateTime
+from dis_sqlalchemy import false
+from dis_sqlalchemy import Float
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import or_
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import true
 
 
 # builtin.pyi stubs define object.__eq__() as returning bool,  which
@@ -121,34 +121,34 @@ if typing.TYPE_CHECKING:
     # as far as if this is ColumnElement, BinaryElement, SQLCoreOperations,
     # that might change.  main thing is it's SomeSQLColThing[bool] and
     # not 'bool' or 'Any'.
-    # EXPECTED_RE_TYPE: sqlalchemy..*ColumnElement\[builtins.bool\]
+    # EXPECTED_RE_TYPE: dis_sqlalchemy..*ColumnElement\[builtins.bool\]
     reveal_type(expr1)
 
-    # EXPECTED_RE_TYPE: sqlalchemy..*ColumnClause\[builtins.str.?\]
+    # EXPECTED_RE_TYPE: dis_sqlalchemy..*ColumnClause\[builtins.str.?\]
     reveal_type(c1)
 
-    # EXPECTED_RE_TYPE: sqlalchemy..*ColumnClause\[builtins.int.?\]
+    # EXPECTED_RE_TYPE: dis_sqlalchemy..*ColumnClause\[builtins.int.?\]
     reveal_type(c2)
 
-    # EXPECTED_RE_TYPE: sqlalchemy..*BinaryExpression\[builtins.bool\]
+    # EXPECTED_RE_TYPE: dis_sqlalchemy..*BinaryExpression\[builtins.bool\]
     reveal_type(expr2)
 
-    # EXPECTED_RE_TYPE: sqlalchemy..*ColumnElement\[Union\[builtins.float, .*\.Decimal\]\]
+    # EXPECTED_RE_TYPE: dis_sqlalchemy..*ColumnElement\[Union\[builtins.float, .*\.Decimal\]\]
     reveal_type(expr3)
 
-    # EXPECTED_RE_TYPE: sqlalchemy..*UnaryExpression\[builtins.int.?\]
+    # EXPECTED_RE_TYPE: dis_sqlalchemy..*UnaryExpression\[builtins.int.?\]
     reveal_type(expr4)
 
-    # EXPECTED_RE_TYPE: sqlalchemy..*ColumnElement\[builtins.bool.?\]
+    # EXPECTED_RE_TYPE: dis_sqlalchemy..*ColumnElement\[builtins.bool.?\]
     reveal_type(expr5)
 
-    # EXPECTED_RE_TYPE: sqlalchemy..*ColumnElement\[builtins.bool.?\]
+    # EXPECTED_RE_TYPE: dis_sqlalchemy..*ColumnElement\[builtins.bool.?\]
     reveal_type(expr6)
 
-    # EXPECTED_RE_TYPE: sqlalchemy..*ColumnElement\[builtins.str\]
+    # EXPECTED_RE_TYPE: dis_sqlalchemy..*ColumnElement\[builtins.str\]
     reveal_type(expr7)
 
-    # EXPECTED_RE_TYPE: sqlalchemy..*ColumnElement\[builtins.int.?\]
+    # EXPECTED_RE_TYPE: dis_sqlalchemy..*ColumnElement\[builtins.int.?\]
     reveal_type(expr8)
 
     # EXPECTED_TYPE: BinaryExpression[bool]

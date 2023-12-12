@@ -1,13 +1,13 @@
 from typing import List
 
-from sqlalchemy import create_engine
-from sqlalchemy import inspect
-from sqlalchemy.engine.reflection import Inspector
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import DeclarativeBaseNoMeta
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import Mapper
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy.engine.reflection import Inspector
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import DeclarativeBaseNoMeta
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import Mapper
 
 
 class Base(DeclarativeBase):

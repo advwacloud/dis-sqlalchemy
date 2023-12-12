@@ -5,25 +5,25 @@ import re
 import textwrap
 import time
 
-from sqlalchemy import Column
-from sqlalchemy import create_engine
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.ext.hybrid import hybrid_method
-from sqlalchemy.ext.hybrid import hybrid_property
-from sqlalchemy.orm import joinedload
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import String
+from dis_sqlalchemy.ext.declarative import declarative_base
+from dis_sqlalchemy.ext.hybrid import hybrid_method
+from dis_sqlalchemy.ext.hybrid import hybrid_property
+from dis_sqlalchemy.orm import joinedload
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
 
 
 logging.basicConfig(
     filename="space_invaders.log",
     format="%(asctime)s,%(msecs)03d %(levelname)-5.5s %(message)s",
 )
-logging.getLogger("sqlalchemy.engine").setLevel(logging.INFO)
+logging.getLogger("dis_sqlalchemy.engine").setLevel(logging.INFO)
 
 Base = declarative_base()
 

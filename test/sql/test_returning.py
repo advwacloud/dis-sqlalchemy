@@ -1,37 +1,37 @@
 import itertools
 
-from sqlalchemy import Boolean
-from sqlalchemy import column
-from sqlalchemy import delete
-from sqlalchemy import exc as sa_exc
-from sqlalchemy import func
-from sqlalchemy import insert
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import String
-from sqlalchemy import table
-from sqlalchemy import testing
-from sqlalchemy import type_coerce
-from sqlalchemy import update
-from sqlalchemy.sql import crud
-from sqlalchemy.sql.sqltypes import NullType
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import AssertsExecutionResults
-from sqlalchemy.testing import config
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_false
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import mock
-from sqlalchemy.testing import provision
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.types import TypeDecorator
+from dis_sqlalchemy import Boolean
+from dis_sqlalchemy import column
+from dis_sqlalchemy import delete
+from dis_sqlalchemy import exc as sa_exc
+from dis_sqlalchemy import func
+from dis_sqlalchemy import insert
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import select
+from dis_sqlalchemy import Sequence
+from dis_sqlalchemy import String
+from dis_sqlalchemy import table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import type_coerce
+from dis_sqlalchemy import update
+from dis_sqlalchemy.sql import crud
+from dis_sqlalchemy.sql.sqltypes import NullType
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import AssertsExecutionResults
+from dis_sqlalchemy.testing import config
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_false
+from dis_sqlalchemy.testing import is_true
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing import provision
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
+from dis_sqlalchemy.types import TypeDecorator
 
 
 class ReturnCombinationTests(fixtures.TestBase, AssertsCompiledSQL):
@@ -731,8 +731,8 @@ class InsertReturnDefaultsTest(fixtures.TablesTest):
 
     @classmethod
     def define_tables(cls, metadata):
-        from sqlalchemy.sql import ColumnElement
-        from sqlalchemy.ext.compiler import compiles
+        from dis_sqlalchemy.sql import ColumnElement
+        from dis_sqlalchemy.ext.compiler import compiles
 
         counter = itertools.count()
 
@@ -821,7 +821,7 @@ class InsertReturnDefaultsTest(fixtures.TablesTest):
         )
 
     def test_insert_sql_expr(self, connection):
-        from sqlalchemy import literal
+        from dis_sqlalchemy import literal
 
         t1 = self.tables.t1
         result = connection.execute(
@@ -999,7 +999,7 @@ class UpdatedReturnDefaultsTest(fixtures.TablesTest):
         eq_(result.all(), [(1, "x", 3)])
 
     def test_update_sql_expr(self, connection):
-        from sqlalchemy import literal
+        from dis_sqlalchemy import literal
 
         t1 = self.tables.t1
         connection.execute(t1.insert().values(upddef=1))
@@ -1244,8 +1244,8 @@ class InsertManyReturningTest(fixtures.TablesTest):
 
     @classmethod
     def define_tables(cls, metadata):
-        from sqlalchemy.sql import ColumnElement
-        from sqlalchemy.ext.compiler import compiles
+        from dis_sqlalchemy.sql import ColumnElement
+        from dis_sqlalchemy.ext.compiler import compiles
 
         counter = itertools.count()
 

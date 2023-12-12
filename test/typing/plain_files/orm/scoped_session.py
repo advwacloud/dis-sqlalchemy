@@ -1,10 +1,10 @@
-from sqlalchemy import inspect
-from sqlalchemy import text
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import scoped_session
-from sqlalchemy.orm import sessionmaker
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import text
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import scoped_session
+from dis_sqlalchemy.orm import sessionmaker
 
 
 class Base(DeclarativeBase):

@@ -12,17 +12,17 @@ This page illustrates the mappings and fixture data used by the
     >>> from typing import List
     >>> from typing import Optional
     >>>
-    >>> from sqlalchemy import Column
-    >>> from sqlalchemy import create_engine
-    >>> from sqlalchemy import ForeignKey
-    >>> from sqlalchemy import LargeBinary
-    >>> from sqlalchemy import Table
-    >>> from sqlalchemy import Text
-    >>> from sqlalchemy.orm import DeclarativeBase
-    >>> from sqlalchemy.orm import Mapped
-    >>> from sqlalchemy.orm import mapped_column
-    >>> from sqlalchemy.orm import relationship
-    >>> from sqlalchemy.orm import Session
+    >>> from dis_sqlalchemy import Column
+    >>> from dis_sqlalchemy import create_engine
+    >>> from dis_sqlalchemy import ForeignKey
+    >>> from dis_sqlalchemy import LargeBinary
+    >>> from dis_sqlalchemy import Table
+    >>> from dis_sqlalchemy import Text
+    >>> from dis_sqlalchemy.orm import DeclarativeBase
+    >>> from dis_sqlalchemy.orm import Mapped
+    >>> from dis_sqlalchemy.orm import mapped_column
+    >>> from dis_sqlalchemy.orm import relationship
+    >>> from dis_sqlalchemy.orm import Session
     >>>
     >>>
     >>> class Base(DeclarativeBase):

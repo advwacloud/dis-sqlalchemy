@@ -8,32 +8,32 @@ from unittest.mock import Mock
 from unittest.mock import patch
 import weakref
 
-import sqlalchemy as tsa
-from sqlalchemy import create_engine
-from sqlalchemy import event
-from sqlalchemy import pool
-from sqlalchemy import PoolResetState
-from sqlalchemy import select
-from sqlalchemy import testing
-from sqlalchemy.engine import default
-from sqlalchemy.pool.base import _AsyncConnDialect
-from sqlalchemy.pool.base import _ConnDialect
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_context_ok
-from sqlalchemy.testing import assert_warns_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_none
-from sqlalchemy.testing import is_not
-from sqlalchemy.testing import is_not_none
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.engines import testing_engine
-from sqlalchemy.testing.util import gc_collect
-from sqlalchemy.testing.util import lazy_gc
+import dis_sqlalchemy as tsa
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import event
+from dis_sqlalchemy import pool
+from dis_sqlalchemy import PoolResetState
+from dis_sqlalchemy import select
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.engine import default
+from dis_sqlalchemy.pool.base import _AsyncConnDialect
+from dis_sqlalchemy.pool.base import _ConnDialect
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_context_ok
+from dis_sqlalchemy.testing import assert_warns_message
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises
+from dis_sqlalchemy.testing import expect_warnings
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_none
+from dis_sqlalchemy.testing import is_not
+from dis_sqlalchemy.testing import is_not_none
+from dis_sqlalchemy.testing import is_true
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing.engines import testing_engine
+from dis_sqlalchemy.testing.util import gc_collect
+from dis_sqlalchemy.testing.util import lazy_gc
 
 join_timeout = 10
 
@@ -1335,7 +1335,7 @@ class QueuePoolTest(PoolTestBase):
             return fairy
 
         with patch(
-            "sqlalchemy.pool._ConnectionRecord.checkout",
+            "dis_sqlalchemy.pool._ConnectionRecord.checkout",
             _decorate_existing_checkout,
         ):
             conn = p.connect()
@@ -1466,7 +1466,7 @@ class QueuePoolTest(PoolTestBase):
         )
 
     def test_recycle(self):
-        with patch("sqlalchemy.pool.base.time.time") as mock:
+        with patch("dis_sqlalchemy.pool.base.time.time") as mock:
             mock.return_value = 10000
 
             p = self._queuepool_fixture(
@@ -1783,7 +1783,7 @@ class QueuePoolTest(PoolTestBase):
 
         p1 = TrackQueuePool(creator=creator, pool_size=20)
 
-        from sqlalchemy import create_engine
+        from dis_sqlalchemy import create_engine
 
         eng = create_engine(testing.db.url, pool=p1, _initialize=False)
         eng.dialect = dialect

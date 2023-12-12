@@ -3,38 +3,38 @@ import time
 from unittest.mock import call
 from unittest.mock import Mock
 
-import sqlalchemy as tsa
-from sqlalchemy import create_engine
-from sqlalchemy import event
-from sqlalchemy import exc
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import pool
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import util
-from sqlalchemy.engine import default
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import assert_raises_message_context_ok
-from sqlalchemy.testing import assert_warns_message
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_false
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import mock
-from sqlalchemy.testing import ne_
-from sqlalchemy.testing.engines import DBAPIProxyConnection
-from sqlalchemy.testing.engines import DBAPIProxyCursor
-from sqlalchemy.testing.engines import testing_engine
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.testing.util import gc_collect
+import dis_sqlalchemy as tsa
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import event
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import pool
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import util
+from dis_sqlalchemy.engine import default
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import assert_raises_message_context_ok
+from dis_sqlalchemy.testing import assert_warns_message
+from dis_sqlalchemy.testing import engines
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_false
+from dis_sqlalchemy.testing import is_true
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing import ne_
+from dis_sqlalchemy.testing.engines import DBAPIProxyConnection
+from dis_sqlalchemy.testing.engines import DBAPIProxyCursor
+from dis_sqlalchemy.testing.engines import testing_engine
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
+from dis_sqlalchemy.testing.util import gc_collect
 
 
 class MockError(Exception):
@@ -269,7 +269,7 @@ class PrePingMockTest(fixtures.TestBase):
 
         @event.listens_for(pool._dialect, "handle_error")
         def setup_disconnect(ctx):
-            assert isinstance(ctx.sqlalchemy_exception, exc.DBAPIError)
+            assert isinstance(ctx.dis_sqlalchemy_exception, exc.DBAPIError)
             assert isinstance(ctx.original_exception, MockDisconnect)
             ctx.is_disconnect = True
 
@@ -755,8 +755,8 @@ class MockReconnectTest(fixtures.TestBase):
         )
 
     def test_dialect_initialize_once(self):
-        from sqlalchemy.engine.url import URL
-        from sqlalchemy.engine.default import DefaultDialect
+        from dis_sqlalchemy.engine.url import URL
+        from dis_sqlalchemy.engine.default import DefaultDialect
 
         dbapi = self.dbapi
 
@@ -784,8 +784,8 @@ class MockReconnectTest(fixtures.TestBase):
         eq_(Dialect.initialize.call_count, 1)
 
     def test_dialect_initialize_retry_if_exception(self):
-        from sqlalchemy.engine.url import URL
-        from sqlalchemy.engine.default import DefaultDialect
+        from dis_sqlalchemy.engine.url import URL
+        from dis_sqlalchemy.engine.default import DefaultDialect
 
         dbapi = self.dbapi
 
@@ -949,7 +949,7 @@ class CursorErrTest(fixtures.TestBase):
 
         dbapi = MockDBAPI()
 
-        from sqlalchemy.engine import default
+        from dis_sqlalchemy.engine import default
 
         url = Mock(
             get_dialect=lambda: default.DefaultDialect,

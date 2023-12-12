@@ -1,17 +1,17 @@
 from decimal import Decimal
 
-from sqlalchemy import BIGINT
-from sqlalchemy import Column
-from sqlalchemy import DECIMAL
-from sqlalchemy import Integer
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy.testing import config
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.provision import normalize_sequence
+from dis_sqlalchemy import BIGINT
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import DECIMAL
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import select
+from dis_sqlalchemy import Sequence
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy.testing import config
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing.provision import normalize_sequence
 
 
 class SequenceTest(fixtures.TablesTest):

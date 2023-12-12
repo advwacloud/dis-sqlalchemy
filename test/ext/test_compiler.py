@@ -1,35 +1,35 @@
-from sqlalchemy import Column
-from sqlalchemy import column
-from sqlalchemy import desc
-from sqlalchemy import exc
-from sqlalchemy import Integer
-from sqlalchemy import literal_column
-from sqlalchemy import MetaData
-from sqlalchemy import Numeric
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import table
-from sqlalchemy import testing
-from sqlalchemy.ext.compiler import compiles
-from sqlalchemy.ext.compiler import deregister
-from sqlalchemy.orm import Session
-from sqlalchemy.schema import CreateColumn
-from sqlalchemy.schema import CreateTable
-from sqlalchemy.schema import ExecutableDDLElement
-from sqlalchemy.sql.elements import ColumnElement
-from sqlalchemy.sql.expression import BindParameter
-from sqlalchemy.sql.expression import ClauseElement
-from sqlalchemy.sql.expression import ColumnClause
-from sqlalchemy.sql.expression import Executable
-from sqlalchemy.sql.expression import FunctionElement
-from sqlalchemy.sql.expression import Select
-from sqlalchemy.sql.sqltypes import NULLTYPE
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.types import TypeEngine
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import column
+from dis_sqlalchemy import desc
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import literal_column
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import Numeric
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.ext.compiler import compiles
+from dis_sqlalchemy.ext.compiler import deregister
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.schema import CreateColumn
+from dis_sqlalchemy.schema import CreateTable
+from dis_sqlalchemy.schema import ExecutableDDLElement
+from dis_sqlalchemy.sql.elements import ColumnElement
+from dis_sqlalchemy.sql.expression import BindParameter
+from dis_sqlalchemy.sql.expression import ClauseElement
+from dis_sqlalchemy.sql.expression import ColumnClause
+from dis_sqlalchemy.sql.expression import Executable
+from dis_sqlalchemy.sql.expression import FunctionElement
+from dis_sqlalchemy.sql.expression import Select
+from dis_sqlalchemy.sql.sqltypes import NULLTYPE
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.types import TypeEngine
 
 
 class UserDefinedTest(fixtures.TestBase, AssertsCompiledSQL):
@@ -87,8 +87,8 @@ class UserDefinedTest(fixtures.TestBase, AssertsCompiledSQL):
         def visit_pg_type(type_, compiler, **kw):
             return "POSTGRES_FOO"
 
-        from sqlalchemy.dialects.sqlite import base as sqlite
-        from sqlalchemy.dialects.postgresql import base as postgresql
+        from dis_sqlalchemy.dialects.sqlite import base as sqlite
+        from dis_sqlalchemy.dialects.postgresql import base as postgresql
 
         self.assert_compile(MyType(), "SQLITE_FOO", dialect=sqlite.dialect())
 
@@ -238,7 +238,7 @@ class UserDefinedTest(fixtures.TestBase, AssertsCompiledSQL):
         )
 
     def test_default_subclass(self):
-        from sqlalchemy.types import ARRAY
+        from dis_sqlalchemy.types import ARRAY
 
         class MyArray(ARRAY):
             pass
@@ -297,7 +297,7 @@ class UserDefinedTest(fixtures.TestBase, AssertsCompiledSQL):
 
         self.assert_compile(DropThingy(), "DROP THINGY")
 
-        from sqlalchemy.dialects.sqlite import base
+        from dis_sqlalchemy.dialects.sqlite import base
 
         self.assert_compile(
             AddThingy(), "ADD SPECIAL SL THINGY", dialect=base.dialect()
@@ -318,7 +318,7 @@ class UserDefinedTest(fixtures.TestBase, AssertsCompiledSQL):
         self.assert_compile(DropThingy(), "DROP THINGY")
 
     def test_functions(self):
-        from sqlalchemy.dialects import postgresql
+        from dis_sqlalchemy.dialects import postgresql
 
         class MyUtcFunction(FunctionElement):
             inherit_cache = True
@@ -353,7 +353,7 @@ class UserDefinedTest(fixtures.TestBase, AssertsCompiledSQL):
         self.assert_compile(myfunc(column("x"), column("y")), "myfunc(x, y)")
 
     def test_function_calls_base(self):
-        from sqlalchemy.dialects import mssql
+        from dis_sqlalchemy.dialects import mssql
 
         class greatest(FunctionElement):
             type = Numeric()
@@ -510,7 +510,7 @@ class DefaultOnExistingTest(fixtures.TestBase, AssertsCompiledSQL):
         s1 = select(t1)
         self.assert_compile(s1, "SELECT t1.c1, t1.c2 FROM t1")
 
-        from sqlalchemy.dialects.sqlite import base as sqlite
+        from dis_sqlalchemy.dialects.sqlite import base as sqlite
 
         self.assert_compile(s1, "OVERRIDE", dialect=sqlite.dialect())
 

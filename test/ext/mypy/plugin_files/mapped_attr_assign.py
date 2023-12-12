@@ -5,16 +5,16 @@ after the mapping is complete
 """
 from typing import Optional
 
-from sqlalchemy import Column
-from sqlalchemy import ForeignKey
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import relationship
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy.ext.declarative import declarative_base
+from dis_sqlalchemy.orm import column_property
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import relationship
 
 Base = declarative_base()
 

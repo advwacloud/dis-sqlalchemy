@@ -3,12 +3,12 @@
 MySQL and MariaDB
 =================
 
-.. automodule:: sqlalchemy.dialects.mysql.base
+.. automodule:: dis_sqlalchemy.dialects.mysql.base
 
 MySQL SQL Constructs
 --------------------
 
-.. currentmodule:: sqlalchemy.dialects.mysql
+.. currentmodule:: dis_sqlalchemy.dialects.mysql
 
 .. autoclass:: match
     :members:
@@ -16,10 +16,10 @@ MySQL SQL Constructs
 MySQL Data Types
 ----------------
 
-As with all SQLAlchemy dialects, all UPPERCASE types that are known to be
+As with all dis_sqlalchemy dialects, all UPPERCASE types that are known to be
 valid with MySQL are importable from the top level dialect::
 
-    from sqlalchemy.dialects.mysql import (
+    from dis_sqlalchemy.dialects.mysql import (
         BIGINT,
         BINARY,
         BIT,
@@ -63,7 +63,7 @@ construction arguments, are as follows:
    in the dialect module, just imported from sqltypes.  this avoids warnings
    in the sphinx build
 
-.. currentmodule:: sqlalchemy.dialects.mysql
+.. currentmodule:: dis_sqlalchemy.dialects.mysql
 
 .. autoclass:: BIGINT
     :members: __init__
@@ -207,9 +207,9 @@ construction arguments, are as follows:
 MySQL DML Constructs
 -------------------------
 
-.. autofunction:: sqlalchemy.dialects.mysql.insert
+.. autofunction:: dis_sqlalchemy.dialects.mysql.insert
 
-.. autoclass:: sqlalchemy.dialects.mysql.Insert
+.. autoclass:: dis_sqlalchemy.dialects.mysql.Insert
   :members:
 
 
@@ -217,29 +217,29 @@ MySQL DML Constructs
 mysqlclient (fork of MySQL-Python)
 ----------------------------------
 
-.. automodule:: sqlalchemy.dialects.mysql.mysqldb
+.. automodule:: dis_sqlalchemy.dialects.mysql.mysqldb
 
 PyMySQL
 -------
 
-.. automodule:: sqlalchemy.dialects.mysql.pymysql
+.. automodule:: dis_sqlalchemy.dialects.mysql.pymysql
 
 MariaDB-Connector
 ------------------
 
-.. automodule:: sqlalchemy.dialects.mysql.mariadbconnector
+.. automodule:: dis_sqlalchemy.dialects.mysql.mariadbconnector
 
 MySQL-Connector
 ---------------
 
-.. automodule:: sqlalchemy.dialects.mysql.mysqlconnector
+.. automodule:: dis_sqlalchemy.dialects.mysql.mysqlconnector
 
 .. _asyncmy:
 
 asyncmy
 -------
 
-.. automodule:: sqlalchemy.dialects.mysql.asyncmy
+.. automodule:: dis_sqlalchemy.dialects.mysql.asyncmy
 
 
 .. _aiomysql:
@@ -247,14 +247,14 @@ asyncmy
 aiomysql
 --------
 
-.. automodule:: sqlalchemy.dialects.mysql.aiomysql
+.. automodule:: dis_sqlalchemy.dialects.mysql.aiomysql
 
 cymysql
 -------
 
-.. automodule:: sqlalchemy.dialects.mysql.cymysql
+.. automodule:: dis_sqlalchemy.dialects.mysql.cymysql
 
 pyodbc
 ------
 
-.. automodule:: sqlalchemy.dialects.mysql.pyodbc
+.. automodule:: dis_sqlalchemy.dialects.mysql.pyodbc

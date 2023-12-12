@@ -3,17 +3,17 @@ import contextvars
 import random
 import threading
 
-from sqlalchemy import exc
-from sqlalchemy.testing import async_test
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_true
-from sqlalchemy.util import await_fallback
-from sqlalchemy.util import await_only
-from sqlalchemy.util import greenlet_spawn
-from sqlalchemy.util import queue
+from dis_sqlalchemy import exc
+from dis_sqlalchemy.testing import async_test
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_true
+from dis_sqlalchemy.util import await_fallback
+from dis_sqlalchemy.util import await_only
+from dis_sqlalchemy.util import greenlet_spawn
+from dis_sqlalchemy.util import queue
 
 try:
     from greenlet import greenlet

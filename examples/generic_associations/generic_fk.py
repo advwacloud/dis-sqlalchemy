@@ -5,7 +5,7 @@ practices, in that the "foreign key" column is not actually
 constrained to refer to any particular table; instead,
 in-application logic is used to determine which table is referenced.
 
-This approach is not in line with SQLAlchemy's usual style, as foregoing
+This approach is not in line with dis_sqlalchemy's usual style, as foregoing
 foreign key integrity means that the tables can easily contain invalid
 references and also have no ability to use in-database cascade functionality.
 
@@ -17,19 +17,19 @@ queued up, here it is.   The author recommends "table_per_related"
 or "table_per_association" instead of this approach.
 
 """
-from sqlalchemy import and_
-from sqlalchemy import Column
-from sqlalchemy import create_engine
-from sqlalchemy import event
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy.ext.declarative import as_declarative
-from sqlalchemy.ext.declarative import declared_attr
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import foreign
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import remote
-from sqlalchemy.orm import Session
+from dis_sqlalchemy import and_
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import event
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import String
+from dis_sqlalchemy.ext.declarative import as_declarative
+from dis_sqlalchemy.ext.declarative import declared_attr
+from dis_sqlalchemy.orm import backref
+from dis_sqlalchemy.orm import foreign
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import remote
+from dis_sqlalchemy.orm import Session
 
 
 @as_declarative()

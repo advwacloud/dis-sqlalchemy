@@ -5,7 +5,7 @@
 Overview
 ========
 
-The SQLAlchemy SQL Toolkit and Object Relational Mapper
+The dis_sqlalchemy SQL Toolkit and Object Relational Mapper
 is a comprehensive set of tools for working with
 databases and Python. It has several distinct areas of
 functionality which can be used individually or combined
@@ -15,10 +15,10 @@ with component dependencies organized into layers:
 .. image:: sqla_arch_small.png
 
 Above, the two most significant front-facing portions of
-SQLAlchemy are the **Object Relational Mapper (ORM)** and the
+dis_sqlalchemy are the **Object Relational Mapper (ORM)** and the
 **Core**.
 
-Core contains the breadth of SQLAlchemy's SQL and database
+Core contains the breadth of dis_sqlalchemy's SQL and database
 integration and description services, the most prominent part of this
 being the **SQL Expression Language**.
 
@@ -56,16 +56,16 @@ Documentation Overview
 The documentation is separated into four sections:
 
 * :ref:`unified_tutorial` - this all-new tutorial for the 1.4/2.0 series of
-  SQLAlchemy introduces the entire library holistically, starting from a
+  dis_sqlalchemy introduces the entire library holistically, starting from a
   description of Core and working more and more towards ORM-specific concepts.
   New users, as well as users coming from the 1.x series of
-  SQLAlchemy, should start here.
+  dis_sqlalchemy, should start here.
 
 * :ref:`orm_toplevel` - In this section, reference documentation for the ORM is
   presented.
 
 * :ref:`core_toplevel` - Here, reference documentation for
-  everything else within Core is presented. SQLAlchemy engine, connection, and
+  everything else within Core is presented. dis_sqlalchemy engine, connection, and
   pooling services are also described here.
 
 * :ref:`dialect_toplevel` - Provides reference documentation
@@ -79,12 +79,12 @@ Code Examples
 =============
 
 Working code examples, mostly regarding the ORM, are included in the
-SQLAlchemy distribution. A description of all the included example
+dis_sqlalchemy distribution. A description of all the included example
 applications is at :ref:`examples_toplevel`.
 
-There is also a wide variety of examples involving both core SQLAlchemy
+There is also a wide variety of examples involving both core dis_sqlalchemy
 constructs as well as the ORM on the wiki.  See
-`Theatrum Chemicum <https://www.sqlalchemy.org/trac/wiki/UsageRecipes>`_.
+`Theatrum Chemicum <https://www.dis_sqlalchemy.org/trac/wiki/UsageRecipes>`_.
 
 .. _installation:
 
@@ -94,18 +94,18 @@ Installation Guide
 Supported Platforms
 -------------------
 
-SQLAlchemy supports the following platforms:
+dis_sqlalchemy supports the following platforms:
 
 * cPython 3.7 and higher
 * Python-3 compatible versions of `PyPy <http://pypy.org/>`_
 
 .. versionchanged:: 2.0
-   SQLAlchemy now targets Python 3.7 and above.
+   dis_sqlalchemy now targets Python 3.7 and above.
 
 AsyncIO Support
 ----------------
 
-SQLAlchemy's ``asyncio`` support depends upon the
+dis_sqlalchemy's ``asyncio`` support depends upon the
 `greenlet <https://pypi.org/project/greenlet/>`_ project.    This dependency
 will be installed by default on common machine platforms, however is not
 supported on every architecture and also may not install by default on
@@ -115,7 +115,7 @@ additional details on ensuring asyncio support is present.
 Supported Installation Methods
 -------------------------------
 
-SQLAlchemy installation is via standard Python methodologies that are
+dis_sqlalchemy installation is via standard Python methodologies that are
 based on `setuptools <https://pypi.org/project/setuptools/>`_, either
 by referring to ``setup.py`` directly or by using
 `pip <https://pypi.org/project/pip/>`_ or other setuptools-compatible
@@ -129,10 +129,10 @@ downloaded from PyPI and installed in one step:
 
 .. sourcecode:: text
 
-    pip install SQLAlchemy
+    pip install dis_sqlalchemy
 
-This command will download the latest **released** version of SQLAlchemy from
-the `Python Cheese Shop <https://pypi.org/project/SQLAlchemy>`_ and install it
+This command will download the latest **released** version of dis_sqlalchemy from
+the `Python Cheese Shop <https://pypi.org/project/dis_sqlalchemy>`_ and install it
 to your system. For most common platforms, a Python Wheel file will be
 downloaded which provides native Cython / C extensions prebuilt.
 
@@ -141,7 +141,7 @@ pip requires that the ``--pre`` flag be used:
 
 .. sourcecode:: text
 
-    pip install --pre SQLAlchemy
+    pip install --pre dis_sqlalchemy
 
 Where above, if the most recent version is a prerelease, it will be installed
 instead of the latest released version.
@@ -168,10 +168,10 @@ otherwise.
 Building the Cython Extensions
 ----------------------------------
 
-SQLAlchemy includes Cython_ extensions which provide an extra speed boost
+dis_sqlalchemy includes Cython_ extensions which provide an extra speed boost
 within various areas, with a current emphasis on the speed of Core result sets.
 
-.. versionchanged:: 2.0  The SQLAlchemy C extensions have been rewritten
+.. versionchanged:: 2.0  The dis_sqlalchemy C extensions have been rewritten
    using Cython.
 
 ``setup.py`` will automatically build the extensions if an appropriate platform
@@ -180,8 +180,8 @@ build looks like:
 
 .. sourcecode:: text
 
-    # cd into SQLAlchemy source distribution
-    cd path/to/sqlalchemy
+    # cd into dis_sqlalchemy source distribution
+    cd path/to/dis_sqlalchemy
 
     # install cython
     pip install cython
@@ -197,8 +197,8 @@ using build_:
 
 .. sourcecode:: text
 
-    # cd into SQLAlchemy source distribution
-    cd path/to/sqlalchemy
+    # cd into dis_sqlalchemy source distribution
+    cd path/to/dis_sqlalchemy
 
     # install build
     pip install build
@@ -212,14 +212,14 @@ message and re-run the build without the Cython extensions upon completion,
 reporting final status.
 
 To run the build/install without even attempting to compile the Cython
-extensions, the ``DISABLE_SQLALCHEMY_CEXT`` environment variable may be
+extensions, the ``DISABLE_dis_sqlalchemy_CEXT`` environment variable may be
 specified. The use case for this is either for special testing circumstances,
 or in the rare case of compatibility/build issues not overcome by the usual
 "rebuild" mechanism:
 
 .. sourcecode:: text
 
-  export DISABLE_SQLALCHEMY_CEXT=1; python setup.py install
+  export DISABLE_dis_sqlalchemy_CEXT=1; python setup.py install
 
 
 .. _Cython: https://cython.org/
@@ -230,31 +230,31 @@ or in the rare case of compatibility/build issues not overcome by the usual
 Installing a Database API
 ----------------------------------
 
-SQLAlchemy is designed to operate with a :term:`DBAPI` implementation built for a
+dis_sqlalchemy is designed to operate with a :term:`DBAPI` implementation built for a
 particular database, and includes support for the most popular databases.
 The individual database sections in :doc:`/dialects/index` enumerate
 the available DBAPIs for each database, including external links.
 
-Checking the Installed SQLAlchemy Version
+Checking the Installed dis_sqlalchemy Version
 ------------------------------------------
 
-This documentation covers SQLAlchemy version 2.0. If you're working on a
-system that already has SQLAlchemy installed, check the version from your
+This documentation covers dis_sqlalchemy version 2.0. If you're working on a
+system that already has dis_sqlalchemy installed, check the version from your
 Python prompt like this::
 
-     >>> import sqlalchemy
-     >>> sqlalchemy.__version__  # doctest: +SKIP
+     >>> import dis_sqlalchemy
+     >>> dis_sqlalchemy.__version__  # doctest: +SKIP
      2.0.0
 
 Next Steps
 ----------
 
-With SQLAlchemy installed, new and old users alike can
-:ref:`Proceed to the SQLAlchemy Tutorial <unified_tutorial>`.
+With dis_sqlalchemy installed, new and old users alike can
+:ref:`Proceed to the dis_sqlalchemy Tutorial <unified_tutorial>`.
 
 .. _migration:
 
 1.x to 2.0 Migration
 =====================
 
-Notes on the new API released in SQLAlchemy 2.0 is available here at :doc:`changelog/migration_20`.
+Notes on the new API released in dis_sqlalchemy 2.0 is available here at :doc:`changelog/migration_20`.

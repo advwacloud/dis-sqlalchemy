@@ -1,39 +1,39 @@
 import copy
 
-from sqlalchemy import exc as sa_exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import CascadeOptions
-from sqlalchemy.orm import class_mapper
-from sqlalchemy.orm import configure_mappers
-from sqlalchemy.orm import exc as orm_exc
-from sqlalchemy.orm import foreign
-from sqlalchemy.orm import object_mapper
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import util as orm_util
-from sqlalchemy.orm import with_parent
-from sqlalchemy.orm.attributes import instance_state
-from sqlalchemy.orm.collections import attribute_keyed_dict
-from sqlalchemy.orm.decl_api import declarative_base
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import assert_warns_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import in_
-from sqlalchemy.testing import not_in
-from sqlalchemy.testing.assertsql import CompiledSQL
-from sqlalchemy.testing.entities import ComparableEntity
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from dis_sqlalchemy import exc as sa_exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.orm import attributes
+from dis_sqlalchemy.orm import backref
+from dis_sqlalchemy.orm import CascadeOptions
+from dis_sqlalchemy.orm import class_mapper
+from dis_sqlalchemy.orm import configure_mappers
+from dis_sqlalchemy.orm import exc as orm_exc
+from dis_sqlalchemy.orm import foreign
+from dis_sqlalchemy.orm import object_mapper
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import util as orm_util
+from dis_sqlalchemy.orm import with_parent
+from dis_sqlalchemy.orm.attributes import instance_state
+from dis_sqlalchemy.orm.collections import attribute_keyed_dict
+from dis_sqlalchemy.orm.decl_api import declarative_base
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import assert_warns_message
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import in_
+from dis_sqlalchemy.testing import not_in
+from dis_sqlalchemy.testing.assertsql import CompiledSQL
+from dis_sqlalchemy.testing.entities import ComparableEntity
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 from test.orm import _fixtures
 
 
@@ -3115,8 +3115,8 @@ class PendingOrphanTestSingleLevel(fixtures.MappedTest):
 class PendingOrphanTestTwoLevel(fixtures.MappedTest):
     """test usages stated at
 
-    https://article.gmane.org/gmane.comp.python.sqlalchemy.user/3085
-    https://article.gmane.org/gmane.comp.python.sqlalchemy.user/3119
+    https://article.gmane.org/gmane.comp.python.dis_sqlalchemy.user/3085
+    https://article.gmane.org/gmane.comp.python.dis_sqlalchemy.user/3119
     """
 
     @classmethod
@@ -4275,7 +4275,7 @@ class SubclassCascadeTest(fixtures.DeclarativeMappedTest):
         lang = eng.languages[0]
         maven_build = lang.maven_builds[0]
 
-        from sqlalchemy import inspect
+        from dis_sqlalchemy import inspect
 
         state = inspect(obj)
         it = inspect(Company).cascade_iterator("save-update", state)

@@ -1,5 +1,5 @@
-from sqlalchemy import column
-from sqlalchemy import table
+from dis_sqlalchemy import column
+from dis_sqlalchemy import table
 
 
 def test_col_accessors() -> None:

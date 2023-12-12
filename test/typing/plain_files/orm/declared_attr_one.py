@@ -1,17 +1,17 @@
 from datetime import datetime
 import typing
 
-from sqlalchemy import DateTime
-from sqlalchemy import Index
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy import UniqueConstraint
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import declared_attr
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import MappedClassProtocol
-from sqlalchemy.sql.schema import PrimaryKeyConstraint
+from dis_sqlalchemy import DateTime
+from dis_sqlalchemy import Index
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import String
+from dis_sqlalchemy import UniqueConstraint
+from dis_sqlalchemy.orm import DeclarativeBase
+from dis_sqlalchemy.orm import declared_attr
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import MappedClassProtocol
+from dis_sqlalchemy.sql.schema import PrimaryKeyConstraint
 
 
 class Base(DeclarativeBase):

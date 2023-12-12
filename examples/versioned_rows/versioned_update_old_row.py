@@ -8,22 +8,22 @@ to only the most recent version.
 import datetime
 import time
 
-from sqlalchemy import and_
-from sqlalchemy import Column
-from sqlalchemy import create_engine
-from sqlalchemy import DateTime
-from sqlalchemy import event
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import backref
-from sqlalchemy.orm import make_transient
-from sqlalchemy.orm import make_transient_to_detached
-from sqlalchemy.orm import relationship
-from sqlalchemy.orm import Session
-from sqlalchemy.orm import with_loader_criteria
+from dis_sqlalchemy import and_
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import DateTime
+from dis_sqlalchemy import event
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import String
+from dis_sqlalchemy.ext.declarative import declarative_base
+from dis_sqlalchemy.orm import attributes
+from dis_sqlalchemy.orm import backref
+from dis_sqlalchemy.orm import make_transient
+from dis_sqlalchemy.orm import make_transient_to_detached
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm import with_loader_criteria
 
 
 Base = declarative_base()
@@ -73,7 +73,7 @@ class VersionedStartEnd:
         # now put it back in the session
         session.add(old_copy_of_us)
 
-        # now update the 'end' - SQLAlchemy sees this as a PK switch
+        # now update the 'end' - dis_sqlalchemy sees this as a PK switch
         old_copy_of_us.end = current_time()
 
         # fun fact!  the new_version() routine is *not* called for

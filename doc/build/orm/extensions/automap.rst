@@ -3,7 +3,7 @@
 Automap
 =======
 
-.. automodule:: sqlalchemy.ext.automap
+.. automodule:: dis_sqlalchemy.ext.automap
 
 API Reference
 -------------

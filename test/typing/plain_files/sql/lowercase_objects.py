@@ -1,4 +1,4 @@
-import sqlalchemy as sa
+import dis_sqlalchemy as sa
 
 Book = sa.table(
     "book",

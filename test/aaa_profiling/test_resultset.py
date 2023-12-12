@@ -1,17 +1,17 @@
 import sys
 
-from sqlalchemy import Column
-from sqlalchemy import create_engine
-from sqlalchemy import Integer
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import Unicode
-from sqlalchemy.engine.row import Row
-from sqlalchemy.testing import AssertsExecutionResults
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import profiling
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import Unicode
+from dis_sqlalchemy.engine.row import Row
+from dis_sqlalchemy.testing import AssertsExecutionResults
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import profiling
 
 
 NUM_FIELDS = 10

@@ -2,86 +2,86 @@ import importlib
 import itertools
 import random
 
-from sqlalchemy import and_
-from sqlalchemy import Boolean
-from sqlalchemy import case
-from sqlalchemy import cast
-from sqlalchemy import Column
-from sqlalchemy import column
-from sqlalchemy import dialects
-from sqlalchemy import exists
-from sqlalchemy import extract
-from sqlalchemy import Float
-from sqlalchemy import Integer
-from sqlalchemy import literal
-from sqlalchemy import literal_column
-from sqlalchemy import MetaData
-from sqlalchemy import or_
-from sqlalchemy import PickleType
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import table
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import tuple_
-from sqlalchemy import TypeDecorator
-from sqlalchemy import union
-from sqlalchemy import union_all
-from sqlalchemy import values
-from sqlalchemy.dialects import mysql
-from sqlalchemy.dialects import postgresql
-from sqlalchemy.schema import Sequence
-from sqlalchemy.sql import bindparam
-from sqlalchemy.sql import ColumnElement
-from sqlalchemy.sql import dml
-from sqlalchemy.sql import False_
-from sqlalchemy.sql import func
-from sqlalchemy.sql import operators
-from sqlalchemy.sql import roles
-from sqlalchemy.sql import True_
-from sqlalchemy.sql import type_coerce
-from sqlalchemy.sql import visitors
-from sqlalchemy.sql.base import HasCacheKey
-from sqlalchemy.sql.elements import _label_reference
-from sqlalchemy.sql.elements import _textual_label_reference
-from sqlalchemy.sql.elements import Annotated
-from sqlalchemy.sql.elements import BindParameter
-from sqlalchemy.sql.elements import ClauseElement
-from sqlalchemy.sql.elements import ClauseList
-from sqlalchemy.sql.elements import CollationClause
-from sqlalchemy.sql.elements import Immutable
-from sqlalchemy.sql.elements import Null
-from sqlalchemy.sql.elements import Slice
-from sqlalchemy.sql.elements import UnaryExpression
-from sqlalchemy.sql.functions import FunctionElement
-from sqlalchemy.sql.functions import GenericFunction
-from sqlalchemy.sql.functions import ReturnTypeFromArgs
-from sqlalchemy.sql.lambdas import lambda_stmt
-from sqlalchemy.sql.lambdas import LambdaElement
-from sqlalchemy.sql.lambdas import LambdaOptions
-from sqlalchemy.sql.selectable import _OffsetLimitParam
-from sqlalchemy.sql.selectable import AliasedReturnsRows
-from sqlalchemy.sql.selectable import FromGrouping
-from sqlalchemy.sql.selectable import LABEL_STYLE_NONE
-from sqlalchemy.sql.selectable import LABEL_STYLE_TABLENAME_PLUS_COL
-from sqlalchemy.sql.selectable import Select
-from sqlalchemy.sql.selectable import Selectable
-from sqlalchemy.sql.selectable import SelectStatementGrouping
-from sqlalchemy.sql.type_api import UserDefinedType
-from sqlalchemy.sql.visitors import InternalTraversal
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_false
-from sqlalchemy.testing import is_not
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import ne_
-from sqlalchemy.testing.assertions import expect_warnings
-from sqlalchemy.testing.util import random_choices
-from sqlalchemy.types import ARRAY
-from sqlalchemy.types import JSON
-from sqlalchemy.util import class_hierarchy
+from dis_sqlalchemy import and_
+from dis_sqlalchemy import Boolean
+from dis_sqlalchemy import case
+from dis_sqlalchemy import cast
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import column
+from dis_sqlalchemy import dialects
+from dis_sqlalchemy import exists
+from dis_sqlalchemy import extract
+from dis_sqlalchemy import Float
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import literal
+from dis_sqlalchemy import literal_column
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import or_
+from dis_sqlalchemy import PickleType
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import text
+from dis_sqlalchemy import tuple_
+from dis_sqlalchemy import TypeDecorator
+from dis_sqlalchemy import union
+from dis_sqlalchemy import union_all
+from dis_sqlalchemy import values
+from dis_sqlalchemy.dialects import mysql
+from dis_sqlalchemy.dialects import postgresql
+from dis_sqlalchemy.schema import Sequence
+from dis_sqlalchemy.sql import bindparam
+from dis_sqlalchemy.sql import ColumnElement
+from dis_sqlalchemy.sql import dml
+from dis_sqlalchemy.sql import False_
+from dis_sqlalchemy.sql import func
+from dis_sqlalchemy.sql import operators
+from dis_sqlalchemy.sql import roles
+from dis_sqlalchemy.sql import True_
+from dis_sqlalchemy.sql import type_coerce
+from dis_sqlalchemy.sql import visitors
+from dis_sqlalchemy.sql.base import HasCacheKey
+from dis_sqlalchemy.sql.elements import _label_reference
+from dis_sqlalchemy.sql.elements import _textual_label_reference
+from dis_sqlalchemy.sql.elements import Annotated
+from dis_sqlalchemy.sql.elements import BindParameter
+from dis_sqlalchemy.sql.elements import ClauseElement
+from dis_sqlalchemy.sql.elements import ClauseList
+from dis_sqlalchemy.sql.elements import CollationClause
+from dis_sqlalchemy.sql.elements import Immutable
+from dis_sqlalchemy.sql.elements import Null
+from dis_sqlalchemy.sql.elements import Slice
+from dis_sqlalchemy.sql.elements import UnaryExpression
+from dis_sqlalchemy.sql.functions import FunctionElement
+from dis_sqlalchemy.sql.functions import GenericFunction
+from dis_sqlalchemy.sql.functions import ReturnTypeFromArgs
+from dis_sqlalchemy.sql.lambdas import lambda_stmt
+from dis_sqlalchemy.sql.lambdas import LambdaElement
+from dis_sqlalchemy.sql.lambdas import LambdaOptions
+from dis_sqlalchemy.sql.selectable import _OffsetLimitParam
+from dis_sqlalchemy.sql.selectable import AliasedReturnsRows
+from dis_sqlalchemy.sql.selectable import FromGrouping
+from dis_sqlalchemy.sql.selectable import LABEL_STYLE_NONE
+from dis_sqlalchemy.sql.selectable import LABEL_STYLE_TABLENAME_PLUS_COL
+from dis_sqlalchemy.sql.selectable import Select
+from dis_sqlalchemy.sql.selectable import Selectable
+from dis_sqlalchemy.sql.selectable import SelectStatementGrouping
+from dis_sqlalchemy.sql.type_api import UserDefinedType
+from dis_sqlalchemy.sql.visitors import InternalTraversal
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_false
+from dis_sqlalchemy.testing import is_not
+from dis_sqlalchemy.testing import is_true
+from dis_sqlalchemy.testing import ne_
+from dis_sqlalchemy.testing.assertions import expect_warnings
+from dis_sqlalchemy.testing.util import random_choices
+from dis_sqlalchemy.types import ARRAY
+from dis_sqlalchemy.types import JSON
+from dis_sqlalchemy.util import class_hierarchy
 
 meta = MetaData()
 meta2 = MetaData()
@@ -1087,7 +1087,7 @@ class CoreFixtures:
                 lambda s: s.where(table_a.c.a == value)
             )
 
-        from sqlalchemy.sql import lambdas
+        from dis_sqlalchemy.sql import lambdas
 
         def eight():
             q = 5
@@ -1346,13 +1346,13 @@ class CompareAndCopyTest(CoreFixtures, fixtures.TestBase):
     def setup_test_class(cls):
         # TODO: we need to get dialects here somehow, perhaps in test_suite?
         [
-            importlib.import_module("sqlalchemy.dialects.%s" % d)
+            importlib.import_module("dis_sqlalchemy.dialects.%s" % d)
             for d in dialects.__all__
             if not d.startswith("_")
         ]
 
     def test_all_present(self):
-        """test for elements that are in SQLAlchemy Core, that they are
+        """test for elements that are in dis_sqlalchemy Core, that they are
         also included in the fixtures above.
 
         """
@@ -1365,7 +1365,7 @@ class CompareAndCopyTest(CoreFixtures, fixtures.TestBase):
                 or issubclass(cls, AliasedReturnsRows)
             )
             and not issubclass(cls, (Annotated))
-            and cls.__module__.startswith("sqlalchemy.")
+            and cls.__module__.startswith("dis_sqlalchemy.")
             and "orm" not in cls.__module__
             and "compiler" not in cls.__module__
             and "crud" not in cls.__module__

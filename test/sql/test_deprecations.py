@@ -1,44 +1,44 @@
-from sqlalchemy import alias
-from sqlalchemy import and_
-from sqlalchemy import bindparam
-from sqlalchemy import CHAR
-from sqlalchemy import column
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import join
-from sqlalchemy import literal_column
-from sqlalchemy import MetaData
-from sqlalchemy import null
-from sqlalchemy import or_
-from sqlalchemy import schema
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import sql
-from sqlalchemy import String
-from sqlalchemy import table
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy.engine import default
-from sqlalchemy.sql import coercions
-from sqlalchemy.sql import LABEL_STYLE_TABLENAME_PLUS_COL
-from sqlalchemy.sql import operators
-from sqlalchemy.sql import quoted_name
-from sqlalchemy.sql import roles
-from sqlalchemy.sql import visitors
-from sqlalchemy.sql.selectable import SelectStatementGrouping
-from sqlalchemy.testing import assertions
-from sqlalchemy.testing import AssertsCompiledSQL
-from sqlalchemy.testing import config
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.provision import normalize_sequence
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
+from dis_sqlalchemy import alias
+from dis_sqlalchemy import and_
+from dis_sqlalchemy import bindparam
+from dis_sqlalchemy import CHAR
+from dis_sqlalchemy import column
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import join
+from dis_sqlalchemy import literal_column
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import null
+from dis_sqlalchemy import or_
+from dis_sqlalchemy import schema
+from dis_sqlalchemy import select
+from dis_sqlalchemy import Sequence
+from dis_sqlalchemy import sql
+from dis_sqlalchemy import String
+from dis_sqlalchemy import table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import text
+from dis_sqlalchemy.engine import default
+from dis_sqlalchemy.sql import coercions
+from dis_sqlalchemy.sql import LABEL_STYLE_TABLENAME_PLUS_COL
+from dis_sqlalchemy.sql import operators
+from dis_sqlalchemy.sql import quoted_name
+from dis_sqlalchemy.sql import roles
+from dis_sqlalchemy.sql import visitors
+from dis_sqlalchemy.sql.selectable import SelectStatementGrouping
+from dis_sqlalchemy.testing import assertions
+from dis_sqlalchemy.testing import AssertsCompiledSQL
+from dis_sqlalchemy.testing import config
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_true
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing.provision import normalize_sequence
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
 
 
 class ToMetaDataTest(fixtures.TestBase):
@@ -674,7 +674,7 @@ class TableDeprecationTest(fixtures.TestBase):
 
 class LegacyOperatorTest(AssertsCompiledSQL, fixtures.TestBase):
     """
-    Several operators were renamed for SqlAlchemy 2.0 in #5429 and #5435
+    Several operators were renamed for dis_sqlalchemy 2.0 in #5429 and #5435
 
     This test class is designed to ensure the deprecated legacy operators
     are still available and equivalent to their modern replacements.
@@ -737,7 +737,7 @@ class LegacyOperatorTest(AssertsCompiledSQL, fixtures.TestBase):
 
     def test_issue_5429_assertions(self):
         """
-        2) ensure compatibility across sqlalchemy.testing.assertions
+        2) ensure compatibility across dis_sqlalchemy.testing.assertions
         """
         # functions
         # is_not

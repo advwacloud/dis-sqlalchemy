@@ -7,39 +7,39 @@ from typing import Optional
 from typing import Set
 import uuid
 
-from sqlalchemy import bindparam
-from sqlalchemy import event
-from sqlalchemy import exc
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import Identity
-from sqlalchemy import insert
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import literal
-from sqlalchemy import literal_column
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy import update
-from sqlalchemy.orm import aliased
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import load_only
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import orm_insert_sentinel
-from sqlalchemy.orm import Session
-from sqlalchemy.testing import config
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import expect_warnings
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import mock
-from sqlalchemy.testing import provision
-from sqlalchemy.testing.assertsql import CompiledSQL
-from sqlalchemy.testing.assertsql import Conditional
-from sqlalchemy.testing.entities import ComparableEntity
-from sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy import bindparam
+from dis_sqlalchemy import event
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Identity
+from dis_sqlalchemy import insert
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import literal
+from dis_sqlalchemy import literal_column
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import update
+from dis_sqlalchemy.orm import aliased
+from dis_sqlalchemy.orm import column_property
+from dis_sqlalchemy.orm import load_only
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import orm_insert_sentinel
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.testing import config
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import expect_warnings
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing import provision
+from dis_sqlalchemy.testing.assertsql import CompiledSQL
+from dis_sqlalchemy.testing.assertsql import Conditional
+from dis_sqlalchemy.testing.entities import ComparableEntity
+from dis_sqlalchemy.testing.fixtures import fixture_session
 
 
 class InsertStmtTest(testing.AssertsExecutionResults, fixtures.TestBase):
@@ -1489,7 +1489,7 @@ class BulkDMLReturningInhTest:
                 result = s.scalars(stmt, upsert_data)
         elif insert_strategy.bulk_w_embedded_bindparam:
             # test related to #9583, specific user case in
-            # https://github.com/sqlalchemy/sqlalchemy/discussions/9581#discussioncomment-5504077  # noqa: E501
+            # https://github.com/dis_sqlalchemy/dis_sqlalchemy/discussions/9581#discussioncomment-5504077  # noqa: E501
             stmt = stmt.values(
                 y=select(bindparam("qq1", type_=Integer)).scalar_subquery()
             )

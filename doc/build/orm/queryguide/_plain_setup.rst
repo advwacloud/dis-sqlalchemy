@@ -12,15 +12,15 @@ This page illustrates the mappings and fixture data used by the
     >>> from typing import List
     >>> from typing import Optional
     >>>
-    >>> from sqlalchemy import Column
-    >>> from sqlalchemy import create_engine
-    >>> from sqlalchemy import ForeignKey
-    >>> from sqlalchemy import Table
-    >>> from sqlalchemy.orm import DeclarativeBase
-    >>> from sqlalchemy.orm import Mapped
-    >>> from sqlalchemy.orm import mapped_column
-    >>> from sqlalchemy.orm import relationship
-    >>> from sqlalchemy.orm import Session
+    >>> from dis_sqlalchemy import Column
+    >>> from dis_sqlalchemy import create_engine
+    >>> from dis_sqlalchemy import ForeignKey
+    >>> from dis_sqlalchemy import Table
+    >>> from dis_sqlalchemy.orm import DeclarativeBase
+    >>> from dis_sqlalchemy.orm import Mapped
+    >>> from dis_sqlalchemy.orm import mapped_column
+    >>> from dis_sqlalchemy.orm import relationship
+    >>> from dis_sqlalchemy.orm import Session
     >>>
     >>>
     >>> class Base(DeclarativeBase):
@@ -71,13 +71,13 @@ This page illustrates the mappings and fixture data used by the
     ...         User(
     ...             name="spongebob",
     ...             fullname="Spongebob Squarepants",
-    ...             addresses=[Address(email_address="spongebob@sqlalchemy.org")],
+    ...             addresses=[Address(email_address="spongebob@dis_sqlalchemy.org")],
     ...         ),
     ...         User(
     ...             name="sandy",
     ...             fullname="Sandy Cheeks",
     ...             addresses=[
-    ...                 Address(email_address="sandy@sqlalchemy.org"),
+    ...                 Address(email_address="sandy@dis_sqlalchemy.org"),
     ...                 Address(email_address="squirrel@squirrelpower.org"),
     ...             ],
     ...         ),
@@ -89,7 +89,7 @@ This page illustrates the mappings and fixture data used by the
     ...         User(
     ...             name="squidward",
     ...             fullname="Squidward Tentacles",
-    ...             addresses=[Address(email_address="stentcl@sqlalchemy.org")],
+    ...             addresses=[Address(email_address="stentcl@dis_sqlalchemy.org")],
     ...         ),
     ...         User(name="ehkrabs", fullname="Eugene H. Krabs"),
     ...     ]

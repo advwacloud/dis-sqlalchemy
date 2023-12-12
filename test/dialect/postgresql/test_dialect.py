@@ -3,59 +3,59 @@ import datetime
 import logging
 import logging.handlers
 
-from sqlalchemy import BigInteger
-from sqlalchemy import bindparam
-from sqlalchemy import cast
-from sqlalchemy import Column
-from sqlalchemy import create_engine
-from sqlalchemy import DateTime
-from sqlalchemy import DDL
-from sqlalchemy import event
-from sqlalchemy import exc
-from sqlalchemy import extract
-from sqlalchemy import func
-from sqlalchemy import Integer
-from sqlalchemy import literal
-from sqlalchemy import MetaData
-from sqlalchemy import Numeric
-from sqlalchemy import schema
-from sqlalchemy import select
-from sqlalchemy import Sequence
-from sqlalchemy import SmallInteger
-from sqlalchemy import String
-from sqlalchemy import Table
-from sqlalchemy import testing
-from sqlalchemy import text
-from sqlalchemy import TypeDecorator
-from sqlalchemy.dialects.postgresql import asyncpg as asyncpg_dialect
-from sqlalchemy.dialects.postgresql import base as postgresql
-from sqlalchemy.dialects.postgresql import HSTORE
-from sqlalchemy.dialects.postgresql import JSONB
-from sqlalchemy.dialects.postgresql import psycopg as psycopg_dialect
-from sqlalchemy.dialects.postgresql import psycopg2 as psycopg2_dialect
-from sqlalchemy.dialects.postgresql import Range
-from sqlalchemy.dialects.postgresql.psycopg2 import EXECUTEMANY_VALUES
-from sqlalchemy.dialects.postgresql.psycopg2 import (
+from dis_sqlalchemy import BigInteger
+from dis_sqlalchemy import bindparam
+from dis_sqlalchemy import cast
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import create_engine
+from dis_sqlalchemy import DateTime
+from dis_sqlalchemy import DDL
+from dis_sqlalchemy import event
+from dis_sqlalchemy import exc
+from dis_sqlalchemy import extract
+from dis_sqlalchemy import func
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import literal
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import Numeric
+from dis_sqlalchemy import schema
+from dis_sqlalchemy import select
+from dis_sqlalchemy import Sequence
+from dis_sqlalchemy import SmallInteger
+from dis_sqlalchemy import String
+from dis_sqlalchemy import Table
+from dis_sqlalchemy import testing
+from dis_sqlalchemy import text
+from dis_sqlalchemy import TypeDecorator
+from dis_sqlalchemy.dialects.postgresql import asyncpg as asyncpg_dialect
+from dis_sqlalchemy.dialects.postgresql import base as postgresql
+from dis_sqlalchemy.dialects.postgresql import HSTORE
+from dis_sqlalchemy.dialects.postgresql import JSONB
+from dis_sqlalchemy.dialects.postgresql import psycopg as psycopg_dialect
+from dis_sqlalchemy.dialects.postgresql import psycopg2 as psycopg2_dialect
+from dis_sqlalchemy.dialects.postgresql import Range
+from dis_sqlalchemy.dialects.postgresql.psycopg2 import EXECUTEMANY_VALUES
+from dis_sqlalchemy.dialects.postgresql.psycopg2 import (
     EXECUTEMANY_VALUES_PLUS_BATCH,
 )
-from sqlalchemy.engine import url
-from sqlalchemy.sql.selectable import LABEL_STYLE_TABLENAME_PLUS_COL
-from sqlalchemy.testing import config
-from sqlalchemy.testing import engines
-from sqlalchemy.testing import expect_raises_message
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_false
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.assertions import assert_raises
-from sqlalchemy.testing.assertions import assert_raises_message
-from sqlalchemy.testing.assertions import AssertsCompiledSQL
-from sqlalchemy.testing.assertions import AssertsExecutionResults
-from sqlalchemy.testing.assertions import eq_
-from sqlalchemy.testing.assertions import eq_regex
-from sqlalchemy.testing.assertions import expect_raises
-from sqlalchemy.testing.assertions import ne_
+from dis_sqlalchemy.engine import url
+from dis_sqlalchemy.sql.selectable import LABEL_STYLE_TABLENAME_PLUS_COL
+from dis_sqlalchemy.testing import config
+from dis_sqlalchemy.testing import engines
+from dis_sqlalchemy.testing import expect_raises_message
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_false
+from dis_sqlalchemy.testing import is_true
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing.assertions import assert_raises
+from dis_sqlalchemy.testing.assertions import assert_raises_message
+from dis_sqlalchemy.testing.assertions import AssertsCompiledSQL
+from dis_sqlalchemy.testing.assertions import AssertsExecutionResults
+from dis_sqlalchemy.testing.assertions import eq_
+from dis_sqlalchemy.testing.assertions import eq_regex
+from dis_sqlalchemy.testing.assertions import expect_raises
+from dis_sqlalchemy.testing.assertions import ne_
 
 
 class DialectTest(fixtures.TestBase):
@@ -1193,7 +1193,7 @@ class MiscBackendTest(
     @testing.requires.no_coverage
     @testing.requires.any_psycopg_compatibility
     def test_notice_logging(self):
-        log = logging.getLogger("sqlalchemy.dialects.postgresql")
+        log = logging.getLogger("dis_sqlalchemy.dialects.postgresql")
         buf = logging.handlers.BufferingHandler(100)
         lev = log.level
         log.addHandler(buf)
@@ -1363,7 +1363,7 @@ $$ LANGUAGE plpgsql;
         )
 
     def test_quoted_name_bindparam_ok(self):
-        from sqlalchemy.sql.elements import quoted_name
+        from dis_sqlalchemy.sql.elements import quoted_name
 
         with testing.db.connect() as conn:
             eq_(

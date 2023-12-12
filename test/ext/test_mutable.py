@@ -6,43 +6,43 @@ import pickle
 from typing import Any
 from typing import Dict
 
-from sqlalchemy import event
-from sqlalchemy import ForeignKey
-from sqlalchemy import func
-from sqlalchemy import inspect
-from sqlalchemy import Integer
-from sqlalchemy import JSON
-from sqlalchemy import select
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.ext.mutable import MutableComposite
-from sqlalchemy.ext.mutable import MutableDict
-from sqlalchemy.ext.mutable import MutableList
-from sqlalchemy.ext.mutable import MutableSet
-from sqlalchemy.orm import attributes
-from sqlalchemy.orm import column_property
-from sqlalchemy.orm import composite
-from sqlalchemy.orm import declarative_base
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import Session
-from sqlalchemy.orm.instrumentation import ClassManager
-from sqlalchemy.orm.mapper import Mapper
-from sqlalchemy.testing import assert_raises
-from sqlalchemy.testing import assert_raises_message
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing import is_
-from sqlalchemy.testing import is_true
-from sqlalchemy.testing import mock
-from sqlalchemy.testing.entities import BasicEntity
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.testing.util import picklers
-from sqlalchemy.types import PickleType
-from sqlalchemy.types import TypeDecorator
-from sqlalchemy.types import VARCHAR
+from dis_sqlalchemy import event
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import func
+from dis_sqlalchemy import inspect
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import JSON
+from dis_sqlalchemy import select
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.ext.mutable import MutableComposite
+from dis_sqlalchemy.ext.mutable import MutableDict
+from dis_sqlalchemy.ext.mutable import MutableList
+from dis_sqlalchemy.ext.mutable import MutableSet
+from dis_sqlalchemy.orm import attributes
+from dis_sqlalchemy.orm import column_property
+from dis_sqlalchemy.orm import composite
+from dis_sqlalchemy.orm import declarative_base
+from dis_sqlalchemy.orm import Mapped
+from dis_sqlalchemy.orm import mapped_column
+from dis_sqlalchemy.orm import Session
+from dis_sqlalchemy.orm.instrumentation import ClassManager
+from dis_sqlalchemy.orm.mapper import Mapper
+from dis_sqlalchemy.testing import assert_raises
+from dis_sqlalchemy.testing import assert_raises_message
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing import is_
+from dis_sqlalchemy.testing import is_true
+from dis_sqlalchemy.testing import mock
+from dis_sqlalchemy.testing.entities import BasicEntity
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
+from dis_sqlalchemy.testing.util import picklers
+from dis_sqlalchemy.types import PickleType
+from dis_sqlalchemy.types import TypeDecorator
+from dis_sqlalchemy.types import VARCHAR
 
 
 class Foo(BasicEntity):
@@ -771,20 +771,20 @@ class _MutableListTestBase(_MutableListTestFixture):
 
         pickles = [
             b"\x80\x04\x95<\x00\x00\x00\x00\x00\x00\x00\x8c\x16"
-            b"sqlalchemy.ext.mutable\x94\x8c\x0bMutableList\x94\x93\x94)"
+            b"dis_sqlalchemy.ext.mutable\x94\x8c\x0bMutableList\x94\x93\x94)"
             b"\x81\x94(K\x01K\x02e]\x94(K\x01K\x02eb.",
-            b"ccopy_reg\n_reconstructor\np0\n(csqlalchemy.ext.mutable\n"
+            b"ccopy_reg\n_reconstructor\np0\n(cdis_sqlalchemy.ext.mutable\n"
             b"MutableList\np1\nc__builtin__\nlist\np2\n(lp3\nI1\naI2\n"
             b"atp4\nRp5\n(lp6\nI1\naI2\nab.",
-            b"ccopy_reg\n_reconstructor\nq\x00(csqlalchemy.ext.mutable\n"
+            b"ccopy_reg\n_reconstructor\nq\x00(cdis_sqlalchemy.ext.mutable\n"
             b"MutableList\nq\x01c__builtin__\nlist\nq\x02]q\x03(K\x01K"
             b"\x02etq\x04Rq\x05]q\x06(K\x01K\x02eb.",
-            b"\x80\x02csqlalchemy.ext.mutable\nMutableList\nq\x00)\x81q"
+            b"\x80\x02cdis_sqlalchemy.ext.mutable\nMutableList\nq\x00)\x81q"
             b"\x01(K\x01K\x02e]q\x02(K\x01K\x02eb.",
-            b"\x80\x03csqlalchemy.ext.mutable\nMutableList\nq\x00)\x81q"
+            b"\x80\x03cdis_sqlalchemy.ext.mutable\nMutableList\nq\x00)\x81q"
             b"\x01(K\x01K\x02e]q\x02(K\x01K\x02eb.",
             b"\x80\x04\x95<\x00\x00\x00\x00\x00\x00\x00\x8c\x16"
-            b"sqlalchemy.ext.mutable\x94\x8c\x0bMutableList\x94\x93\x94)"
+            b"dis_sqlalchemy.ext.mutable\x94\x8c\x0bMutableList\x94\x93\x94)"
             b"\x81\x94(K\x01K\x02e]\x94(K\x01K\x02eb.",
         ]
 
@@ -1227,7 +1227,7 @@ class MutableColumnCopyArrayTest(_MutableListTestBase, fixtures.MappedTest):
 
     @classmethod
     def define_tables(cls, metadata):
-        from sqlalchemy.sql.sqltypes import ARRAY
+        from dis_sqlalchemy.sql.sqltypes import ARRAY
 
         MutableList = cls._type_fixture()
 
@@ -1466,7 +1466,7 @@ class _CompositeTestBase:
         )
 
     def setup_test(self):
-        from sqlalchemy.ext import mutable
+        from dis_sqlalchemy.ext import mutable
 
         mutable._setup_composite_listener()
 

@@ -5,7 +5,7 @@ Mapping Classes with Declarative
 ================================
 
 The Declarative mapping style is the primary style of mapping that is used
-with SQLAlchemy.   See the section :ref:`orm_declarative_mapping` for the
+with dis_sqlalchemy.   See the section :ref:`orm_declarative_mapping` for the
 top level introduction.
 
 

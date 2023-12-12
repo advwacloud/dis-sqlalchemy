@@ -1,9 +1,9 @@
-from sqlalchemy import Column
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy.ext.orderinglist import ordering_list
-from sqlalchemy.orm import registry
-from sqlalchemy.orm import relationship
+from dis_sqlalchemy import Column
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy.ext.orderinglist import ordering_list
+from dis_sqlalchemy.orm import registry
+from dis_sqlalchemy.orm import relationship
 
 mapper_registry: registry = registry()
 

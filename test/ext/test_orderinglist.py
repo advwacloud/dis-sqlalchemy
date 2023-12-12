@@ -1,17 +1,17 @@
-from sqlalchemy import ForeignKey
-from sqlalchemy import Integer
-from sqlalchemy import MetaData
-from sqlalchemy import String
-from sqlalchemy import testing
-from sqlalchemy.ext.orderinglist import ordering_list
-from sqlalchemy.orm import clear_mappers
-from sqlalchemy.orm import relationship
-from sqlalchemy.testing import eq_
-from sqlalchemy.testing import fixtures
-from sqlalchemy.testing.fixtures import fixture_session
-from sqlalchemy.testing.schema import Column
-from sqlalchemy.testing.schema import Table
-from sqlalchemy.testing.util import picklers
+from dis_sqlalchemy import ForeignKey
+from dis_sqlalchemy import Integer
+from dis_sqlalchemy import MetaData
+from dis_sqlalchemy import String
+from dis_sqlalchemy import testing
+from dis_sqlalchemy.ext.orderinglist import ordering_list
+from dis_sqlalchemy.orm import clear_mappers
+from dis_sqlalchemy.orm import relationship
+from dis_sqlalchemy.testing import eq_
+from dis_sqlalchemy.testing import fixtures
+from dis_sqlalchemy.testing.fixtures import fixture_session
+from dis_sqlalchemy.testing.schema import Column
+from dis_sqlalchemy.testing.schema import Table
+from dis_sqlalchemy.testing.util import picklers
 
 
 metadata = None
@@ -468,7 +468,7 @@ class OrderingListTest(fixtures.MappedTest):
             self.assert_(alpha[li].position == pos)
 
     def test_picklability(self):
-        from sqlalchemy.ext.orderinglist import OrderingList
+        from dis_sqlalchemy.ext.orderinglist import OrderingList
 
         olist = OrderingList("order", reorder_on_append=True)
         olist.append(DummyItem())

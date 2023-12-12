@@ -1,8 +1,8 @@
 from typing import Optional
 
-from sqlalchemy import Boolean
-from sqlalchemy import Column
-from sqlalchemy.orm import declarative_base
+from dis_sqlalchemy import Boolean
+from dis_sqlalchemy import Column
+from dis_sqlalchemy.orm import declarative_base
 
 Base = declarative_base()
 
