@@ -2008,17 +2008,13 @@ class Inspector(inspection.Inspectable["Inspector"]):
             columns=run(
                 self.get_multi_columns, check_filter_names_from_meth=True
             ),
-            pk_constraint=run(self.get_multi_pk_constraint),
-            foreign_keys=run(self.get_multi_foreign_keys),
-            indexes=run(self.get_multi_indexes),
-            unique_constraints=run(
-                self.get_multi_unique_constraints, optional=True
-            ),
-            table_comment=run(self.get_multi_table_comment, optional=True),
-            check_constraints=run(
-                self.get_multi_check_constraints, optional=True
-            ),
-            table_options=run(self.get_multi_table_options, optional=True),
+            pk_constraint={},
+            foreign_keys={},
+            indexes={},
+            unique_constraints={},
+            table_comment={},
+            check_constraints={},
+            table_options={},
             unreflectable=unreflectable,
         )
         if _reflect_info:
