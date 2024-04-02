@@ -396,6 +396,39 @@ class Inspector(inspection.Inspectable["Inspector"]):
             return self.dialect.get_table_names(
                 conn, schema, info_cache=self.info_cache, **kw
             )
+        
+    def get_table_names_with_comment(
+        self, schema: Optional[str] = None, **kw: Any
+    ) -> List[str]:
+        r"""Return all table names within a particular schema.
+
+        The names are expected to be real tables only, not views.
+        Views are instead returned using the
+        :meth:`_reflection.Inspector.get_view_names` and/or
+        :meth:`_reflection.Inspector.get_materialized_view_names`
+        methods.
+
+        :param schema: Schema name. If ``schema`` is left at ``None``, the
+         database's default schema is
+         used, else the named schema is searched.  If the database does not
+         support named schemas, behavior is undefined if ``schema`` is not
+         passed as ``None``.  For special quoting, use :class:`.quoted_name`.
+        :param \**kw: Additional keyword argument to pass to the dialect
+         specific implementation. See the documentation of the dialect
+         in use for more information.
+
+        .. seealso::
+
+            :meth:`_reflection.Inspector.get_sorted_table_and_fkc_names`
+
+            :attr:`_schema.MetaData.sorted_tables`
+
+        """
+
+        with self._operation_context() as conn:
+            return self.dialect.get_table_names_with_comment(
+                conn, schema, info_cache=self.info_cache, **kw
+            )
 
     def has_table(
         self, table_name: str, schema: Optional[str] = None, **kw: Any

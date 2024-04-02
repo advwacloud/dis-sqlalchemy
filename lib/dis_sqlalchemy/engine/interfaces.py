@@ -1459,6 +1459,19 @@ class Dialect(EventTarget):
         """
 
         raise NotImplementedError()
+    
+
+    def get_table_names_with_comment(
+        self, connection: Connection, schema: Optional[str] = None, **kw: Any
+    ) -> List[str]:
+        """Return a list of table names for ``schema``.
+
+        This is an internal dialect method. Applications should use
+        :meth:`_engine.Inspector.get_table_names`.
+
+        """
+
+        raise NotImplementedError()
 
     def get_temp_table_names(
         self, connection: Connection, schema: Optional[str] = None, **kw: Any
